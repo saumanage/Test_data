@@ -1,0 +1,20 @@
+<apex:page showHeader="false" title="{!$Label.site.in_maintenance}" cache="false">
+  
+<!--
+<apex:composition template="StdExceptionTemplate">
+    <apex:define name="icon">
+      <apex:image url="{!URLFOR($Resource.SiteSamples, 'img/warning.png')}"/>
+    </apex:define>
+    <apex:define name="error">
+      <apex:outputText escape="false" styleClass="title" value="{!$Label.site.down_for_maintenance}">
+        <apex:param value="{!$Site.BaseUrl}"/>
+      </apex:outputText>
+      <br/>
+      <br/>
+      <apex:outputText value="{!$Label.site.sorry_for_inconvenience_back_shortly}"/>
+   </apex:define>
+  </apex:composition>-->
+<div style='display: flex; align-items: center; flex-direction: column; margin: 60px 25px 40px 25px;'><br/><br/><br/><div style='background: url(/sfsites/assets/Images/serviceNotAvailable/serviceNotAvailable.svg) center no-repeat; background-size: contain; height: 331px; width: 100%; max-width: 538px;'></div></div><div style='margin: 0 25px; text-align: center;'><p><b style='font-size: 3.4em'><apex:outputText escape="false" styleClass="title" value="{!$Label.site.down_for_maintenance}">
+        <apex:param value="{!$Site.BaseUrl}"/>
+      </apex:outputText></b></p><br/><p><span style='font-size: 2em;'><apex:outputText value="{!$Label.site.sorry_for_inconvenience_back_shortly}"/></span></p><br/><br/><br/></div>
+</apex:page>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Opportunity Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- New Opportunity --></label>
+        <name>New_Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Relationships (Original Opportunity) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Original Opportunity --></label>
+        <name>Previous_Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Relationships (New Opportunity) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Relationship Type --></label>
+        <name>Reason_For_Cloning__c</name>
+        <picklistValues>
+            <masterLabel>Customer Requested Dealer Reassignment</masterLabel>
+            <translation><!-- Customer Requested Dealer Reassignment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dealer Buy-Sell</masterLabel>
+            <translation><!-- Dealer Buy-Sell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate-Similar</masterLabel>
+            <translation><!-- Duplicate-Similar --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

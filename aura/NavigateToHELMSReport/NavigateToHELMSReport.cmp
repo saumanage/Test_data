@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordID" access="global">
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    <lightning:button label="Navigate to Report" onclick="{!c.gotoURL}"/>
+</aura:component>

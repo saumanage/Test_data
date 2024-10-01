@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dealer CRM Disposition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dealer CRM Dispositions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Arrival Time --></label>
+        <name>Arrival_Time_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Response --></label>
+        <name>Auto_Response_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Status --></label>
+        <name>Current_Status_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- HELMS Opportunity External Key --></label>
+        <name>HELMS_Opportunity_External_Key_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- The Last Event --></label>
+        <name>The_Last_Event_TXT__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

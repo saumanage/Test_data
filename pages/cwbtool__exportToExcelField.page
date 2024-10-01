@@ -1,0 +1,3 @@
+<apex:page controller="cwbtool.ExportToExcelFieldController"  contenttype="application/x-excel#fieldtrack{!Now()}.xls" readOnly="true">
+  <c:exportToExcelField lstFieldDetail="{!lstFieldDetail}" instanceUrl="{!instanceUrl}"></c:exportToExcelField> 
+</apex:page>

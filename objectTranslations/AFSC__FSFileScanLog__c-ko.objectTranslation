@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>파일 검사</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action --></label>
+        <name>AFSC__Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>AFSC__Date_Time_Scanned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direction --></label>
+        <name>AFSC__Direction__c</name>
+        <picklistValues>
+            <masterLabel>Download</masterLabel>
+            <translation>다운로드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scan Job</masterLabel>
+            <translation>검사 작업</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload</masterLabel>
+            <translation>업로드</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Extension --></label>
+        <name>AFSC__File_Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Name --></label>
+        <name>AFSC__File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Parent Id --></label>
+        <name>AFSC__File_Parent_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Prevalence --></label>
+        <name>AFSC__File_Prevalence_Desc1__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Prevalence Desc --></label>
+        <name>AFSC__File_Prevalence_Desc__c</name>
+        <picklistValues>
+            <masterLabel>Common</masterLabel>
+            <translation>흔함</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rare</masterLabel>
+            <translation>드뭄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unique</masterLabel>
+            <translation>고유함</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universal</masterLabel>
+            <translation>범용</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>알 수 없음</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very common</masterLabel>
+            <translation>매우 흔함</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very rare</masterLabel>
+            <translation>매우 드뭄</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Prevalence --></label>
+        <name>AFSC__File_Prevalence__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Reputation --></label>
+        <name>AFSC__File_Reputation_Desc1__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Reputation --></label>
+        <name>AFSC__File_Reputation_Desc__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation>클린</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malicious</masterLabel>
+            <translation>악성</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not available</masterLabel>
+            <translation>사용 불가</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspicious</masterLabel>
+            <translation>의심스러움</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>알 수 없음</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Reputation Rating --></label>
+        <name>AFSC__File_Reputation_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Size --></label>
+        <name>AFSC__File_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Type --></label>
+        <name>AFSC__File_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Version --></label>
+        <name>AFSC__File_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full File Name --></label>
+        <name>AFSC__Full_File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infection Name --></label>
+        <name>AFSC__Infection_Name2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infection Name DEPRECATED --></label>
+        <name>AFSC__Infection_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP address --></label>
+        <name>AFSC__Ip_address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Download --></label>
+        <name>AFSC__Is_Download__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>AFSC__Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>AFSC__Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEPRECATED Record Id --></label>
+        <name>AFSC__Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ref Content Document Id --></label>
+        <name>AFSC__Ref_Content_Document_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Id --></label>
+        <name>AFSC__Ref_Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replacement File Id --></label>
+        <name>AFSC__Replacement_File_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- SHA --></label>
+        <name>AFSC__SHA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scan Type --></label>
+        <name>AFSC__Scan_Type__c</name>
+        <picklistValues>
+            <masterLabel>Attachment</masterLabel>
+            <translation>첨부 파일</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation>콘텐츠</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scanbox Result --></label>
+        <name>AFSC__Scanbox_Result__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation>클린</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grayware</masterLabel>
+            <translation>그레이웨어</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infected</masterLabel>
+            <translation>감염됨</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspected</masterLabel>
+            <translation>의심됨</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>알 수 없음</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Whitelisted</masterLabel>
+            <translation>허용 목록에 추가됨</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DEPRECATED SHA1 --></label>
+        <name>AFSC__Sha1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>AFSC__Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>AFSC__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Name --></label>
+        <name>AFSC__User_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>AFSC__User__c</name>
+        <relationshipLabel><!-- File Scans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Verdict --></label>
+        <name>AFSC__Verdict__c</name>
+        <picklistValues>
+            <masterLabel>Disallowed</masterLabel>
+            <translation>허용되지 않음</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation>오류</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation>안전함</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>알 수 없음</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation>안전하지 않음</translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel>
+</nameFieldLabel>
+</CustomObjectTranslation>

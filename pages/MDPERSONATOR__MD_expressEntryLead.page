@@ -1,0 +1,601 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_expressEntry ] 
+     
+     purpose            : A custom VisualForce page which adds the "Express Entry" form to your Salesforce Leads, etc.
+                          Left here to demonstrate legacy usage of ExpressEntry component.
+
+     date created       : 8/20/2014
+     version            : 1.5
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+<apex:page standardController="Lead" tabstyle="Lead" extensions="MDPERSONATOR.MD_ExpressEntry">
+    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/redmond/jquery-ui.css"/>
+    
+    <script type="text/javascript">
+        var jq$ = jQuery.noConflict();
+
+        var timeInter = setInterval(function(){iterateObjectMethod()},600000);
+ 
+        function iterateObjectMethod() {
+            newToken();
+        }
+
+        // borrowed from here: http://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#JavaScript
+        /*
+          Copyright (c) 2011 Andrei Mackenzie
+        
+          Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        
+          The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        */
+        function getEditDistance(a, b) {
+          if(a.length === 0) return b.length; 
+          if(b.length === 0) return a.length; 
+         
+          var matrix = [];
+         
+          // increment along the first column of each row
+          var i;
+          for(i = 0; i <= b.length; i++){
+            matrix[i] = [i];
+          }
+         
+          // increment each column in the first row
+          var j;
+          for(j = 0; j <= a.length; j++){
+            matrix[0][j] = j;
+          }
+         
+          // Fill in the rest of the matrix
+          for(i = 1; i <= b.length; i++){
+            for(j = 1; j <= a.length; j++){
+              if(b.charAt(i-1) == a.charAt(j-1)){
+                matrix[i][j] = matrix[i-1][j-1];
+              } else {
+                matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
+                                        Math.min(matrix[i][j-1] + 1, // insertion
+                                                 matrix[i-1][j] + 1)); // deletion
+              }
+            }
+          }
+         
+          return matrix[b.length][a.length];
+        };
+
+        var eeToggleCase = 'MIXED';
+        
+        jq$(document).ready(function() {
+            eeToggleCase = jq$("#eeToggleCase").text();
+            
+            jq$('[id$=freeform]').autocomplete({
+                showHeader: true, 
+                minLength: parseInt(jq$("#eeMinLookup").text()),   
+                delay: 1,                                                                                                                 
+                source: function(request, response) {
+                    var getToken = jq$("#token").text();
+                    jq$.getJSON("https://expressentry.melissadata.net/jsonp/GlobalExpressFreeForm?callback=?", {format: "jsonp", id: getToken, FF: request.term, country: jq$('[id$=country]').val(), maxrecords: "10"}, function (data) {                        
+                        var suites = [];
+                        var results = jq$.map(data.Results, function( item ) {
+                            if (item.Address.SubBuilding != null && item.Address.SubBuilding != "") {
+                                var suiteArray = item.Address.SubBuilding.split(",");
+                                var secondaryPostalCode = item.Address.PostalCodeSecondary.split(",");
+                                for (var i = 0; i < suiteArray.length; i++) {
+                                    var postalCode = item.Address.PostalCode;
+                                    if (item.Address.PostalCodePrimary != null && item.Address.PostalCodePrimary != "") {
+                                        if (secondaryPostalCode[i] != null && secondaryPostalCode[i] != "") {
+                                            postalCode = item.Address.PostalCodePrimary + "-" + secondaryPostalCode[i];
+                                        }
+                                    }
+                                    var m_completeAddress = item.Address.DeliveryAddress + " " + suiteArray[i] + ", " + item.Address.Locality + ", " + item.Address.AdministrativeArea + ", " + postalCode;
+                                    if (eeToggleCase == "UPPER") {
+                                        m_completeAddress = m_completeAddress.toUpperCase();
+                                        
+                                        item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                        item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                        item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                        item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                        item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                        item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                        item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                        
+                                        suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(),
+                                        deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(), postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                        subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                    } else {
+                                        suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i],
+                                            deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i], postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                            subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                    }
+                                }
+                            }
+                            
+                            var m_completeAddress = item.Address.DeliveryAddress + ", " + item.Address.Locality + ", " + item.Address.AdministrativeArea + ", " + item.Address.PostalCode;
+                            if (eeToggleCase == "UPPER") {
+                                m_completeAddress = m_completeAddress.toUpperCase();
+                                
+                                item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                
+                                return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                            }
+                            
+                            return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                        });
+                        
+                        for (var i = 0; i < suites.length; i++) {
+                            results.push(suites[i]);
+                        }
+
+                        results = results.sort(function(a,b) {
+                            return getEditDistance(a.deliveryAddress.toUpperCase(),request.term.toUpperCase()) - getEditDistance(b.deliveryAddress.toUpperCase(),request.term.toUpperCase());
+                        });
+                        
+                        response(results);
+                    });
+                },
+                select: function(evt, ui) {
+                    //put selection in result box
+                    //this.form.result.value = ui.item.label;
+                    jq$('[id$=freeform]').val(ui.item.label);
+                    jq$('[id$=ee_street]').val(ui.item.deliveryAddress);
+                    jq$('[id$=ee_locality]').val(ui.item.locality);
+                    jq$('[id$=ee_postalCode]').val(ui.item.postalCode);
+                    jq$('[id$=ee_adminarea]').val(ui.item.administrativeArea);
+                    jq$('[id$=ee_subadminarea]').val(ui.item.subadministrativeArea);
+                    jq$('[id$=ee_ddl]').val(ui.item.ddlocality);
+                    jq$('[id$=ee_dl]').val(ui.item.dlocality);
+                    
+                    if (jq$('[id$=country]').val() == "US") {
+                        selected();
+                    } else {
+                        globalSelected();
+                    }
+                }
+            })
+                .data('ui-autocomplete')._renderItem = function( ul, item ) {
+                    var srchTerm = jq$.trim(this.term).split(/\s+/).join ('|');
+                    var strNewLabel = item.label;
+                    regexp = new RegExp ('(' + srchTerm + ')', "ig");
+                    var strNewLabel = strNewLabel.replace(regexp,"<span style='font-weight:bold;'>$1</span>");
+                    return jq$( "<li></li>" )
+                    .data( "ui-autocomplete-item", item )
+                    .append( "<a>" + strNewLabel + "</a>" )
+                    .appendTo( ul );
+                }
+            ;
+            
+            jq$('[id$=freeform]').autocomplete('search', '');
+            
+            jq$('[id$=ee_postalCode]').autocomplete({
+                showHeader: true,
+                minLength: 2,
+                delay: 100,
+                source: function(request, response) {
+                    var getToken = jq$("#token").text();
+                    jq$.getJSON("https://expressentry.melissadata.net/jsonp/GlobalExpressPostalCode?callback=?", {format: "jsonp", id: getToken, postalcode: request.term, country: jq$('[id$=country]').val(), maxrecords: "10"}, function (data) {
+                        //alert(JSON.stringify(data.Results));
+                        response(jq$.map(data.Results, function( item ) {  
+                            var m_completeAddress = item.Address.PostalCodePrimary + ", " + item.Address.Locality + ", " + item.Address.AdministrativeArea;
+                            if (eeToggleCase == "UPPER") {
+                                m_completeAddress = (m_completeAddress != null) ? m_completeAddress.toUpperCase() : m_completeAddress;
+                                
+                                item.Address.PostalCodePrimary = (item.Address.PostalCodePrimary != null) ? item.Address.PostalCodePrimary.toUpperCase() : item.Address.PostalCodePrimary;
+                                item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : item.Address.Locality;
+                                item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : item.Address.AdministrativeArea;
+                                
+                                return{label: m_completeAddress, value: item.Address.PostalCodePrimary, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea};
+                            }
+                            
+                            return{label: m_completeAddress, value: item.Address.PostalCodePrimary, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea};
+                        }));
+                    });
+                },
+                select: function(evt, ui) {
+                    jq$('[id$=ee_locality]').val(ui.item.locality);
+                    jq$('[id$=ee_adminarea]').val(ui.item.administrativeArea);
+                    
+                    jq$('[id$=freeform]').val('');
+                    jq$('[id$=ee_street]').val('');
+                }
+            })
+                .data('ui-autocomplete')._renderItem = function( ul, item ) {
+                    var srchTerm = jq$.trim(this.term).split(/\s+/).join ('|');
+                    var strNewLabel = item.label;
+                    regexp = new RegExp ('(' + srchTerm + ')', "ig");
+                    var strNewLabel = strNewLabel.replace(regexp,"<span style='font-weight:bold;'>$1</span>");
+                    return jq$( "<li></li>" )
+                    .data( "ui-autocomplete-item", item )
+                    .append( "<a>" + strNewLabel + "</a>" )
+                    .appendTo( ul );
+                }
+            ;
+            
+            jq$('[id$=ee_street]').autocomplete({
+                showHeader: true,
+                minLength: 2,
+                delay: 100,
+                source: function(request, response) {
+                    var getToken = jq$("#token").text();
+                    jq$.getJSON("https://expressentry.melissadata.net/jsonp/GlobalExpressAddress?callback=?", {format: "jsonp", id: getToken, address1: request.term, locality: jq$('[id$=ee_locality]').val(), administrativearea: jq$('[id$=ee_adminarea]').val(), postalcode: jq$('[id$=ee_postalCode]').val(), country: jq$('[id$=country]').val(), maxrecords: "10"}, function (data) {
+                        var suites = [];
+                        var results = jq$.map(data.Results, function( item ) {
+                            if (item.Address.SubBuilding != null && item.Address.SubBuilding != "") {
+                                var suiteArray = item.Address.SubBuilding.split(",");
+                                var secondaryPostalCode = item.Address.PostalCodeSecondary.split(",");
+                                for (var i = 0; i < suiteArray.length; i++) {
+                                    var postalCode = item.Address.PostalCode;
+                                    if (item.Address.PostalCodePrimary != null && item.Address.PostalCodePrimary != "") {
+                                        if (secondaryPostalCode[i] != null && secondaryPostalCode[i] != "") {
+                                            postalCode = item.Address.PostalCodePrimary + "-" + secondaryPostalCode[i];
+                                        }
+                                    }
+                                    var m_completeAddress = item.Address.DeliveryAddress + " " + suiteArray[i];
+                                    if (eeToggleCase == "UPPER") {
+                                        m_completeAddress = (m_completeAddress != null) ? m_completeAddress.toUpperCase() : m_completeAddress;
+                                        
+                                        item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                        item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                        item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                        item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                        item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                        item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                        item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                
+                                        suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(),
+                                            deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(), postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                            subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                    } else {
+                                        suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i],
+                                            deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i], postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                            subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                    }
+                                }
+                            }
+                            
+                            var m_completeAddress = item.Address.DeliveryAddress;
+                            
+                            if (eeToggleCase == "UPPER") {
+                                m_completeAddress = (m_completeAddress != null) ? m_completeAddress.toUpperCase() : m_completeAddress;
+                                        
+                                item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                
+                                return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                    deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                    subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                            }
+                            
+                            return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                        });
+                        
+                        for (var i = 0; i < suites.length; i++) {
+                            results.push(suites[i]);
+                        }
+
+                        results = results.sort(function(a,b) {
+                            return getEditDistance(a.deliveryAddress.toUpperCase(),request.term.toUpperCase()) - getEditDistance(b.deliveryAddress.toUpperCase(),request.term.toUpperCase());
+                        });
+                        
+                        response(results);
+                    });
+                },
+                select: function(evt, ui) {
+                    if (jq$('[id$=country]').val() == "US") {
+                        selected();
+                    } else {
+                        globalSelected();
+                    }
+                    
+                    jq$('[id$=ee_postalCode').val(ui.item.postalCode);
+                    jq$('[id$=ee_street]').val('');
+                }
+            })
+                .data('ui-autocomplete')._renderItem = function( ul, item ) {
+                    var srchTerm = jq$.trim(this.term).split(/\s+/).join ('|');
+                    var strNewLabel = item.label;
+                    regexp = new RegExp ('(' + srchTerm + ')', "ig");
+                    var strNewLabel = strNewLabel.replace(regexp,"<span style='font-weight:bold;'>$1</span>");
+                    return jq$( "<li></li>" )
+                    .data( "ui-autocomplete-item", item )
+                    .append( "<a>" + strNewLabel + "</a>" )
+                    .appendTo( ul );
+                }
+            ;
+            
+        });
+        
+    </script>
+    
+    <apex:form >
+        <apex:actionFunction action="{!consumeCredits}" name="selected" rerender=""/>
+        <apex:actionFunction action="{!globalConsumeCredits}" name="globalSelected" rerender=""/>
+        
+        <apex:actionFunction action="{!refreshToken}" name="newToken" rerender="contactPB"/>
+        <apex:sectionheader title="Contact Edit" subtitle="{!if(Lead.Id==null,'New Lead',Lead.Name)}">
+        </apex:sectionheader>
+        
+        <apex:pageblock mode="edit" id="contactPB" title="Contact Edit">
+            <div id="token" style="display: none;">{!expressToken}</div>
+            <div id="eeMinLookup" style="display: none;">{!eeMinLookup}</div>
+            <div id="eeToggleCase" style="display: none;">{!eeToggleCase}</div>
+            
+            <apex:pageblockbuttons >
+                <apex:commandbutton action="{!redirect}" value="Next"></apex:commandbutton>
+                <apex:commandbutton action="{!cancel}" value="Cancel"></apex:commandbutton>
+            </apex:pageblockbuttons>
+        
+            <apex:pagemessages ></apex:pagemessages>
+        
+            <apex:pageblocksection id="ContactExpressEntry" title="Express Entry for {!rType} Object" columns="1">
+                <apex:inputtext label="Freeform" id="freeform" size="80"/>
+                <apex:selectList tabindex="17" size="1" label="Country" value="{!savedEECountry}" id="country">
+                    <apex:selectOption itemValue="US" itemLabel="United States of America" />
+                    <apex:selectOption itemValue="AF" itemLabel="Afghanistan" />
+                    <apex:selectOption itemValue="AX" itemLabel="Aland Islands" />
+                    <apex:selectOption itemValue="AL" itemLabel="Albania" />
+                    <apex:selectOption itemValue="DZ" itemLabel="Algeria" />
+                    <apex:selectOption itemValue="AD" itemLabel="Andorra" />
+                    <apex:selectOption itemValue="AO" itemLabel="Angola" />
+                    <apex:selectOption itemValue="AI" itemLabel="Anguilla" />
+                    <apex:selectOption itemValue="AG" itemLabel="Antigua and Barbuda" />
+                    <apex:selectOption itemValue="AR" itemLabel="Argentina" />
+                    <apex:selectOption itemValue="AM" itemLabel="Armenia" />
+                    <apex:selectOption itemValue="AW" itemLabel="Aruba" />
+                    <apex:selectOption itemValue="AU" itemLabel="Australia" />
+                    <apex:selectOption itemValue="AT" itemLabel="Austria" />
+                    <apex:selectOption itemValue="AZ" itemLabel="Azerbaijan" />
+                    <apex:selectOption itemValue="BS" itemLabel="Bahamas" />
+                    <apex:selectOption itemValue="BH" itemLabel="Bahrain" />
+                    <apex:selectOption itemValue="BD" itemLabel="Bangladesh" />
+                    <apex:selectOption itemValue="BB" itemLabel="Barbados" />
+                    <apex:selectOption itemValue="BY" itemLabel="Belarus" />
+                    <apex:selectOption itemValue="BE" itemLabel="Belgium" />
+                    <apex:selectOption itemValue="BZ" itemLabel="Belize" />
+                    <apex:selectOption itemValue="BJ" itemLabel="Benin" />
+                    <apex:selectOption itemValue="BM" itemLabel="Bermuda" />
+                    <apex:selectOption itemValue="BT" itemLabel="Bhutan" />
+                    <apex:selectOption itemValue="BO" itemLabel="Bolivia" />
+                    <apex:selectOption itemValue="BA" itemLabel="Bosnia and Herzegovina" />
+                    <apex:selectOption itemValue="BW" itemLabel="Botswana" />
+                    <apex:selectOption itemValue="BV" itemLabel="Bouvet Island" />
+                    <apex:selectOption itemValue="BR" itemLabel="Brazil" />
+                    <apex:selectOption itemValue="IO" itemLabel="British Indian Ocean Territory" />
+                    <apex:selectOption itemValue="BN" itemLabel="Brunei Darussalam" />
+                    <apex:selectOption itemValue="BG" itemLabel="Bulgaria" />
+                    <apex:selectOption itemValue="BF" itemLabel="Burkina Faso" />
+                    <apex:selectOption itemValue="BI" itemLabel="Burundi" />
+                    <apex:selectOption itemValue="KH" itemLabel="Cambodia" />
+                    <apex:selectOption itemValue="CM" itemLabel="Cameroon" />
+                    <apex:selectOption itemValue="CA" itemLabel="Canada" />
+                    <apex:selectOption itemValue="CV" itemLabel="Cape Verde" />
+                    <apex:selectOption itemValue="BQ" itemLabel="Caribbean Netherlands " />
+                    <apex:selectOption itemValue="KY" itemLabel="Cayman Islands" />
+                    <apex:selectOption itemValue="CF" itemLabel="Central African Republic" />
+                    <apex:selectOption itemValue="TD" itemLabel="Chad" />
+                    <apex:selectOption itemValue="CL" itemLabel="Chile" />
+                    <apex:selectOption itemValue="CN" itemLabel="China" />
+                    <apex:selectOption itemValue="CX" itemLabel="Christmas Island" />
+                    <apex:selectOption itemValue="CC" itemLabel="Cocos (Keeling) Islands" />
+                    <apex:selectOption itemValue="CO" itemLabel="Colombia" />
+                    <apex:selectOption itemValue="KM" itemLabel="Comoros" />
+                    <apex:selectOption itemValue="CG" itemLabel="Congo" />
+                    <apex:selectOption itemValue="CD" itemLabel="Congo, Democratic Republic of" />
+                    <apex:selectOption itemValue="CK" itemLabel="Cook Islands" />
+                    <apex:selectOption itemValue="CR" itemLabel="Costa Rica" />
+                    <apex:selectOption itemValue="CI" itemLabel="Cote D'Ivoire" />
+                    <apex:selectOption itemValue="HR" itemLabel="Croatia" />
+                    <apex:selectOption itemValue="CU" itemLabel="Cuba" />
+                    <apex:selectOption itemValue="CW" itemLabel="Curacao" />
+                    <apex:selectOption itemValue="CY" itemLabel="Cyprus" />
+                    <apex:selectOption itemValue="CZ" itemLabel="Czech Republic" />
+                    <apex:selectOption itemValue="DK" itemLabel="Denmark" />
+                    <apex:selectOption itemValue="DJ" itemLabel="Djibouti" />
+                    <apex:selectOption itemValue="DM" itemLabel="Dominica" />
+                    <apex:selectOption itemValue="DO" itemLabel="Dominican Republic" />
+                    <apex:selectOption itemValue="EC" itemLabel="Ecuador" />
+                    <apex:selectOption itemValue="EG" itemLabel="Egypt" />
+                    <apex:selectOption itemValue="SV" itemLabel="El Salvador" />
+                    <apex:selectOption itemValue="GQ" itemLabel="Equatorial Guinea" />
+                    <apex:selectOption itemValue="ER" itemLabel="Eritrea" />
+                    <apex:selectOption itemValue="EE" itemLabel="Estonia" />
+                    <apex:selectOption itemValue="ET" itemLabel="Ethiopia" />
+                    <apex:selectOption itemValue="FK" itemLabel="Falkland Islands" />
+                    <apex:selectOption itemValue="FO" itemLabel="Faroe Islands" />
+                    <apex:selectOption itemValue="FJ" itemLabel="Fiji" />
+                    <apex:selectOption itemValue="FI" itemLabel="Finland" />
+                    <apex:selectOption itemValue="FR" itemLabel="France" />
+                    <apex:selectOption itemValue="GF" itemLabel="French Guiana" />
+                    <apex:selectOption itemValue="PF" itemLabel="French Polynesia" />
+                    <apex:selectOption itemValue="TF" itemLabel="French Southern Territories" />
+                    <apex:selectOption itemValue="GA" itemLabel="Gabon" />
+                    <apex:selectOption itemValue="GM" itemLabel="Gambia" />
+                    <apex:selectOption itemValue="GE" itemLabel="Georgia" />
+                    <apex:selectOption itemValue="DE" itemLabel="Germany" />
+                    <apex:selectOption itemValue="GH" itemLabel="Ghana" />
+                    <apex:selectOption itemValue="GI" itemLabel="Gibraltar" />
+                    <apex:selectOption itemValue="GR" itemLabel="Greece" />
+                    <apex:selectOption itemValue="GL" itemLabel="Greenland" />
+                    <apex:selectOption itemValue="GD" itemLabel="Grenada" />
+                    <apex:selectOption itemValue="GP" itemLabel="Guadeloupe" />
+                    <apex:selectOption itemValue="GT" itemLabel="Guatemala" />
+                    <apex:selectOption itemValue="GG" itemLabel="Guernsey" />
+                    <apex:selectOption itemValue="GN" itemLabel="Guinea" />
+                    <apex:selectOption itemValue="GW" itemLabel="Guinea-Bissau" />
+                    <apex:selectOption itemValue="GY" itemLabel="Guyana" />
+                    <apex:selectOption itemValue="HT" itemLabel="Haiti" />
+                    <apex:selectOption itemValue="HM" itemLabel="Heard and McDonald Islands" />
+                    <apex:selectOption itemValue="HN" itemLabel="Honduras" />
+                    <apex:selectOption itemValue="HK" itemLabel="Hong Kong" />
+                    <apex:selectOption itemValue="HU" itemLabel="Hungary" />
+                    <apex:selectOption itemValue="IS" itemLabel="Iceland" />
+                    <apex:selectOption itemValue="IN" itemLabel="India" />
+                    <apex:selectOption itemValue="ID" itemLabel="Indonesia" />
+                    <apex:selectOption itemValue="IR" itemLabel="Iran" />
+                    <apex:selectOption itemValue="IQ" itemLabel="Iraq" />
+                    <apex:selectOption itemValue="IE" itemLabel="Ireland" />
+                    <apex:selectOption itemValue="IM" itemLabel="Isle of Man" />
+                    <apex:selectOption itemValue="IL" itemLabel="Israel" />
+                    <apex:selectOption itemValue="IT" itemLabel="Italy" />
+                    <apex:selectOption itemValue="JM" itemLabel="Jamaica" />
+                    <apex:selectOption itemValue="JP" itemLabel="Japan" />
+                    <apex:selectOption itemValue="JE" itemLabel="Jersey" />
+                    <apex:selectOption itemValue="JO" itemLabel="Jordan" />
+                    <apex:selectOption itemValue="KZ" itemLabel="Kazakhstan" />
+                    <apex:selectOption itemValue="KE" itemLabel="Kenya" />
+                    <apex:selectOption itemValue="KI" itemLabel="Kiribati" />
+                    <apex:selectOption itemValue="KW" itemLabel="Kuwait" />
+                    <apex:selectOption itemValue="KG" itemLabel="Kyrgyzstan" />
+                    <apex:selectOption itemValue="LA" itemLabel="Lao People's Democratic Republic" />
+                    <apex:selectOption itemValue="LV" itemLabel="Latvia" />
+                    <apex:selectOption itemValue="LB" itemLabel="Lebanon" />
+                    <apex:selectOption itemValue="LS" itemLabel="Lesotho" />
+                    <apex:selectOption itemValue="LR" itemLabel="Liberia" />
+                    <apex:selectOption itemValue="LY" itemLabel="Libya" />
+                    <apex:selectOption itemValue="LI" itemLabel="Liechtenstein" />
+                    <apex:selectOption itemValue="LT" itemLabel="Lithuania" />
+                    <apex:selectOption itemValue="LU" itemLabel="Luxembourg" />
+                    <apex:selectOption itemValue="MO" itemLabel="Macau" />
+                    <apex:selectOption itemValue="MK" itemLabel="Macedonia" />
+                    <apex:selectOption itemValue="MG" itemLabel="Madagascar" />
+                    <apex:selectOption itemValue="MW" itemLabel="Malawi" />
+                    <apex:selectOption itemValue="MY" itemLabel="Malaysia" />
+                    <apex:selectOption itemValue="MV" itemLabel="Maldives" />
+                    <apex:selectOption itemValue="ML" itemLabel="Mali" />
+                    <apex:selectOption itemValue="MT" itemLabel="Malta" />
+                    <apex:selectOption itemValue="MQ" itemLabel="Martinique" />
+                    <apex:selectOption itemValue="MR" itemLabel="Mauritania" />
+                    <apex:selectOption itemValue="MU" itemLabel="Mauritius" />
+                    <apex:selectOption itemValue="YT" itemLabel="Mayotte" />
+                    <apex:selectOption itemValue="MX" itemLabel="Mexico" />
+                    <apex:selectOption itemValue="MD" itemLabel="Moldova" />
+                    <apex:selectOption itemValue="MC" itemLabel="Monaco" />
+                    <apex:selectOption itemValue="MN" itemLabel="Mongolia" />
+                    <apex:selectOption itemValue="ME" itemLabel="Montenegro" />
+                    <apex:selectOption itemValue="MS" itemLabel="Montserrat" />
+                    <apex:selectOption itemValue="MA" itemLabel="Morocco" />
+                    <apex:selectOption itemValue="MZ" itemLabel="Mozambique" />
+                    <apex:selectOption itemValue="MM" itemLabel="Myanmar" />
+                    <apex:selectOption itemValue="NA" itemLabel="Namibia" />
+                    <apex:selectOption itemValue="NR" itemLabel="Nauru" />
+                    <apex:selectOption itemValue="NP" itemLabel="Nepal" />
+                    <apex:selectOption itemValue="NC" itemLabel="New Caledonia" />
+                    <apex:selectOption itemValue="NZ" itemLabel="New Zealand" />
+                    <apex:selectOption itemValue="NI" itemLabel="Nicaragua" />
+                    <apex:selectOption itemValue="NE" itemLabel="Niger" />
+                    <apex:selectOption itemValue="NG" itemLabel="Nigeria" />
+                    <apex:selectOption itemValue="NU" itemLabel="Niue" />
+                    <apex:selectOption itemValue="NF" itemLabel="Norfolk Island" />
+                    <apex:selectOption itemValue="KP" itemLabel="North Korea" />
+                    <apex:selectOption itemValue="NO" itemLabel="Norway" />
+                    <apex:selectOption itemValue="OM" itemLabel="Oman" />
+                    <apex:selectOption itemValue="PK" itemLabel="Pakistan" />
+                    <apex:selectOption itemValue="PS" itemLabel="Palestinian Territory, Occupied" />
+                    <apex:selectOption itemValue="PA" itemLabel="Panama" />
+                    <apex:selectOption itemValue="PG" itemLabel="Papua New Guinea" />
+                    <apex:selectOption itemValue="PY" itemLabel="Paraguay" />
+                    <apex:selectOption itemValue="PE" itemLabel="Peru" />
+                    <apex:selectOption itemValue="PH" itemLabel="Philippines" />
+                    <apex:selectOption itemValue="PN" itemLabel="Pitcairn" />
+                    <apex:selectOption itemValue="PL" itemLabel="Poland" />
+                    <apex:selectOption itemValue="PT" itemLabel="Portugal" />
+                    <apex:selectOption itemValue="QA" itemLabel="Qatar" />
+                    <apex:selectOption itemValue="RE" itemLabel="Reunion" />
+                    <apex:selectOption itemValue="RO" itemLabel="Romania" />
+                    <apex:selectOption itemValue="RU" itemLabel="Russian Federation" />
+                    <apex:selectOption itemValue="RW" itemLabel="Rwanda" />
+                    <apex:selectOption itemValue="BL" itemLabel="Saint Barthelemy" />
+                    <apex:selectOption itemValue="SH" itemLabel="Saint Helena" />
+                    <apex:selectOption itemValue="KN" itemLabel="Saint Kitts and Nevis" />
+                    <apex:selectOption itemValue="LC" itemLabel="Saint Lucia" />
+                    <apex:selectOption itemValue="VC" itemLabel="Saint Vincent and the Grenadines" />
+                    <apex:selectOption itemValue="MF" itemLabel="Saint-Martin (France)" />
+                    <apex:selectOption itemValue="SX" itemLabel="Saint-Martin (Pays-Bas)" />
+                    <apex:selectOption itemValue="WS" itemLabel="Samoa" />
+                    <apex:selectOption itemValue="SM" itemLabel="San Marino" />
+                    <apex:selectOption itemValue="ST" itemLabel="Sao Tome and Principe" />
+                    <apex:selectOption itemValue="SA" itemLabel="Saudi Arabia" />
+                    <apex:selectOption itemValue="SN" itemLabel="Senegal" />
+                    <apex:selectOption itemValue="RS" itemLabel="Serbia" />
+                    <apex:selectOption itemValue="SC" itemLabel="Seychelles" />
+                    <apex:selectOption itemValue="SL" itemLabel="Sierra Leone" />
+                    <apex:selectOption itemValue="SG" itemLabel="Singapore" />
+                    <apex:selectOption itemValue="SK" itemLabel="Slovakia (Slovak Republic)" />
+                    <apex:selectOption itemValue="SI" itemLabel="Slovenia" />
+                    <apex:selectOption itemValue="SB" itemLabel="Solomon Islands" />
+                    <apex:selectOption itemValue="SO" itemLabel="Somalia" />
+                    <apex:selectOption itemValue="ZA" itemLabel="South Africa" />
+                    <apex:selectOption itemValue="GS" itemLabel="South Georgia & S Sandwich Islands" />
+                    <apex:selectOption itemValue="KR" itemLabel="South Korea" />
+                    <apex:selectOption itemValue="SS" itemLabel="South Sudan" />
+                    <apex:selectOption itemValue="ES" itemLabel="Spain" />
+                    <apex:selectOption itemValue="LK" itemLabel="Sri Lanka" />
+                    <apex:selectOption itemValue="PM" itemLabel="St. Pierre and Miquelon" />
+                    <apex:selectOption itemValue="SD" itemLabel="Sudan" />
+                    <apex:selectOption itemValue="SR" itemLabel="Suriname" />
+                    <apex:selectOption itemValue="SJ" itemLabel="Svalbard and Jan Mayen Islands" />
+                    <apex:selectOption itemValue="SZ" itemLabel="Swaziland" />
+                    <apex:selectOption itemValue="SE" itemLabel="Sweden" />
+                    <apex:selectOption itemValue="CH" itemLabel="Switzerland" />
+                    <apex:selectOption itemValue="SY" itemLabel="Syria" />
+                    <apex:selectOption itemValue="TW" itemLabel="Taiwan" />
+                    <apex:selectOption itemValue="TJ" itemLabel="Tajikistan" />
+                    <apex:selectOption itemValue="TZ" itemLabel="Tanzania" />
+                    <apex:selectOption itemValue="TH" itemLabel="Thailand" />
+                    <apex:selectOption itemValue="NL" itemLabel="The Netherlands" />
+                    <apex:selectOption itemValue="TL" itemLabel="Timor-Leste" />
+                    <apex:selectOption itemValue="TG" itemLabel="Togo" />
+                    <apex:selectOption itemValue="TK" itemLabel="Tokelau" />
+                    <apex:selectOption itemValue="TO" itemLabel="Tonga" />
+                    <apex:selectOption itemValue="TT" itemLabel="Trinidad and Tobago" />
+                    <apex:selectOption itemValue="TN" itemLabel="Tunisia" />
+                    <apex:selectOption itemValue="TR" itemLabel="Turkey" />
+                    <apex:selectOption itemValue="TM" itemLabel="Turkmenistan" />
+                    <apex:selectOption itemValue="TC" itemLabel="Turks and Caicos Islands" />
+                    <apex:selectOption itemValue="TV" itemLabel="Tuvalu" />
+                    <apex:selectOption itemValue="UG" itemLabel="Uganda" />
+                    <apex:selectOption itemValue="UA" itemLabel="Ukraine" />
+                    <apex:selectOption itemValue="AE" itemLabel="United Arab Emirates" />
+                    <apex:selectOption itemValue="GB" itemLabel="United Kingdom" />
+                    <apex:selectOption itemValue="UY" itemLabel="Uruguay" />
+                    <apex:selectOption itemValue="UZ" itemLabel="Uzbekistan" />
+                    <apex:selectOption itemValue="VU" itemLabel="Vanuatu" />
+                    <apex:selectOption itemValue="VA" itemLabel="Vatican" />
+                    <apex:selectOption itemValue="VE" itemLabel="Venezuela" />
+                    <apex:selectOption itemValue="VN" itemLabel="Vietnam" />
+                    <apex:selectOption itemValue="VG" itemLabel="Virgin Islands (British)" />
+                    <apex:selectOption itemValue="WF" itemLabel="Wallis and Futuna Islands" />
+                    <apex:selectOption itemValue="YE" itemLabel="Yemen" />
+                    <apex:selectOption itemValue="ZM" itemLabel="Zambia" />
+                    <apex:selectOption itemValue="ZW" itemLabel="Zimbabwe" />
+                </apex:selectList>
+                <apex:inputtext label="Street Address" value="{!deliveryAddress}" id="ee_street" size="50"/>
+                <apex:inputtext label="City" value="{!city}" id="ee_locality" size="50"/>
+                <apex:inputtext label="State/Province" value="{!state}" id="ee_adminarea" size="50"/>
+                <apex:inputtext label="Postal Code" value="{!zip}" id="ee_postalCode" size="50"/>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+    
+    
+</apex:page>

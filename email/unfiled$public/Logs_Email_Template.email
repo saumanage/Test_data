@@ -1,0 +1,14 @@
+Hi Team,
+
+
+
+Please find below error Details:
+
+
+
+Name : {!Logs__c.Name}
+Error Line Number : {!Logs__c.Error_Line_Number__c}
+Error Message : {!Logs__c.Error_Message__c}
+PE Reply Id : {!Logs__c.PE_Reply_Id__c}
+SF Rec Id : {!Logs__c.SF_Rec_Id__c}
+Trigger/Class Name : {!Logs__c.Trigger_or_Class_Name__c}

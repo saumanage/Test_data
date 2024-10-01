@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dealer Participation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dealer Participations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM System --></label>
+        <name>CRM_System__c</name>
+        <relationshipLabel><!-- Dealer Participations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Certificate Name --></label>
+        <name>CertificateName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Certification Status --></label>
+        <name>CertificateStatus_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Certification Date --></label>
+        <name>CertificationDate_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Account --></label>
+        <name>DealerAccount_ID__c</name>
+        <relationshipLabel><!-- Dealer Participations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dealer Subdivision --></label>
+        <name>Dealer_Subdivision__c</name>
+        <relationshipLabel><!-- Dealer Participations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsActive --></label>
+        <name>ISActive_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox_ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Receiving End Date --></label>
+        <name>LeadReceivingEndDate_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Receiving Start Date --></label>
+        <name>LeadReceivingStartDate_DT__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Dealer Participation --></label>
+        <name>Dealer_Participation</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

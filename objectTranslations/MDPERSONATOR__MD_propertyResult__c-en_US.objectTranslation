@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- APNYearChange --></label>
+        <name>MDPERSONATOR__APNYearChange__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccessabilityElevatorFlag --></label>
+        <name>MDPERSONATOR__AccessabilityElevatorFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccessabilityHandicapFlag --></label>
+        <name>MDPERSONATOR__AccessabilityHandicapFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountNumber --></label>
+        <name>MDPERSONATOR__AccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressKey --></label>
+        <name>MDPERSONATOR__AddressKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>MDPERSONATOR__Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- AlternateAPN --></label>
+        <name>MDPERSONATOR__AlternateAPN__c</name>
+    </fields>
+    <fields>
+        <label><!-- ArborPergolaFlag --></label>
+        <name>MDPERSONATOR__ArborPergolaFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area1stFloor --></label>
+        <name>MDPERSONATOR__Area1stFloor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area2ndFloor --></label>
+        <name>MDPERSONATOR__Area2ndFloor__c</name>
+    </fields>
+    <fields>
+        <label><!-- AreaBuildingDefinitionCode --></label>
+        <name>MDPERSONATOR__AreaBuildingDefinitionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- AreaBuilding --></label>
+        <name>MDPERSONATOR__AreaBuilding__c</name>
+    </fields>
+    <fields>
+        <label><!-- AreaGross --></label>
+        <name>MDPERSONATOR__AreaGross__c</name>
+    </fields>
+    <fields>
+        <label><!-- AreaLotAcres --></label>
+        <name>MDPERSONATOR__AreaLotAcres__c</name>
+    </fields>
+    <fields>
+        <label><!-- AreaLotSF --></label>
+        <name>MDPERSONATOR__AreaLotSF__c</name>
+    </fields>
+    <fields>
+        <label><!-- AreaUpperFloors --></label>
+        <name>MDPERSONATOR__AreaUpperFloors__c</name>
+    </fields>
+    <fields>
+        <label><!-- ArenaFlag --></label>
+        <name>MDPERSONATOR__ArenaFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessedImprovementsPerc --></label>
+        <name>MDPERSONATOR__AssessedImprovementsPerc__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessedValueImprovements --></label>
+        <name>MDPERSONATOR__AssessedValueImprovements__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessedValueLand --></label>
+        <name>MDPERSONATOR__AssessedValueLand__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessedValueTotal --></label>
+        <name>MDPERSONATOR__AssessedValueTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessorLastSaleAmount --></label>
+        <name>MDPERSONATOR__AssessorLastSaleAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessorLastSaleDate --></label>
+        <name>MDPERSONATOR__AssessorLastSaleDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessorPriorSaleAmount --></label>
+        <name>MDPERSONATOR__AssessorPriorSaleAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssessorPriorSaleDate --></label>
+        <name>MDPERSONATOR__AssessorPriorSaleDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssrLastUpdated --></label>
+        <name>MDPERSONATOR__AssrLastUpdated__c</name>
+    </fields>
+    <fields>
+        <label><!-- AtticArea --></label>
+        <name>MDPERSONATOR__AtticArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- AtticFlag --></label>
+        <name>MDPERSONATOR__AtticFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BalconyArea --></label>
+        <name>MDPERSONATOR__BalconyArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- BaseMAK --></label>
+        <name>MDPERSONATOR__BaseMAK__c</name>
+    </fields>
+    <fields>
+        <label><!-- BasementAreaFinished --></label>
+        <name>MDPERSONATOR__BasementAreaFinished__c</name>
+    </fields>
+    <fields>
+        <label><!-- BasementAreaUnfinished --></label>
+        <name>MDPERSONATOR__BasementAreaUnfinished__c</name>
+    </fields>
+    <fields>
+        <label><!-- BasementArea --></label>
+        <name>MDPERSONATOR__BasementArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- BathCount --></label>
+        <name>MDPERSONATOR__BathCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- BathHouseArea --></label>
+        <name>MDPERSONATOR__BathHouseArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- BathHouseFlag --></label>
+        <name>MDPERSONATOR__BathHouseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BathPartialCount --></label>
+        <name>MDPERSONATOR__BathPartialCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- BedroomsCount --></label>
+        <name>MDPERSONATOR__BedroomsCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Block1 --></label>
+        <name>MDPERSONATOR__Block1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Block2 --></label>
+        <name>MDPERSONATOR__Block2__c</name>
+    </fields>
+    <fields>
+        <label><!-- BoatAccessFlag --></label>
+        <name>MDPERSONATOR__BoatAccessFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BoatHouseArea --></label>
+        <name>MDPERSONATOR__BoatHouseArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- BoatHouseFlag --></label>
+        <name>MDPERSONATOR__BoatHouseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BoatLiftFlag --></label>
+        <name>MDPERSONATOR__BoatLiftFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BonusRoomFlag --></label>
+        <name>MDPERSONATOR__BonusRoomFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BreakfastNookFlag --></label>
+        <name>MDPERSONATOR__BreakfastNookFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BreezewayFlag --></label>
+        <name>MDPERSONATOR__BreezewayFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingsCount --></label>
+        <name>MDPERSONATOR__BuildingsCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSACode --></label>
+        <name>MDPERSONATOR__CBSACode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSAName --></label>
+        <name>MDPERSONATOR__CBSAName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CabinArea --></label>
+        <name>MDPERSONATOR__CabinArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- CabinFlag --></label>
+        <name>MDPERSONATOR__CabinFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- CanopyArea --></label>
+        <name>MDPERSONATOR__CanopyArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- CanopyFlag --></label>
+        <name>MDPERSONATOR__CanopyFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- CarrierRoute --></label>
+        <name>MDPERSONATOR__CarrierRoute__c</name>
+    </fields>
+    <fields>
+        <label><!-- CellarFlag --></label>
+        <name>MDPERSONATOR__CellarFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- CellarWineFlag --></label>
+        <name>MDPERSONATOR__CellarWineFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusBlockGrp --></label>
+        <name>MDPERSONATOR__CensusBlockGrp__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusBlock --></label>
+        <name>MDPERSONATOR__CensusBlock__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusTract --></label>
+        <name>MDPERSONATOR__CensusTract__c</name>
+    </fields>
+    <fields>
+        <label><!-- CentralVacuumFlag --></label>
+        <name>MDPERSONATOR__CentralVacuumFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>MDPERSONATOR__City__c</name>
+    </fields>
+    <fields>
+        <label><!-- CompanyFlag --></label>
+        <name>MDPERSONATOR__CompanyFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConfidenceScore --></label>
+        <name>MDPERSONATOR__ConfidenceScore__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConstructionFireResistanceClass --></label>
+        <name>MDPERSONATOR__ConstructionFireResistanceClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Construction --></label>
+        <name>MDPERSONATOR__Construction__c</name>
+    </fields>
+    <fields>
+        <label><!-- County --></label>
+        <name>MDPERSONATOR__County__c</name>
+    </fields>
+    <fields>
+        <label><!-- CourtyardArea --></label>
+        <name>MDPERSONATOR__CourtyardArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- CourtyardFlag --></label>
+        <name>MDPERSONATOR__CourtyardFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeckArea --></label>
+        <name>MDPERSONATOR__DeckArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeckFlag --></label>
+        <name>MDPERSONATOR__DeckFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeedLastDocumentNumber --></label>
+        <name>MDPERSONATOR__DeedLastDocumentNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeedLastSaleDate --></label>
+        <name>MDPERSONATOR__DeedLastSaleDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeedLastSaleDocumentBook --></label>
+        <name>MDPERSONATOR__DeedLastSaleDocumentBook__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeedLastSaleDocumentPage --></label>
+        <name>MDPERSONATOR__DeedLastSaleDocumentPage__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeedLastSalePrice --></label>
+        <name>MDPERSONATOR__DeedLastSalePrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeedLastSaleTxID --></label>
+        <name>MDPERSONATOR__DeedLastSaleTxID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DrivewayArea --></label>
+        <name>MDPERSONATOR__DrivewayArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- DrivewayMaterial --></label>
+        <name>MDPERSONATOR__DrivewayMaterial__c</name>
+    </fields>
+    <fields>
+        <label><!-- EscalatorFlag --></label>
+        <name>MDPERSONATOR__EscalatorFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- EstimatedMaxValue --></label>
+        <name>MDPERSONATOR__EstimatedMaxValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- EstimatedMinValue --></label>
+        <name>MDPERSONATOR__EstimatedMinValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- EstimatedValue --></label>
+        <name>MDPERSONATOR__EstimatedValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExcerciseFlag --></label>
+        <name>MDPERSONATOR__ExcerciseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exterior1Code --></label>
+        <name>MDPERSONATOR__Exterior1Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- FIPS Code --></label>
+        <name>MDPERSONATOR__FIPSCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- FamilyCode --></label>
+        <name>MDPERSONATOR__FamilyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- FeatureBalconyFlag --></label>
+        <name>MDPERSONATOR__FeatureBalconyFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- FenceArea --></label>
+        <name>MDPERSONATOR__FenceArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- FenceCode --></label>
+        <name>MDPERSONATOR__FenceCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- FireplaceCount --></label>
+        <name>MDPERSONATOR__FireplaceCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fireplace --></label>
+        <name>MDPERSONATOR__Fireplace__c</name>
+    </fields>
+    <fields>
+        <label><!-- FlooringMaterialPrimary --></label>
+        <name>MDPERSONATOR__FlooringMaterialPrimary__c</name>
+    </fields>
+    <fields>
+        <label><!-- FormattedAPN --></label>
+        <name>MDPERSONATOR__FormattedAPN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Foundation --></label>
+        <name>MDPERSONATOR__Foundation__c</name>
+    </fields>
+    <fields>
+        <label><!-- GameFlag --></label>
+        <name>MDPERSONATOR__GameFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- GazeboArea --></label>
+        <name>MDPERSONATOR__GazeboArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- GazeboFlag --></label>
+        <name>MDPERSONATOR__GazeboFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geolocation --></label>
+        <name>MDPERSONATOR__Geolocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- GolfCourseGreenFlag --></label>
+        <name>MDPERSONATOR__GolfCourseGreenFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- GranaryArea --></label>
+        <name>MDPERSONATOR__GranaryArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- GranaryFlag --></label>
+        <name>MDPERSONATOR__GranaryFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- GranteeName1Full --></label>
+        <name>MDPERSONATOR__GranteeName1Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GranteeName2Full --></label>
+        <name>MDPERSONATOR__GranteeName2Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GranteeName3Full --></label>
+        <name>MDPERSONATOR__GranteeName3Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GranteeName4Full --></label>
+        <name>MDPERSONATOR__GranteeName4Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GrantorName1Full --></label>
+        <name>MDPERSONATOR__GrantorName1Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GrantorName2Full --></label>
+        <name>MDPERSONATOR__GrantorName2Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GrantorName3Full --></label>
+        <name>MDPERSONATOR__GrantorName3Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GrantorName4Full --></label>
+        <name>MDPERSONATOR__GrantorName4Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- GreatFlag --></label>
+        <name>MDPERSONATOR__GreatFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- GreenHouseArea --></label>
+        <name>MDPERSONATOR__GreenHouseArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- GreenHouseFlag --></label>
+        <name>MDPERSONATOR__GreenHouseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- GuestHouseArea --></label>
+        <name>MDPERSONATOR__GuestHouseArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- GuestHouseFlag --></label>
+        <name>MDPERSONATOR__GuestHouseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- HVACCoolingDetail --></label>
+        <name>MDPERSONATOR__HVACCoolingDetail__c</name>
+    </fields>
+    <fields>
+        <label><!-- HVACHeatingDetail --></label>
+        <name>MDPERSONATOR__HVACHeatingDetail__c</name>
+    </fields>
+    <fields>
+        <label><!-- HVACHeatingFuel --></label>
+        <name>MDPERSONATOR__HVACHeatingFuel__c</name>
+    </fields>
+    <fields>
+        <label><!-- HobbyFlag --></label>
+        <name>MDPERSONATOR__HobbyFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- IntercomFlag --></label>
+        <name>MDPERSONATOR__IntercomFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- InteriorStructure --></label>
+        <name>MDPERSONATOR__InteriorStructure__c</name>
+    </fields>
+    <fields>
+        <label><!-- KennelArea --></label>
+        <name>MDPERSONATOR__KennelArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- KennelFlag --></label>
+        <name>MDPERSONATOR__KennelFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName1First --></label>
+        <name>MDPERSONATOR__LastDeedName1First__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName1Full --></label>
+        <name>MDPERSONATOR__LastDeedName1Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName1Last --></label>
+        <name>MDPERSONATOR__LastDeedName1Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName1Middle --></label>
+        <name>MDPERSONATOR__LastDeedName1Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName1Suffix --></label>
+        <name>MDPERSONATOR__LastDeedName1Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName2First --></label>
+        <name>MDPERSONATOR__LastDeedName2First__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName2Full --></label>
+        <name>MDPERSONATOR__LastDeedName2Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName2Last --></label>
+        <name>MDPERSONATOR__LastDeedName2Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName2Middle --></label>
+        <name>MDPERSONATOR__LastDeedName2Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName2Suffix --></label>
+        <name>MDPERSONATOR__LastDeedName2Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName3First --></label>
+        <name>MDPERSONATOR__LastDeedName3First__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName3Full --></label>
+        <name>MDPERSONATOR__LastDeedName3Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName3Last --></label>
+        <name>MDPERSONATOR__LastDeedName3Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName3Middle --></label>
+        <name>MDPERSONATOR__LastDeedName3Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName3Suffix --></label>
+        <name>MDPERSONATOR__LastDeedName3Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName4First --></label>
+        <name>MDPERSONATOR__LastDeedName4First__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName4Full --></label>
+        <name>MDPERSONATOR__LastDeedName4Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName4Last --></label>
+        <name>MDPERSONATOR__LastDeedName4Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName4Middle --></label>
+        <name>MDPERSONATOR__LastDeedName4Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastDeedName4Suffix --></label>
+        <name>MDPERSONATOR__LastDeedName4Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastOwnershipTransferDate --></label>
+        <name>MDPERSONATOR__LastOwnershipTransferDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastOwnershipTransferDocumentNumber --></label>
+        <name>MDPERSONATOR__LastOwnershipTransferDocumentNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastOwnershipTransferTxID --></label>
+        <name>MDPERSONATOR__LastOwnershipTransferTxID__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastTaxRollUpdate --></label>
+        <name>MDPERSONATOR__LastTaxRollUpdate__c</name>
+    </fields>
+    <fields>
+        <label><!-- LaundryFlag --></label>
+        <name>MDPERSONATOR__LaundryFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- LeanToArea --></label>
+        <name>MDPERSONATOR__LeanToArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- LeanToFlag --></label>
+        <name>MDPERSONATOR__LeanToFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- LegalDescription --></label>
+        <name>MDPERSONATOR__LegalDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- LenderCode --></label>
+        <name>MDPERSONATOR__LenderCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- LenderName --></label>
+        <name>MDPERSONATOR__LenderName__c</name>
+    </fields>
+    <fields>
+        <label><!-- LoadingPlatformArea --></label>
+        <name>MDPERSONATOR__LoadingPlatformArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- LoadingPlatformFlag --></label>
+        <name>MDPERSONATOR__LoadingPlatformFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotDepth --></label>
+        <name>MDPERSONATOR__LotDepth__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotNumber1 --></label>
+        <name>MDPERSONATOR__LotNumber1__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotNumber2 --></label>
+        <name>MDPERSONATOR__LotNumber2__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotNumber3 --></label>
+        <name>MDPERSONATOR__LotNumber3__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotWidth --></label>
+        <name>MDPERSONATOR__LotWidth__c</name>
+    </fields>
+    <fields>
+        <label><!-- MAK --></label>
+        <name>MDPERSONATOR__MAK__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSACode --></label>
+        <name>MDPERSONATOR__MSACode__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSAName --></label>
+        <name>MDPERSONATOR__MSAName__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapBook --></label>
+        <name>MDPERSONATOR__MapBook__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapPage --></label>
+        <name>MDPERSONATOR__MapPage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping --></label>
+        <name>MDPERSONATOR__Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- MarketImprovementsPerc --></label>
+        <name>MDPERSONATOR__MarketImprovementsPerc__c</name>
+    </fields>
+    <fields>
+        <label><!-- MarketValueImprovements --></label>
+        <name>MDPERSONATOR__MarketValueImprovements__c</name>
+    </fields>
+    <fields>
+        <label><!-- MarketValueLand --></label>
+        <name>MDPERSONATOR__MarketValueLand__c</name>
+    </fields>
+    <fields>
+        <label><!-- MarketValueTotal --></label>
+        <name>MDPERSONATOR__MarketValueTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- MarketValueYear --></label>
+        <name>MDPERSONATOR__MarketValueYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- MediaFlag --></label>
+        <name>MDPERSONATOR__MediaFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- MetropolitanDivision --></label>
+        <name>MDPERSONATOR__MetropolitanDivision__c</name>
+    </fields>
+    <fields>
+        <label><!-- MilkHouseArea --></label>
+        <name>MDPERSONATOR__MilkHouseArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- MilkHouseFlag --></label>
+        <name>MDPERSONATOR__MilkHouseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- MinorCivilDivisionCode --></label>
+        <name>MDPERSONATOR__MinorCivilDivisionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- MinorCivilDivisionName --></label>
+        <name>MDPERSONATOR__MinorCivilDivisionName__c</name>
+    </fields>
+    <fields>
+        <label><!-- MobileHomeHookupFlag --></label>
+        <name>MDPERSONATOR__MobileHomeHookupFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- MortgageAmount --></label>
+        <name>MDPERSONATOR__MortgageAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- MortgageDate --></label>
+        <name>MDPERSONATOR__MortgageDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- MortgageDueDate --></label>
+        <name>MDPERSONATOR__MortgageDueDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- MortgageLoanTypeCode --></label>
+        <name>MDPERSONATOR__MortgageLoanTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- MortgageTermCode --></label>
+        <name>MDPERSONATOR__MortgageTermCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- MortgageTerm --></label>
+        <name>MDPERSONATOR__MortgageTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- MudFlag --></label>
+        <name>MDPERSONATOR__MudFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name1First --></label>
+        <name>MDPERSONATOR__Name1First__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name1Full --></label>
+        <name>MDPERSONATOR__Name1Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name1Last --></label>
+        <name>MDPERSONATOR__Name1Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name1Middle --></label>
+        <name>MDPERSONATOR__Name1Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name1Suffix --></label>
+        <name>MDPERSONATOR__Name1Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name2First --></label>
+        <name>MDPERSONATOR__Name2First__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name2Full --></label>
+        <name>MDPERSONATOR__Name2Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name2Last --></label>
+        <name>MDPERSONATOR__Name2Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name2Middle --></label>
+        <name>MDPERSONATOR__Name2Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name2Suffix --></label>
+        <name>MDPERSONATOR__Name2Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name3First --></label>
+        <name>MDPERSONATOR__Name3First__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name3Full --></label>
+        <name>MDPERSONATOR__Name3Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name3Last --></label>
+        <name>MDPERSONATOR__Name3Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name3Middle --></label>
+        <name>MDPERSONATOR__Name3Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name3Suffix --></label>
+        <name>MDPERSONATOR__Name3Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name4First --></label>
+        <name>MDPERSONATOR__Name4First__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name4Full --></label>
+        <name>MDPERSONATOR__Name4Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name4Last --></label>
+        <name>MDPERSONATOR__Name4Last__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name4Middle --></label>
+        <name>MDPERSONATOR__Name4Middle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name4Suffix --></label>
+        <name>MDPERSONATOR__Name4Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- NeighborhoodCode --></label>
+        <name>MDPERSONATOR__NeighborhoodCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- OfficeArea --></label>
+        <name>MDPERSONATOR__OfficeArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- OfficeFlag --></label>
+        <name>MDPERSONATOR__OfficeFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- OutdoorKitchenFireplaceFlag --></label>
+        <name>MDPERSONATOR__OutdoorKitchenFireplaceFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- OverheadDoorFlag --></label>
+        <name>MDPERSONATOR__OverheadDoorFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddress --></label>
+        <name>MDPERSONATOR__OwnerAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerBaseMAK --></label>
+        <name>MDPERSONATOR__OwnerBaseMAK__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerCarrierRoute --></label>
+        <name>MDPERSONATOR__OwnerCarrierRoute__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerCity --></label>
+        <name>MDPERSONATOR__OwnerCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerFormatInfo --></label>
+        <name>MDPERSONATOR__OwnerFormatInfo__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerMAK --></label>
+        <name>MDPERSONATOR__OwnerMAK__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerOccupied --></label>
+        <name>MDPERSONATOR__OwnerOccupied__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerPrivacyInfo --></label>
+        <name>MDPERSONATOR__OwnerPrivacyInfo__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerState --></label>
+        <name>MDPERSONATOR__OwnerState__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerZip --></label>
+        <name>MDPERSONATOR__OwnerZip__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParkingCarportArea --></label>
+        <name>MDPERSONATOR__ParkingCarportArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParkingCarport --></label>
+        <name>MDPERSONATOR__ParkingCarport__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParkingGarageArea --></label>
+        <name>MDPERSONATOR__ParkingGarageArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParkingGarage --></label>
+        <name>MDPERSONATOR__ParkingGarage__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParkingSpaceCount --></label>
+        <name>MDPERSONATOR__ParkingSpaceCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Range --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- PatioArea --></label>
+        <name>MDPERSONATOR__PatioArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phase --></label>
+        <name>MDPERSONATOR__Phase__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlumbingFixturesCount --></label>
+        <name>MDPERSONATOR__PlumbingFixturesCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoleStructureArea --></label>
+        <name>MDPERSONATOR__PoleStructureArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoleStructureFlag --></label>
+        <name>MDPERSONATOR__PoleStructureFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- PondFlag --></label>
+        <name>MDPERSONATOR__PondFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoolArea --></label>
+        <name>MDPERSONATOR__PoolArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoolHouseArea --></label>
+        <name>MDPERSONATOR__PoolHouseArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoolHouseFlag --></label>
+        <name>MDPERSONATOR__PoolHouseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pool --></label>
+        <name>MDPERSONATOR__Pool__c</name>
+    </fields>
+    <fields>
+        <label><!-- PorchArea --></label>
+        <name>MDPERSONATOR__PorchArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- PorchCode --></label>
+        <name>MDPERSONATOR__PorchCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostDirectional --></label>
+        <name>MDPERSONATOR__PostDirectional__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoultryHouseArea --></label>
+        <name>MDPERSONATOR__PoultryHouseArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoultryHouseFlag --></label>
+        <name>MDPERSONATOR__PoultryHouseFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- PreDirectional --></label>
+        <name>MDPERSONATOR__PreDirectional__c</name>
+    </fields>
+    <fields>
+        <label><!-- PreviousAPN --></label>
+        <name>MDPERSONATOR__PreviousAPN__c</name>
+    </fields>
+    <fields>
+        <label><!-- PreviousAssessedValue --></label>
+        <name>MDPERSONATOR__PreviousAssessedValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- PrivacyInfo --></label>
+        <name>MDPERSONATOR__PrivacyInfo__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyUseGroup --></label>
+        <name>MDPERSONATOR__PropertyUseGroup__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyUseMuni --></label>
+        <name>MDPERSONATOR__PropertyUseMuni__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyUseStandardized --></label>
+        <name>MDPERSONATOR__PropertyUseStandardized__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuarterQuarter --></label>
+        <name>MDPERSONATOR__QuarterQuarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>MDPERSONATOR__Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuonsetArea --></label>
+        <name>MDPERSONATOR__QuonsetArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuonsetFlag --></label>
+        <name>MDPERSONATOR__QuonsetFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- RVParkingFlag --></label>
+        <name>MDPERSONATOR__RVParkingFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Range --></label>
+        <name>MDPERSONATOR__Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordID --></label>
+        <name>MDPERSONATOR__RecordID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Results --></label>
+        <name>MDPERSONATOR__Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoofConstruction --></label>
+        <name>MDPERSONATOR__RoofConstruction__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoofMaterial --></label>
+        <name>MDPERSONATOR__RoofMaterial__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoomsCount --></label>
+        <name>MDPERSONATOR__RoomsCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- SafeRoomFlag --></label>
+        <name>MDPERSONATOR__SafeRoomFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SafetyFireSprinklersFlag --></label>
+        <name>MDPERSONATOR__SafetyFireSprinklersFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SaunaFlag --></label>
+        <name>MDPERSONATOR__SaunaFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SecondMortgageAmount --></label>
+        <name>MDPERSONATOR__SecondMortgageAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- SecondMortgageLoanTypeCode --></label>
+        <name>MDPERSONATOR__SecondMortgageLoanTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section --></label>
+        <name>MDPERSONATOR__Section__c</name>
+    </fields>
+    <fields>
+        <label><!-- SecurityAlarmFlag --></label>
+        <name>MDPERSONATOR__SecurityAlarmFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SewageUsage --></label>
+        <name>MDPERSONATOR__SewageUsage__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShedArea --></label>
+        <name>MDPERSONATOR__ShedArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShedCode --></label>
+        <name>MDPERSONATOR__ShedCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- SiloArea --></label>
+        <name>MDPERSONATOR__SiloArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- SiloFlag --></label>
+        <name>MDPERSONATOR__SiloFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SittingFlag --></label>
+        <name>MDPERSONATOR__SittingFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SoundSystemFlag --></label>
+        <name>MDPERSONATOR__SoundSystemFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SportsCourtFlag --></label>
+        <name>MDPERSONATOR__SportsCourtFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- SprinklersFlag --></label>
+        <name>MDPERSONATOR__SprinklersFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- StableArea --></label>
+        <name>MDPERSONATOR__StableArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- StableFlag --></label>
+        <name>MDPERSONATOR__StableFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>MDPERSONATOR__State__c</name>
+    </fields>
+    <fields>
+        <label><!-- StorageBuildingArea --></label>
+        <name>MDPERSONATOR__StorageBuildingArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- StorageBuildingFlag --></label>
+        <name>MDPERSONATOR__StorageBuildingFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- StoriesCount --></label>
+        <name>MDPERSONATOR__StoriesCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- StormFlag --></label>
+        <name>MDPERSONATOR__StormFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- StormShutterFlag --></label>
+        <name>MDPERSONATOR__StormShutterFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- StreetName --></label>
+        <name>MDPERSONATOR__StreetName__c</name>
+    </fields>
+    <fields>
+        <label><!-- StructureStyle --></label>
+        <name>MDPERSONATOR__StructureStyle__c</name>
+    </fields>
+    <fields>
+        <label><!-- StudyFlag --></label>
+        <name>MDPERSONATOR__StudyFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subdivision --></label>
+        <name>MDPERSONATOR__Subdivision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suffix --></label>
+        <name>MDPERSONATOR__Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- SuiteName --></label>
+        <name>MDPERSONATOR__SuiteName__c</name>
+    </fields>
+    <fields>
+        <label><!-- SuiteRange --></label>
+        <name>MDPERSONATOR__SuiteRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- SunroomFlag --></label>
+        <name>MDPERSONATOR__SunroomFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxBilledAmount --></label>
+        <name>MDPERSONATOR__TaxBilledAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxDelinquentYear --></label>
+        <name>MDPERSONATOR__TaxDelinquentYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxExemptionAdditional --></label>
+        <name>MDPERSONATOR__TaxExemptionAdditional__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxExemptionDisabled --></label>
+        <name>MDPERSONATOR__TaxExemptionDisabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxExemptionHomeowner --></label>
+        <name>MDPERSONATOR__TaxExemptionHomeowner__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxExemptionSenior --></label>
+        <name>MDPERSONATOR__TaxExemptionSenior__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxExemptionVeteran --></label>
+        <name>MDPERSONATOR__TaxExemptionVeteran__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxExemptionWidow --></label>
+        <name>MDPERSONATOR__TaxExemptionWidow__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxFiscalYear --></label>
+        <name>MDPERSONATOR__TaxFiscalYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxJurisdiction --></label>
+        <name>MDPERSONATOR__TaxJurisdiction__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaxRateArea --></label>
+        <name>MDPERSONATOR__TaxRateArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- TennisCourtFlag --></label>
+        <name>MDPERSONATOR__TennisCourtFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- TopographyCode --></label>
+        <name>MDPERSONATOR__TopographyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Township --></label>
+        <name>MDPERSONATOR__Township__c</name>
+    </fields>
+    <fields>
+        <label><!-- TractNumber --></label>
+        <name>MDPERSONATOR__TractNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- TrustFlag --></label>
+        <name>MDPERSONATOR__TrustFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type2 --></label>
+        <name>MDPERSONATOR__Type2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>MDPERSONATOR__Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnformattedAPN --></label>
+        <name>MDPERSONATOR__UnformattedAPN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit --></label>
+        <name>MDPERSONATOR__Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnitsCount --></label>
+        <name>MDPERSONATOR__UnitsCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- UtilityArea --></label>
+        <name>MDPERSONATOR__UtilityArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- UtilityBuildingArea --></label>
+        <name>MDPERSONATOR__UtilityBuildingArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- UtilityBuildingFlag --></label>
+        <name>MDPERSONATOR__UtilityBuildingFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- UtilityCode --></label>
+        <name>MDPERSONATOR__UtilityCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuationDate --></label>
+        <name>MDPERSONATOR__ValuationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- VestingType --></label>
+        <name>MDPERSONATOR__VestingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- ViewDescription --></label>
+        <name>MDPERSONATOR__ViewDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- WaterFeatureFlag --></label>
+        <name>MDPERSONATOR__WaterFeatureFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- WaterSource --></label>
+        <name>MDPERSONATOR__WaterSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- WellKnownText --></label>
+        <name>MDPERSONATOR__WellKnownText__c</name>
+    </fields>
+    <fields>
+        <label><!-- WetBarFlag --></label>
+        <name>MDPERSONATOR__WetBarFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- YearAdded --></label>
+        <name>MDPERSONATOR__YearAdded__c</name>
+    </fields>
+    <fields>
+        <label><!-- YearAssessed --></label>
+        <name>MDPERSONATOR__YearAssessed__c</name>
+    </fields>
+    <fields>
+        <label><!-- YearBuiltEffective --></label>
+        <name>MDPERSONATOR__YearBuiltEffective__c</name>
+    </fields>
+    <fields>
+        <label><!-- YearBuilt --></label>
+        <name>MDPERSONATOR__YearBuilt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip --></label>
+        <name>MDPERSONATOR__Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZonedCodeLocal --></label>
+        <name>MDPERSONATOR__ZonedCodeLocal__c</name>
+    </fields>
+</CustomObjectTranslation>

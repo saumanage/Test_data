@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Expiration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Expiration</value>
+    </caseValues>
+    <fields>
+        <label><!-- A --></label>
+        <name>A__c</name>
+    </fields>
+    <fields>
+        <label><!-- B --></label>
+        <name>B__c</name>
+    </fields>
+    <fields>
+        <label><!-- M --></label>
+        <name>M__c</name>
+    </fields>
+    <fields>
+        <label><!-- P --></label>
+        <name>P__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

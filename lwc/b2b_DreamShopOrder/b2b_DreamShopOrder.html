@@ -1,0 +1,157 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <lightning-card class="orderDetails">
+
+        <template if:true={openorderpage}>
+        <h3 slot="title" >
+            <lightning-icon icon-name="standard:orders" size="large"></lightning-icon>
+                <!--Modified by Divya for EVSE_Phase2 - Sprint1 HDMP-24335-START-->
+                <template if:true={opendirectshiporderpage}>
+                            <b>&ensp; Open Direct Ship Orders</b>
+                </template>
+                <template if:false={opendirectshiporderpage}>
+            <b>&ensp; Open & In Progress Orders</b>
+                </template>
+                <!--Modified by Divya for EVSE_Phase2 - Sprint1 HDMP-24335-END-->
+        </h3>
+        <template if:false={isBTTokenActive}>
+            <h1 class="slds-text-heading_small slds-text-align_center slds-text-color_error"><b>Your Braintree account is not connected to Dreamshop,
+                which may cause payment issues for orders. <a href={btAuthGuideUrL} target="_blank">
+                Click here</a> for instructions to restore payment functionality.</b>
+            </h1>
+        </template>
+        </template>
+        
+<template if:false={openorderpage}>
+            <h3 slot="title" >
+                <lightning-icon icon-name="standard:orders" size="large"></lightning-icon>
+                <b>&ensp; Completed Orders</b>
+            </h3>
+             </template>
+<br/>
+<lightning-input type="search" lable="Search" placeholder="Search this list" slot="actions" onchange={handlesearch}></lightning-input>
+<!--Added by suresh - Start-->
+<br/>
+<template if:true={displaySearchAPIErrorMessage}>
+    <div class="slds-text-heading_medium slds-text-align_center slds-text-color_destructive">We're facing technical difficulties in retrieving current payment status for your open orders. Please try again later</div>
+</template>
+<template if:true={accessTokenErrorMessage}>
+    <div class="slds-text-heading_medium slds-text-align_center slds-text-color_destructive">Your Braintree Account is not connected to Dreamshop, Which may cause payment issues for orders. Cick here for instructions to restore payment functionality.</div>
+</template>
+<template if:true={dealerAccRevokedErrorMessage}>
+    <div class="slds-text-heading_medium slds-text-align_center slds-text-color_destructive">Your Braintree Account is not connected to Dreamshop, Which may cause payment issues for orders. Please connect with Braintree to resolve the issue.</div>
+</template>
+<!--Added by suresh - End-->
+<div class="slds-border_top">
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small slds-table_col-bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="sort" data-id="OrderNumber" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Order No">Order No.</div>
+                        <div style={orderNumberSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={orderNumberSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="sort" data-id="OrderedDate__c" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Ordered Date">Ordered Date</div>
+                        <div style={orderedDateSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={orderedDateSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="sort" data-id="customerName" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Cust. Name">Cust. Name</div>
+                        <div style={customerNameSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={customerNameSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                </th>
+                <th class="" scope="col">
+                    <div class="sort" data-id="phone" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                        <div style={phoneNumberSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={phoneNumberSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="sort" data-id="shipToStore" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Ship. Method">Ship. Method</div>
+                        <div style={shipToStoreSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={shipToStoreSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                </th>
+              
+                <th class="" scope="col">
+                    <div class="sort" data-id="Updated_Order_Total_c__c" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Total">Total</div>
+                        <div style={totalAmountSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={totalAmountSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="sort" data-id="BT_Transaction_Status_c__c" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Pay.Status">Pay.Status</div>
+                        <div style={statusrSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={statusrSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                    <lightning-helptext content="user friendly messages"></lightning-helptext>
+                </th>
+               
+                <th class="" scope="col">
+                    <div class="sort" data-id="Status__c" onclick={handleSortOrders}>
+                        <div class="slds-truncate" title="Order Status">Order Status</div>
+                        <div style={statusrSort.iconStyle}>
+                            <lightning-icon data-value="Name" icon-name={statusrSort.sortIcon} size="xx-small" ></lightning-icon>
+                        </div>
+                    </div>
+                </th>
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            <template for:each={Order__x} for:item="ord">
+                <tr class="slds-hint-parent" key={ord.id}>
+                    <td key={ord.id}> 
+                        <a style="color: #006dcc;" onclick={navigateToOrderRecordPage} data-record-id={ord.Id} >{ord.OrderNumber}</a>
+                    </td>
+                    <td><div class="slds-truncate">{ord.OrderedDate__c}</div> </td>
+                    <td><div class="slds-truncate">{ord.Customer_Name_c__c}</div></td>                        
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning-formatted-phone value={ord.BillingPhoneNumber__c} disabled></lightning-formatted-phone>
+                        </div>
+                    </td>                      
+                    <td><div class="slds-truncate">{ord.shipToStore}</div></td>                      
+                    <td><div class="slds-truncate slds-text-align_right">{ord.totalAmount}</div> </td>                  
+                    <td><div class="slds-truncate">{ord.latestStatus}</div></td>              
+                    <td><div class="slds-truncate">{ord.Status__c}</div></td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</div>
+<!-- Added by Divya for EVSE Phase2_Sprint1 HDMP-24335-START -->
+<template if:false={isDirectShipOrders}>
+    <div class="slds-align_absolute-center slds-text-heading_large" style="height:5rem">
+        Currently there are no open orders in the list
+    </div>
+ </template>
+ <!-- Added by Divya for EVSE Phase2_Sprint1 HDMP-24335-START -->
+
+</lightning-card>
+</template>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Transaction Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Transaction Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK_Order Transaction Item --></label>
+        <name>AK_Order_Transaction_Item_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Date Time --></label>
+        <name>Adjustment_Date_Time_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Order Item Detail --></label>
+        <name>Inbound_OrderItemDetail_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Transaction Item No --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Fulfillment --></label>
+        <name>Order_Fulfillment_c__c</name>
+        <relationshipLabel><!-- Order Transaction Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Item --></label>
+        <name>Order_Item_c__c</name>
+        <relationshipLabel><!-- Order Transaction Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Transaction --></label>
+        <name>Order_Transaction_c__c</name>
+        <relationshipLabel><!-- Order Transaction Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Post Adjustment Extended Price --></label>
+        <name>Post_Adjustment_Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Adjustment Quantity --></label>
+        <name>Post_Adjustment_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre Adjustment Extended Price --></label>
+        <name>Pre_Adjustment_Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre Adjustment Quantity --></label>
+        <name>Pre_Adjustment_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation><!-- Accessory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core Charge</masterLabel>
+            <translation><!-- Core Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motocompacto</masterLabel>
+            <translation><!-- Motocompacto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part</masterLabel>
+            <translation><!-- Part --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>Reason_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Description --></label>
+        <name>Reason_Desc_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- TotalPost Adjustment Installation Charge --></label>
+        <name>TotalPost_Adjustment_Installation_Cha__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Product Tax --></label>
+        <name>Total_Post_Adjustment_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Shipping Tax --></label>
+        <name>Total_Post_ShippedTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Shipping Amt --></label>
+        <name>Total_Post_ShippingAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Installation Charge --></label>
+        <name>Total_Pre_Adjustment_Installation_Cha__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Product Tax --></label>
+        <name>Total_Pre_Adjustment_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Shipping Amt --></label>
+        <name>Total_Pre_ShippingAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Shipping Tax --></label>
+        <name>Total_Pre_ShippingTax_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

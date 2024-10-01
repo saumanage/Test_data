@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This will be used for  User permission set group Assignment
+Internal or Corporate User - Application Role
+Dealer User - Job Code</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ApplicationRole__c</fullName>
+        <externalId>false</externalId>
+        <label>ApplicationRole</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Required_Tableau_Permission__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Based on this field tabulo CRM permission will update</description>
+        <label>Is Required Tableau Permission</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Support_Team__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>if this checkbox is true user will have HELMS Support Team profile</description>
+        <label>Is Support Team</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Job_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Level</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Permission_set_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Permission set Group</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Persona__c</fullName>
+        <externalId>false</externalId>
+        <label>Persona</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>SSO Job Code Mapping</label>
+    <listViews>
+        <fullName>Test</fullName>
+        <columns>NAME</columns>
+        <columns>ApplicationRole__c</columns>
+        <columns>Job_Code__c</columns>
+        <columns>Permission_set_Group__c</columns>
+        <columns>Persona__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Test</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

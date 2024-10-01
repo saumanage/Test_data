@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- JobID --></label>
+        <name>MDPERSONATOR__JobID__c</name>
+    </fields>
+    <fields>
+        <label><!-- JobStatus --></label>
+        <name>MDPERSONATOR__JobStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- PercentComplete --></label>
+        <name>MDPERSONATOR__PercentComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- RetrieveStatus --></label>
+        <name>MDPERSONATOR__RetrieveStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- TokenID --></label>
+        <name>MDPERSONATOR__TokenID__c</name>
+    </fields>
+</CustomObjectTranslation>

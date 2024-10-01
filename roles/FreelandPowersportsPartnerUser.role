@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Freeland Powersports Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Freeland Powersports Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>FreelandPowersportsPartnerManager</parentRole>
+</Role>

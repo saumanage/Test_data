@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- City --></label>
+        <name>MDPERSONATOR__cityField__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>MDPERSONATOR__countryField__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Subdivision --></label>
+        <name>MDPERSONATOR__ctrySubdivision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Prefix --></label>
+        <name>MDPERSONATOR__objectPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code/Zip --></label>
+        <name>MDPERSONATOR__postalField__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>MDPERSONATOR__stateField__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>MDPERSONATOR__streetField__c</name>
+    </fields>
+</CustomObjectTranslation>

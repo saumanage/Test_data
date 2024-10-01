@@ -1,0 +1,29 @@
+Dear {!Opportunity.PreferredDealerAccount_TXT__c},
+
+A new opportunity has been assigned to your dealership. The details are as below:
+
+Name: {!Opportunity.Name}
+
+Email: {!Opportunity.Email__c}
+
+Phone: ({! LEFT(Opportunity.Phone__c , 3) }) {! LEFT(RIGHT(Opportunity.Phone__c, 7), 3) }-{! RIGHT(Opportunity.Phone__c, 4) }
+
+Model/Year: {!Opportunity.Model_TXT__c}{!Opportunity.Model_ID__c}/{!Opportunity.Year_YR__c}
+
+Lead Provider: {!Opportunity.LeadProvider_ID__c}
+
+Please click the below HONDA lead management system link to view more details.
+
+Login using your Dealer Number and Credentials
+->Navigate to Sales
+->Expand Lead Management
+->Select Lead Management and Analytics
+https://www.in.honda.com/
+
+
+Thanks!
+
+HONDA {!Opportunity.SubDiv_TXT__c} Lead Management team
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.

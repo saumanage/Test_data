@@ -1,0 +1,1246 @@
+<template> 
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <template if:true={isLoadingForCancel}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <div class="slds-card" if:true={objOrder}> 
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">
+                <div class="custom-box" style="min-height: 2.5rem;">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="12" >
+                            <div class="custom-box">
+                                <!-- R2B changes for HDMP-10201 -->
+                                <div class="slds-text-heading_large" style="color: grey;">Order No: <template if:true={objOrder.OrderReferenceNumber__c}>{objOrder.OrderReferenceNumber__c}</template>
+                                    <template if:false={objOrder.OrderReferenceNumber__c}>{objOrder.OrderNumber__c}</template></div>
+                            </div>
+                        </lightning-layout-item>
+                        <!--Added by suresh for Braintree Reconciliation  start-->
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+                                <div class="custom-box slds-cell-wrap slds-text-heading_x-small" style="color: red" if:true={ispaymentVoided}>                               
+                                    "This order was systematically cancelled because the customer’s payment transaction was cancelled."
+                                </div>
+                                <template if:true={isShowBraintreeFetchError}> <!--Added by suresh for HDMP-27485-->
+                                    <div class="slds-text-heading_x-small slds-text-color_error">"There was an issue retrieving the payment status for this order. Please try updating the order status again later."</div>
+                                </template>
+                                <template if:true={isShowBraintreeAPIError}> <!--Added by Swaroop for HDMP-27596-->
+                                    <div class="slds-text-heading_x-small slds-text-color_error">There appears to be an issue with your Braintree account. For further assistance, please contact Braintree Support.</div>
+                                </template>    
+                        </lightning-layout-item><!--end -->
+                        <lightning-layout-item size="12" class="slds-p-top_small slds-p-bottom_small" large-device-size="3">
+                            <div class="custom-box" style="float: left;">                
+                                <div class="custom-box slds-cell-wrap slds-text-heading_x-small" if:true={isPaymentEmailSent}>                               
+                                   <b>Payment link has been sent!</b> Once customer updates their payment info, they will automatically be billed.                             
+                                </div> 
+                                <!-- <div class="custom-box slds-cell-wrap slds-text-heading_x-small" if:true={isPaymentIssue}>                               
+                                   Payment was declined on this account. Press "Send Payment Link" to send a link to the customer that will allow them to update their payment.                             
+                                </div>-->                               
+                                <template if:true={isShowMarkOrderShippedButton}>
+                                    <lightning-button variant="brand" label="Mark Order Shipped" name="Mark Order Shipped" title="Mark Order Shipped" class="slds-m-left_x-small buttonStyle" onclick={handleMarkOrderClick}></lightning-button>
+                                </template>
+                                <template if:true={isShowInProgressButton}><!--modified by suresh -->
+                                    <lightning-button variant="brand" label="Mark In Progress/Process Payment" name="Mark Order In Progress" title="Mark Order In Progress" class="slds-m-left_x-small buttonStyle" onclick={handleMarkOrderClick}></lightning-button>
+                                </template>
+                                <template if:true={isShowReadyForPickupButton}>
+                                    <lightning-button variant="brand" label="Mark Order Ready For Pickup" name="Mark Order Ready For Pickup" title="Mark Order Ready For Pickup" class="slds-m-left_x-small buttonStyle" onclick={handleMarkOrderClick}></lightning-button>
+                                </template>
+                                <template if:true={isShowOrderPickedUpButton}>
+                                    <lightning-button variant="brand" label="Mark Order Picked Up" name="Mark Order Picked Up" title="Mark Order Picked Up" class="slds-m-left_x-small buttonStyle" onclick={handleMarkOrderClick}></lightning-button>
+                                </template>
+                                <template if:true={isShowInstallationButton}>
+                                    <lightning-button variant="brand" label="Mark Installation Complete" name="Mark Installation Complete" title="Mark Installation Complete" class="slds-m-left_x-small buttonStyle" onclick={handleMarkOrderClick}></lightning-button>
+                                </template>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" class="slds-p-top_small slds-p-bottom_small" large-device-size="9">
+                            <div class="custom-box" style="float: right;">                               
+                                <lightning-button variant="brand" label="Dealer Notes" name="Edit Notes" title="Dealer Notes" icon-name="utility:edit" class="slds-m-left_x-small buttonStyle" onclick={handleEditNotesClick}></lightning-button>                               
+                                <template if:true={isShowEditButton}>
+                                    <lightning-button variant="brand" label="Edit Shipping Info" name="Edit Shipping Info" title="Edit Shipping Info" icon-name="utility:edit" class="slds-m-left_x-small buttonStyle" onclick={handleEditClick}></lightning-button>
+                                </template>
+                                <template if:true={isShowModifyOrderButton}>
+                                    <lightning-button variant="brand" label="Modify Order" name="Modify Order" title="Modify Order" icon-name="utility:edit" class="slds-m-left_x-small buttonStyle" onclick={handleModifyOrderClick}></lightning-button>
+                                </template>
+                                <template if:true={isShowReturnButton}>
+                                    <!-- <lightning-button variant="brand" label="Return Entire Order" title="Return Entire Order" class="slds-m-left_x-small buttonStyle" onclick={handleReturnClick}></lightning-button> -->
+                                    <!-- <lightning-button variant="brand" label="Partial Return" title="Partial Return" class="slds-m-left_x-small buttonStyle" onclick={handlePartialReturnClick}></lightning-button> -->
+                                    
+                                    <!-- Modified by Bruno - EVSE_Phase2_Sprint_3 - Return CTA Label Change - BUG HDMP-25909 -->
+                                    <lightning-button variant="brand" label="Return" title="Return" class="slds-m-left_x-small buttonStyle" onclick={handlePartialReturnClick}></lightning-button>
+                                    <!-- Modified by Bruno - EVSE_Phase2_Sprint_3 - Return CTA Label Change - BUG HDMP-25909 -->
+                                    
+                                    <!-- <template if:true={isDealerInstall}>
+                                        <lightning-button variant="brand" label="Refund Installation Fees" name="Refund Installation Fees" title="Refund Installation Fees" class="slds-m-left_x-small buttonStyle" onclick={handleRefundInstallationClick}></lightning-button>
+                                    </template> -->
+                                </template>                               
+                                <template if:true={isPaymentIssueNeedAction}>
+                                    <lightning-button variant="brand" label="Send Payment Link" name="Send Payment Link" title="Send Payment Link" icon-name="utility:payment_gateway" icon-position="right" class="slds-m-left_x-small buttonStyle" value={recordId} onclick={handleUpdateReprocessing}></lightning-button>
+                                </template>                                                                                                           
+                                <template if:true={isShowCancelButton}>
+                                    <lightning-button variant="brand" label="Cancel Order" name="Cancel Order" title="Cancel Order" class="slds-m-left_x-small buttonStyle" onclick={handleCancelClick}></lightning-button>
+                                </template>
+                                
+                                <lightning-button variant="brand" label="Back" title="Back" name="Back" icon-name="utility:left" class="slds-m-left_x-small buttonStyle" onclick={handlebackaction}></lightning-button>                                
+                            </div>
+                        </lightning-layout-item>                       
+                    </lightning-layout>                  
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">
+                <div class="custom-box">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div class="custom-box" style="display:inline-flex;">
+                                <div class="slds-text-align_left slds-p-right_x-small"><b>ORDER STATUS : </b></div> 
+                                <div><b>{objOrder.Status}</b></div>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div class="custom-box" style="display:inline-flex;">
+                                <div class="slds-text-align_left slds-p-right_x-small"><b>SHIPPING TYPE : </b></div> 
+                                <div><b>{objOrder.shipToStore}</b></div>                               
+                            </div>
+                        </lightning-layout-item>                                                               
+                    </lightning-layout>
+                  
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">
+                <div class="custom-box">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small"> Billing Info </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>NAME : </b></div>
+                                    <div>{objOrder.Customer_Name_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>PHONE : </b></div>
+                                    <div><lightning-formatted-phone value={objOrder.BillingPhoneNumber__c} disabled></lightning-formatted-phone></div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>EMAIL : </b></div>
+                                    <div>{objOrder.BillingEmailAddress__c}</div>
+                                </div>         
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>PAYMENT INFO : </b></div>
+                                    <div if:true={objOrder.CC_Last4_c__c}>{objOrder.Payment_Type_c__c} ending in {objOrder.CC_Last4_c__c}</div>
+                                    <div if:false={objOrder.CC_Last4_c__c}>PayPal</div>
+                                </div>
+                                <!--Start Added by Imtiyaz Ali Sprint_4 - HDMP-24620-->
+                                <div class="custom-box display-style slds-p-bottom_x-small" if:true={isHpdOrder}>
+                                    <div class="slds-text-align_left slds-p-right_x-small" if:true={RACING_LINE_ID}><b>RACING LINE ACCOUNT NUMBER : </b></div>
+                                    <div>{RACING_LINE_ID}</div>
+                                </div>  
+                                <!--End Added by Imtiyaz Ali Sprint_4 - HDMP-24620-->
+                                <!--Start - Added by Imtiyaz|Swaroop for HPD Sprint_4 - HDMP-24620 - HDMP-25860-->
+                                <div class="custom-box display-style slds-p-bottom_x-small" if:true={isHpdOrder}>
+                                    <div class="slds-text-align_left slds-p-right_x-small" if:true={tnCAcceptedDatetime}><b>T&C ACCEPTANCE : </b></div>
+                                    <div>{tnCAcceptedDatetime}</div>
+                                </div>  
+                                <!--End - Added by Imtiyaz|Swaroop for HPD Sprint_4 - HDMP-24620 - HDMP-25860-->                    
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div class="custom-box" style="display: grid;" if:true={isShowShippingAddress}>
+                                <div class="slds-text-heading_small slds-p-bottom_x-small"> Shipping Info </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>NAME : </b></div>
+                                    <div>{objOrder.Cart_Shipping_Customer_Name_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>PHONE : </b></div>
+                                    <div><lightning-formatted-phone value={objOrder.Cart_Shipping_Phone_c__c} disabled></lightning-formatted-phone></div>
+                                </div>                                                             
+                                <!--Added by Divya for EVSE_Phase2_Sprint1 START HDMP-24337-->
+                                <template if:true={isDirectShip}>
+                                    <div class="custom-box display-style slds-p-bottom_x-small">
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>Cust.Shipping Speed : </b></div>
+                                        <div if:true={objOrder.Customer_Preferred_Speeds_c__c}>{objOrder.Customer_Preferred_Speeds_c__c}</div>
+                                        <div if:false={objOrder.Customer_Preferred_Speeds_c__c}>Standard</div>
+                                    </div>
+                                </template>
+                                <!--Modified by Lokesh for bug-27148-->
+                                <template if:true={objOrder.Shipping_Note_c__c}>
+                                    <div class="custom-box display-style slds-p-bottom_x-small">
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>SHIPPING NOTES : </b></div>
+                                        <div >{objOrder.Shipping_Note_c__c}</div>
+                                    </div>
+                                </template>                                                             
+                            </div>
+                        </lightning-layout-item>                                               
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">
+                <div class="custom-box">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6">
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small"> Billing Address </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ADDRESS : </b></div>
+                                    <div>{objOrder.BillingStreet__c}</div>
+                                </div>
+                                <!-- <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ADDRESS 2 : </b></div>
+                                    <div></div>
+                                </div> -->
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>CITY : </b></div>
+                                    <div>{objOrder.BillingCity__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>STATE, PROVINCE OR TERRITORY : </b></div>
+                                    <div>{objOrder.BillingState__c}</div>
+                                </div>
+                                <!--Lakshmi HDMP-19441 - modified correct zipcode field -->
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ZIPCODE : </b></div>
+                                    <div>{objOrder.BillingPostalCode__c}</div><!--Modified by Divya-->
+                                </div>
+                            </div>                           
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6">                          
+                            <div class="custom-box" style="display: grid;" if:true={isShowShippingAddress}>
+                                <div class="slds-text-heading_small slds-p-bottom_x-small"> Shipping Address </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ADDRESS : </b></div>
+                                    <div>{objOrder.ShippingStreet__c}</div>
+                                </div>
+                                <!-- <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ADDRESS 2 : </b></div>
+                                    <div></div>
+                                </div> -->
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>CITY : </b></div>
+                                    <div>{objOrder.ShippingCity__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>STATE, PROVINCE OR TERRITORY : </b></div>
+                                    <div>{objOrder.ShippingState__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ZIPCODE : </b></div>
+                                    <div>{objOrder.ShippingPostalCode__c}</div>
+                                </div>
+                                <!--Added by Divya for EVSE_Phase1_Sprint2 - START HDMP-24337-->
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ADDRESS TYPE : </b></div>
+                                    <div>{ShipToAddressType}</div>
+                                </div>
+                                <!--Added by Divya for EVSE_Phase1_Sprint2 - END HDMP-24337-->
+                            </div>   
+                        </lightning-layout-item>                                           
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+        <template if:false = {isDirectShip}>
+            <lightning-layout-item if:true={isShowShippingAddress} size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">
+                <div class="custom-box">
+                    <lightning-layout multiple-rows>                       
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6">                            
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small" style="height: 2rem;"> Shipping Details </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>SHIPPING CARRIER : </b></div>
+                                    <div>{objOrder.Shipping_Vendors_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>OTHER CARRIER : </b></div>
+                                    <div>{objOrder.Other_Carrier_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>TRACKING NO. : </b></div>
+                                    <div>{objOrder.ShippingNumber_c__c}</div>
+                                </div> 
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>CUST. SHIPPING SPEED : </b></div>
+                                    <div if:true={objOrder.Customer_Preferred_Speeds_c__c}>{objOrder.Customer_Preferred_Speeds_c__c}</div>
+                                    <div if:false={objOrder.Customer_Preferred_Speeds_c__c}>Standard</div>
+                                </div>                               
+                            </div>
+                        </lightning-layout-item> 
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small slds-p-top_x-small" style="height: 2rem;"> </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>DEALER SHIPPING SPEED : </b></div>
+                                    <div>{objOrder.Dealer_Shipping_Speed_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>SHIPPED DATE : </b></div>
+                                    <div>{objOrder.shippedDate}</div>
+                                </div>                                                   
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+        </template>
+
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">
+                <div class="custom-box">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small" style="height: 2rem;"> Transaction Info </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ORDERED DATE : </b></div>
+                                    <div>{objOrder.OrderedDate}</div>
+                                </div>
+                                <!-- <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>VERTEX TRANS ID : </b></div>
+                                    <div>{objOrder.Vertex_Trans_Id_c__c}</div>
+                                </div> 
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>VERTEX STATUS : </b></div>
+                                    <div>{objOrder.vertexStatus}</div>
+                                </div>  -->                                                                                  
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6">                            
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small" style="height: 2rem;">  </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>PAYMENT TRANS ID : </b></div>
+                                    <div>{objOrder.BT_Transaction_Id_c__c}</div>
+                                     
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>PAYMENT TRANS STATUS : </b></div>
+                                    <div>{objOrder.BT_Transaction_Status_c__c}</div>
+                                </div>  
+                            </div>
+                        </lightning-layout-item> 
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+            
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">          
+                <div class="custom-box slds-p-top_small" style="min-height: 6rem;">
+                    <div class="slds-text-heading_small slds-p-bottom_small slds-m-left_small"> Order Products </div> <!-- Modified by Bruno - BUG HDMP-24267 --><!--Modified by Divya for EVSE_Phase2_Sprint2-->
+                    <div class="custom-box slds-scrollable_y" style="max-height: 15rem;overflow-x:auto">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" width="100%">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th class="" scope="col" style="width: 5%;">
+                                        <div class="slds-truncate" title="Product Name">S.No</div><!--Modified by Divya for EVSE_Phase2_Sprint3-->
+                                    </th>
+                                    <th class="" scope="col" style="width: 15%;">
+                                        <div class="slds-truncate" title="Product Name">PRODUCT NAME</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 10%;">
+                                        <div class="slds-truncate" title="Product SKU">PART/ACCESSORY NUMBER</div><!--Changes by Divya for HDMP-24267-->
+                                    </th>
+                                    <th if:true={isDealerInstall} class="" scope="col" style="width: 10%;">
+                                        <div class="slds-truncate" title="Product SKU">ORIG. INSTALL</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 5%;">
+                                        <div class="slds-truncate" title="Quantity">ORIG. QUANTITY</div>
+                                    </th>
+                                    <th if:false={isDealerInstall} class="" scope="col" style="width: 5%;">
+                                        <div class="slds-truncate" title="Quantity">UPDATED QUANTITY</div>
+                                    </th>
+                                    <th if:true={isDealerInstall} class="" scope="col" style="width: 10%;">
+                                        <div class="slds-truncate" title="Quantity">RETURN INSTALL</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 5%;">
+                                        <div class="slds-truncate" title="Quantity">RETURN QUANTITY</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 10%;">
+                                        <div class="slds-truncate" title="Price">UNIT PRICE</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 10%;">
+                                        <div class="slds-truncate" title="Price">EXTENDED PRICE</div>
+                                    </th>
+                                    <th if:false={isDirectShip} class="" scope="col" style="width: 15%;"><!--Modified by Divya for HDMP-24337-->
+                                        <div class="slds-truncate" title="Product Type">VEHICLE</div>
+                                    </th>
+                                    <!--<th if:true={isDirectShip} class="" scope="col" style="width: 5%;">
+                                        <div class="slds-truncate" title="Price">STATUS</div>
+                                    </th>-->
+                                    <!--Added by Divya - EVSE_Phase2_Sprnt1 START HDMP-24337-->
+                                    <th if:true={isDirectShip} class="" scope="col" style="width: 5%;">
+                                        <div class="slds-truncate" title="Price" style="text-align: center;">MORE DETAILS</div>
+                                    </th>
+                                    <!--Added by Divya - EVSE_Phase2_Sprnt1 END HDMP-24337-->
+                                    <!--th class="" scope="col">
+                                        <div class="slds-truncate" title="Status">Status</div>
+                                    </th-->
+                                </tr>
+                            </thead>
+                            <tbody if:true={isShowOrderItems}>
+                                <template if:true={orderItems} for:each={orderItems} for:item="orderItem">
+                                    <tr key={orderItem.Id} class="slds-hint-parent">
+                                        <th scope="row"> {orderItem.index} </th>
+                                        <!--Changes done by Vivek for HDMP-17167 -->
+                                        <th if:true={orderItem.isReman} scope="row">
+                                            <div class="slds-truncate">{orderItem.Cart_Item_Product_Name_c__c}</div>
+                                            <!-- Aditya HDMP-17167 -->
+                                        </th>
+                                        <th if:false={orderItem.isReman} scope="row">
+                                            <div class="slds-cell-wrap">{orderItem.Cart_Item_Product_Name_c__c}</div>
+                                        </th>
+                                        <!--End of Changes done by Vivek for HDMP-17167 -->
+                                        <th scope="row"> {orderItem.Product_SKU_c__c} </th>
+                                        <th if:true={isDealerInstall} scope="row" class="slds-text-align_right"> ${orderItem.Dealer_Installation_Price_c__c} </th>
+                                        <th scope="row" class="slds-text-align_right"> {orderItem.Quantity__c} </th>
+                                        <!-- Imtiyaz - EVSE_Phase2_Sprint_3_HDMP-24353 Start -->
+                                        <th if:false={isDealerInstall} scope="row" class="slds-text-align_right"> {orderItem.updatedQuantityAfterUnavailableQuantity} </th>
+                                        <!-- Imtiyaz - EVSE_Phase2_Sprint_3_HDMP-24353 Start -->
+                                        <th if:true={isDealerInstall} scope="row" class="slds-text-align_right"> ${orderItem.returnInstallPrice} </th>
+                                        <th scope="row" class="slds-text-align_right"> {orderItem.Return_Quantity_c__c} </th>
+                                        <th scope="row" class="slds-text-align_right"> ${orderItem.ListPrice__c} </th>
+                                        <th scope="row" class="slds-text-align_right"> ${orderItem.UpdExtendedPrice} </th> 
+                                        <th if:false={isDirectShip} scope="row"> <div class="slds-cell-wrap">{orderItem.Product_Model_Marketing_Name_c__c}</div> </th><!--Modified by Divya for HDMP-24337 -->
+                                        <!--<th if:true={isDirectShip} scope="row"> {orderItem.Order_Item_Status_c__c} </th>-->
+                                        <th if:true={isDirectShip} scope="row"><!--Added by Divya for HDMP-24337 START--><!--Modified by Divya for EVSE_Phase2_Sprint3 modified line 366-->
+                                            <lightning-button data-id={orderItem.ExternalId}
+                                            data-name={orderItem.Cart_Item_Product_Name_c__c}
+                                            data-sku={orderItem.Product_SKU_c__c} 
+                                            data-quantity={orderItem.Quantity__c}
+                                            data-upquantity={orderItem.updatedQuantityAfterUnavailableQuantity}
+                                            data-shippedquantity={orderItem.Shipped_Quantity_c__c}
+                                            data-detail={orderItem.Product_Model_Marketing_Name_c__c}
+                                            data-status={orderItem.Order_Item_Status_c__c}
+                                            data-vin={orderItem.Product_Identifier_c__c}
+                                            variant="brand" label="MORE INFO" name="MORE INFO" title="MORE INFO" class="slds-m-right_large slds-m-left_medium" onclick={handleMoreInfoClick}></lightning-button>
+                                        </th><!--Added by Divya for HDMP-24337 END-->
+                                        <!--th scope="row"> {orderItem.Order_Item_Status_c__c} </th-->                               
+                                    </tr>
+                                </template>   
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">
+                <div class="custom-box">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="4" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small"> Totals </div>                             
+                                                              
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ITEMS : </b></div>
+                                    <div>${Updated_Order_Amount_c__c}</div>
+                                </div>
+                                <div if:false={hideShipChrgsForPUD} style="display: flex;flex-direction: column;"> <!--Added by Swaroop to hide Shipping Charges for PickUp From Dealer orders-->
+                                    <!-- Saravanan LTIM Added for HDMP-19413 if:true={updateShippingSection}-->
+                                    <div if:true={updateShippingSection} class="custom-box display-style slds-p-bottom_x-small">
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>SHIPPING : </b></div>
+                                        <div>${Updated_Shipping_c__c}</div>
+                                    </div>
+                                </div>
+                                <div if:true={isCoreExist} style="display: flex;flex-direction: column;">
+                                    <!-- Saravanan LTIM Added for HDMP-19413 if:true={updateShippingSection}-->
+                                    <div class="custom-box display-style slds-p-bottom_x-small" if:false={isHpdOrder}>
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>CORE CHARGES : </b></div>
+                                        <div>${objOrder.coreTotal}</div>
+                                    </div>
+                                    <!-- Saravanan LTIM Added for HDMP-19413-->
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small" if:true={isDealerInstall}>
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>INSTALLATION CHGS. : </b></div>
+                                    <div>${objOrder.Total_Installation_Charges_c__c}</div> <!-- Modified by Bruno - Issue: INSTALLATION CHGS showing as $ -->
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>TAX : </b></div>
+                                    <div>${Updated_Total_Tax_c__c}</div>
+                                </div>
+                                <!-- <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>RESTOCKING FEES : </b></div>
+                                    <div>${objOrder.Total_Restocking_Fees_c__c}</div>
+                                </div> -->
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>TOTAL PURCHASE : </b></div>
+                                    <div>${Updated_Order_Total_c__c}</div><!--Modified by Divya for EVSE_Phase2_Sprint3-->
+                                </div>
+                                
+                            </div>
+                        </lightning-layout-item>  
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="4" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small">Returns </div>                              
+                                
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ITEM REFUND : </b></div>
+                                    <div>${objOrder.Total_Item_Return_c__c}</div>
+                                </div>
+                                <div if:false={hideShipChrgsForPUD} style="display: flex;flex-direction: column;"> <!--Added by Swaroop to hide Shipping Charges for PickUp From Dealer orders-->
+                                    <!-- Saravanan LTIM HDMP-19413 -->
+                                    <div class="custom-box display-style slds-p-bottom_x-small">
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>SHIP. REFUND : </b></div>
+                                        <div>${objOrder.Total_Ship_Return_c__c}</div>
+                                    </div>
+                                </div> 
+                                <div if:true={isCoreExist} style="display: flex;flex-direction: column;">
+                                    <!-- Saravanan LTIM Added for HDMP-19413-->
+                                    <div class="custom-box display-style slds-p-bottom_x-small" if:false={isHpdOrder}>
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>CORE CHARGE REFUND : </b></div>
+                                        <div>${objOrder.Total_Core_Charge_Return_Amount__c}</div>
+                                    </div>
+                                    <!-- Saravanan LTIM Ended for HDMP-19413 -->
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small" if:true={isDealerInstall}>
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>INSTALL. CHG. REFUND : </b></div>
+                                    <div>${objOrder.Total_Installation_Return_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>TAX REFUND : </b></div>
+                                    <div>${objOrder.Total_Tax_Return_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>RESTOCKING FEES : </b></div>
+                                    <div>-${objOrder.Total_Restocking_Fees_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>TOTAL REFUND : </b></div>
+                                    <div>${objOrder.Total_Return_c__c}</div>
+                                </div>                               
+                            </div>
+                        </lightning-layout-item>   
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="4" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-p-bottom_x-small">Net Totals </div>                              
+                                
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>ITEM TOTAL : </b></div>
+                                    <div>${objOrder.netItems}</div>
+                                </div>
+                                <div if:false={hideShipChrgsForPUD} style="display: flex;flex-direction: column;"> <!--Added by Swaroop to hide Shipping Charges for PickUp From Dealer orders-->
+                                    <!-- Saravanan LTIM HDMP-19413 -->
+                                    <div  class="custom-box display-style slds-p-bottom_x-small">
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>SHIP. CHARGES : </b></div>
+                                        <div>${objOrder.netShippingAmountToRefund}</div> <!-- Modified by Bruno - BUG HDMP-27151 -->
+                                    </div>
+                                </div> 
+                                <div if:true={isCoreExist} style="display: flex;flex-direction: column;">
+                                    <!-- Saravanan LTIM Added for HDMP-19413-->
+                                    <div class="custom-box display-style slds-p-bottom_x-small" if:false={isHpdOrder}>
+                                        <div class="slds-text-align_left slds-p-right_x-small"><b>CORE CHARGES : </b></div>
+                                        <div>${objOrder.netCoreCharges}</div>
+                                    </div>
+                                    <!-- Saravanan LTIM Added for HDMP-19413-->
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small" if:true={isDealerInstall}>
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>INSTALL. CHARGES : </b></div>
+                                    <div>${objOrder.netInstall}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>TOTAL TAX : </b></div>
+                                    <div>${objOrder.netTax}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>RESTOCKING FEES : </b></div>
+                                    <div>${objOrder.Total_Restocking_Fees_c__c}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>TOTAL PURCHASE : </b></div>
+                                    <div>${objOrder.netTotal}</div>
+                                </div>                               
+                            </div>
+                        </lightning-layout-item>                                          
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+                <div class="custom-box">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <!-- Commented by Faraz on 20/06/2022 due to requirement change -->
+                            <!-- <div class="custom-box" >
+                                <div class="slds-text-heading_small slds-p-bottom_x-small"> Dealer Notes </div>   
+                                <div>{objOrder.Dealer_Notes_c__c}</div>
+                            </div> -->
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+
+    <!--Edit page template -->
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container bar-modal" style={modalWidthStyle}>
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon setMinWidth slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon> <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-text-heading_medium slds-col slds-size_12-of-12"> 
+                            <span if:true={isEditClicked} class="slds-align_absolute-center"><b>Enter Shipping Information</b> </span>
+                            <span if:true={isCancelClicked} class="slds-align_absolute-center"><b>Order Cancellation</b> </span>
+                            <span if:true={isPartialReturnClicked} class="slds-align_absolute-center"><b>Return Order</b> </span>
+                            <span if:true={isModifyOrderClicked} class="slds-align_absolute-center"><b>Modify Order</b> </span>
+                            <span if:true={isModifyOrderClicked} class="slds-align_absolute-center slds-m-top_small slds-text-heading_small">Enter an updated quantity for each item below. Entering "0" will remove the item.</span>
+                            <span if:true={isEntireReturnClicked} class="slds-align_absolute-center"><b>Order Return</b> </span>
+                            <span if:true={isShowModifyError} class="slds-align_absolute-center"><b>Missing Information</b> </span> 
+                            <!-- Added by Faraz for 8722 on 25/05/2022 - start-->
+                            <span if:true={isShowEditNotes} class="slds-align_absolute-center"><b>Dealer Notes</b> </span>        
+                            <span if:true={isShowEditNotes} class="slds-align_absolute-center slds-text-heading_small">These notes are only for dealer records and are never visible to customer.</span>
+                            <!-- Added by Faraz for 8722 on 25/05/2022 - end -->
+                            <!--Added by Divya for EVSE - Start HDMP-24337--><!-- Modified by Divya for EVSE_Phase2_Sprint3 START-->
+                            <span if:true={isShowMoreInfo} class="slds-align_absolute-center"><b>ADDITIONAL ORDER DETAILS</b> </span>
+                            <!-- Added by Divya for EVSE - End HDMP-24337--><!-- Modified by Divya for EVSE_Phase2_Sprint3 END-->
+                        </div>                
+                    </div>
+                </header>
+
+                <!-- model body for Edit dealer note -->
+                <div if:true={isShowEditNotes} class="slds-modal__content slds-p-around_medium" >    
+                    <!-- value={dealerNotes} -->
+                    <!-- Added by Faraz for 8722 on 25/05/2022 -->
+                    <lightning-textarea name="Dealer Notes" label="New Note" placeholder="Type here..." onchange={handleEditNotesChange}></lightning-textarea>                        
+                </div>
+
+                 <!-- model body for Shipping Info -->			
+                <div if:true={isEditClicked} class="slds-modal__content slds-p-around_medium" style="min-height: 15rem;">
+                    <div if:true={errorMessage} class="slds-scoped-notification slds-media slds-media_center slds-theme_error"
+                    style="background-color: #fafaf9; color: #c23934; border: .125rem solid #c23934;max-height: 2.7rem;">
+                        <div class="slds-media__figure slds-p-bottom_xx-small">
+                            <lightning-icon class="errorIcon" icon-name="utility:error" alternative-text="Error!" title="Error" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            {errorMessage}
+                        </div>
+                    </div>
+                    <template if:true={isLoading}>
+                        <lightning-spinner alternative-text="Saving"></lightning-spinner>
+                    </template>
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" large-device-size="12" >
+                            
+                                         
+                            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                                <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+                                    <span></span>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12 slds-p-around_small">
+                                    <span>Select Shipping Service :</span>
+                                </div>
+                                <div class="slds-col slds-size_6-of-12 slds-p-around_small" style="display: flex;">
+                                    <lightning-combobox
+                                        style="width: 12rem;"
+                                        dropdown-alignment="auto"
+                                        name="Select Shipping Service"
+                                        label="Select Shipping Service"                                       
+                                        value={shippingVender}
+                                        placeholder="Select Shipping Service"
+                                        options={shippingvendor}
+                                        onchange={handleShippngVendorChange}
+                                        variant="label-hidden"
+                                        required
+                                    ></lightning-combobox>
+                                    <lightning-input
+                                        style="width: 12rem;padding-left:1rem;"
+                                        if:true={isOtherSelected}
+                                        type="text"  
+                                        class="otherCarrier"                                         
+                                        label="Name" 
+                                        name="Other Carrier"
+                                        max-length="30"     
+                                        variant="label-hidden"                        
+                                        value={otherCarrier}                                                                                                                    
+                                        onchange={handleShippingInfoChange}
+                                        required
+                                    ></lightning-input>
+                                </div>                                  
+                            </div>                                                                                         
+                                <!-- <div class="custom-box slds-p-top_x-small" style="width: 18rem;">                      
+                                 </div> -->
+                            
+                        </lightning-layout-item>   
+
+                        <!-- R2B shipping speed Epic start-->
+                        <lightning-layout-item size="12" large-device-size="12" >
+                            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                                <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+                                    <span></span>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12 slds-p-around_small">
+                                    <span>Customer Shipping Speed :</span>
+                                </div>
+                                <div class="slds-col slds-size_6-of-12 slds-p-around_small" if:true={objOrder.Customer_Preferred_Speeds_c__c}>
+                                    <span><b>{objOrder.Customer_Preferred_Speeds_c__c}</b></span>
+                                </div>
+                                <div class="slds-col slds-size_6-of-12 slds-p-around_small" if:false={objOrder.Customer_Preferred_Speeds_c__c}>
+                                    <span><b>Standard</b></span>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" large-device-size="12" >
+                            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                                <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+                                    <span></span>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12 slds-p-around_small">
+                                    <span>Dealer Shipping Speed :</span>
+                                </div>
+                                <div class="slds-col slds-size_6-of-12 slds-p-around_small" style="display: flex;">
+                                   <lightning-combobox
+                                        style="width: 12rem;"    
+                                        dropdown-alignment="auto"
+                                        name="Dealer Shipping Speed"
+                                        label="Dealer Shipping Speed"                                       
+                                        value={dealerShippingSpeed}
+                                        placeholder="Select Shipping Speed"
+                                        options={dealerShippingSpeedOptions}
+                                        onchange={handleShippingSpeedChange}
+                                        variant="label-hidden"
+                                        required
+                                    ></lightning-combobox>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                         <!-- R2B shipping speed Epic ends -->
+
+                        <lightning-layout-item size="12" large-device-size="12" >
+                            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                                <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+                                    <span></span>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12 slds-p-around_small">
+                                    <span>Enter Tracking Number :</span>
+                                </div>
+                                <div class="slds-col slds-size_6-of-12 slds-p-around_small" style="display: flex;">
+                                 <lightning-input
+                                        style="width: 12rem;"
+                                        type="text" 
+                                        class="trackingNumber"                                           
+                                        label="Enter Tracking Number" 
+                                        name="Tracking Number"
+                                        max-length="50"                             
+                                        value={trackingNumber}      
+                                        variant="label-hidden"                              
+                                        onchange={handleShippingInfoChange}
+                                        required
+                                    ></lightning-input>
+                                </div>
+                            </div>   
+                        </lightning-layout-item>
+                                                          
+                    </lightning-layout>               
+                </div>
+                <!-- Divya EVSE Start HDMP-24337 Modal body for More Info-->
+                <div if:true={isShowMoreInfo} class="slds-modal__content">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>PRODUCT NAME : </b></div>
+                                    <div>{productName}</div>
+                                </div> 
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>PART NUMBER : </b></div>
+                                    <div><div>{partNumber}</div></div>
+                                </div> 
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>UPDATED QUANTITY : </b></div>
+                                    <div>{updatedQuantity}</div>
+                                </div> 
+                                <div if:false={isHpdOrder} class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>SHIPPED QUANTITY : </b></div>
+                                    <div>{shippedQuantity}</div>
+                                </div>                            
+                                <!--Added by Divya for EVSE_Phase2_Sprint3 START-->
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>CUSTOMER SHIPPING SPEED : </b></div>
+                                    <div if:true={objOrder.Customer_Preferred_Speeds_c__c}>{objOrder.Customer_Preferred_Speeds_c__c}</div>
+                                    <div if:false={objOrder.Customer_Preferred_Speeds_c__c}>Standard</div>
+                                </div>
+                                <!--Added by Divya for EVSE_Phase2_Sprint3 END-->                            
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="6" >
+                            <div if:false={isHpdOrder} class="custom-box" style="display: grid;">
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>VEHICLE DETAILS : </b></div>
+                                    <div>{productMarketingName}</div>
+                                </div>
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>VIN : </b></div>
+                                    <div>{vin}</div>
+                                </div> 
+                                <div class="custom-box display-style slds-p-bottom_x-small">
+                                    <div class="slds-text-align_left slds-p-right_x-small"><b>LINE ITEM STATUS : </b></div>
+                                    <div>{orderItemStatus}</div>
+                                </div>                                                          
+                            </div>
+                        </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small" large-device-size="12" class="slds-border_bottom">          
+                                <div class="custom-box slds-p-top_small" style="min-height: 6rem;">
+                                    <div class="custom-box slds-scrollable_y" style="max-height: 15rem;">
+                                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" width="100%">
+                                            <thead>
+                                                <tr class="slds-line-height_reset">
+                                                    <th class="" scope="col" style="width: 5%;">
+                                                        <div class="slds-truncate" title="Shipping Date">SHIPPING DATE</div><!--Modified by Divya for EVSE_Phase2_Sprint3-->
+                                                    </th>
+                                                    <th if:false={isHpdOrder} class="" scope="col" style="width: 5%;">
+                                                        <div class="slds-truncate" title="Shipped Part Number">SHIPPED PART NUMBER</div><!--Modified by Divya for EVSE_Phase2_Sprint3-->
+                                                    </th>
+                                                    <th if:false={isHpdOrder} class="" scope="col" style="width: 5%;">
+                                                        <div class="slds-truncate" title="Shipped Quantity">SHIPPED QUANTITY</div><!--Modified by Divya for EVSE_Phase2_Sprint3-->
+                                                    </th>
+                                                    <th class="" scope="col" style="width: 5%;">
+                                                        <div class="slds-truncate" title="Shipping Carrier">SHIPPING CARRIER</div><!--Modified by Divya for EVSE_Phase2_Sprint2-->
+                                                    </th>
+                                                    <th class="" scope="col" style="width: 5%;">
+                                                        <div class="slds-truncate" title="Shipped Speed">SHIPPED SPEED</div><!--Modified by Divya for EVSE_Phase2_Sprint3-->
+                                                    </th>  
+                                                    <th class="" scope="col" style="width: 5%;">
+                                                        <div class="slds-truncate" title="TrackingNumber">TRACKING NUMBER</div>
+                                                    </th> 
+                                                    <th if:true={isHrcOrderInProgress} class="" scope="col" style="width: 5%;">
+                                                        <div class="slds-truncate" title="EditShipping">EDIT SHIPPING</div>
+                                                    </th>                                             
+                                                </tr>
+                                            </thead>
+                                            <tbody if:true={additionalOrderDetails}>
+                                                <template if:true={additionalOrderDetails} for:each={additionalOrderDetails} for:item="additionalorderDetail">
+                                                    <tr key={additionalorderDetail.Id} class="slds-hint-parent">
+                                                        <th scope="row"> {additionalorderDetail.Shipment_Date_Time_c__c} </th>
+                                                        <th if:false={isHpdOrder} scope="row">{additionalorderDetail.Shipped_Partnumber_c__c}</th>
+                                                        <th if:false={isHpdOrder} scope="row">{additionalorderDetail.Shipped_Item_Quantity_c__c}</th>
+                                                        <th scope="row">{additionalorderDetail.Shipment_Carrier_c__c}</th>
+                                                        <th scope="row">{additionalorderDetail.Honda_Shipping_Speed_c__c}</th>
+                                                        <th scope="row">{additionalorderDetail.Tracking_Number_c__c}</th>
+                                                        <th if:true={isHrcOrderInProgress} scope="row"><a name="Edit" data-id={additionalorderDetail.Id} data-carrier={additionalorderDetail.Shipment_Carrier_c__c} data-shipspeed={additionalorderDetail.Honda_Shipping_Speed_c__c} data-tracking={additionalorderDetail.Tracking_Number_c__c} onclick={editShippingInfo}>
+                                                            Edit</a>
+                                                        </th>                            
+                                                    </tr>
+                                                </template>   
+                                            </tbody>
+                                        </table>
+                                        <template if:false={additionalOrderDetails}>
+                                            <!--Modified by Divya for EVSE_Phase2_Sprint3 START-->
+                                            <div class="slds-text-heading_medium slds-m-bottom_small slds-m-top_small slds-text-align_center slds-text-color_error">
+                                               No shipment information available
+                                            </div>
+                                            <!--Modified by Divya for EVSE_Phase2_Sprint3 START-->
+                                        </template>
+                                    </div>
+                                </div>
+                            </lightning-layout-item>                                      
+                    </lightning-layout>
+                </div>
+                <!-- Divya EVSE END HDMP-24337 Modal body for More Info END-->
+
+                <!-- model body for cancel request -->
+                <div if:true={isCancelClicked} class="slds-modal__content slds-p-around_medium" > 
+                    <!-- Added by Faraz for 8722 on 25/05/2022 -->
+                    <lightning-textarea name="Customer Notes" label="Include a note to the customer: (optional)" placeholder="Include a note here..." onchange={handleCustomerNotesChange}></lightning-textarea>
+                    <br/>
+                    <div class="slds-align_absolute-center slds-text-heading_small">
+                        Please specify what type of cancellation is this
+                    </div>                          
+                </div>
+
+                <div if:true={isShowModifyError} class="slds-modal__content slds-p-around_medium" > 
+                    <div class="slds-align_absolute-center slds-text-heading_small">
+                        Before an item can marked as Shipped, <br/>
+                        a tracking number must be provided
+                    </div>                          
+                </div>
+
+                <!-- model body for partial return request -->
+                <div if:true={isPartialReturnClicked} class="slds-modal__content" > 
+                    <div if:true={errorMessage} class="slds-scoped-notification slds-media slds-media_center slds-theme_error"
+                                style="background-color: #fafaf9; color: #c23934; border: .125rem solid #c23934;max-height: 2.7rem;">
+                        <div class="slds-media__figure slds-p-bottom_xx-small">
+                            <lightning-icon class="errorIcon" icon-name="utility:error" alternative-text="Error!" title="Error" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            {errorMessage}
+                        </div>
+                    </div>
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="8" >
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_x-small slds-m-bottom_small" >Original purchase amount: <b>${objOrder.Updated_Order_Total_c__c}.</b></div>
+                                <div if:true={isShowRestockingFees} class="slds-text-heading_x-small slds-m-bottom_small" style="display: flex;line-height: 3;">
+                                    Restocking fee: 
+                                    <div class="custom-box slds-m-left_small">
+                                        <template if:false={isTaxCalculated}>
+                                            <lightning-input type="number" step="0.01" min="0" class="restockingFees" variant="label-hidden" value={restockingFees} onchange={restockingFeesChange} name="name" label="label"></lightning-input>
+                                            <div if:true={resErrorMessage} style="color:rgb(234, 0, 30);" class="slds-form-element__help slds-cell-wrap">{resErrorMessage}</div>    
+                                        </template>
+                                       <template if:true={isTaxCalculated}>
+                                            ${updRestockingFees}
+                                        </template>  
+                                    </div>                                   
+                                </div>
+                                <div if:true={objOrder.isShowReturnWindow} class="slds-text-heading_x-small slds-m-bottom_small">Your dealership has a return window policy of <b>{objOrder.returnWindow} days.</b> This order is <b>{objOrder.orderDays} days</b> past the allowable  return window</div>
+                                <!-- Imtiyaz - EVSE_Phase2_Sprint_3_HDMP-25942 Start -->
+                                <div if:true={isShowShippingAddress} class="slds-text-heading_x-small slds-m-bottom_small" style="display: flex;line-height: 3;"><b style="margin-right: 1rem;">Refund customer for shipping? (${objOrder.netShippingAmountToRefund}) </b>
+                                <!-- Imtiyaz - EVSE_Phase2_Sprint_3_HDMP-25942 End -->
+                                    <template if:false={isTaxCalculated}> 
+                                        <lightning-input type="number" step="0.01" min="0" variant="label-hidden" class="shippingReturn" name="shippingReturn" label="shippingReturn" value={shipRefundVal} onchange={partialShipRefundChange}></lightning-input>
+                                    </template>
+                                    <template if:true={isTaxCalculated}>
+                                        ${updatedShipRefundVal}
+                                    </template>                                  
+                                </div>                                       
+                            </div>  
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" large-device-size="4">
+                            <div class="custom-box"></div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12"  class="slds-border_top" padding="around-small" large-device-size="12">
+                            <div class="slds-text-heading_medium slds-p-around_small slds-align_absolute-center">Specify how many of each the customer is returning.</div>
+                            
+                            <div class="custom-box slds-scrollable_y" style="max-height: 16rem;overflow-x:auto">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" width="100%">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">  
+                                            <th class="" scope="col" style="width: 5%;">
+                                                <div class="slds-truncate" title="Product Name">NO.</div>
+                                            </th>                                 
+                                            <th class="" scope="col" style="width: 30%;">
+                                                <div class="slds-truncate" title="Product Name">PRODUCT NAME</div>
+                                            </th>
+                                            <th class="" scope="col" style="width: 15%;">
+                                                <div class="slds-truncate" title="Product SKU">PART NUMBER</div>
+                                            </th>
+                                            <th if:true={isDealerInstall} class="" scope="col" style="width: 10%;">
+                                                <div class="slds-truncate" title="Product SKU">CURRENT INSTALL.</div>
+                                            </th>
+                                            <th if:true={isDealerInstall} class="" scope="col" style="width: 10%;">
+                                                <div class="slds-truncate" title="Product SKU">RETURN INSTALL.</div>
+                                            </th>
+                                            <th class="" scope="col" style="width: 15%;">
+                                                <div class="slds-truncate" title="Quantity">CURRENT QTY.</div>
+                                            </th>
+                                            <th class="" scope="col" style="width: 15%;">
+                                                <div class="slds-truncate" title="Quantity">RETURN QTY.</div>                                                
+                                            </th>
+                                            <th class="" scope="col" style="width: 10%;">
+                                                <div class="slds-truncate" title="Price">UNIT PRICE</div>
+                                            </th>  
+                                            <th class="" scope="col" style="width: 10%;">
+                                                <div class="slds-truncate" title="Price">EXTENDED PRICE</div>
+                                            </th>                                                                 
+                                        </tr>
+                                    </thead>
+                                    <tbody if:true={isShowOrderItems}>
+                                        <template if:true={orderItems} for:each={orderItems} for:item="orderItem" for:index="index">
+                                            <tr key={orderItem.Id} class="slds-hint-parent">  
+                                                <th scope="row"> {orderItem.index} </th>
+                                                <!--Changes done by Vivek for HDMP-17167 -->
+                                                <th if:true={orderItem.isReman} scope="row">
+                                                    <div class="slds-truncate">{orderItem.Cart_Item_Product_Name_c__c}</div>
+                                                    <!-- Aditya HDMP-17167 -->
+                                                </th>
+                                                <th if:false={orderItem.isReman} scope="row">
+                                                    <div class="slds-cell-wrap">{orderItem.Cart_Item_Product_Name_c__c}</div>
+                                                </th>
+                                                <!--End of Changes done by Vivek for HDMP-17167 -->                                 
+                                                <th scope="row"> {orderItem.Product_SKU_c__c} </th>
+                                                <th if:true={isDealerInstall} scope="row" class="slds-text-align_right"> 
+                                                    ${orderItem.currentInstallPrice}
+                                                </th>
+                                                <th if:true={isDealerInstall} scope="row" class="slds-text-align_right"> 
+                                                    <template if:true={isTaxCalculated}> ${orderItem.tempUpdInstallPrice}</template>
+                                                    <template if:false={isTaxCalculated}> 
+                                                        <lightning-input style="width: 7rem;" disabled={orderItem.installDisabled} data-id={orderItem.Id} data-index={index} class={orderItem.classInstall} type="number" step="0.01" min="0" max={orderItem.currentInstallPrice} variant="label-hidden" value={orderItem.updatedInstallPrice} name="Install Price" label="Install Price" onchange={handleInstallPriceChange}></lightning-input> 
+                                                        <div if:true={orderItem.installErrorMessage} style="color:rgb(234, 0, 30);" class="slds-form-element__help slds-cell-wrap">{orderItem.installErrorMessage}</div>             
+                                                     </template>
+                                                </th>
+                                                <!-- START - Modified by Bruno - BUG HDMP-26266 Modified by Divya-->
+                                                <th  scope="row" class="slds-text-align_right"> {orderItem.currentQty} </th>
+                                                <!-- END - Modified by Bruno - BUG HDMP-26266 Modified by Divya-->
+                                                <th scope="row" class="slds-text-align_right"> 
+                                                    <template if:true={isTaxCalculated}> {orderItem.deltaQuantity}</template>
+                                                    <template if:false={isTaxCalculated}> 
+                                                        <lightning-input style="width: 7rem;" disabled={orderItem.qtyDisabled} data-id={orderItem.Id} data-index={index} class={orderItem.classDelta} type="number" min="0" max={orderItem.Updated_Quantity_c__c} variant="label-hidden" value={orderItem.deltaQuantity} name="Delta Quantity" label="Delta Quantity" onchange={handleDeltaQuantityChange}></lightning-input> 
+                                                        <div if:true={orderItem.errorMessage} style="color:rgb(234, 0, 30);" class="slds-form-element__help slds-cell-wrap">{orderItem.errorMessage}</div>       
+                                                    </template>
+                                                </th>
+                                                <th scope="row" class="slds-text-align_right"> ${orderItem.ListPrice__c} </th> 
+                                                <th scope="row" class="slds-text-align_right"> ${orderItem.extendedPrice} </th>                                                                                                              
+                                            </tr>
+                                        </template>   
+                                    </tbody>
+                                </table>
+                            </div> 
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={isTaxCalculated} size="12" class="slds-border_top slds-border_bottom" padding="around-small" large-device-size="12">
+                            <div class="custom-box" style="text-align:right;">
+                                <div class="slds-text-heading_x-small slds-m-bottom_large" >
+                                    <span style="margin-right:10px">Original purchase amount:</span> 
+                                    <span><b>${objOrder.Updated_Order_Total_c__c}</b></span>
+                                </div>
+                                <div class="slds-text-heading_x-small slds-m-bottom_small" >
+                                    <span style="margin-right:10px">Total Items Return:</span> 
+                                    <span><b>${itemsReturnPrice}</b></span>
+                                </div>
+								<!-- Below if:true={restockingFees} added by ashwin for sp4-7818 -->
+                                <div if:true={restockingFees} class="slds-text-heading_x-small slds-m-bottom_small" >
+                                    <span style="margin-right:10px">Restocking fee:</span> 
+                                    <span><b>${updRestockingFees}</b></span>
+                                </div>
+								<!-- Started by ashwin for SP4-7818 -->
+                                <div if:true={coreChargeItemsTotal} class="slds-text-heading_x-small slds-m-bottom_small">
+                                    <span style="margin-right:10px">Core Charge Refund:</span>
+                                    <span><b>${coreChargeItemsTotal}</b></span>
+                                </div>
+                                <!-- Ended by ashwin for SP4-7818 -->
+                                <!-- Saravanan LTIM Added for HDMP-19453-->
+                                <div if:true={shippingRefundValChange} class="slds-text-heading_x-small slds-m-bottom_small" >
+                                    <span style="margin-right:10px">Shipping Refund: </span>
+                                    <span><b>${updatedShipRefundVal}</b></span>
+                                </div>                                                                                                                      
+                                <div if:true={isDealerInstall} class="slds-text-heading_x-small slds-m-bottom_small" >
+                                    <span style="margin-right:10px">Installation fees: </span> 
+                                    <span><b>${installFullReturnPrice}</b></span>
+                                </div>
+                                <div class="slds-text-heading_x-small slds-m-bottom_small" >
+                                    <span style="margin-right:10px">Tax:</span> 
+                                    <span><b>${returnTax}</b></span>
+                                </div> 
+                                <div class="slds-text-heading_x-small slds-m-bottom_small" >
+                                    <span style="margin-right:10px">Total:</span>
+                                    <span><b>${totalRefund}</b></span>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+
+                        <!-- Added by Faraz for 8722 on 25/05/2022 -->
+                        <lightning-layout-item if:true={isTaxCalculated} size="12" class="slds-border_bottom" padding="around-small" large-device-size="12">
+                            <lightning-textarea name="Customer Notes" label="Include a note to the customer: (optional)" placeholder="Include a note here..." onchange={handleCustomerNotesChange} style="padding: 10px 50px;"></lightning-textarea>
+                            <br/>
+                        </lightning-layout-item>
+                        <!--  Added by Faraz for 8722 on 25/05/2022 End -->
+
+                        <lightning-layout-item if:true={isTaxCalculated} size="12" padding="around-small" large-device-size="12">
+                            <div class="custom-box" style="display: grid;">
+                                <div class="slds-text-heading_small slds-m-bottom_large slds-align_absolute-center" ><b>Total amount that will be refunded to customer : ${totalRefund}</b></div>
+                                <div class="slds-text-heading_x-small slds-m-bottom_x-small slds-align_absolute-center" >Hittng ACCEPT below means you will accept a partial return with</div>
+                                <div class="slds-text-heading_x-small slds-m-bottom_small slds-align_absolute-center" >the specified details above. Do you want to accept the return? </div>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>                                            
+                </div>
+
+                <!-- model body for Modify Order request -->
+                <div if:true={isModifyOrderClicked} class="slds-modal__content" > 
+                    <div if:true={errorMessage} class="slds-scoped-notification slds-media slds-media_center slds-theme_error"
+                        style="background-color: #fafaf9; color: #c23934; border: .125rem solid #c23934;max-height: 2.7rem;">
+                        <div class="slds-media__figure slds-p-bottom_xx-small">
+                            <lightning-icon class="errorIcon" icon-name="utility:error" alternative-text="Error!" title="Error" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            {errorMessage}
+                        </div>
+                    </div>
+                    <div class="custom-box slds-scrollable_y" style="max-height: 16rem;overflow-x:auto">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" width="100%">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th class="" scope="col" style="width: 5%;">
+                                        <div class="slds-truncate" title="Product Name">NO.</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 30%;">
+                                        <div class="slds-truncate" title="Product Name">PRODUCT NAME</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 15%;">
+                                        <div class="slds-truncate" title="Product SKU">PART NUMBER</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 15%;">
+                                        <div class="slds-truncate" title="Quantity">ORIGINAL QTY.</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 15%;">
+                                        <div class="slds-truncate" title="Quantity">UPDATED QTY.</div>
+                                    </th>
+									<!-- below line added by ashwin for 19435 -->
+									<!--blow  if:true={isCoreExist} added by Ashwin for 19435-->
+									<th if:true={isCoreExist} class="" scope="col" style="width: 15%;">
+                                        <div class="slds-truncate" title="Quantity">CORE CHARGE</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 10%;">
+                                        <div class="slds-truncate" title="Price">UNIT PRICE</div>
+                                    </th> 
+                                    <th class="" scope="col" style="width: 10%;">
+                                        <div class="slds-truncate" title="Price">EXTENDED PRICE</div>
+                                    </th>                                        
+                                </tr>
+                            </thead>
+                            <tbody if:true={isShowOrderItems}>
+                                <template if:true={orderItems} for:each={orderItems} for:item="orderItem" for:index="index">
+                                    <!-- if:false={orderItem.isCoreCharge} added by ashwin for 19435 -->
+                                    <tr if:false={orderItem.isCoreCharge} key={orderItem.Id} class="slds-hint-parent">
+                                        <!-- Saravanan LTIM Added for 19537-->
+                                        <th scope="row">  {orderItem.indexVal} </th>
+                                        <!--Changes done by Vivek for HDMP-17167 -->
+                                        <th if:true={orderItem.isReman} scope="row">
+                                            <div class="slds-truncate">{orderItem.Cart_Item_Product_Name_c__c}
+                                            </div> <!-- Aditya HDMP-17167 -->
+                                        </th>
+                                        <th if:false={orderItem.isReman} scope="row">
+                                            <div class="slds-cell-wrap">{orderItem.Cart_Item_Product_Name_c__c}
+                                            </div>
+                                        </th>
+                                        <!--End of Changes done by Vivek for HDMP-17167 -->
+                                        <th scope="row"> {orderItem.Product_SKU_c__c} </th>
+                                        <th scope="row" class="slds-text-align_right"> {orderItem.Quantity__c} </th>
+                                        <th scope="row">
+
+                                            <!-- In Blow light Input (data-row,data-sku) added by ashwin for US SP2-16544 , false condition-->
+
+											 <lightning-input if:false={orderItem.isCoreCharge} style="width: 7rem;" 
+                                             data-id={orderItem.Id} 
+                                             data-index={index} 
+                                             class={orderItem.classIndex} 
+                                             type="number" 
+                                             min="0" 
+                                             max={orderItem.updatedQuantityAfterUnavailableQuantity} 
+                                             variant="label-hidden" 
+                                             value={orderItem.updatedQuantity} 
+                                             name="Updated Quantity" 
+                                             label="Updated Quantity" 
+                                             onchange={handleItemQuantityChange}
+											 data-sku={orderItem.Product_SKU_c__c}
+                                             data-row={orderItem.index}
+												></lightning-input> 
+												
+												<!-- Begin changes Added by ashwin for SP2-16544 -->
+                                            <lightning-input if:true={orderItem.isCoreCharge} style="width: 7rem;"
+                                                data-id={orderItem.Id} data-index={index} class={orderItem.classIndex}
+                                                type="number" min="0" max={orderItem.Updated_Quantity_c__c}
+                                                variant="label-hidden" value={orderItem.updatedQuantity}
+                                                name="Updated Quantity" label="Updated Quantity"
+                                                data-sku={orderItem.Product_SKU_c__c} data-row={orderItem.index}
+                                                onchange={handleItemQuantityChange} disabled></lightning-input>
+                                            <!--  End changes by ashwin for SP2-16544 -->
+											
+                                             <div if:true={orderItem.errorMessage} style="color:rgb(234, 0, 30);" class="slds-form-element__help slds-cell-wrap">{orderItem.errorMessage}</div>
+                                            
+                                        </th>
+										<!-- below line added by ashwin for 19435 -->
+										<!--blow  if:true={isCoreExist} added by Ashwin for 19435-->
+										<th if:true={isCoreExist} scope="row" class="slds-text-align_right"> ${orderItem.extendedCoreCharge}
+                                        </th>
+                                        <th scope="row" class="slds-text-align_right"> ${orderItem.ListPrice__c} </th>      
+										<!-- Blow changed from UpdExtendedPrice to  (old - extendedPrice) (new - totalUpdExtendedPrice) for 19435-->
+                                        <th if:true={isCoreExist} scope="row" class="slds-text-align_right"> ${orderItem.totalUpdExtendedPrice} </th> 
+                                        <th if:false={isCoreExist} scope="row" class="slds-text-align_right"> ${orderItem.UpdExtendedPrice} </th>                                                                                                                                    
+                                    </tr>
+                                </template>   
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Added by Faraz for 8722 on 25/05/2022 -->
+                    <lightning-layout-item size="12" class="slds-border_bottom" padding="around-small" large-device-size="12">
+                        <lightning-textarea name="Customer Notes" label="Include a note to the customer: (optional)" placeholder="Include a note here..." onchange={handleCustomerNotesChange} style="padding: 10px 50px;"></lightning-textarea>
+                        <br/>
+                    </lightning-layout-item>
+                    <!--  Added by Faraz for 8722 on 25/05/2022 End -->                          
+                </div>
+
+            <!-- Modal/Popup Box LWC footer starts here -->
+                <!-- Added by Faraz for 8722 on 25/05/2022 - start -->
+                <footer class="slds-modal__footer" if:true={isShowEditNotes} style="border-top: 0; padding-right: 0px;">                  
+                    <div class="slds-align_absolute-center">
+                        <!-- onclick={saveEditNotes} -->
+                        <!-- Added by Lokesh for BUG-27122-->
+                        <lightning-button variant="brand" label="ADD NOTE" title="ADD NOTE" onclick={handleAddDealerNote} class="slds-p-right_medium"></lightning-button>                               
+                        <!--<button class="slds-button slds-button_brand" style="width: 11rem;" onclick={handleAddDealerNote}>ADD NOTE</button>-->
+                        <lightning-button variant="brand" label="CANCEL" title="CANCEL" onclick={closeModal}></lightning-button>                              
+                        <!--<button class="slds-button slds-button_brand" style="width: 11rem;" onclick={closeModal}>CANCEL</button>-->                     
+                    </div>
+                    <hr if:true={isDealerNotesExist} style="margin: 0px;margin-top: 20px;margin-bottom: 10px;"/>
+                    <div if:true={isDealerNotesExist} class="slds-align_absolute-center slds-text-heading_medium"><b>Dealer Note History</b></div>
+                    <div if:true={isDealerNotesExist} class="slds-modal__content" style="text-align: left;height: 120px; overflow: auto;">
+                        <lightning-layout multiple-rows>
+                            <template if:true={dealerNotesList} for:each={dealerNotesList} for:item="item" for:index="index">
+                                <lightning-layout-item key={item.Id} size="12" padding="around-small" large-device-size="4" >
+                                    <div class="custom-box">{item.createdFormatDate} by {item.Created_By_Name_c__c }</div>  
+                                </lightning-layout-item>
+                                <lightning-layout-item key={item.Id} size="12" padding="around-small" large-device-size="8">
+                                    <div class="custom-box">
+                                        {item.Notes_c__c}
+                                    </div>
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>                                            
+                    </div>
+                    <hr if:true={customerNotes} style="margin: 0px;margin-top: 20px;margin-bottom: 10px;"/>
+                    <div if:true={customerNotes} class="slds-align_absolute-center slds-text-heading_medium"><b>Notes Sent To Customer</b></div>
+                    <div if:true={customerNotes} class="slds-modal__content" style="text-align: left;height: 120px; overflow: auto;">
+                        <lightning-layout multiple-rows>
+                            <template if:true={customerNotes} for:each={customerNotes} for:item="item" for:index="index">
+                                <lightning-layout-item key={item.Id} size="12" padding="around-small" large-device-size="4" >
+                                    <div class="custom-box">{item.date}</div>  
+                                </lightning-layout-item>
+                                <lightning-layout-item key={item.Id} size="12" padding="around-small" large-device-size="8">
+                                    <div class="custom-box">
+                                        {item.note}
+                                    </div>
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>                                            
+                    </div>
+                </footer>
+                <!-- Added by Faraz for 8722 on 25/05/2022 - End -->
+
+                <footer class="slds-modal__footer" if:true={isModifyOrderClicked}>                  
+                    <div class="slds-align_absolute-center">
+                        <button class="slds-button slds-button_brand" style="width: 11rem;" onclick={modifyOrderDetails} title="SAVE CHANGES">SAVE CHANGES</button>
+                        <button class="slds-button slds-button_brand" style="width: 11rem;" onclick={closeModal} title="CANCEL">CANCEL</button>                       
+                    </div>
+                </footer>
+
+                <footer class="slds-modal__footer" if:true={isEditClicked}>
+                    <div class="slds-align_absolute-center">
+                        <!-- Added by Swaroop for HPD_Sprint5 - Start -->
+                        <button if:true={isInsertOrderFullFilment} class="slds-button slds-button_brand" style="width: 11rem;" onclick={updateShippingInfo} title="SAVE CHANGES">SAVE CHANGES</button>
+                        <button if:false={isInsertOrderFullFilment} class="slds-button slds-button_brand" style="width: 11rem;" onclick={callUpdateOrderFulFill} title="SAVE CHANGES">SAVE CHANGES</button>
+                        <!-- Added by Swaroop for HPD_Sprint5 - End -->
+                        <button class="slds-button slds-button_brand" style="width: 11rem;" onclick={closeModal} title="CANCEL">CANCEL</button>                       
+                    </div>
+                </footer>
+
+                <footer class="slds-modal__footer" if:true={isPartialReturnClicked}>
+                    <!-- <div class="custom-box slds-m-bottom_small" style="display:grid;">
+                        <div class="slds-align_absolute-center">Note : Order funds will be credited back to the customer's card.</div>
+                        <div class="slds-align_absolute-center">Shipping charges will not be credited back currently.</div>
+                    </div> -->
+                    <div class="slds-align_absolute-center">
+                        <template if:false={isTaxCalculated}>
+                            <button class="slds-button slds-button_brand" style="width: 13rem;" onclick={calculateTaxFromVertax} title="CALCULATE RETURN">CALCULATE RETURN</button>
+                        </template>                      
+                        <template if:true={isTaxCalculated}>
+                            <button class="slds-button slds-button_brand" style="width: 15.3rem;" onclick={modifyTax} title="MODIFY">MODIFY</button>
+                            <button class="slds-button slds-button_brand" style="width: 15.3rem;" onclick={handleDeltaQuantitySubmit} title="ACCEPT RETURN">ACCEPT RETURN</button>
+                        </template>
+                        <button class="slds-button slds-button_brand" style="width: 11rem;" onclick={closeModal} title="CANCEL">CANCEL</button>                       
+                    </div>                
+                </footer>
+
+                <footer class="slds-modal__footer" if:true={isCancelClicked}>
+                    <div class="slds-align_absolute-center">
+                        <button style="width: 14.4rem;" class="slds-button slds-button_brand" name="Customer Cancel" onclick={processCancelRequest} title="Customer Cancelled">Customer Cancelled</button> 
+                        <button style="width: 14.4rem;" class="slds-button slds-button_brand" name="Dealer Cancel" onclick={processCancelRequest} title="Dealer Cancelled">Dealer Cancelled</button>
+                    </div>
+                </footer>
+
+                <footer class="slds-modal__footer" if:true={isShowModifyError}>
+                    <div class="slds-align_absolute-center">
+                        <button class="slds-button slds-button_brand" name="Continue" onclick={handleEditClick} title="CONTINUE">CONTINUE</button>                       
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+</template>

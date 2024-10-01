@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Execution Id --></label>
+        <name>privacycenter__Masking_Execution_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Policy Name --></label>
+        <name>privacycenter__Policy_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled Date --></label>
+        <name>privacycenter__Scheduled_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>privacycenter__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skipped</masterLabel>
+            <translation><!-- Skipped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syncing</masterLabel>
+            <translation><!-- Syncing --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

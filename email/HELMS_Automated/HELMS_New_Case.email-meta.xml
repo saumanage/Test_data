@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email notification for HELMS TIER 1 Queue members when a new case is created</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>HELMS New Case</name>
+    <style>none</style>
+    <subject>New Case {!Case.CaseNumber}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

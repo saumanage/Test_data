@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>to send custom email notification of apex error.</description>
+        <name>Apex_log_email_notification</name>
+        <label>Apex log email notification</label>
+        <locationX>489</locationX>
+        <locationY>472</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>emailaddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>yourhonda@ebizmail.honda.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>NotificationSubject</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Checking_Bypass_Automation</name>
+        <label>Checking Bypass Automation</label>
+        <locationX>745</locationX>
+        <locationY>346</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Bypass_Automation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Apex_log_email_notification</targetReference>
+            </connector>
+            <label>Bypass Automation</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Log Email Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Log Email Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>373</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Checking_Bypass_Automation</targetReference>
+        </connector>
+        <filterLogic>1 OR 2</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Error_Message__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Logs__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>NotificationBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;Hi Team,&lt;/p&gt;
+&lt;p&gt;Please find below error details:&lt;/p&gt;
+&lt;p&gt;Logs Name: {!$Record.Name}&lt;br&gt;PE Reply Id: {!$Record.PE_Reply_Id__c}&lt;br&gt;SF Record Id: {!$Record.SF_Rec_Id__c}&lt;br&gt;Trigger or Class Name: {!$Record.Trigger_or_Class_Name__c}&lt;br&gt;Error Line Number: {!$Record.Error_Line_Number__c}&lt;br&gt;Error Message: {!$Record.Error_Message__c} &lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NotificationSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Apex script unhandled exception: {!$Record.Name}</text>
+    </textTemplates>
+    <variables>
+        <name>emailaddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>HELMS@ahm.honda.com</stringValue>
+        </value>
+    </variables>
+</Flow>

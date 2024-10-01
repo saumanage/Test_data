@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AddressLine1 --></label>
+        <name>MDPERSONATOR__AddressLine1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean Suite BusinessCoder Result --></label>
+        <name>MDPERSONATOR__BusinessCoder_Result__c</name>
+        <relationshipLabel><!-- Clean Suite Business Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>MDPERSONATOR__City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>MDPERSONATOR__Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryCode --></label>
+        <name>MDPERSONATOR__CountryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryName --></label>
+        <name>MDPERSONATOR__CountryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>MDPERSONATOR__Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>MDPERSONATOR__Gender__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameFirst --></label>
+        <name>MDPERSONATOR__NameFirst__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameLast --></label>
+        <name>MDPERSONATOR__NameLast__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>MDPERSONATOR__Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>MDPERSONATOR__PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>MDPERSONATOR__State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>MDPERSONATOR__Title__c</name>
+    </fields>
+</CustomObjectTranslation>

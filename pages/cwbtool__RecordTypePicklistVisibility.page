@@ -1,0 +1,203 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 06-23-2021
+  @last modified by  : Kanishk Singh
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   05-13-2021   Kanishk Singh   Initial Version
+-->
+<apex:page controller="cwbtool.RecordTypePicklistVisibilityController" sidebar="false" tabStyle="CWB_Tool__tab" >
+
+  <c:requiredJSAndCSS />
+
+  <c:lightningScript ></c:lightningScript>
+
+  <apex:form id="frmId" styleClass="CWB">
+    <c:lightningspinner />
+    <apex:actionFunction name="downloadComponent" action="{!getrecordTypeDeatil}" />
+    <apex:actionFunction name="downloadRecordTypeAction" action="{!downloadRecordTypeAction}" />
+    <apex:actionFunction name="processInBatch" action="{!processInBatch}" />
+    <apex:actionFunction name="processInBatchRecordType" action="{!processInBatchRecordType}" />
+    <apex:actionFunction name="getRecordTypeNameAction" action="{!getRecordTypeNameAction}" reRender="frmId" oncomplete="hideOverLay();init();initTab();"/>
+    
+    <apex:actionFunction name="refresh2" action="{!refresh}" reRender="refreshPanel2" oncomplete="init();initTab();"
+    />
+     <apex:outputpanel id="refreshPanel2">
+
+        <apex:actionPoller action="{!resultfound}" reRender="refreshPanel" interval="5" enabled="{!isStart}" oncomplete="if({!isProcessed}){initTab();init();hideOverLay();}"
+        />
+    </apex:outputpanel>
+
+    <c:ComponentSelector buttonText="Download" ComponentType="{!strComponentType}" ComponentSelectorModel="{!objComponentSelectorModel}" hideWarning="true"></c:ComponentSelector>
+
+    <apex:outputpanel layout="none" rendered="{!objComponentSelectorModel.strSelectedOrg!=null && objComponentSelectorModel.strSelectedOrg!=''}">
+      <div class="slds-card slds-has-top-magnet" style='margin-top: 1rem;'>
+        <div class="slds-card__body">Use Batch process If found any issue in above.It will generate report based on Selected org and Objects.
+          <div class="slds-grid slds-wrap slds-form--inline">
+            <div class="slds-form-element">
+              <div class='slds-form--inline'>
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label" for="select-01">Batch Size</label>
+                  <div class="slds-select_container">
+                    <div class="slds-select_container">
+                      <apex:selectList id="btcj" value="{!batchSize}" multiselect="false" size="1" styleclass="slds-select multiselect profileClass">
+                        <apex:selectOptions value="{!lstBatchSize}" />
+                      </apex:selectList>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="select-01">File Size</label>
+              <div class="slds-select_container">
+                <div class="slds-select_container">
+                  <apex:selectList id="btcj1255511" value="{!selectedFileSize}" multiselect="false" size="1" styleclass="slds-select multiselect profileClass">
+                    <apex:selectOptions value="{!fileSize}" />
+                  </apex:selectList>
+                </div>
+              </div>
+            </div>
+            <div class="slds-form-element">
+              <div class="slds-button-group" role="group">
+                <button type='button' onclick='showOverLay();processInBatch();' class="slds-button slds-button--brand slds-not-selected" style='margin-top:19px;'
+                  aria-live="assertive" actiondetail='Start Apex Test Class Analysis '>
+                  <span class="slds-text-not-selected">
+                    <span class='ion-ios-plus-empty'></span>Process in Batch</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </apex:outputpanel>
+    <div class="slds-card">
+      <div class="slds-card__body">Download Record Type picklist Visibilty for specifc record type from current Org
+        <div class="slds-grid slds-wrap slds-form--inline">
+          <apex:outputPanel rendered="{!lstRecordType.size>0}">
+          <div class="slds-form-element">
+            <div class='slds-form--inline'>
+              <div class="slds-form-element">
+                <label class="slds-form-element__label" for="select-01">Record Type</label>
+                <div class="slds-select_container">
+                  <div class="slds-select_container">
+                    <apex:selectList value="{!lstSelectedRecordType}" multiselect="true" size="1" styleclass="slds-select multiselect genericMultiSelect"
+                    style="margin-right:40px;display:none1;">
+                    <apex:selectOption rendered="{!lstRecordType.size==0}" itemValue="" itemLabel="" />
+                    <apex:selectOptions rendered='{!lstRecordType.size>=1}' value="{!lstRecordType[0]}" />
+                    <apex:selectOptions rendered='{!lstRecordType.size>=2}' value="{!lstRecordType[1]}" />
+                    <apex:selectOptions rendered='{!lstRecordType.size>=3}' value="{!lstRecordType[2]}" />
+                </apex:selectList>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          </apex:outputPanel>
+          <div class="slds-form-element">
+            <div class="slds-button-group" role="group">
+              <apex:outputPanel rendered="{!lstRecordType.size==0}">
+              <button type='button' onclick='showOverLay();getRecordTypeNameAction();' class="slds-button slds-button--brand slds-not-selected" style='margin-top:19px;'
+                aria-live="assertive" actiondetail='View RecordType'>
+                <span class="slds-text-not-selected">
+                  <span class='ion-ios-plus-empty'></span>View</span>
+              </button>
+              </apex:outputPanel>
+              <apex:outputPanel rendered="{!lstRecordType.size>0}" layout="none">
+                <button type='button' onclick='showOverLay();refresh2();downloadRecordTypeAction();' class="slds-button slds-button--brand slds-not-selected" style='margin-top:19px;'
+                  aria-live="assertive" actiondetail='Download Record'>
+                  <span class="slds-text-not-selected">
+                    <span class='ion-ios-plus-empty'></span>Download</span>
+                </button>
+
+               
+              </apex:outputPanel>
+            </div>
+          </div>
+          <apex:outputPanel rendered="{!lstRecordType.size>0}" layout="none">  
+          <div class="slds-grid slds-wrap slds-form--inline">
+            <div class="slds-form-element">
+              <div class='slds-form--inline'>
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label" for="select-01">Batch Size</label>
+                  <div class="slds-select_container">
+                    <div class="slds-select_container">
+                      <apex:selectList id="btcj12" value="{!batchSize2}" multiselect="false" size="1" styleclass="slds-select multiselect profileClass">
+                        <apex:selectOptions value="{!lstBatchSize}" />
+                      </apex:selectList>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="select-01">File Size</label>
+              <div class="slds-select_container">
+                <div class="slds-select_container">
+                  <apex:selectList id="btcj125551" value="{!selectedFileSize}" multiselect="false" size="1" styleclass="slds-select multiselect profileClass">
+                    <apex:selectOptions value="{!fileSize}" />
+                  </apex:selectList>
+                </div>
+              </div>
+            </div>
+            <div class="slds-form-element">
+              <div class="slds-button-group" role="group">
+                <button type='button' onclick='showOverLay();processInBatchRecordType();' class="slds-button slds-button--brand slds-not-selected" style='margin-top:19px;'
+                  aria-live="assertive" actiondetail=' '>
+                  <span class="slds-text-not-selected">
+                    <span class='ion-ios-plus-empty'></span>Process in Batch</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </apex:outputPanel>
+        </div>
+
+      </div>
+      </div>
+
+    <apex:outputPanel rendered="{!isDetail && lstId.size>0}" layout="none">
+            <article class="slds-card">
+             <table class="slds-table slds-table--cell-buffer slds-table--bordered">
+               <thead>
+                 <tr class="slds-line-height_reset">
+                   <th class="" scope="col">
+                     <div class="slds-truncate" title="">#</div>
+                   </th>
+       
+                   </tr>
+                   </thead>
+                   <tbody>
+                     <apex:variable value="{!1}" var="count"></apex:variable>
+                   <apex:repeat value="{!lstId}" var="row">   
+                     <tr class="slds-hint-parent">
+                       <th data-label="" scope="row">
+                         <div class="slds-truncate" title="">
+                          <a href='{!$Page.RecordTypePicklistVisibilityDownload}?reportId={!row}&Id={!strId}&from=recDetail' target='_blank' class="slds-button slds-button--neutral  compType ga">
+                            <span id="example21-toggle1"  style='margin-right:10px;'> 
+                            <span class='ion-ios-cloud-download'></span> Export To Excel Report {!count}</span>
+                          </a>
+                         </div>
+                       </th>
+       
+                       </tr>
+                       <apex:variable value="{!count+1}" var="count"></apex:variable>
+                      </apex:repeat>  
+                       </tbody>
+                      
+               </table>
+       
+            </article>
+           </apex:outputPanel> 
+
+  </apex:form>
+  <c:ConnectionModalComp />
+</apex:page>

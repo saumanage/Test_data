@@ -1,0 +1,18 @@
+<!--
+
+@author: Salesforce (Success Growth and Adoption)
+@maintainedBy:  (Success Growth and Adoption)
+@version :        1.0
+@created :       2019-01-28
+@modified :      2019-01-28
+
+-->
+
+<apex:page sidebar="false" lightningStylesheets="true" controller="sf_GsPilotV1.GettingStartedController" applyBodyTag="false" showHeader="true" >
+
+<body style="padding-top:0px;">
+<apex:iframe scrolling="false" height="2700px;" id="theIframe" src="{!URLIframe}" rendered="{!If(IsSandbox==false,true,false) && If(InvalidAccess == false,true,false)}" frameborder="false"/>
+</body>
+<apex:pageMessage rendered="{!If(IsSandbox==true,true,false) || If(InvalidAccess == true,true,false) }" severity="Error" title="Error Messsage" strength="1"
+ summary="{!ErrorMessage}"  />
+</apex:page>

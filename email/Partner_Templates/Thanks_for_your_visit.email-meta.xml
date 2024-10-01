@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>Thanks for your visit</name>
+    <style>freeForm</style>
+    <subject>Thanks for your visit</subject>
+    <textOnly>Dear {!Opportunity.Name},
+
+I enjoyed meeting with you earlier today and hope that you enjoyed your visit to our dealership.  I will contact you shortly to answer any questions you might have about the {!Opportunity.Product_TXT__c} and to discuss your next steps in the Product purchase process.
+
+In the meantime, please do not hesitate to contact me.  I can be reached either by replying to this e-mail or by phone at {!Opportunity.PreferredDealerContact_ID__c}.
+
+I look forward to speaking with you soon!
+
+Sincerely,
+
+{!User.Name}
+{!Opportunity.PreferredDealerAccount_TXT__c}
+{!User.Phone}
+{!User.Email}
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

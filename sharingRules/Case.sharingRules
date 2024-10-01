@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Acura_Strategist_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Acura Strategist Sharing</label>
+        <sharedTo>
+            <role>Acura_Dealer_Strategist</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>B-Acura</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>A-Honda</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Honda_Strategist_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Honda Strategist Sharing</label>
+        <sharedTo>
+            <role>Honda_Dealer_Strategist</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>A-Honda</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>B-Acura</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PE_Dealer_Strategist</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>PE Dealer Strategist</label>
+        <sharedTo>
+            <role>PE_Dealer_Strategist</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>P-PowerEquipment</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Powersports_Dealer_Strategist</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Powersports Dealer Strategist</label>
+        <sharedTo>
+            <role>PSP_Dealer_Strategist</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>M-Motorcycle</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>share_all_cases_with_HELMS_Corporate</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>share all cases with HELMS Corporate</label>
+        <sharedTo>
+            <role>HELMS_Corporate_User</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Integration_Data_Migration</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

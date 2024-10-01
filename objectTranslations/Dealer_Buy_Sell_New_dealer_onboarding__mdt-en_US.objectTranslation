@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dealer Buy/Sell-New dealer onboarding</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dealer Buy/Sell-New dealer onboardings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role-Title --></label>
+        <name>Roles_Title__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

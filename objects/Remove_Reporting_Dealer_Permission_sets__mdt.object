@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Permission_Set_Group_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Permission Set Group API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Remove Reporting Dealer Permission sets</label>
+    <pluralLabel>Remove Reporting Dealer Permission sets</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

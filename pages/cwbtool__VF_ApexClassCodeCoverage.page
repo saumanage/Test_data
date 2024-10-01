@@ -1,0 +1,260 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 03-30-2021
+  @last modified by  : Kanishk Singh
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   03-20-2021   Kanishk Singh   Initial Version
+-->
+<apex:page controller="cwbtool.ApexClassCoverageController" action="{!getActiveConnection}" sidebar="false" tabStyle="CWB_TOOL__tab">
+  <c:requiredJSAndCSS ></c:requiredJSAndCSS>
+  <c:lightningScript ></c:lightningScript>
+  <script>
+    function refreshOrgDetailFromModal() {
+      refreshOrgConnection();
+
+    }
+    function hideNotification(){
+    $('#notificationd').hide();
+    $("input[id$='notify']" ).val(true);
+   }
+    $(document).ready(function () {
+      if ({!lstActiveConnection.size == 0    
+}){
+      refreshOrgConnection();
+    }
+    $('.dataCell  a').attr('target', '_blank');
+    inittabs();
+
+  
+  });
+    function inittabs() {
+      $('.tabsl').on('click', function () {
+        $('.slds-show').addClass('slds-hide').removeClass('slds-show');
+        $('li').removeClass('slds-active');
+
+        var showId = $(this).data('container');
+        $(this).closest('li').addClass('slds-active');
+        $('#' + showId).addClass('slds-show').removeClass('slds-hide');
+      });
+    }
+  </script>
+
+
+
+  <div class='CWB'>
+    <c:lightningspinner />
+    <div class="slds-tabs--default">
+      <ul class="slds-tabs--default__nav" role="tablist">
+        <li class="slds-tabs--default__item slds-text-heading--label slds-active " data-container='tab-default-1' title="Apex Code Analysis"
+          role="presentation">
+          <a class="slds-tabs--default__link tabsl" data-container='tab-default-1' href="javascript:void(0);" role="tab" tabindex="0"
+            aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">
+            Apex Code Analysis</a>
+        </li>
+        <li class="slds-tabs--default__item slds-text-heading--label tabsl" data-container='tab-default-2' title="Apex Code Analysis Report"
+          role="presentation">
+          <a class="slds-tabs--default__link tabsl" data-container='tab-default-2' href="javascript:void(0);" role="tab" tabindex="-1"
+            aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">
+            Apex Code Analysis Report</a>
+        </li>
+      </ul>
+      <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+       <apex:outputPanel layout="none" rendered="{!!isNotificationDone}">
+        <div id='notificationd'>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+          <div class="slds-modal__container">
+            <header class="slds-modal__header">
+             
+              <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Test Class Notification</h2>
+             
+            </header>
+            <div class="slds-modal__content slds-p-around--medium" id="modal-content-id-1">
+              <p>Please make sure all test classes are run and have been completed before report download.It will download last run test class report.</p>
+            </div>
+            <footer class="slds-modal__footer">
+               <button type='button' class="slds-button slds-button--brand" onClick='hideNotification();'>Got It</button>
+            </footer>
+          </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        </div>
+      </apex:outputPanel>
+        <apex:form id="form" styleclass="frm1">
+
+
+          <apex:pagemessages ></apex:pagemessages>
+          <apex:actionFunction name="refreshOrgConnection" action="{!refreshOrgDetail}" oncomplete="getActiveConnection();init();initTab();"
+            rerender="form,msgId" />
+          <apex:actionFunction name="getActiveConnection" action="{!getActiveConnection}" oncomplete="hideOverLay();init();initTab();"
+            rerender="form,msgId" />
+          <apex:actionFunction name="getApexClassDetail" action="{!getApexClassDetail}" oncomplete="hideOverLay();init();initTab();"
+            rerender="form,msgId" />
+          <apex:actionFunction name="downloadApexClassCoverageAction" action="{!downloadApexClassCoverage}" />
+          <apex:actionFunction name="downloadOverAllCoverage" action="{!downloadOverAllCoverage}" />
+          <apex:actionFunction name="refresh" action="{!refresh}" reRender="refreshPanel,msgId,form" />
+
+          <apex:outputpanel id="refreshPanel">
+            <apex:pagemessages id="msgId" rendered="{!isStart}" />
+            <apex:actionPoller action="{!resultfound}" reRender="refreshPanel,msgId,form" interval="5" enabled="{!isStart}" oncomplete="if({!isProcessed}){initTab();init();hideOverLay();}"
+            />
+          </apex:outputpanel>
+          <apex:actionFunction name="processAll" action="{!processAll}" oncomplete="init();initTab();hideOverLay();" rerender="frmId,msgId,dataContainer"
+          />
+        <apex:inputHidden id="notify" value="{!isNotificationDone}" ></apex:inputHidden>
+          
+          <div class="slds-box slds-theme--shade" role="banner">
+
+            <div class="slds-grid slds-wrap slds-form--inline">
+              <div class="slds-form-element">
+                <div class='slds-form--inline'>
+                  <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="select-01">
+                      <a href='javascript:void(0);' onclick="refreshOrgConnection();">
+                        <span class="ion-refresh" aria-hidden="true"></span>
+                      </a>
+                      Source Org</label>
+                    <div class="slds-select_container">
+                      <div class="slds-select_container">
+                        <apex:selectList id="TargetOrg" value="{!strSelectedOrg}" onchange="showOverLay();getApexClassDetail();" multiselect="false"
+                          size="1" styleclass="slds-select multiselect profileClass">
+                          <apex:selectOptions value="{!lstActiveConnection}" />
+
+                        </apex:selectList>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slds-form-element">
+
+                <fieldset class="slds-form-element">
+                  <legend class="slds-form-element__legend slds-form-element__label">Apex Class</legend>
+                  <div class="slds-form-element__control">
+                    <apex:selectList id="metaname" value="{!lstSelectedComponent}" multiselect="true" size="1" styleclass="slds-select multiselect profileClass">
+                      <apex:selectOption rendered="{!lstApexClass.size==0}" itemValue="" itemLabel="" />
+                      <apex:selectOptions rendered='{!lstApexClass.size>=1}' value="{!lstApexClass[0]}" />
+                      <apex:selectOptions rendered='{!lstApexClass.size>=2}' value="{!lstApexClass[1]}" />
+                      <apex:selectOptions rendered='{!lstApexClass.size>=3}' value="{!lstApexClass[2]}" />
+                    </apex:selectList>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="slds-form-element">
+                <div class="slds-button-group" role="group">
+                  <apex:outputpanel layout="none" rendered="{!lstActiveConnection.size>0}">
+                    <button type='button' onclick='showOverLay();downloadApexClassCoverageAction();refresh();' class="slds-button slds-button--brand slds-not-selected"
+                      style='margin-top:19px;' aria-live="assertive" actiondetail='getApexClassDetail '>
+                      <span class="slds-text-not-selected">
+                        <span class='ion-ios-cloud-download'></span>Test Class Method Detail</span>
+                    </button>
+                    <button type='button' onclick='showOverLay();downloadOverAllCoverage();refresh();' class="slds-button slds-button--neutral slds-not-selected"
+                      style='margin-top:19px;' aria-live="assertive" actiondetail='getApexClassDetail '>
+                      <span class="slds-text-not-selected">
+                        <span class='ion-ios-cloud-download'></span>Download All Code Coverage</span>
+                    </button>
+                  </apex:outputpanel>
+                  <button type='button' urlparam="{!$Page.createNewConnection}?open=modal" class="slds-button slds-button--neutral connectionmodal"
+                    style='margin-top:19px;' aria-live="assertive" actiondetail='Create New Connection '>
+                    <span class="slds-text-not-selected">
+                      <span class='ion-ios-plus-empty'></span>Create New Connection</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <apex:outputpanel layout="none" rendered="{!lstActiveConnection.size>0}">
+              <div class="slds-grid slds-wrap slds-form--inline">
+                <div class="slds-form-element">
+                  <div class='slds-form--inline'>
+                      <div class="slds-form-element">
+                          <label class="slds-form-element__label" for="select-01">Batch Size</label>
+                          <div class="slds-select_container">
+                              <div class="slds-select_container">
+                                  <apex:selectList id="btcj" value="{!batchSize}"
+                                      multiselect="false" size="1" styleclass="slds-select multiselect profileClass">
+                                      <apex:selectOptions value="{!lstBatchSize}" />
+                                  </apex:selectList>
+                              </div>
+                          </div>
+                     </div>
+                </div>
+           </div>
+                <div class="slds-form-element">
+                  <div class="slds-button-group" role="group">
+                    <button type='button' onclick='showOverLay();processAll();' class="slds-button slds-button--brand slds-not-selected" style='margin-top:19px;'
+                      aria-live="assertive" actiondetail='Start Apex Test Class Analysis '>
+                      <span class="slds-text-not-selected">
+                        <span class='ion-ios-plus-empty'></span>Process Test Class Details for All Classes</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </apex:outputpanel>
+
+
+          </div>
+          <apex:outputPanel rendered="{!isDetail && lstId.size>0}" layout="none">
+            <article class="slds-card">
+             <table class="slds-table slds-table--cell-buffer slds-table--bordered">
+               <thead>
+                 <tr class="slds-line-height_reset">
+                   <th class="" scope="col">
+                     <div class="slds-truncate" title="">Single WorkSheet</div>
+                   </th>
+                   <th class="" scope="col">
+                    <div class="slds-truncate" title="">Multi Worksheet</div>
+                  </th>
+                  
+       
+                   </tr>
+                   </thead>
+                   <tbody>
+                     <apex:variable value="{!1}" var="count"></apex:variable>
+                   <apex:repeat value="{!lstId}" var="row">   
+                     <tr class="slds-hint-parent">
+                       <th data-label="" scope="row">
+                         <div class="slds-truncate" title="">
+                          <a href='{!$Page.VF_ApexClassCodeCoverageDownload}?reportId={!row}&Id={!strId}&from=recDetail&frmt=S' target='_blank' class="slds-button slds-button--neutral  compType ga">
+                            <span id="example21-toggle1"  style='margin-right:10px;'> 
+                            <span class='ion-ios-cloud-download'></span> Export To Excel Report {!count}</span>
+                          </a>
+                         </div>
+                       </th>
+                       <th data-label="" scope="row">
+                        <div class="slds-truncate" title="">
+                         <a href='{!$Page.VF_ApexClassCodeCoverageDownload}?reportId={!row}&Id={!strId}&from=recDetail&frmt=M' target='_blank' class="slds-button slds-button--neutral  compType ga">
+                           <span id="example21-toggle1"  style='margin-right:10px;'> 
+                           <span class='ion-ios-cloud-download'></span> Export To Excel Report {!count}</span>
+                         </a>
+                        </div>
+                      </th>
+       
+                       </tr>
+                       <apex:variable value="{!count+1}" var="count"></apex:variable>
+                      </apex:repeat>  
+                       </tbody>
+                      
+               </table>
+       
+            </article>
+           </apex:outputPanel>  
+
+
+          <script>
+            function refreshOrgDetailFromModal() {
+              refreshOrgConnection();
+            }
+          </script>
+
+        </apex:form>
+        <c:ConnectionModalComp />
+      </div>
+      <div id="tab-default-2" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
+        <apex:ListViews type="cwbtool__Apex_Code_Analysis__c" />
+      </div>
+    </div>
+  </div>
+</apex:page>

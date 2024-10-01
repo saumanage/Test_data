@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>QuoteCreationTemplate</name>
+    <style>freeForm</style>
+    <subject>Here is your Internet Price for your product selection</subject>
+    <textOnly>Dear {!Quote.Name},
+
+Thank you for your interest in the {!Quote.Model__c} {!Quote.Year__c} quote that you requested. I checked your request against the current inventory and available offers and I have come up with a competitive quote for the product. Please see the details below.
+
+Quote Price: {!Quote.Amount_AMT__c}
+Valid Till: {!Quote.ExpirationDate}
+.
+
+Please do not hesitate to contact me should you have any questions/concerns. I would be happy to assist in any way possible. I can be reached either by replying to this e-mail or by phone at {!User.Phone}. I can also meet with you at your convenience.
+
+I look forward to hearing from you soon!
+
+Sincerely,
+
+{!User.Name}
+{!Quote.DealerName__c}
+{!User.Phone}
+{!User.Email}
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

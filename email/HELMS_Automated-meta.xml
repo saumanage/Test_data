@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>HELMS Automated</name>
+    <publicFolderAccess>ReadOnly</publicFolderAccess>
+    <sharedTo>
+        <role>HELMS_Corporate</role>
+        <role>HELMS_Corporate_User</role>
+        <roleAndSubordinatesInternal>Integration_Data_Migration</roleAndSubordinatesInternal>
+    </sharedTo>
+</EmailFolder>

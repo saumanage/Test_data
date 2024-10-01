@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AddressDeliveryInstallation --></label>
+        <name>MDPERSONATOR__AddressDeliveryInstallation__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressHouseNumber --></label>
+        <name>MDPERSONATOR__AddressHouseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressKey --></label>
+        <name>MDPERSONATOR__AddressKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine1 --></label>
+        <name>MDPERSONATOR__AddressLine1__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine2 --></label>
+        <name>MDPERSONATOR__AddressLine2__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLockBox --></label>
+        <name>MDPERSONATOR__AddressLockBox__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressPostDirection --></label>
+        <name>MDPERSONATOR__AddressPostDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressPreDirection --></label>
+        <name>MDPERSONATOR__AddressPreDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressPrivateMailboxName --></label>
+        <name>MDPERSONATOR__AddressPrivateMailboxName__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressRouteService --></label>
+        <name>MDPERSONATOR__AddressRouteService__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressStreetName --></label>
+        <name>MDPERSONATOR__AddressStreetName__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressStreetSuffix --></label>
+        <name>MDPERSONATOR__AddressStreetSuffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressSuiteName --></label>
+        <name>MDPERSONATOR__AddressSuiteName__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressSuiteNumber --></label>
+        <name>MDPERSONATOR__AddressSuiteNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressTypeCode --></label>
+        <name>MDPERSONATOR__AddressTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressprivateMailboxRange --></label>
+        <name>MDPERSONATOR__AddressprivateMailboxRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- AreaCode --></label>
+        <name>MDPERSONATOR__AreaCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSACode --></label>
+        <name>MDPERSONATOR__CBSACode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSADivisionCode --></label>
+        <name>MDPERSONATOR__CBSADivisionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSADivisionLevel --></label>
+        <name>MDPERSONATOR__CBSADivisionLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSADivisionTitle --></label>
+        <name>MDPERSONATOR__CBSADivisionTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSALevel --></label>
+        <name>MDPERSONATOR__CBSALevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- CBSATitle --></label>
+        <name>MDPERSONATOR__CBSATitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- CarrierRoute --></label>
+        <name>MDPERSONATOR__CarrierRoute__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusBlock --></label>
+        <name>MDPERSONATOR__CensusBlock__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusKey --></label>
+        <name>MDPERSONATOR__CensusKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusTract --></label>
+        <name>MDPERSONATOR__CensusTract__c</name>
+    </fields>
+    <fields>
+        <label><!-- ChildrenAgeRange --></label>
+        <name>MDPERSONATOR__ChildrenAgeRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- CityAbbreviation --></label>
+        <name>MDPERSONATOR__CityAbbreviation__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>MDPERSONATOR__City__c</name>
+    </fields>
+    <fields>
+        <label><!-- CompanyName --></label>
+        <name>MDPERSONATOR__CompanyName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CongressionalDistrict --></label>
+        <name>MDPERSONATOR__CongressionalDistrict__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryCode --></label>
+        <name>MDPERSONATOR__CountryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryName --></label>
+        <name>MDPERSONATOR__CountryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountyFIPS --></label>
+        <name>MDPERSONATOR__CountyFIPS__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountyName --></label>
+        <name>MDPERSONATOR__CountyName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountySubdivisionCode --></label>
+        <name>MDPERSONATOR__CountySubdivisionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountySubdivisionName --></label>
+        <name>MDPERSONATOR__CountySubdivisionName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CreditCardUser --></label>
+        <name>MDPERSONATOR__CreditCardUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateOfBirth --></label>
+        <name>MDPERSONATOR__DateOfBirth__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateOfDeath --></label>
+        <name>MDPERSONATOR__DateOfDeath__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeliveryIndicator --></label>
+        <name>MDPERSONATOR__DeliveryIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeliveryPointCheckDigit --></label>
+        <name>MDPERSONATOR__DeliveryPointCheckDigit__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeliveryPointCode --></label>
+        <name>MDPERSONATOR__DeliveryPointCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- DemographicsGender --></label>
+        <name>MDPERSONATOR__DemographicsGender__c</name>
+    </fields>
+    <fields>
+        <label><!-- DemographicsResults --></label>
+        <name>MDPERSONATOR__DemographicsResults__c</name>
+    </fields>
+    <fields>
+        <label><!-- DomainName --></label>
+        <name>MDPERSONATOR__DomainName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>MDPERSONATOR__Education__c</name>
+    </fields>
+    <fields>
+        <label><!-- ElementarySchoolDistrictCode --></label>
+        <name>MDPERSONATOR__ElementarySchoolDistrictCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ElementarySchoolDistrictName --></label>
+        <name>MDPERSONATOR__ElementarySchoolDistrictName__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailAddress --></label>
+        <name>MDPERSONATOR__EmailAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- EthnicCode --></label>
+        <name>MDPERSONATOR__EthnicCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- EthnicGroup --></label>
+        <name>MDPERSONATOR__EthnicGroup__c</name>
+    </fields>
+    <fields>
+        <label><!-- FullName --></label>
+        <name>MDPERSONATOR__FullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender2 --></label>
+        <name>MDPERSONATOR__Gender2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>MDPERSONATOR__Gender__c</name>
+    </fields>
+    <fields>
+        <label><!-- HouseholdIncome --></label>
+        <name>MDPERSONATOR__HouseholdIncome__c</name>
+    </fields>
+    <fields>
+        <label><!-- HouseholdSize --></label>
+        <name>MDPERSONATOR__HouseholdSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>MDPERSONATOR__Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- LengthOfResidence --></label>
+        <name>MDPERSONATOR__LengthOfResidence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>MDPERSONATOR__Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- MailboxName --></label>
+        <name>MDPERSONATOR__MailboxName__c</name>
+    </fields>
+    <fields>
+        <label><!-- MaritalStatus --></label>
+        <name>MDPERSONATOR__MaritalStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- MoveDate --></label>
+        <name>MDPERSONATOR__MoveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameFirst2 --></label>
+        <name>MDPERSONATOR__NameFirst2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameFirst --></label>
+        <name>MDPERSONATOR__NameFirst__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameLast2 --></label>
+        <name>MDPERSONATOR__NameLast2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameLast --></label>
+        <name>MDPERSONATOR__NameLast__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameMiddle2 --></label>
+        <name>MDPERSONATOR__NameMiddle2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameMiddle --></label>
+        <name>MDPERSONATOR__NameMiddle__c</name>
+    </fields>
+    <fields>
+        <label><!-- NamePrefix2 --></label>
+        <name>MDPERSONATOR__NamePrefix2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NamePrefix --></label>
+        <name>MDPERSONATOR__NamePrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameSuffix2 --></label>
+        <name>MDPERSONATOR__NameSuffix2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameSuffix --></label>
+        <name>MDPERSONATOR__NameSuffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- NewAreaCode --></label>
+        <name>MDPERSONATOR__NewAreaCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation --></label>
+        <name>MDPERSONATOR__Occupation__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnRent --></label>
+        <name>MDPERSONATOR__OwnRent__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneExtension --></label>
+        <name>MDPERSONATOR__PhoneExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneNumber --></label>
+        <name>MDPERSONATOR__PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhonePrefix --></label>
+        <name>MDPERSONATOR__PhonePrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneSuffix --></label>
+        <name>MDPERSONATOR__PhoneSuffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlaceCode --></label>
+        <name>MDPERSONATOR__PlaceCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlaceName --></label>
+        <name>MDPERSONATOR__PlaceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plus4 --></label>
+        <name>MDPERSONATOR__Plus4__c</name>
+    </fields>
+    <fields>
+        <label><!-- PoliticalParty --></label>
+        <name>MDPERSONATOR__PoliticalParty__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>MDPERSONATOR__PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PresenceOfChildren --></label>
+        <name>MDPERSONATOR__PresenceOfChildren__c</name>
+    </fields>
+    <fields>
+        <label><!-- PresenceOfSenior --></label>
+        <name>MDPERSONATOR__PresenceOfSenior__c</name>
+    </fields>
+    <fields>
+        <label><!-- PrivateMailBox --></label>
+        <name>MDPERSONATOR__PrivateMailBox__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResultCode --></label>
+        <name>MDPERSONATOR__ResultCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResultDescription --></label>
+        <name>MDPERSONATOR__ResultDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Results --></label>
+        <name>MDPERSONATOR__Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salutation --></label>
+        <name>MDPERSONATOR__Salutation__c</name>
+    </fields>
+    <fields>
+        <label><!-- SecondarySchoolDistrictCode --></label>
+        <name>MDPERSONATOR__SecondarySchoolDistrictCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- SecondarySchoolDistrictName --></label>
+        <name>MDPERSONATOR__SecondarySchoolDistrictName__c</name>
+    </fields>
+    <fields>
+        <label><!-- StateDistrictLower --></label>
+        <name>MDPERSONATOR__StateDistrictLower__c</name>
+    </fields>
+    <fields>
+        <label><!-- StateName --></label>
+        <name>MDPERSONATOR__StateName__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>MDPERSONATOR__State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suite --></label>
+        <name>MDPERSONATOR__Suite__c</name>
+    </fields>
+    <fields>
+        <label><!-- TopLevelDomain --></label>
+        <name>MDPERSONATOR__TopLevelDomain__c</name>
+    </fields>
+    <fields>
+        <label><!-- TransmissionResults --></label>
+        <name>MDPERSONATOR__TransmissionResults__c</name>
+    </fields>
+    <fields>
+        <label><!-- UTC --></label>
+        <name>MDPERSONATOR__UTC__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnifiedSchoolDistrcitName --></label>
+        <name>MDPERSONATOR__UnifiedSchoolDistrcitName__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnifiedSchoolDistrictCode --></label>
+        <name>MDPERSONATOR__UnifiedSchoolDistrictCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- UrbanizationName --></label>
+        <name>MDPERSONATOR__UrbanizationName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>MDPERSONATOR__Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- contactIdExtID --></label>
+        <name>MDPERSONATOR__contactIdExtID__c</name>
+    </fields>
+</CustomObjectTranslation>

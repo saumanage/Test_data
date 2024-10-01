@@ -1,0 +1,89 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_batchProcess ]  
+     
+     purpose            : a custom VisualForce page which allows the user to configure a batch job
+
+     date created       : 1/26/2015
+     version            : 1.5
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+
+<apex:page controller="MDPERSONATOR.MD_BatchProcessExt" readOnly="false" tabStyle="Batch_Process__tab">
+    <script src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"/>
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        var timeInter =setInterval(function(){iterateObjectMethod()},1000);
+ 
+        function iterateObjectMethod(){
+            getObjectList();
+            var iterationDone = j$("#isIterationDoneDiv").text();
+            if(iterationDone  == 'Yes'){
+                j$("#isIterationDoneDiv").hide();
+                clearInterval(timeInter);
+            }
+        }        
+    </script>
+ 
+    <apex:actionStatus startText="[ starting job... ]" stopText="" id="save-status" layout="block" startStyle="color:green;font-weight:bold; text-alight:right;" stopStyle="color:black; font-weight:bold; text-align:right" title="Status when saving your application settings" />
+    <apex:actionStatus startText="[ aborting jobs... ]" stopText="" id="abort-status" layout="block" startStyle="color:green;font-weight:bold; text-alight:right;" stopStyle="color:black; font-weight:bold; text-align:right" title="Status when aborting jobs" />
+    <apex:actionStatus startText="[ clearing jobs... ]" stopText="" id="clear-status" layout="block" startStyle="color:green;font-weight:bold; text-alight:right;" stopStyle="color:black; font-weight:bold; text-align:right" title="Status when clearing jobs" />
+ 
+ 
+    <apex:form >
+        <apex:actionFunction action="{!ObjectList}" status="myStatus" name="getObjectList" reRender="selectBlock,fieldsBlock,outputBlock" />
+
+        <apex:sectionheader title="Batch Process" subtitle="Create a new batch job"/>
+        <font color="red"><b>Warning: </b> Double check all your settings under Administration and Advanced Mappings before starting a batch job. Make a backup of your data if necessary. Doing a batch run within Salesforce with the <b>Record Update</b> option set to <b>On</b> will overwrite your data! Also, if you've already have processed records from an earlier batch run, please select <b>Process only unvalidated records</b> to process only records that have not been standardized and verified. To cancel all running jobs click on Abort or Clear all jobs.</font><br/><br/>
+        
+        <font color="green"><b>
+        <apex:actionStatus id="myStatus" startText="Please wait, fetching list of objects..." stopText=""/>
+        </b></font>
+        
+        <apex:panelGrid columns="2" width="100%">
+        
+            <apex:panelGrid columns="1" width="100%">
+                
+		        <apex:pageBlock id="selectBlock" title="1) Select Object Type">
+		            <apex:selectList label="Salesforce Objects" value="{!objectSelected}" size="1" multiselect="false">
+		                <apex:selectOptions value="{!items}"/>
+		                <apex:actionSupport event="onchange" rerender="fieldsBlock,outputBlock"/>
+		            </apex:selectList>
+		            <div id="isIterationDoneDiv" style="display: none;">{!isIterationDone}</div>
+		        </apex:pageBlock>
+		        
+		        <apex:pageBlock id="batchBlock" title="2) Batch Options">
+		        	<apex:pageBlockSection title="Job Settings" columns="2" collapsible="false" rendered="true">
+		        		<apex:outputText value="Pick Service (Personator for US/CA, Global for international): "/>
+		        		<apex:selectRadio value="{!savedServiceOpt}">
+		        		    <apex:selectOptions value="{!serviceItems}"/>
+		        		</apex:selectRadio>
+		        		
+		        		<apex:outputText value="Record Update (if On Listware will overwrite original data): "/>
+		        		<apex:selectRadio value="{!savedUpdateOpt}">
+		        			<apex:selectOptions value="{!updateOptItems}"/>
+		        		</apex:selectRadio>
+		        		
+		        		<apex:outputText value="Batch Settings (process all or only unprocessed): "></apex:outputText>
+		        		<apex:selectRadio value="{!savedBatchOpt}">
+		        			<apex:selectOptions value="{!processOptItems}"/>
+		        		</apex:selectRadio>
+		        	</apex:pageBlockSection>
+		        </apex:pageBlock>
+            </apex:panelGrid>
+            
+        </apex:panelGrid>
+        
+        <center>
+            <apex:commandButton action="{!doStartJob}" rerender="jobs,error" value="Start job" status="save-status" /><br/><br/>
+            <apex:commandButton action="{!abortJobs}" rerender="jobs,error" value="Abort jobs" status="abort-status"/>&nbsp;&nbsp;&nbsp;<apex:commandButton action="{!clearJobs}" rerender="jobs,error" value="Clear all jobs" status="clear-status"/><br/><br/>
+            <apex:outputText id="error" value="{!error}" style="font-weight: bold; color: red" />
+        </center>
+        
+     	<br/>
+        <c:MD_batchJobsComponent id="jobs" numberOfJobsTest="20"/>
+    </apex:form>
+    
+</apex:page>

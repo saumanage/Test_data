@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Acura</fullName>
+        <default>false</default>
+        <label>Acura</label>
+    </customValue>
+    <customValue>
+        <fullName>Engine</fullName>
+        <default>false</default>
+        <label>Engine</label>
+    </customValue>
+    <customValue>
+        <fullName>Honda</fullName>
+        <default>false</default>
+        <label>Honda</label>
+    </customValue>
+    <customValue>
+        <fullName>Marine</fullName>
+        <default>false</default>
+        <label>Marine</label>
+    </customValue>
+    <customValue>
+        <fullName>Motorcycle</fullName>
+        <default>false</default>
+        <label>Motorcycle</label>
+    </customValue>
+    <customValue>
+        <fullName>PowerEquipment</fullName>
+        <default>false</default>
+        <label>Power Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>NSX</fullName>
+        <default>false</default>
+        <label>NSX</label>
+    </customValue>
+    <customValue>
+        <fullName>HRC</fullName>
+        <default>false</default>
+        <label>HRC</label>
+    </customValue>
+    <masterLabel>Subdivision</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

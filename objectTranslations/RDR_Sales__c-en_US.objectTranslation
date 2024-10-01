@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RDR Sales</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RDR Sales</value>
+    </caseValues>
+    <fields>
+        <label><!-- AHM Bill of Lading Identification --></label>
+        <name>AHM_Bill_of_Lading_Identification_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accessory Inst --></label>
+        <name>Accessory_Inst_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accessory --></label>
+        <name>Accessory_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Arrival Date --></label>
+        <name>Arrival_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto VIN Status Code --></label>
+        <name>Auto_VIN_Status_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Warranty End Date --></label>
+        <name>Base_Warranty_End_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- CUST-TYP-CD --></label>
+        <name>CUST_TYP_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Number --></label>
+        <name>Carrier_Number_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Address --></label>
+        <name>Customer_Address_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Address ZIP Code --></label>
+        <name>Customer_Address_ZIP_Code_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Cellphone Number --></label>
+        <name>Customer_Cellphone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer City --></label>
+        <name>Customer_City_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer First Name --></label>
+        <name>Customer_First_Name_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Home Phone Number --></label>
+        <name>Customer_Home_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Last Name --></label>
+        <name>Customer_Last_Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer MI Code --></label>
+        <name>Customer_MI_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>Customer_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Street Address --></label>
+        <name>Customer_Street_Address_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Number --></label>
+        <name>Dealer_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Order Invoice Number --></label>
+        <name>Dealer_Order_Invoice_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Date --></label>
+        <name>Delivery_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Date --></label>
+        <name>Demo_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email id --></label>
+        <name>Email_id_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engine Identification --></label>
+        <name>Engine_Identification_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ext Warranty --></label>
+        <name>Ext_Warranty_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filler --></label>
+        <name>Filler_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Intransit Shipment Number --></label>
+        <name>Intransit_Shipment_Number_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Date --></label>
+        <name>Invoice_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invt Flag --></label>
+        <name>Invt_Flag_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsToDelete --></label>
+        <name>IsToDelete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox_ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Model Year --></label>
+        <name>Legacy_Model_Year_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location code --></label>
+        <name>Location_code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Code --></label>
+        <name>Manufacturer_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mfg PS Code --></label>
+        <name>Mfg_PS_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Miles at Retail --></label>
+        <name>Miles_at_Retail_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Id --></label>
+        <name>Model_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Name Code --></label>
+        <name>Model_Name_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Dealer Number From Buy Sell --></label>
+        <name>New_Dealer_Number_From_Buy_Sell__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Status Code --></label>
+        <name>Owner_Status_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Address --></label>
+        <name>Primary_Driver_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Cellphone Number --></label>
+        <name>Primary_Driver_Cellphone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver City Name --></label>
+        <name>Primary_Driver_City_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Email --></label>
+        <name>Primary_Driver_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver First Name --></label>
+        <name>Primary_Driver_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Home Phone Number --></label>
+        <name>Primary_Driver_Home_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Last Name --></label>
+        <name>Primary_Driver_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Middle Name --></label>
+        <name>Primary_Driver_Middle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Phone Number --></label>
+        <name>Primary_Driver_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver State Name --></label>
+        <name>Primary_Driver_State_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Title Code --></label>
+        <name>Primary_Driver_Title_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Driver Zip Code --></label>
+        <name>Primary_Driver_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Identifier --></label>
+        <name>Product_Identifier_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Use Code --></label>
+        <name>Product_Use_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product code/line --></label>
+        <name>Product_codeline_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- RDR Sales Identifier --></label>
+        <name>RDR_Sales_Identifier_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- RDR Sold Model --></label>
+        <name>RDR_Sold_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- RDR Transation Date --></label>
+        <name>RDR_Transation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>Reason_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Sales Date --></label>
+        <name>Retail_Sales_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Sales Type Code --></label>
+        <name>Retail_Sales_Type_Code__c</name>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O</masterLabel>
+            <translation><!-- O --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R</masterLabel>
+            <translation><!-- R --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Date --></label>
+        <name>Sales_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial Number --></label>
+        <name>Serial_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Date --></label>
+        <name>Shipping_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sold Model Processed --></label>
+        <name>Sold_Model_Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Code --></label>
+        <name>State_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>Status_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subdivision --></label>
+        <name>Subdivision_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Telephone Number --></label>
+        <name>Telephone_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timestamp (YYYYMMDDHHMMSS) --></label>
+        <name>Timestamp_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Sales Dealer Number --></label>
+        <name>Unit_Sales_Dealer_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Status Code --></label>
+        <name>Unit_Status_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Warranty MICR Reference Number --></label>
+        <name>Unit_Warranty_MICR_Reference_Number_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated by New MB --></label>
+        <name>Updated_by_New_MB__c</name>
+    </fields>
+    <fields>
+        <label><!-- VIN number prefix identifier --></label>
+        <name>VIN_number_prefix_identifier_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Status --></label>
+        <name>Vehicle_Status__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P</masterLabel>
+            <translation><!-- P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U</masterLabel>
+            <translation><!-- U --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vin --></label>
+        <name>Vin_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warehouse Control Number --></label>
+        <name>Warehouse_Control_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warehouse ID --></label>
+        <name>Warehouse_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Registration Date --></label>
+        <name>Warranty_Registration_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- XPROD-DIV-CD --></label>
+        <name>XPROD_DIV_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- isProcessed --></label>
+        <name>isProcessed__c</name>
+    </fields>
+    <fields>
+        <label><!-- isUnwind --></label>
+        <name>isUnwind__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

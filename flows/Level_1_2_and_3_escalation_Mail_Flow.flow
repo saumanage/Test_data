@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Escalation_Level_1_notification_Mail</name>
+        <label>Escalation Level 1 notification Mail</label>
+        <locationX>936</locationX>
+        <locationY>46</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Level1EmailEscalationTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.PreferredDealerAccount_TXT__r.EscalationEmailLevel1__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Notification for Level 1 Escalation</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Escalation_Level_2_notification_mail</name>
+        <label>Escalation Level 2 notification mail</label>
+        <locationX>796</locationX>
+        <locationY>176</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Level2EmailEscalationTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.PreferredDealerAccount_TXT__r.EscalationEmailLevel2__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Notification for Level 2 Escalation</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>Level_1_or_Level_2_Escalation</name>
+        <label>Level 1 or Level 2 or Level 3 Escalation</label>
+        <locationX>514</locationX>
+        <locationY>50</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Level_1_Escalation_path</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Level_Agreement_TXT__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Level 1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PreferredDealerAccount_TXT__r.EscalationEmailLevel1__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Escalation_Level_1_notification_Mail</targetReference>
+            </connector>
+            <label>Level 1 Escalation path</label>
+        </rules>
+        <rules>
+            <name>Level_2_Escalation_Path</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Level_Agreement_TXT__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Level 2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PreferredDealerAccount_TXT__r.EscalationEmailLevel2__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Escalation_Level_2_notification_mail</targetReference>
+            </connector>
+            <label>Level 2 Escalation Path</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Level 1, 2 and 3 escalation Mail Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Level 1, 2 and 3 escalation Mail Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>46</locationX>
+        <locationY>38</locationY>
+        <connector>
+            <targetReference>Level_1_or_Level_2_Escalation</targetReference>
+        </connector>
+        <filterLogic>(1 AND 3) OR (2 AND 3) OR (4 AND 3)</filterLogic>
+        <filters>
+            <field>Service_Level_Agreement_TXT__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Level 1</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Service_Level_Agreement_TXT__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Level 2</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Service_Level_Agreement_TXT__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Service_Level_Agreement_TXT__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Level 3</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>Level1EmailEscalationTemplate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Greetings,&lt;/p&gt;&lt;p&gt;This email advises that {!$Record.First_Name_TXT__c} {!$Record.Last_Name_TXT__c} requested a quote for a {!$Record.Product_TXT__c}. Follow-up has not been done within {!$Record.Business_Hours_Elasped__c} hours.&lt;/p&gt;&lt;p&gt;Would you please check with {!$Record.Assigned_To_TXT__r.FirstName} {!$Record.Assigned_To_TXT__r.LastName}? If the sales representative has already followed up, please have the sales representative update the opportunity record.&lt;/p&gt;&lt;p&gt;Thank you,&lt;/p&gt;&lt;p&gt;HELMS Support Team&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Level2EmailEscalationTemplate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Greetings,&lt;/p&gt;&lt;p&gt;This email advises that {!$Record.First_Name_TXT__c} {!$Record.Last_Name_TXT__c} requested a quote for a {!$Record.Product_TXT__c}. Follow-up has not been done within {!$Record.Business_Hours_Elasped__c} hours.&lt;/p&gt;&lt;p&gt;Would you please check with &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!$Record.Assigned_To_TXT__r.FirstName} {!$Record.Assigned_To_TXT__r.LastName}&lt;/span&gt;? If the sales representative has already followed up, please have the sales representative update the opportunity record.&lt;/p&gt;&lt;p&gt;Thank you,&lt;/p&gt;&lt;p&gt;HELMS Support Team&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>AccountIdrelatedtotheopptyrecord</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

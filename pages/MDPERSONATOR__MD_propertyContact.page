@@ -1,0 +1,193 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_propertyContact ] 
+     
+     purpose            : a custom VisualForce page which adds the "MD Property Detail" section to the bottom half of the Contact 
+                          Detail page.  This includes the 'Get Property Details' custom button which is how you run the 
+                          application.
+
+     date created       : 2/6/2013
+     version            : 1.5
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+<apex:page StandardController="Contact" extensions="MDPERSONATOR.MD_PropertyWSExt" showHeader="true" tabStyle="Contact"> 
+    <apex:outputPanel id="detailContainer">
+        <apex:detail id="detailView" subject="{!Contact}" relatedList="false"/>
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="messagePanel">
+        <apex:pageMessages id="pMessages" rendered="true" showDetail="true" />
+    </apex:outputPanel>
+    
+    <apex:form >
+    
+    <p></p>
+
+    <style>
+         p {color: #FFFFFF; background-image:none; height: 7.5px;}
+        .linkText {font-weight:bold;}
+        .msgText {font-weight:bold;}
+        .propResponse {color: #000000; background-image:none}
+        .propTitle {color: #0066CC; font-size: x-large; font-weight: bold; font-style: italic}       
+    </style>
+    
+    <apex:pageBlock mode="maindetail">
+
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!doVerifyParams}" value="Get Property Details" status="status" rerender="currentOwnerTable, currentOwnerAddressTable, currentCurrentDeedTable, 
+            currentCurrentSaleTable, currentPriorSaleTable, currentValuesTable, currentParcelTable, currentBuildingTable, currentLotTable, currentSquareFootageTable, currentPropertyAddressTable, 
+            currentParsedPropertyAddressTable, currentResultTable, currentResponseResultTable, getCustomerIDLink, responseTable, currentDateHeader" />
+        </apex:pageBlockButtons>
+                
+        <apex:outputPanel styleClass="propTitle">
+            <apex:image url="{!$Resource.MDPERSONATOR__MD_propertyIcon}" width="47" height="47"/>
+
+            Property
+        </apex:outputPanel>
+                    
+        <apex:pageBlockSection title="" columns="2">
+                           
+            <apex:pageBlockTable value="{!savedResult}" var="a" id="savedResultTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Result" value="{!a}"></apex:column>
+                <apex:column headerValue="Last Updated : {!lastModifiedDate}" value="{!savedResult[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <!-- <apex:pageBlockTable value="{!currentResult}" var="b" id="currentResultTable" columns="{!columnValue}" columnsWidth="{!columnWidthValue}"> -->
+            <apex:pageBlockTable value="{!currentResult}" var="b" id="currentResultTable" columns="{!IF(NOT(renderedValue), '2', columnValue)}" columnsWidth="{!IF(NOT(renderedValue), '40%, 60%', columnWidthValue)}">
+                <apex:column headerValue="Result" value="{!b}"></apex:column>
+                <apex:column headerValue="Current Date : {!currentDate}" value="{!currentResult[b]}" id="currentDateHeader"></apex:column>
+                <apex:column rendered="{!renderedValue}" styleClass="msgText">
+                    <!-- <a href="http://www.melissadata.com/free-trials/salesforce.htm" target="_blank">Get a Customer ID</a> -->
+         
+                    Your license string is invalid.&nbsp;&nbsp;Register now and&nbsp;
+                    <apex:outputLink value="http://www.melissadata.com/free-trials/salesforce.htm" target="_blank" id="getCustomerIDLink" styleClass="linkText" rendered="{!renderedValue}">get a valid license string with free credits.</apex:outputLink>                   
+                </apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedOwner}" var="a" id="savedOwnerTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Owner" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedOwner[a]}" id="savedDate"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentOwner}" var="b" id="currentOwnerTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Owner" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentOwner[b]}" id="currentDate"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedOwnerAddress}" var="a" id="savedOwnerAddressTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Owner Address" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedOwnerAddress[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentOwnerAddress}" var="b" id="currentOwnerAddressTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Owner Address" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentOwnerAddress[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedCurrentDeed}" var="a" id="savedCurrentDeedTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Current Deed" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedCurrentDeed[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentCurrentDeed}" var="b" id="currentCurrentDeedTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Current Deed" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentCurrentDeed[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedCurrentSale}" var="a" id="savedCurrentSaleTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Current Sale" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedCurrentSale[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentCurrentSale}" var="b" id="currentCurrentSaleTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Current Sale" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentCurrentSale[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedPriorSale}" var="a" id="savedPriorSaleTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Prior Sale" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedPriorSale[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentPriorSale}" var="b" id="currentPriorSaleTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Prior Sale" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentPriorSale[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedValues}" var="a" id="savedValuesTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Values" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedValues[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentValues}" var="b" id="currentValuesTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Values" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentValues[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedParcel}" var="a" id="savedParcelTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Parcel" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedParcel[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentParcel}" var="b" id="currentParcelTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Parcel" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentParcel[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedBuilding}" var="a" id="savedBuildingTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Building" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedBuilding[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentBuilding}" var="b" id="currentBuildingTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Building" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentBuilding[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedLot}" var="a" id="savedLotTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Lot" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedLot[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentLot}" var="b" id="currentLotTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Lot" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentLot[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedSquareFootage}" var="a" id="savedSquareFootageTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Square Footage" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedSquareFootage[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentSquareFootage}" var="b" id="currentSquareFootageTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Square Footage" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentSquareFootage[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedPropertyAddress}" var="a" id="savedPropertyAddressTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Property Address" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedPropertyAddress[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentPropertyAddress}" var="b" id="currentPropertyAddressTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Property Address" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentPropertyAddress[b]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!savedParsedPropertyAddress}" var="a" id="savedParsedPropertyAddressTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Parsed Property Address" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedParsedPropertyAddress[a]}"></apex:column>
+            </apex:pageBlockTable>
+
+            <apex:pageBlockTable value="{!currentParsedPropertyAddress}" var="b" id="currentParsedPropertyAddressTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Parsed Property Address" value="{!b}"></apex:column>
+                <apex:column headerValue="" value="{!currentParsedPropertyAddress[b]}"></apex:column>
+            </apex:pageBlockTable>
+        
+        </apex:pageBlockSection>
+            
+    </apex:pageBlock>
+    
+    </apex:form>                
+    
+</apex:page>

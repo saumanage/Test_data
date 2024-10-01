@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bypass Automations</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bypass Automations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bypass Apex Class --></label>
+        <name>BypassApexClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bypass Process Builder --></label>
+        <name>BypassProcessBuilder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bypass Trigger --></label>
+        <name>BypassTrigger__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bypass Validation Rule --></label>
+        <name>BypassValidationRule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bypass Workflow Rule --></label>
+        <name>BypassWorkflowRule__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,26 @@
+<!--
+
+  This page is shown when the file scanning is complete and no
+  malicious or dangerous content is found.
+
+  Copyright (c) 2016 F-Secure Corporation. All rights reserved.
+
+-->
+
+<apex:page sidebar="false" controller="AFSC.FS_ScanCompletePageController" title="{!$Label.afsc__fs_statusscancompleteheader}" lightningStylesheets="true" showHeader="false">
+
+
+<script type="text/javascript">
+    window.onload = function() {
+
+        showBack();
+        showClose();
+        // refresh the page in 1 sec after load
+        self.setTimeout(function(){window.open('{!JSINHTMLENCODE(DownloadUrl)}', "_self")}, 500);
+    }
+
+</script>
+
+<c:ScanResultInfo state="ok" header="{!$Label.afsc__fs_statusscancompleteheader}" subHeader="" standardText="{!$Label.afsc__fs_statuscontent1success}" customText="{!$Label.afsc__fs_statuscontent2clickhere}" link="true" />
+
+</apex:page>

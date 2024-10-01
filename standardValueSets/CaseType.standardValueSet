@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>CRM Switch</fullName>
+        <default>false</default>
+        <label>CRM Switch</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New CRM Vendor</fullName>
+        <default>false</default>
+        <label>New CRM Vendor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New Dealer CRM</fullName>
+        <default>false</default>
+        <label>New Dealer–Certified CRM selection</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer Leads to New CRM</fullName>
+        <default>false</default>
+        <label>Transfer Leads to New CRM</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Routing Disposition Failure</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Routing Disposition Failure</value>
+    </caseValues>
+    <fields>
+        <label><!-- Log --></label>
+        <name>Log__c</name>
+        <relationshipLabel><!-- Routing Disposition Failure --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity SF Ids --></label>
+        <name>Opportunity_SF_Ids__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payload --></label>
+        <name>Payload__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

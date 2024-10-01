@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Batch Id --></label>
+        <name>cwbtool__Batch_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Export to Excel --></label>
+        <name>cwbtool__Export_to_Excel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Failed --></label>
+        <name>cwbtool__Failed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Multi Org --></label>
+        <name>cwbtool__IsMultiOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Job Failed --></label>
+        <name>cwbtool__Parent_Job_Failed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected Profile --></label>
+        <name>cwbtool__SelectedProfile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Org --></label>
+        <name>cwbtool__SourceOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>cwbtool__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Org --></label>
+        <name>cwbtool__TargetOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Batch --></label>
+        <name>cwbtool__Total_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total_Completed_Batch --></label>
+        <name>cwbtool__Total_Completed_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total_Failed_Batch --></label>
+        <name>cwbtool__Total_Failed_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total_Job_Item --></label>
+        <name>cwbtool__Total_Job_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Parent Batch --></label>
+        <name>cwbtool__Total_Parent_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total_Process_Batch --></label>
+        <name>cwbtool__Total_Process_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Comparison Detail --></label>
+        <name>cwbtool__View_Comparison_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Job Status --></label>
+        <name>cwbtool__View_Job_Status__c</name>
+    </fields>
+</CustomObjectTranslation>

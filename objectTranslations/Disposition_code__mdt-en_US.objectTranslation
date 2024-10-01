@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Disposition_code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Disposition code</value>
+    </caseValues>
+    <fields>
+        <label><!-- Oppty Stage --></label>
+        <name>Oppty_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oppty Status --></label>
+        <name>Oppty_Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

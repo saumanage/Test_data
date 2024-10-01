@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Oh Acura of Temecula Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Oh Acura of Temecula Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>OhAcuraofTemeculaPartnerManager</parentRole>
+</Role>

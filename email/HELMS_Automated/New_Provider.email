@@ -1,0 +1,12 @@
+Greetings,
+
+The following lead provider has been whitelisted by HELMS.
+Please proceed to whitelist this provider in your system as well.
+Lead Provider Name: {!Account.Name}
+Start Date/Trigger Date: {!Account.Start_Date__c}
+End Date: {!Account.End_Date__c}
+
+Thank you,
+HELMS Support Team
+
+This message was sent from an unmonitored email address. Please do not reply to this message.

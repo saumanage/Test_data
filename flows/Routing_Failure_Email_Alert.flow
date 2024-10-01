@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Email notification for routing failure and backside connection error.</description>
+        <name>Email_Alert_for_Routing_Failure</name>
+        <label>Email Alert for Routing Failure</label>
+        <locationX>516</locationX>
+        <locationY>386</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>RoutingFailureEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Label.Routing_Failure_Email_Alert_From_Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>yourhonda@ebizmail.honda.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Routing Failure Details</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Checking_Bypass_Automation</name>
+        <label>Checking Bypass Automation</label>
+        <locationX>713</locationX>
+        <locationY>244</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Bypass_Aytomation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Alert_for_Routing_Failure</targetReference>
+            </connector>
+            <label>Bypass Aytomation</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Routing Failure Email Alert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Routing Failure Email Alert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>183</locationX>
+        <locationY>40</locationY>
+        <connector>
+            <targetReference>Checking_Bypass_Automation</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Routing_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Failure</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Routing_Status_Message__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>6 - Integration Not Available</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Routing_Error__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Failed to establish a backside connection</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>RoutingFailureEmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Please find the below details for routing failure:
+
+ Opportunity ID- {!$Record.Id}
+ Opportunity Sfid-{!$Record.Opportunity_SF_ID__c}
+ Created Date/Time-{!$Record.Created_Date_DT__c}
+ Routed Date/Time-{!$Record.RoutedDateTime__c}
+ Opportunity Name- {!$Record.Name}
+ Routing Status- {!$Record.Routing_Status__c}
+ CRM Response Message- {!$Record.Routing_Status_Message__c}
+ Routing Error-
+ {!$Record.Routing_Error__c}</text>
+    </textTemplates>
+</Flow>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- API Name --></label>
+        <name>privacycenter__API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>privacycenter__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Archive Value --></label>
+        <name>privacycenter__Archive_Value__c</name>
+        <picklistValues>
+            <masterLabel>archive</masterLabel>
+            <translation><!-- archive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>delete</masterLabel>
+            <translation><!-- delete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Batch Data --></label>
+        <name>privacycenter__Batch_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Object --></label>
+        <name>privacycenter__Child_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom --></label>
+        <name>privacycenter__Custom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Policy --></label>
+        <name>privacycenter__Data_Policy__c</name>
+        <relationshipLabel><!-- Data Objects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Filter Enabled --></label>
+        <name>privacycenter__Filter_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hard Delete --></label>
+        <name>privacycenter__Hard_Delete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Prepped Date --></label>
+        <name>privacycenter__Last_Prepped_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Object --></label>
+        <name>privacycenter__Master_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Fields --></label>
+        <name>privacycenter__Number_of_Fields__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Object API Name --></label>
+        <name>privacycenter__Parent_Object_API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Object ID --></label>
+        <name>privacycenter__Parent_Object_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Raw Filter Data --></label>
+        <name>privacycenter__Raw_Filter_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Caching --></label>
+        <name>privacycenter__Record_Caching__c</name>
+        <picklistValues>
+            <masterLabel>Cache Original</masterLabel>
+            <translation><!-- Cache Original --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cache Transformation</masterLabel>
+            <translation><!-- Cache Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Cache</masterLabel>
+            <translation><!-- No Cache --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Record Count --></label>
+        <name>privacycenter__Record_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Retention --></label>
+        <name>privacycenter__Record_Retention__c</name>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transform</masterLabel>
+            <translation><!-- Transform --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Run In Poly --></label>
+        <name>privacycenter__Run_In_Poly__c</name>
+    </fields>
+    <fields>
+        <label><!-- Run In Serial --></label>
+        <name>privacycenter__Run_In_Serial__c</name>
+    </fields>
+    <fields>
+        <label><!-- Where Criteria SOQL LT --></label>
+        <name>privacycenter__Where_Criteria_LT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Where Criteria PG Cache LT --></label>
+        <name>privacycenter__Where_Criteria_PG_Cache_LT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Where Criteria PG Cache --></label>
+        <name>privacycenter__Where_Criteria_PG_Cache__c</name>
+    </fields>
+    <fields>
+        <label><!-- Where Criteria PG Salesforce LT --></label>
+        <name>privacycenter__Where_Criteria_PG_LT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Where Criteria PG Salesforce --></label>
+        <name>privacycenter__Where_Criteria_PG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Where Criteria SOQL --></label>
+        <name>privacycenter__Where_Criteria__c</name>
+    </fields>
+</CustomObjectTranslation>

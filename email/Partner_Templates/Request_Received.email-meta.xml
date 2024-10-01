@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>Request Received</name>
+    <style>formalLetter</style>
+    <subject>Request Received</subject>
+    <textOnly>Dear {!Opportunity.Name},
+
+Thank you for your interest in the {!Opportunity.Product_TXT__c} quote that you requested.  To ensure you receive our most competitive price, I am checking your request against our available inventory.
+
+We will contact you shortly to confirm the specifications, availability and price of this Product, and to make sure it is exactly what you want.
+
+Thanks for your interest.  I look forward to speaking with you soon!
+
+Sincerely,
+{!User.Name}
+{!Opportunity.PreferredDealerAccount_TXT__c}
+{!User.Phone}
+{!User.Email}
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Events</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Find Events</actionButtonLabel>
+        <actionButtonLink>https://pages.mail.salesforce.com/cloud-services/event-calendar#&amp;product=.SalesCloud&amp;date=.1Month&amp;category=.GettingStarted</actionButtonLink>
+        <body>Events are always available for you to join to learn best practices and connect with Sales Cloud experts.</body>
+        <customApplication>standard__LightningSales</customApplication>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Events</masterLabel>
+        <publishedDate>2019-08-14</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2019-10-28</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Join Events to Get Best Practices</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Assign this Permission set group to Dealer Internet / Retail Sales persona user</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Dealer Internet OR Retail Sales</label>
+    <permissionSets>Assign_Group_Access</permissionSets>
+    <permissionSets>CRM_System_Read</permissionSets>
+    <permissionSets>HELMS_Dealer_Notification_Preference_Management</permissionSets>
+    <permissionSets>HELMS_Dealer_User</permissionSets>
+    <permissionSets>HELMS_Opportunity_Creation</permissionSets>
+    <permissionSets>HELMS_Opportunity_Edit</permissionSets>
+    <permissionSets>HELMS_Opportunity_Offers_Read</permissionSets>
+    <permissionSets>Quote_Create_and_Edit</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

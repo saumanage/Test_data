@@ -1,0 +1,292 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_stats ]  
+     
+     purpose            : A VisualForce page which displays the results of the processing
+
+     date created       : 10/12/2015
+     version            : 1.0
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+
+<apex:page controller="MDPERSONATOR.MD_Stats">
+    <head>
+    
+    <apex:includescript value="//code.jquery.com/jquery-1.11.1.min.js" / >
+    <apex:includescript value="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js" />
+    <apex:stylesheet value="//cdn.datatables.net/1.10.9/css/jquery.dataTables.css" />
+    
+    <style>
+        tfoot input {
+          width: 100%;
+        }
+    </style>
+    <script>        
+        j$ = jQuery.noConflict();
+        
+        window.onload=function() {
+            cleanup();
+        };
+        
+        function setupTable() {
+            j$('[id$="personatorTable"] tfoot th').each( function () {
+                var title = j$('[id$="personatorTable"] thead th').eq( j$(this).index() ).text();
+                j$(this).html( '<input type="text" placeholder="'+title+'" />' );
+            } );
+                                               
+            var persTable = j$('[id$="personatorTable"]').DataTable( {
+                "processing": true,
+                "serverSide": true,
+                "ajax": "/apex/MD_dataHelper?core.apexpages.devmode.url=0&tableType=personator",
+                "columns": [
+                    { "data": "MDPERSONATOR__contactIdExtID__c", "render": function ( data, type, row ) { return '<a href="/' + data + '" target="_blank">' + data + '</a>'; }, "defaultContent": '' },
+                    { "data": "MDPERSONATOR__FullName__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__AddressLine1__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__AddressLine2__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__City__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__State__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__PostalCode__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__CountryCode__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__EmailAddress__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__PhoneNumber__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Results__c", "defaultContent": '' }   
+                ]
+            } );
+            
+            persTable.columns().every( function () {
+                var that = this;
+         
+                j$( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+            
+            // global
+            j$('[id$="globalTable"] tfoot th').each( function () {
+                var title = j$('[id$="globalTable"] thead th').eq( j$(this).index() ).text();
+                j$(this).html( '<input type="text" placeholder="'+title+'" />' );
+            } );
+                                            
+            var globalTable = j$('[id$="globalTable"]').DataTable( {
+                "processing": true,
+                "serverSide": true,
+                "ajax": "/apex/MD_dataHelper?core.apexpages.devmode.url=0&tableType=global",
+                "columns": [
+                    { "data": "MDPERSONATOR__contactIdExtID__c", "render": function ( data, type, row ) { return '<a href="/' + data + '" target="_blank">' + data + '</a>'; }, "defaultContent": '' },
+                    { "data": "MDPERSONATOR__NameFirst__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__NameLast__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__AddressLine1__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Locality__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__AdministrativeArea__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__PostalCode__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__CountryName__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__EmailAddress__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__PhoneNumber__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Results__c", "defaultContent": '' }   
+                ]
+            } );
+            
+            globalTable.columns().every( function () {
+                var that = this;
+         
+                j$( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+            
+            // matchup
+            j$('[id$="matchupTable"] tfoot th').each( function () {
+                var title = j$('[id$="matchupTable"] thead th').eq( j$(this).index() ).text();
+                j$(this).html( '<input type="text" placeholder="'+title+'" />' );
+            } );
+            
+			var getObjectType = function() {
+				return j$('[id$=\"matchupObject\"]').val();
+			}
+			
+            var matchupTable = j$('[id$="matchupTable"]').DataTable( {
+            	"sDom": 'tpir',
+                "processing": true,
+                "serverSide": true,
+                // "ajax": "/apex/MD_dataHelper?core.apexpages.devmode.url=0&tableType=matchup&objType=" + getObjectType(),
+                "ajax": {
+                	url: "/apex/MD_dataHelper?core.apexpages.devmode.url=0&tableType=matchup",
+                	type: "GET",
+                	data: function(d) {
+                		d.objType = j$('[id$=\"matchupObject\"]').val();
+                	}
+                },
+                "columns": [
+                    { "data": "Id", "render": function ( data, type, row ) { return '<a href="/' + data + '" target="_blank">' + data + '</a>'; }, "defaultContent": '' },
+                    { "data": "MDPERSONATOR__FirstName__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__LastName__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Company__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Street__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__City__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__State__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__PostalCode__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Phone__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Email__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__DupeGroup__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__DupeCount__c", "defaultContent": '' },
+                    { "data": "MDPERSONATOR__Results__c", "defaultContent": '' }
+                ]
+            } );
+            
+            matchupTable.columns().every( function () {
+                var that = this;
+         
+                j$( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+            
+            j$('[id$="matchupObject"]').change(function() {
+            	matchupTable.draw();
+           	});
+           	
+        }
+    </script>
+    </head>
+    
+    <apex:form >
+    	<apex:actionFunction name="cleanup" action="{!doCleanup}" rerender="resultsPanel" oncomplete="setupTable();"/>
+        <apex:sectionheader title="Results" subtitle="Summary"/>
+        
+        <b>Results Code Meanings</b>
+        <ul id="resultCodeLinks">
+		    <li><a href="http://wiki.melissadata.com/index.php?title=Result_Code_Details#Personator" target="_blank">Personator</a></li>
+		    <li><a href="http://wiki.melissadata.com/index.php?title=Result_Code_Details#Listware_for_Salesforce" target="_blank">International - Global</a></li>
+		    <li><a href="http://wiki.melissadata.com/index.php?title=Result_Code_Details#MatchUp_Object" target="_blank">MatchUp</a></li>
+		</ul>
+        
+        <apex:tabPanel switchType="client" selectedTab="personatorTab" id="resultsPanel">
+            <apex:tab label="USA/CAN (Personator)" name="personator" id="personatorTab">
+                 <table id="personatorTable" class="display" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                          <th>Salesforce Record</th>
+                          <th>Name</th>
+                          <th>Address Line 1</th>
+                          <th>Address Line 2</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>Postal Code</th>
+                          <th>Country</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Results</th>
+                      </tr>
+                  </thead>
+                  <tfoot>
+                     <tr>
+                          <th>Salesforce Record</th>
+                          <th>Name</th>
+                          <th>Address Line 1</th>
+                          <th>Address Line 2</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>Postal Code</th>
+                          <th>Country</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Results</th>
+                     </tr>
+                    </tfoot>
+                </table>
+            </apex:tab>
+            
+            <apex:tab label="International (Global Verify)" name="global" id="globalTab">
+               <table id="globalTable" class="display" cellspacing="0" width="100%">
+                   <thead>
+                       <tr>
+                           <th>Salesforce Record</th>
+                           <th>First Name</th>
+                           <th>Last Name</th>
+                           <th>Address</th>
+                           <th>Locality (City)</th>
+                           <th>Administrative Area (State)</th>
+                           <th>Postal Code</th>
+                           <th>Country</th>
+                           <th>Email</th>
+                           <th>Phone</th>
+                           <th>Results</th>
+                       </tr>
+                   </thead>
+                   <tfoot>
+                       <tr>
+                           <th>Salesforce Record</th>
+                           <th>First Name</th>
+                           <th>Last Name</th>
+                           <th>Address</th>
+                           <th>Locality (City)</th>
+                           <th>Administrative Area (State)</th>
+                           <th>Postal Code</th>
+                           <th>Country</th>
+                           <th>Email</th>
+                           <th>Phone</th>
+                           <th>Results</th>
+                       </tr>
+                   </tfoot>
+               </table>
+             </apex:tab>
+             
+             <apex:tab label="MatchUp" name="matchup" id="matchupTab">
+             	<select id="matchupObject">
+             		<option value="Contact">Contact</option>
+             		<option value="Account">Account</option>
+             		<option value="Lead">Lead</option>
+             	</select>
+             	<p/>
+             	<table id="matchupTable" class="display" cellspacing="0" width="100%">
+             		<thead>
+             			<tr>
+                          <th>Salesforce Record</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Company</th>
+                          <th>Street</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>Postal Code</th>
+                          <th>Phone</th>
+                          <th>Email</th>
+                          <th>Dupe Group</th>
+                          <th>Dupe Count</th>
+                          <th>MatchUp Results</th>
+                      </tr>
+             		</thead>
+             		<tfoot>
+             			<tr>
+             			  <th>Salesforce Record</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Company</th>
+                          <th>Street</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>Postal Code</th>
+                          <th>Phone</th>
+                          <th>Email</th>
+                          <th>Dupe Group</th>
+                          <th>Dupe Count</th>
+                          <th>MatchUp Results</th>
+                        </tr>
+             		</tfoot>
+             	</table>
+             </apex:tab>
+        </apex:tabPanel>
+    </apex:form>
+</apex:page>

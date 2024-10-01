@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>수동 검사 설정</value>
+    </caseValues>
+    <fields>
+        <label><!-- Settings --></label>
+        <name>AFSC__Settings__c</name>
+    </fields>
+    <nameFieldLabel>
+</nameFieldLabel>
+</CustomObjectTranslation>

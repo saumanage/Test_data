@@ -1,0 +1,26 @@
+<messaging:emailTemplate subject="Confirmation of Your Quote Request" recipientType="User" relatedToType="Lead">
+<messaging:plainTextEmailBody >
+Thank you for submitting a quote request for your {!relatedTo.Model_TXT__c}{!relatedTo.Model_ID__c}. Your request has been submitted to your selected {!relatedTo.SubDiv_TXT__c} Dealer who should respond to your quote request shortly.
+
+The information you have submitted follows:
+
+PRODUCT
+
+Model/Trim/Transmission: {!relatedTo.Model_TXT__c}{!relatedTo.Model_ID__c}
+
+DEALER INFORMATION:
+
+Dealer Name: {!relatedTo.PreferredDealerAccount_ID__r.Name}
+
+Address: {!relatedTo.Dealer_Address_TXT__c}
+
+Phone Number: ({! LEFT(relatedTo.Dealer_NUM_TXT__c , 3) }) {! LEFT(RIGHT(relatedTo.Dealer_NUM_TXT__c, 7), 3) }-{! RIGHT(relatedTo.Dealer_NUM_TXT__c, 4) }
+
+Once again, thank you for your interest in purchasing a {!relatedTo.Model_TXT__c}{!relatedTo.Model_ID__c}.
+
+{!relatedTo.SubDiv_TXT__c} Division of American Honda Motor Co., Inc.
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

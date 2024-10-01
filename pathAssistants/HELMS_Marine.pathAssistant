@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>HELMS Marine</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>Acknowledged</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>Assigned to Dealer</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Number_NM__c</fieldNames>
+        <info>&lt;p&gt;&lt;a href=&quot;https://vendortest.in.honda.com&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;Honda Marine | Product Registration&lt;/a&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>In Conversation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>On Hold</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Marine</recordTypeName>
+</PathAssistant>

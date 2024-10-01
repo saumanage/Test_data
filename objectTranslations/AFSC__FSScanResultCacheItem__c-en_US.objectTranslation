@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- File Prevalence --></label>
+        <name>AFSC__File_Prevalence__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Reputation Rating --></label>
+        <name>AFSC__File_Reputation_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infection Name --></label>
+        <name>AFSC__Infection_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scan Result --></label>
+        <name>AFSC__Scan_Result__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sha1 --></label>
+        <name>AFSC__Sha1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verdict --></label>
+        <name>AFSC__Verdict__c</name>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation><!-- Safe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation><!-- Unsafe --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

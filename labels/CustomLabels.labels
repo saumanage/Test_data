@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AccountEmailRecipients</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountEmailRecipients</shortDescription>
+        <value>surabhirastogi1308@gmail.com,surabhi.rastogi@wipro.com</value>
+    </labels>
+    <labels>
+        <fullName>Accountid</fullName>
+        <categories>Being used in UploadFileMock class</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Accountid</shortDescription>
+        <value>514000661</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Error_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Error Type</shortDescription>
+        <value>http api callout</value>
+    </labels>
+    <labels>
+        <fullName>B2B_HDM_Authorization</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B HDM Authorization</shortDescription>
+        <value>Basic c2VydmljZV9iMmNfaGRtX3FhOkVhcnRoIzc0</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Installation_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Installation Code</shortDescription>
+        <value>00005</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Motocompacto_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Motocompacto Code</shortDescription>
+        <value>00014</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Product_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Product Code</shortDescription>
+        <value>00004</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Product_Code_Core_Charges</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B_Product_Code_Core_Charges</shortDescription>
+        <value>Core Charge</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Product_Code_Reman</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B_Product_Code_Reman</shortDescription>
+        <value>Remanufactured Part</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Sales_Tax_Disclaimer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B_Sales_Tax_Disclaimer</shortDescription>
+        <value>** Dealership will be responsible for remitting Sales Tax to the supporting selling states</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Severity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Severity</shortDescription>
+        <value>Critical</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Shipping_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Shipping Code</shortDescription>
+        <value>00006</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Tax_BusinessId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Tax BusinessId</shortDescription>
+        <value>DREAMSHOP</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Tax_SiteId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Tax SiteId</shortDescription>
+        <value>7a075db5b4b04c04afdc0b75fc135a80</value>
+    </labels>
+    <labels>
+        <fullName>B2B_VertexPassword</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B VertexPassword</shortDescription>
+        <value>r@5WXPUh</value>
+    </labels>
+    <labels>
+        <fullName>B2B_VertexUserName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B VertexUserName</shortDescription>
+        <value>dreamshop_test_api</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Vertex_Path_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B Vertex Path URL</shortDescription>
+        <value>/SOAP12/HDM/Vertex/CalculateTax90/1.0/</value>
+    </labels>
+    <labels>
+        <fullName>B2B_restockingfee_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>B2B restockingfee Code</shortDescription>
+        <value>00013</value>
+    </labels>
+    <labels>
+        <fullName>Business_Hours_Class_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Business Hours Class Batch Size</shortDescription>
+        <value>200</value>
+    </labels>
+    <labels>
+        <fullName>Business_Hours_Job_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Business Hours Job Limit</shortDescription>
+        <value>120</value>
+    </labels>
+    <labels>
+        <fullName>Client_Id</fullName>
+        <categories>Being used in UploadFileMock class</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client_Id</shortDescription>
+        <value>gavd7i4f44u7uk4red7u5fli</value>
+    </labels>
+    <labels>
+        <fullName>Closed_Converted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Closed - Converted</shortDescription>
+        <value>Closed - Converted</value>
+    </labels>
+    <labels>
+        <fullName>Closed_Not_Converted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Closed - Not Converted</shortDescription>
+        <value>Closed - Not Converted</value>
+    </labels>
+    <labels>
+        <fullName>Contact_time_anytime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact time-anytime</shortDescription>
+        <value>anytime</value>
+    </labels>
+    <labels>
+        <fullName>Dashboard_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard URL</shortDescription>
+        <value>/analytics/dashboard/0FK7c0000004E29GAE</value>
+    </labels>
+    <labels>
+        <fullName>Data_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Data User</shortDescription>
+        <value>Data User</value>
+    </labels>
+    <labels>
+        <fullName>Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date</shortDescription>
+        <value>2</value>
+    </labels>
+    <labels>
+        <fullName>Dealer_User_Error_Message</fullName>
+        <categories>User</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dealer_User_Error_Message</shortDescription>
+        <value>Dealer Job Code is not matching with SSO_Job_Code_Mapping custom setting recor, So user should not create</value>
+    </labels>
+    <labels>
+        <fullName>EconfigBearerToken</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EconfigBearerToken</shortDescription>
+        <value>bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDbGllbnRBcHBsaWNhdGlvbklEIjoiaGVsbXMuaG9uZGEuY29tIiwiQ2xpZW50RG9tYWluIjoiaGVsbXMuaG9uZGEuY29tIiwiVG9rZW5JRCI6IjE2OTQ2NDEzNDQ2NDIiLCJpc3MiOiJlY29uZmlnLnNlcnZpY2VzLmhvbmRhLmNvbSIsImF1ZCI6InByb2R1Y3Rpb25fZWNvbmZpZzIuc2VydmljZXMuaG9uZGEuY29tIn0.yOmees324kGXJ1GTcRs4CaFHegiFPinc19dTAu50tAw</value>
+    </labels>
+    <labels>
+        <fullName>EconfigClientDomain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EconfigClientDomain</shortDescription>
+        <value>helms.honda.com</value>
+    </labels>
+    <labels>
+        <fullName>EconfigWlAuthorization</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EconfigWlAuthorization</shortDescription>
+        <value>Basic c2VydmljZV9oZWxtc19lY29uZmlnMl9wcm9kOlZhbHVlJDcy</value>
+    </labels>
+    <labels>
+        <fullName>EndpointURL</fullName>
+        <categories>LeadEnrichment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EndpointURL</shortDescription>
+        <value>https://ws-qa4.hondaweb.com/REST/HELMS/LeadEnrichmentService/1.0</value>
+    </labels>
+    <labels>
+        <fullName>HDMSingleSignOnErrorNoAccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HDMSingleSignOnErrorNoAccess</shortDescription>
+        <value>You do not have access to this Dreamshop menu. Please ensure that you have completed your Dreamshop enrollment and that your dealership is activated. If the problem persists, please contact iN Support at (800) 245-4343 to report the issue.</value>
+    </labels>
+    <labels>
+        <fullName>HELMSGeoCodesLocationAPIClass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HELMSGeoCodesLocationAPIClass</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>HELMS_Active_Admin_Users_Recipients</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HELMS Active Admin Users Recipients</shortDescription>
+        <value>talapalle.vinay@wipro.com</value>
+    </labels>
+    <labels>
+        <fullName>HELMS_Close_Lead_Status_Val</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HELMS Close Lead Status Val</shortDescription>
+        <value>Closed - Not Converted</value>
+    </labels>
+    <labels>
+        <fullName>HELMS_Opportunity_Score_Visibility</fullName>
+        <categories>Permissionset</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HELMS_Opportunity_Score_Visibility</shortDescription>
+        <value>HELMS_Opportunity_Score_Visibility</value>
+    </labels>
+    <labels>
+        <fullName>HELMS_Support_team_email_address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HELMS Support team email address</shortDescription>
+        <value>HELMS_Support@na.honda.com,talapalle.vinay@wipro.com,saikiran.siddipeta@wipro.com,grandhi.lavanya@wipro.com</value>
+    </labels>
+    <labels>
+        <fullName>HondaSingleSignOnError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HondaSingleSignOnError</shortDescription>
+        <value>Your dealership is not part of the two month Lead Management Tool Pilot. Lead Management tool enrollment opportunities will be made available to all dealers late summer. More details to come. Please contact your DSM if you have any questions</value>
+    </labels>
+    <labels>
+        <fullName>HondaSingleSignOnErrorEmailRequired</fullName>
+        <categories>SSO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HondaSingleSignOnErrorEmailRequired</shortDescription>
+        <value>Please work with your Administrator to set up a email address for your account. Once email is set-up, please try signing in again</value>
+    </labels>
+    <labels>
+        <fullName>HondaSingleSignOnErrorFullaccess</fullName>
+        <categories>SSO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HondaSingleSignOnErrorFullaccess</shortDescription>
+        <value>Lead Management tool enrollment opportunities will be made available to all dealers soon. Please contact your DSM if you have any questions.</value>
+    </labels>
+    <labels>
+        <fullName>HondaSingleSignOnErrorInternalUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HondaSingleSignOnErrorInternalUser</shortDescription>
+        <value>We can&apos;t log you in because of an issue with single sign-on. Contact your HELMS admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>HondaSingleSignOnErrorOtherError</fullName>
+        <categories>SSO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HondaSingleSignOnErrorOtherError</shortDescription>
+        <value>We are having difficulties logging you in. Please contact iN Support for assistance.</value>
+    </labels>
+    <labels>
+        <fullName>Honda_Marine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Honda Marine</shortDescription>
+        <value>https://marine.honda.com/registration</value>
+    </labels>
+    <labels>
+        <fullName>Incoming_Leads_to_API_Integration</fullName>
+        <categories>HELMSLeadDailyReportNotification</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Incoming Leads to API (Integration)</shortDescription>
+        <value>12</value>
+    </labels>
+    <labels>
+        <fullName>LAST_N_DAYS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last N days for Matchback Process</shortDescription>
+        <value>15</value>
+    </labels>
+    <labels>
+        <fullName>LeadRetryQ4days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LeadRetryQ4days</shortDescription>
+        <value>2</value>
+    </labels>
+    <labels>
+        <fullName>LeadSource</fullName>
+        <categories>Lead Creation PlatformEvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LeadSource</shortDescription>
+        <value>Dealer Website</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Management_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Management URL</shortDescription>
+        <value>https://www.in.honda.com/</value>
+    </labels>
+    <labels>
+        <fullName>Leads_Rejected_Errored</fullName>
+        <categories>HELMSLeadDailyReportNotification</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Leads Rejected/Errored</shortDescription>
+        <value>12</value>
+    </labels>
+    <labels>
+        <fullName>MatchbackDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MatchbackDate</shortDescription>
+        <value>2021-12-04</value>
+    </labels>
+    <labels>
+        <fullName>Matchback_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Matchback Batch Size</shortDescription>
+        <value>20</value>
+    </labels>
+    <labels>
+        <fullName>Matchback_N_Days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Matchback N Days</shortDescription>
+        <value>120</value>
+    </labels>
+    <labels>
+        <fullName>Matchback_Query_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Matchback Query Limit</shortDescription>
+        <value>30000</value>
+    </labels>
+    <labels>
+        <fullName>N_days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last N days for Matchback Process</shortDescription>
+        <value>365</value>
+    </labels>
+    <labels>
+        <fullName>New</fullName>
+        <categories>LeadAutoConvert</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>Note</fullName>
+        <categories>casesupport</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Note</shortDescription>
+        <value>In the spirit of continuous improvement, you can now request support for issues like: Duplicate Leads, Slow Lead Receipt and Not getting Leads by contacting a live support agent. Please call 800-245-4343 for iN Support.
+You can still create HELMS Cases for common request such as: CRM Switch, New CRM Vendor, New Dealer-Certified CRM selection and transfering Leads to a New Certified CRM.</value>
+    </labels>
+    <labels>
+        <fullName>On_Hold</fullName>
+        <categories>LeadAutoConvert</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>On Hold</shortDescription>
+        <value>On Hold</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Score_Visibility_To_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Score Visibility  To User</shortDescription>
+        <value>Opportunity_Score_Visibility</value>
+    </labels>
+    <labels>
+        <fullName>PEProfile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEProfile</shortDescription>
+        <value>System Administrator</value>
+    </labels>
+    <labels>
+        <fullName>PlatformEventUSerProfileName</fullName>
+        <categories>LeadCreationPE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PlatformEventUSerProfileName</shortDescription>
+        <value>User PE</value>
+    </labels>
+    <labels>
+        <fullName>Ready_to_Convert</fullName>
+        <categories>LeadAutoconvert</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ready_to_Convert</shortDescription>
+        <value>Ready_to_Convert</value>
+    </labels>
+    <labels>
+        <fullName>Routing_Failure_Email_Alert_From_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Routing Failure Email Alert From Address</shortDescription>
+        <value>bijay.sahoo1@wipro.com</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Account_Id</fullName>
+        <categories>Being used in the HELMSConstants class</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC_Account_Id</shortDescription>
+        <value>514000662</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Acura_Account_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC_Acura_Account_Id</shortDescription>
+        <value>514000661</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Client_Id</fullName>
+        <categories>Being used in the HELMSConstants class</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC_Client_Id</shortDescription>
+        <value>gavd7i4f44u7uk4red7u5fli</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_Client_Secret</fullName>
+        <categories>Being used in the HELMSConstants class</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC_Client_Secret</shortDescription>
+        <value>Jg3YPFU80nSkdOlIKMUEZGpB</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_PE_Account_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC_PE_Account_Id</shortDescription>
+        <value>514004361</value>
+    </labels>
+    <labels>
+        <fullName>SFMC_PSP_Account_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFMC_PSP_Account_Id</shortDescription>
+        <value>514004360</value>
+    </labels>
+    <labels>
+        <fullName>SMSKeyword</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMSKeyword</shortDescription>
+        <value>TESTLYAPI</value>
+    </labels>
+    <labels>
+        <fullName>Slient_Secret</fullName>
+        <categories>Being used in UploadFileMock class</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Slient_Secret</shortDescription>
+        <value>Jg3YPFU80nSkdOlIKMUEZGpB</value>
+    </labels>
+    <labels>
+        <fullName>System_Health_Alerts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Health Alerts</shortDescription>
+        <value>call.bijay1@gmail.com,bijay.sahoo1@wipro.com,saikiran.siddipeta@wipro.com,talapalle.vinay@wipro.com,namrata.sherkar@wipro.com,uni_clarke@na.honda.com</value>
+    </labels>
+    <labels>
+        <fullName>Tableau_CRM_Plus_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tableau_CRM_Plus_User</shortDescription>
+        <value>Tableau_CRM_Plus_User</value>
+    </labels>
+    <labels>
+        <fullName>Threshold_Email_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Threshold_Email_ID</shortDescription>
+        <value>HELMS@ahm.honda.com;franciszonemanager@gmail.com</value>
+    </labels>
+    <labels>
+        <fullName>businessId</fullName>
+        <categories>LeadEnrichment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>businessId</shortDescription>
+        <value>HELMS</value>
+    </labels>
+    <labels>
+        <fullName>siteId</fullName>
+        <categories>LeadEnrichment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SiteId</shortDescription>
+        <value>https://ahmdev-honda.cs191.force.com/login</value>
+    </labels>
+    <labels>
+        <fullName>source</fullName>
+        <categories>LeadEnrichment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>source</shortDescription>
+        <value>HELMS</value>
+    </labels>
+</CustomLabels>

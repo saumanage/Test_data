@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Policy Name --></label>
+        <name>privacycenter__Policy_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- This value is the Id for the Parent Object from the selected RTBF Policy. --></help>
+        <label><!-- Record for Deletion --></label>
+        <name>privacycenter__Record_for_Deletion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Message --></label>
+        <name>privacycenter__Response_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>privacycenter__Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

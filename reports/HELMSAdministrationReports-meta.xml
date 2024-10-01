@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>ahm_vat65135@helms.honda.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>HELMS Administration Reports</name>
+</ReportFolder>

@@ -1,0 +1,12 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 01-06-2022
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.SharingRuleController" contenttype="application/x-excel#SharingRule_{!Now()}.xls"  readOnly="true">
+
+<c:downloadSharingRule mapSharingRules="{!mapSharingRules}" ></c:downloadSharingRule>
+
+</apex:page>

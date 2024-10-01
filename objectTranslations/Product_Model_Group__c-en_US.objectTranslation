@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Model Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Model Groups</value>
+    </caseValues>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Series Group Name --></label>
+        <name>Parent_Series_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Model Master --></label>
+        <name>Product_Model_Master__c</name>
+        <relationshipLabel><!-- Product Model Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Series Group Name --></label>
+        <name>Product_Series_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subdivision --></label>
+        <name>Subdivision__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

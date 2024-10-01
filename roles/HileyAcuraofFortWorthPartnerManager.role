@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Hiley Acura of Fort Worth Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Hiley Acura of Fort Worth Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>HileyAcuraofFortWorthPartnerExecutive</parentRole>
+</Role>

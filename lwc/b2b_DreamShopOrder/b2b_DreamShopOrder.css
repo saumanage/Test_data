@@ -1,0 +1,21 @@
+.orderDetails .slds-media input {
+    border-radius: 2px;
+    padding: 5px 12px;
+}
+
+.orderDetails .slds-table th,
+.orderDetails .slds-table td {
+    padding: 12px 18px;
+}
+
+.orderDetails .slds-table th {
+    background: #f0f0f0;
+    text-transform: uppercase;
+    color: #444;
+    font-size: 15px;
+}
+
+.sort{
+    display: inline-flex;  
+    cursor : pointer;
+}

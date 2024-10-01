@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Business Rule --></label>
+        <name>cwbtool__BusinessRule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance Categorization --></label>
+        <name>cwbtool__Compliance_Categorization__c</name>
+        <picklistValues>
+            <masterLabel>CCPA</masterLabel>
+            <translation><!-- CCPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COPPA</masterLabel>
+            <translation><!-- COPPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GDPR</masterLabel>
+            <translation><!-- GDPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HIPAA</masterLabel>
+            <translation><!-- HIPAA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCI</masterLabel>
+            <translation><!-- PCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PII</masterLabel>
+            <translation><!-- PII --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PersonalInfo</masterLabel>
+            <translation><!-- PersonalInfo --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Component Name --></label>
+        <name>cwbtool__ComponentName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Source --></label>
+        <name>cwbtool__DataSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Owner --></label>
+        <name>cwbtool__Data_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Sensitivity Level --></label>
+        <name>cwbtool__Data_Sensitivity_Level__c</name>
+        <picklistValues>
+            <masterLabel>Confidential</masterLabel>
+            <translation><!-- Confidential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MissionCritical</masterLabel>
+            <translation><!-- MissionCritical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public</masterLabel>
+            <translation><!-- Public --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restricted</masterLabel>
+            <translation><!-- Restricted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Definition --></label>
+        <name>cwbtool__Definition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Type --></label>
+        <name>cwbtool__FieldType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Usage --></label>
+        <name>cwbtool__Field_Usage__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeprecateCandidate</masterLabel>
+            <translation><!-- DeprecateCandidate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation><!-- Hidden --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GDPR Data Type --></label>
+        <name>cwbtool__GDPRDataType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Database Mapping --></label>
+        <name>cwbtool__InternalDatabaseMapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Label --></label>
+        <name>cwbtool__Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Trailhead --></label>
+        <name>cwbtool__LinktoTrailhead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>cwbtool__Parent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Published --></label>
+        <name>cwbtool__Published__c</name>
+    </fields>
+    <fields>
+        <label><!-- Read only Field? --></label>
+        <name>cwbtool__Read_only_Field__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reporting Field? --></label>
+        <name>cwbtool__Reporting_Field__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requester --></label>
+        <name>cwbtool__Requester__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>cwbtool__Type__c</name>
+        <picklistValues>
+            <masterLabel>Field</masterLabel>
+            <translation><!-- Field --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation><!-- Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist</masterLabel>
+            <translation><!-- Picklist --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

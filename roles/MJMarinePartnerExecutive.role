@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>M &amp; J Marine Partner Executive</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>M &amp; J Marine Partner Executive</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>SPZ03</parentRole>
+</Role>

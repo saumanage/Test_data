@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Create a custom setting to map Oppty state and status to one of the below numbers. Only create platform event if a matching entry was fround in the custom setting. 
+
+trigger should fire afterupdate of oppty if status/stage changed
+
+We will need a mapping from the Oppty stage/status combination to on of the following values.  Note that only the numeric portion of the below list is to be populated in the event: SEE LMS-1671
+1.  Sale (if oppty stage type changes to Closed/won) = Closed Won
+2-  Meeting (oppty stage/status change: tbd) = Dealer Visit
+3 - Letter (oppty stage/status change: tbd) = &lt;not used&gt;
+4 - Phone (oppty stage/status change: tbd) = In Conversation
+5 - Note (oppty stage/status change: tbd) = In Conversation
+6 - Inactive (if oppty stage type chagnes to Closed/lost) = Closed Inactive
+7 - email (oppty stage/status change: tbd) = In Conversations</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CurrentStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Event__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Event</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StageName__c</fullName>
+        <externalId>false</externalId>
+        <label>StageName</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lead_Disposition_Last_Event_Status</label>
+    <visibility>Public</visibility>
+</CustomObject>

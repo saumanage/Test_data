@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>Did we give the information you needed?</name>
+    <style>freeForm</style>
+    <subject>Did we give the information you needed?</subject>
+    <textOnly>Dear {!Opportunity.Name},
+
+This is in regards to the information that you had requested about a product {!Opportunity.Segment_TXT__c}, {!Opportunity.Category_TXT__c}, {!Opportunity.Model_TXT__c}.  I am just following up to check if we provided all the information you needed.
+
+I am happy to call you or meet with you at your convenience should you have any further questions or need more details.
+
+You can get in touch with me as well by replying to this email or by phone at {!User.Phone}.
+
+I look forward to speaking with you soon!
+
+Sincerely,
+
+{!User.Name}
+{!Opportunity.PreferredDealerAccount_TXT__c}
+{!User.Phone}
+{!User.Email}
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

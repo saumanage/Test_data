@@ -1,0 +1,13 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 03-20-2021
+  @last modified by  : Kanishk Singh
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   03-20-2021   Kanishk Singh   Initial Version
+-->
+<apex:page controller="cwbtool.ApexClassCoverageController" action="{!redirect}">
+
+</apex:page>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Action --></label>
+        <name>AFSC__Action__c</name>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed</masterLabel>
+            <translation><!-- Passed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Categories --></label>
+        <name>AFSC__Categories__c</name>
+        <picklistValues>
+            <masterLabel>abortion</masterLabel>
+            <translation><!-- abortion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adserving</masterLabel>
+            <translation><!-- adserving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adult</masterLabel>
+            <translation><!-- adult --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>alcohol and tobacco</masterLabel>
+            <translation><!-- alcohol and tobacco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>anonymizers</masterLabel>
+            <translation><!-- anonymizers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>auctions</masterLabel>
+            <translation><!-- auctions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>banking</masterLabel>
+            <translation><!-- banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>blogs</masterLabel>
+            <translation><!-- blogs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>chat</masterLabel>
+            <translation><!-- chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dating</masterLabel>
+            <translation><!-- dating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>drugs</masterLabel>
+            <translation><!-- drugs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>entertainment</masterLabel>
+            <translation><!-- entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gambling</masterLabel>
+            <translation><!-- gambling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>games</masterLabel>
+            <translation><!-- games --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hacking</masterLabel>
+            <translation><!-- hacking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hate</masterLabel>
+            <translation><!-- hate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>job search</masterLabel>
+            <translation><!-- job search --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>paymentservice</masterLabel>
+            <translation><!-- paymentservice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>scam</masterLabel>
+            <translation><!-- scam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>shopping</masterLabel>
+            <translation><!-- shopping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>social networking</masterLabel>
+            <translation><!-- social networking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>software download</masterLabel>
+            <translation><!-- software download --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>spam</masterLabel>
+            <translation><!-- spam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>streaming media</masterLabel>
+            <translation><!-- streaming media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>violence</masterLabel>
+            <translation><!-- violence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>warez</masterLabel>
+            <translation><!-- warez --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>weapons</masterLabel>
+            <translation><!-- weapons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>webmail</masterLabel>
+            <translation><!-- webmail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>AFSC__Date_Time_Scanned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direction --></label>
+        <name>AFSC__Direction__c</name>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post</masterLabel>
+            <translation><!-- Post --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disallowed Category --></label>
+        <name>AFSC__Disallowed_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Address --></label>
+        <name>AFSC__IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>AFSC__Link__c</name>
+        <relationshipLabel><!-- URL Scan --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>AFSC__Location__c</name>
+        <picklistValues>
+            <masterLabel>Cases</masterLabel>
+            <translation><!-- Cases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatter</masterLabel>
+            <translation><!-- Chatter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Value</masterLabel>
+            <translation><!-- Field Value --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>AFSC__Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reputation Description --></label>
+        <name>AFSC__Reputation_Desc__c</name>
+        <picklistValues>
+            <masterLabel>Malicious</masterLabel>
+            <translation><!-- Malicious --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not available</masterLabel>
+            <translation><!-- Not available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation><!-- Safe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspicious</masterLabel>
+            <translation><!-- Suspicious --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trusted</masterLabel>
+            <translation><!-- Trusted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation><!-- Unsafe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reputation --></label>
+        <name>AFSC__Reputation_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reputation --></label>
+        <name>AFSC__Reputation__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>AFSC__User__c</name>
+        <relationshipLabel><!-- URL Scan --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Verdict --></label>
+        <name>AFSC__Verdict__c</name>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation><!-- Safe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation><!-- Unsafe --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

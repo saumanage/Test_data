@@ -1,0 +1,2 @@
+<apex:page standardController="Contact" extensions="MDPERSONATOR.MD_GlobalListController" recordSetVar="contacts" action="{!processSelected}">
+</apex:page>

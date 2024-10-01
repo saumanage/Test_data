@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- aac --></label>
+        <name>MDPERSONATOR__aac__c</name>
+    </fields>
+    <fields>
+        <label><!-- append --></label>
+        <name>MDPERSONATOR__append__c</name>
+    </fields>
+    <fields>
+        <label><!-- centricHint --></label>
+        <name>MDPERSONATOR__centricHint__c</name>
+    </fields>
+    <fields>
+        <label><!-- correctFirstName --></label>
+        <name>MDPERSONATOR__correctFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- correctSyntax --></label>
+        <name>MDPERSONATOR__correctSyntax__c</name>
+    </fields>
+    <fields>
+        <label><!-- customerId --></label>
+        <name>MDPERSONATOR__customerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- databaseLookup --></label>
+        <name>MDPERSONATOR__databaseLookup__c</name>
+    </fields>
+    <fields>
+        <label><!-- diacritics --></label>
+        <name>MDPERSONATOR__diacritics__c</name>
+    </fields>
+    <fields>
+        <label><!-- genderAggression --></label>
+        <name>MDPERSONATOR__genderAggression__c</name>
+    </fields>
+    <fields>
+        <label><!-- genderPopulation --></label>
+        <name>MDPERSONATOR__genderPopulation__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpAddressDetails --></label>
+        <name>MDPERSONATOR__grpAddressDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpCensus --></label>
+        <name>MDPERSONATOR__grpCensus__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpGeocode --></label>
+        <name>MDPERSONATOR__grpGeocode__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpNameDetails --></label>
+        <name>MDPERSONATOR__grpNameDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpParsedAddress --></label>
+        <name>MDPERSONATOR__grpParsedAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpParsedEmail --></label>
+        <name>MDPERSONATOR__grpParsedEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpParsedPhone --></label>
+        <name>MDPERSONATOR__grpParsedPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- isAppendAction --></label>
+        <name>MDPERSONATOR__isAppendAction__c</name>
+    </fields>
+    <fields>
+        <label><!-- isCheckAction --></label>
+        <name>MDPERSONATOR__isCheckAction__c</name>
+    </fields>
+    <fields>
+        <label><!-- isVerifyAction --></label>
+        <name>MDPERSONATOR__isVerifyAction__c</name>
+    </fields>
+    <fields>
+        <label><!-- middleNameLogic --></label>
+        <name>MDPERSONATOR__middleNameLogic__c</name>
+    </fields>
+    <fields>
+        <label><!-- nameHint --></label>
+        <name>MDPERSONATOR__nameHint__c</name>
+    </fields>
+    <fields>
+        <label><!-- salutationFormat --></label>
+        <name>MDPERSONATOR__salutationFormat__c</name>
+    </fields>
+    <fields>
+        <label><!-- standardizeCompany --></label>
+        <name>MDPERSONATOR__standardizeCompany__c</name>
+    </fields>
+    <fields>
+        <label><!-- updateDomain --></label>
+        <name>MDPERSONATOR__updateDomain__c</name>
+    </fields>
+    <fields>
+        <label><!-- usePreferredCity --></label>
+        <name>MDPERSONATOR__usePreferredCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- webServiceUrl --></label>
+        <name>MDPERSONATOR__webServiceUrl__c</name>
+    </fields>
+</CustomObjectTranslation>

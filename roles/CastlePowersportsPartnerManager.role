@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Castle Powersports Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Castle Powersports Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>CastlePowersportsPartnerExecutive</parentRole>
+</Role>

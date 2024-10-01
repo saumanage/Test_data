@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AFSC__FSFileScanLog__c$Name</field>
+    </columns>
+    <columns>
+        <field>AFSC__FSFileScanLog__c$AFSC__File_Extension__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FSFileScanLog__c$AFSC__File_Prevalence__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FSFileScanLog__c$AFSC__Scan_Type__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FSFileScanLog__c$AFSC__User__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AFSC__FSFileScanLog__c$AFSC__Verdict__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Unsafe</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AFSC__FSFileScanLog__c$AFSC__Source__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>File Threats by Location</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AFSC__File_Scan__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AFSC__FSFileScanLog__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

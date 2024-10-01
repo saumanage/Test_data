@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payment Gateway Transaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payment Gateway Transactions</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Payment Gateway --></label>
+        <name>AK_Payment_Gateway_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- BT TransactionId --></label>
+        <name>BT_TransactionId_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing City --></label>
+        <name>Billing_City_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing PostalCode --></label>
+        <name>Billing_PostalCode_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State/Province --></label>
+        <name>Billing_State_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Street --></label>
+        <name>Billing_Street_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder Name --></label>
+        <name>Cardholder_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Card Last Four Digit --></label>
+        <name>Credit_Card_Number_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- BT Transaction Details Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Transaction --></label>
+        <name>Order_Transaction_c__c</name>
+        <relationshipLabel><!-- Payment Gateway Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order_c__c</name>
+        <relationshipLabel><!-- Payment Gateway Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Gateway --></label>
+        <name>Payment_Gateway_c__c</name>
+        <picklistValues>
+            <masterLabel>Braintree</masterLabel>
+            <translation><!-- Braintree --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Method Token --></label>
+        <name>Payment_Method_Token_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Method Type --></label>
+        <name>Payment_Method_Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Amex</masterLabel>
+            <translation><!-- Amex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diners Club</masterLabel>
+            <translation><!-- Diners Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discover</masterLabel>
+            <translation><!-- Discover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mastercard</masterLabel>
+            <translation><!-- Mastercard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PayPal</masterLabel>
+            <translation><!-- PayPal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visa</masterLabel>
+            <translation><!-- Visa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Date --></label>
+        <name>Transaction_Date_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Status --></label>
+        <name>Transaction_Status_c__c</name>
+        <picklistValues>
+            <masterLabel>Authorization_Expired</masterLabel>
+            <translation><!-- Authorization_Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorized</masterLabel>
+            <translation><!-- Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BT error code</masterLabel>
+            <translation><!-- BT error code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gateway_Rejected</masterLabel>
+            <translation><!-- Gateway_Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processor_Declined</masterLabel>
+            <translation><!-- Processor_Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settled</masterLabel>
+            <translation><!-- Settled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settlement_Declined</masterLabel>
+            <translation><!-- Settlement_Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settlement_Pending</masterLabel>
+            <translation><!-- Settlement_Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settling</masterLabel>
+            <translation><!-- Settling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted_For_Settlement</masterLabel>
+            <translation><!-- Submitted_For_Settlement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voided</masterLabel>
+            <translation><!-- Voided --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transaction Type --></label>
+        <name>Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Refund</masterLabel>
+            <translation><!-- Refund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sale</masterLabel>
+            <translation><!-- Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Void</masterLabel>
+            <translation><!-- Void --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>credit</masterLabel>
+            <translation><!-- credit --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

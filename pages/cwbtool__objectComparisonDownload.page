@@ -1,0 +1,5 @@
+<apex:page controller="cwbtool.CodeComparator" contenttype="application/x-excel#ObjectComp_{!Now()}.xls" readOnly="true">
+<title>Object Comparison Report</title>
+<c:objectComparisonDownload strSourceOrgName="{!strSourceOrgName}" strTargetOrgName="{!strTargetOrgName}" 
+lstSelectedField="{!lstSelectedField}" orgComparedetail2="{!lstORGComparatorModel}"/>
+</apex:page>

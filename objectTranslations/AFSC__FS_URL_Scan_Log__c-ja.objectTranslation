@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>URL スキャン</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action --></label>
+        <name>AFSC__Action__c</name>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation>ブロック</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed</masterLabel>
+            <translation>許可</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Categories --></label>
+        <name>AFSC__Categories__c</name>
+        <picklistValues>
+            <masterLabel>abortion</masterLabel>
+            <translation>中絶</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adserving</masterLabel>
+            <translation>広告</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adult</masterLabel>
+            <translation>アダルト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>alcohol and tobacco</masterLabel>
+            <translation>アルコールとタバコ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>anonymizers</masterLabel>
+            <translation>アノニマイザ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>auctions</masterLabel>
+            <translation>オークション</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>banking</masterLabel>
+            <translation>バンキング</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>blogs</masterLabel>
+            <translation>ブログ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>chat</masterLabel>
+            <translation>チャット</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dating</masterLabel>
+            <translation>出会い</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>drugs</masterLabel>
+            <translation>ドラッグ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>entertainment</masterLabel>
+            <translation>芸能</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gambling</masterLabel>
+            <translation>ギャンブル</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>games</masterLabel>
+            <translation>ゲーム</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hacking</masterLabel>
+            <translation>ハッキング</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hate</masterLabel>
+            <translation>憎悪表現</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>job search</masterLabel>
+            <translation>就活</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>paymentservice</masterLabel>
+            <translation>支払いサービス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>scam</masterLabel>
+            <translation>詐欺</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>shopping</masterLabel>
+            <translation>ショッピング</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>social networking</masterLabel>
+            <translation>SNS</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>software download</masterLabel>
+            <translation>ソフトウェア ダウンロード</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>spam</masterLabel>
+            <translation>スパム</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>streaming media</masterLabel>
+            <translation>ストリーミング メディア</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>violence</masterLabel>
+            <translation>暴力</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>warez</masterLabel>
+            <translation>海賊版ソフトウェア</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>weapons</masterLabel>
+            <translation>武器</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>webmail</masterLabel>
+            <translation>Web メール</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>AFSC__Date_Time_Scanned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direction --></label>
+        <name>AFSC__Direction__c</name>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation>開く</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post</masterLabel>
+            <translation>投稿</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disallowed Category --></label>
+        <name>AFSC__Disallowed_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Address --></label>
+        <name>AFSC__IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>AFSC__Link__c</name>
+        <relationshipLabel><!-- URL Scan --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>AFSC__Location__c</name>
+        <picklistValues>
+            <masterLabel>Cases</masterLabel>
+            <translation>投稿</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatter</masterLabel>
+            <translation>Chatter</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation>メール アドレス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Value</masterLabel>
+            <translation>フィールド値</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>AFSC__Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reputation Description --></label>
+        <name>AFSC__Reputation_Desc__c</name>
+        <picklistValues>
+            <masterLabel>Malicious</masterLabel>
+            <translation>危険</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not available</masterLabel>
+            <translation>使用不可</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation>安全</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspicious</masterLabel>
+            <translation>不審</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trusted</masterLabel>
+            <translation>信頼済み</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>不明</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation>危険</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reputation --></label>
+        <name>AFSC__Reputation_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reputation --></label>
+        <name>AFSC__Reputation__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>AFSC__User__c</name>
+        <relationshipLabel><!-- URL Scan --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Verdict --></label>
+        <name>AFSC__Verdict__c</name>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation>安全</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>不明</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation>危険</translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel>
+</nameFieldLabel>
+</CustomObjectTranslation>

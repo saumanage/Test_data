@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Model Master</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Model Master</value>
+    </caseValues>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- LaunchBoxId --></label>
+        <name>LaunchBoxId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ModelGroupName --></label>
+        <name>ModelGroupName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ModelID --></label>
+        <name>ModelID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ModelMSRP --></label>
+        <name>ModelMSRP__c</name>
+    </fields>
+    <fields>
+        <label><!-- ModelMarketingName --></label>
+        <name>ModelMarketingName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ModelYear --></label>
+        <name>ModelYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParentSeriesGroupName --></label>
+        <name>ParentSeriesGroupName__c</name>
+    </fields>
+    <fields>
+        <label><!-- SeriesGroupName --></label>
+        <name>SeriesGroupName__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubDivision --></label>
+        <name>SubDivision__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

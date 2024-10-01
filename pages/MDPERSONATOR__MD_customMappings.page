@@ -1,0 +1,97 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_customMappings ]  
+     
+     purpose            : a custom VisualForce page which allows the user to configure their own mappings
+
+     date created       : 8/3/2014
+     version            : 1.5
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+
+<apex:page controller="MDPERSONATOR.MD_CustomMappings" readOnly="false" tabStyle="Custom_Mappings__tab">
+    <script src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"/>
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        var timeInter =setInterval(function(){iterateObjectMethod()},1000);
+ 
+        function iterateObjectMethod(){
+            getObjectList();
+            var iterationDone = j$("#isIterationDoneDiv").text();
+            if(iterationDone  == 'Yes'){
+                j$("#isIterationDoneDiv").hide();
+                clearInterval(timeInter);
+            }
+        }        
+    </script>
+ 
+    <apex:actionStatus startText="[ saving... ]" stopText="[ saved status is 'done' ]" id="save-status" layout="block" startStyle="color:green;font-weight:bold; text-alight:right;" stopStyle="color:black; font-weight:bold; text-align:right" title="Status when saving your application settings" />
+ 
+    <apex:form >
+        <apex:actionFunction action="{!ObjectList}" status="myStatus" name="getObjectList" reRender="selectBlock,fieldsBlock,outputBlock" />
+
+        <apex:sectionheader title="Advanced mappings" subtitle="Create your mappings"/>
+        <apex:actionStatus id="myStatus" startText="Fetching list of objects..." stopText=""/>
+        
+        <apex:pageBlock >
+			<apex:pageBlockSection title="Enterprise Key" columns="1" collapsible="false" rendered="true">
+	       		<apex:inputText value="{!savedEnterprise}" id="savedEnterprise" size="70" maxLength="255" />
+	       		<apex:outputLabel value="{!enterpriseMessage}"></apex:outputLabel>
+	        </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:panelGrid columns="2" width="100%">
+        
+            <apex:panelGrid columns="1" width="100%">
+                
+		        <apex:pageBlock id="selectBlock" title="1) Select Object Type">
+		            <apex:selectList label="Salesforce Objects" value="{!objectSelected}" size="1" multiselect="false">
+		                <apex:selectOptions value="{!items}"/>
+		                <apex:actionSupport event="onchange" rerender="fieldsBlock,outputBlock"/>
+		            </apex:selectList>
+		            <div id="isIterationDoneDiv" style="display: none;">{!isIterationDone}</div>
+		        </apex:pageBlock>
+		        
+		        <apex:pageBlock id="fieldsBlock" title="2) Input Mappings">
+		            <apex:pageBlockTable id="aTable" value="{!keyList}" var="key" rendered="{!displayMapForms}">
+		               <apex:column id="Name" value="{!key}" width="20%"/>
+		               <apex:column id="inputField">
+		                    <apex:selectList size="1" multiselect="false" value="{!inputPersMap[key]}">
+		                       <apex:selectOptions value="{!inputFieldList}"/>
+		                    </apex:selectList>
+		               </apex:column>
+		            </apex:pageBlockTable>
+		        </apex:pageBlock>
+		        
+		        <apex:pageBlock id="noteBlock" title="Notes">
+		            <p>
+	                    <b>*</b> - Through US/CAN (Personator) component only<br/>
+	                    <b>**</b> - Through Global/International (240+ countries &amp; territories) component only<br/>
+	                    <b>***</b> - Through Business component only
+	                </p>
+	            </apex:pageBlock>
+            </apex:panelGrid>
+            
+	        <apex:pageBlock id="outputBlock" title="3) Output Mappings">
+	        	<div style="overflow: scroll; height: 600px;">  
+		            <apex:pageBlockTable id="bTable" value="{!outputKeyList}" var="key" rendered="{!displayMapForms}">
+		                <apex:column id="Name" value="{!key}" width="20%"/>
+		                <apex:column id="outputField">
+		                    <apex:selectList size="1" multiselect="false" value="{!outputPersMap[key]}">
+		                        <apex:selectOptions value="{!outputFieldList}"/>
+		                    </apex:selectList>
+		                </apex:column>
+		            </apex:pageBlockTable>
+	            </div>
+	        </apex:pageBlock>
+	        
+        </apex:panelGrid>
+                
+        <center>
+            <apex:commandButton action="{!doSaveMapping}" rerender="selectBlock,fieldsBlock,outputBlock" value="Save Mapping" status="save-status" tabindex="100" />
+        </center>
+    </apex:form>
+    
+</apex:page>

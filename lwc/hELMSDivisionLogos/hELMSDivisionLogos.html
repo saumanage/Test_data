@@ -1,0 +1,31 @@
+<template>
+    
+        <lightning-layout multiple-rows="true" horizontal-align="center">
+						<template if:true={isPowerEquip}>
+								<div class="slds-m-around_medium">
+            			<img src={PowerEquipment}>
+        				</div>
+						</template>
+						<template if:true={isMarine}>
+								<div class="slds-m-around_medium">
+            			<img src={Marine}>
+        				</div>
+						</template>
+						<template if:true={isMotorcycle}>
+								<div class="slds-m-around_medium">
+            			<img src={Powersports}>
+        				</div>
+			  	 		</template>
+					    <template if:true={isAcura}>
+						<div class="slds-m-around_medium">
+						<img src={Acura}>
+						</div>
+						</template> 
+						<template if:true={isHonda}>
+						<div class="slds-m-around_medium">
+						<img src={Honda}>
+						</div>
+						</template>
+    	</lightning-layout>
+    
+</template>

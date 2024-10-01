@@ -1,0 +1,30 @@
+.comm-page-custom-orderhistoryview h2 {
+    font-size: 28px;
+}
+
+.comm-page-custom-orderhistoryview .labelname {
+    width: 30%;
+    padding-right: 10px;
+}
+
+
+.display-style {
+    display:inline-flex;
+}
+
+.errorIcon {
+    --sds-c-icon-color-foreground-default: red;
+}
+
+.setMinWidth {
+    min-width: auto !important;
+}
+
+.alignment {
+    text-align-last: end;
+}
+
+.buttonStyle {  
+    display: inline-block;
+    margin-top: 5px;
+}

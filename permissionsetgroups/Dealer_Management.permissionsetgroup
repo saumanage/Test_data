@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Assign this Permission set group to Dealer Management persona user</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Dealer Management</label>
+    <permissionSets>Assign_Group_Access</permissionSets>
+    <permissionSets>CRM_System_Read</permissionSets>
+    <permissionSets>HELMS_CRM_Eligible_flag</permissionSets>
+    <permissionSets>HELMS_Case_Management</permissionSets>
+    <permissionSets>HELMS_Contact_Management</permissionSets>
+    <permissionSets>HELMS_Dealer_ManagementPS</permissionSets>
+    <permissionSets>HELMS_Dealer_Notification_Preference_Management</permissionSets>
+    <permissionSets>HELMS_Opportunity_Offers_Read</permissionSets>
+    <permissionSets>Quote_Create_and_Edit</permissionSets>
+    <permissionSets>View_Opportunity_Score</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

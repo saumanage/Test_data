@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SLA Levels</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SLA Levels</value>
+    </caseValues>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M</masterLabel>
+            <translation><!-- M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P</masterLabel>
+            <translation><!-- P --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Level 1 SLA Hours --></label>
+        <name>Level_1_SLA_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level 2 SLA Hours --></label>
+        <name>Level_2_SLA_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level 3 SLA Hours --></label>
+        <name>Level_3_SLA_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level 4 SLA Hours --></label>
+        <name>Level_4_SLA_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 1 Role 1 --></label>
+        <name>SLA_Level_1_Role_1__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 1 Role 2 --></label>
+        <name>SLA_Level_1_Role_2__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 1 Role 3 --></label>
+        <name>SLA_Level_1_Role_3__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 2 Role 1 --></label>
+        <name>SLA_Level_2_Role_1__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 2 Role 2 --></label>
+        <name>SLA_Level_2_Role_2__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 2 Role 3 --></label>
+        <name>SLA_Level_2_Role_3__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 3 Role 1 --></label>
+        <name>SLA_Level_3_Role_1__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 3 Role 2 --></label>
+        <name>SLA_Level_3_Role_2__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 3 Role 3 --></label>
+        <name>SLA_Level_3_Role_3__c</name>
+        <picklistValues>
+            <masterLabel>Analyst</masterLabel>
+            <translation><!-- Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant Zone Manager</masterLabel>
+            <translation><!-- Assistant Zone Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSM</masterLabel>
+            <translation><!-- DSM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA/Admin</masterLabel>
+            <translation><!-- TA/Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone Manager</masterLabel>
+            <translation><!-- Zone Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SubDivision --></label>
+        <name>SubDivision__c</name>
+        <picklistValues>
+            <masterLabel>Acura</masterLabel>
+            <translation><!-- Acura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engine</masterLabel>
+            <translation><!-- Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda</masterLabel>
+            <translation><!-- Honda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine</masterLabel>
+            <translation><!-- Marine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle</masterLabel>
+            <translation><!-- Motorcycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PowerEquipment</masterLabel>
+            <translation><!-- PowerEquipment --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

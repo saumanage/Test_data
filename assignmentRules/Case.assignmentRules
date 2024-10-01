@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Case assign to HELMS Tier 1 Support</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>HELMS_Tier_1_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <template>HELMS_Automated/HELMS_New_Case</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

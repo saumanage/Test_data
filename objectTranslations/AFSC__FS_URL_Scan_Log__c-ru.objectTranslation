@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Проверка URL</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Проверка URL</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value><!-- Проверка URL --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Action --></label>
+        <name>AFSC__Action__c</name>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation>Заблокированный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed</masterLabel>
+            <translation>Пройдено</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Categories --></label>
+        <name>AFSC__Categories__c</name>
+        <picklistValues>
+            <masterLabel>abortion</masterLabel>
+            <translation>аборт</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adserving</masterLabel>
+            <translation>демонстрация рекламы</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>adult</masterLabel>
+            <translation>только для взрослых</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>alcohol and tobacco</masterLabel>
+            <translation>алкоголь и табак</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>anonymizers</masterLabel>
+            <translation>анонимайзеры</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>auctions</masterLabel>
+            <translation>аукционы</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>banking</masterLabel>
+            <translation>банковские операции</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>blogs</masterLabel>
+            <translation>блоги</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>chat</masterLabel>
+            <translation>чат</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>dating</masterLabel>
+            <translation>знакомства</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>drugs</masterLabel>
+            <translation>наркотики</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>entertainment</masterLabel>
+            <translation>развлечения</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gambling</masterLabel>
+            <translation>азартные игры</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>games</masterLabel>
+            <translation>игры</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hacking</masterLabel>
+            <translation>взлом компьютеров и сетей</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hate</masterLabel>
+            <translation>ненависть</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>job search</masterLabel>
+            <translation>поиск работы</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>paymentservice</masterLabel>
+            <translation>служба платежей</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>scam</masterLabel>
+            <translation>мошенничество</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>shopping</masterLabel>
+            <translation>покупки</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>social networking</masterLabel>
+            <translation>социальные сети</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>software download</masterLabel>
+            <translation>загрузка ПО</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>spam</masterLabel>
+            <translation>спам</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>streaming media</masterLabel>
+            <translation>потоковые медиаресурсы</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>violence</masterLabel>
+            <translation>насилие</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>warez</masterLabel>
+            <translation>нелицензионное ПО</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>weapons</masterLabel>
+            <translation>оружие</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>webmail</masterLabel>
+            <translation>веб-почта</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>AFSC__Date_Time_Scanned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direction --></label>
+        <name>AFSC__Direction__c</name>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation>Открытие</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post</masterLabel>
+            <translation>Публикация</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disallowed Category --></label>
+        <name>AFSC__Disallowed_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Address --></label>
+        <name>AFSC__IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>AFSC__Link__c</name>
+        <relationshipLabel><!-- URL Scan --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>AFSC__Location__c</name>
+        <picklistValues>
+            <masterLabel>Cases</masterLabel>
+            <translation>Случаи</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatter</masterLabel>
+            <translation>Chatter</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation>Электронная почта</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Value</masterLabel>
+            <translation>Значение поля</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>AFSC__Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reputation Description --></label>
+        <name>AFSC__Reputation_Desc__c</name>
+        <picklistValues>
+            <masterLabel>Malicious</masterLabel>
+            <translation>Вредоносный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not available</masterLabel>
+            <translation>Нет данных</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation>Безопасный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspicious</masterLabel>
+            <translation>Подозрительный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trusted</masterLabel>
+            <translation>Надежный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Неизвестный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation>Небезопасный</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reputation --></label>
+        <name>AFSC__Reputation_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reputation --></label>
+        <name>AFSC__Reputation__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>AFSC__User__c</name>
+        <relationshipLabel><!-- URL Scan --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Verdict --></label>
+        <name>AFSC__Verdict__c</name>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation>Безопасный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Неизвестный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation>Небезопасный</translation>
+        </picklistValues>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>
+</nameFieldLabel>
+</CustomObjectTranslation>

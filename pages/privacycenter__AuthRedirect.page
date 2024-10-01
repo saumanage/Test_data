@@ -1,0 +1,16 @@
+<apex:page controller="privacycenter.AuthController" action="{!init}">
+    <script>
+    	try{
+            if ({!authSuccessful}) {
+                window.setTimeout(function(){
+                    window.top.location.href = "{!redirectUrl}";
+                	}, 5000);
+            }
+        } catch(err){
+            console.log("error: ", err);
+        }
+    </script>
+    Connecting... Please Stand By...
+    <br/><br/>
+    {!message}<br/>Auth successful: {!authSuccessful}<br/>Redirect Url: {!redirectUrl}
+</apex:page>

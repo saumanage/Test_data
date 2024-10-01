@@ -1,0 +1,16 @@
+<template>
+    <lightning-card> 
+        <div class="slds slds-p-center--medium">
+            <template if:true={checkflag}>
+                <lightning-datatable class="slds-text-heading_small" hide-table-header key-field="Id" data={records} columns={columns}
+                    hide-checkbox-column="true"> 
+                </lightning-datatable>
+            </template>
+            <template if:false={checkflag}>
+                <lightning-formatted-rich-text   
+                    value={a_Dynamic_Field}>
+                </lightning-formatted-rich-text> 
+            </template>
+        </div>
+    </lightning-card> 
+</template>

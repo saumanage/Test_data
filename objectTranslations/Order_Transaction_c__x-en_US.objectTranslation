@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Transaction_Ext</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Transactions_Ext</value>
+    </caseValues>
+    <fields>
+        <label><!-- Adjustment Date Time --></label>
+        <name>Adjustment_Date_Time_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Note --></label>
+        <name>Adjustment_Note_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Gateway Transaction --></label>
+        <name>BT_Transaction_Details_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer To Customer Note --></label>
+        <name>Dealer_To_Customer_Note_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Order Item Detail --></label>
+        <name>Inbound_OrderItemDetail_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Adjustment --></label>
+        <name>Is_Adjustment_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Transaction No --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Fulfillment --></label>
+        <name>Order_Fulfillment_c__c</name>
+        <relationshipLabel><!-- Order Transactions_Ext --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Transaction Status --></label>
+        <name>Order_Transaction_Status_c__c</name>
+        <picklistValues>
+            <masterLabel>Failure</masterLabel>
+            <translation><!-- Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order Transaction Type --></label>
+        <name>Order_Transaction_Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Braintree Reconciliation</masterLabel>
+            <translation><!-- Braintree Reconciliation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled</masterLabel>
+            <translation><!-- Fulfilled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modified</masterLabel>
+            <translation><!-- Modified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Installed</masterLabel>
+            <translation><!-- Order Installed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Picked Up</masterLabel>
+            <translation><!-- Order Picked Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment Settlement</masterLabel>
+            <translation><!-- Payment Settlement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Placed</masterLabel>
+            <translation><!-- Placed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved Payment</masterLabel>
+            <translation><!-- Resolved Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Returned</masterLabel>
+            <translation><!-- Returned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment</masterLabel>
+            <translation><!-- Shipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unavailable Refund</masterLabel>
+            <translation><!-- Unavailable Refund --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order_c__c</name>
+        <relationshipLabel><!-- Order Transactions_Ext --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Adjustment Total Amount --></label>
+        <name>Post_Adjustment_Total_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Adjustment Total Tax --></label>
+        <name>Post_Adjustment_Total_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre Adjustment Total Amount --></label>
+        <name>Pre_Adjustment_Total_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- TotalPost Adjustment Installation Charge --></label>
+        <name>TotalPost_Adjustment_Installation_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Core Charge Amount --></label>
+        <name>Total_Post_Adjustment_Core_Charge_Amo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Core Charge Qty --></label>
+        <name>Total_Post_Adjustment_Core_Charge_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Core Charge Tax --></label>
+        <name>Total_Post_Adjustment_Core_Charge_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Extended Price --></label>
+        <name>Total_Post_Adjustment_Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Product Tax --></label>
+        <name>Total_Post_Adjustment_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Quantity --></label>
+        <name>Total_Post_Adjustment_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post Adjustment Shiping Charge --></label>
+        <name>Total_Post_Adjustment_Shiping_Charge_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post adjustment Installation Tax --></label>
+        <name>Total_Post_adjustment_Installation_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Post adjustment Shipping Tax --></label>
+        <name>Total_Post_adjustment_Shipping_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjusmtment Quantity --></label>
+        <name>Total_Pre_Adjusmtment_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Core Charge Amount --></label>
+        <name>Total_Pre_Adjustment_Core_Charge_Amou__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Core Charge Qty --></label>
+        <name>Total_Pre_Adjustment_Core_Charge_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Core Charge Tax --></label>
+        <name>Total_Pre_Adjustment_Core_Charge_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Extended Price --></label>
+        <name>Total_Pre_Adjustment_Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Installation Charge --></label>
+        <name>Total_Pre_Adjustment_Installation_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Installation Tax --></label>
+        <name>Total_Pre_Adjustment_Installation_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Product Tax --></label>
+        <name>Total_Pre_Adjustment_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Shiping Charge --></label>
+        <name>Total_Pre_Adjustment_Shiping_Charge_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Pre Adjustment Shipping Tax --></label>
+        <name>Total_Pre_Adjustment_Shipping_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Restocking Fee Tax --></label>
+        <name>Total_Restocking_Fee_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Restocking Fee --></label>
+        <name>Total_Restocking_Fee_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,5 @@
+<apex:page controller="cwbtool.DescribeBasicObjectCtrl" contenttype="application/x-excel#ObjectBasicDetail_{!Now()}.xls" readOnly="true">
+
+<c:VFC_downloadbasicObjectdetail mapSchema="{!mapSchema}"/>
+   
+</apex:page>

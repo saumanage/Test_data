@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Zone Manager</fullName>
+        <default>false</default>
+        <label>Zone Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Assistant Zone Manager</fullName>
+        <default>false</default>
+        <label>Assistant Zone Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Analyst</fullName>
+        <default>false</default>
+        <label>Analyst</label>
+    </customValue>
+    <customValue>
+        <fullName>TA/Admin</fullName>
+        <default>false</default>
+        <label>TA/Admin</label>
+    </customValue>
+    <customValue>
+        <fullName>DSM</fullName>
+        <default>false</default>
+        <label>DSM</label>
+    </customValue>
+    <masterLabel>Roles</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

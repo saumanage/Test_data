@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead_Division_Mapping_From_Subdivision</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead_Division_Mapping_From_Subdivision</value>
+    </caseValues>
+    <fields>
+        <label><!-- Division_CD --></label>
+        <name>Division_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp_Recortype_API_name --></label>
+        <name>Opp_Recortype_API_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subdivision --></label>
+        <name>Subdivision__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

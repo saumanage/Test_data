@@ -1,0 +1,11 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 01-06-2022
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.WorkFlowAlert" contenttype="application/x-excel#WorkflowAlert_{!Now()}.xls"  readOnly="true">
+
+<c:downloadWorkflowAlert mapWorkflowAlert="{!mapWorkflowAlert}" includeRecipient="{!includeRecipient}"></c:downloadWorkflowAlert>
+</apex:page>

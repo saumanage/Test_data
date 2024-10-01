@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Routing Acknowledgement No Response</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Routing Acknowledgement No Response</value>
+    </caseValues>
+    <fields>
+        <label><!-- CRM Payload --></label>
+        <name>CRM_Payload__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM XML Response --></label>
+        <name>CRM_XML_Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- CreatedDate --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- DSP Payload --></label>
+        <name>DSP_Payload__c</name>
+    </fields>
+    <fields>
+        <label><!-- DSP Status --></label>
+        <name>DSP_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Details Urban Science --></label>
+        <name>Error_Details_Urban_Science__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Walkin Lead --></label>
+        <name>Initial_Walkin_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsProcessed --></label>
+        <name>IsProcessed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity SF ID --></label>
+        <name>Opportunity_SF_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response DSP --></label>
+        <name>Response_DSP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Urban Science --></label>
+        <name>Response_Urban_Science__c</name>
+    </fields>
+    <fields>
+        <label><!-- Routing Error --></label>
+        <name>Routing_Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send to DSP --></label>
+        <name>Send_to_DSP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent to Urban Science Status --></label>
+        <name>Sent_to_Urban_Science_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>Status_Code__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

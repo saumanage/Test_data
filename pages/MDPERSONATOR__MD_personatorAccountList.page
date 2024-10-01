@@ -1,0 +1,2 @@
+<apex:page standardController="Account" extensions="MDPERSONATOR.PersonatorListViewController" recordSetVar="accounts" action="{!processSelected}">
+</apex:page>

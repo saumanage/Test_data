@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Coggin Honda of Ft. Pierce Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Coggin Honda of Ft. Pierce Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>CogginHondaofFtPiercePartnerExecutive</parentRole>
+</Role>

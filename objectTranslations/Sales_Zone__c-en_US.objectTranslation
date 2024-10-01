@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Zone</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Zones</value>
+    </caseValues>
+    <fields>
+        <label><!-- Region-Subdivision --></label>
+        <name>Region_Subdivision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Region Identifier --></label>
+        <name>Sales_Region_Identifier__c</name>
+        <relationshipLabel><!-- Sales Zones --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SubDivision --></label>
+        <name>SubDivision__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

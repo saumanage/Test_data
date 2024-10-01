@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>Not available in Stock</name>
+    <style>freeForm</style>
+    <subject>Not available in Stock</subject>
+    <textOnly>Dear {!Opportunity.Name},
+
+Thank you for your interest in the {!Opportunity.Model_TXT__c}{!Opportunity.Year_YR__c}.  Unfortunately, the exact product you inquired about is not currently on our lot. We will reach out to you as soon as the product is available in stock.
+
+If you are interested in exploring other products, I am happy to call you or meet you at your convenience. I can also be reached either by replying to this e-mail or by phone at {!User.Phone}.
+
+Thank you!
+
+Sincerely,
+
+{!User.Name}
+{!Opportunity.PreferredDealerAccount_TXT__c}
+{!User.Phone}
+{!User.Email}
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

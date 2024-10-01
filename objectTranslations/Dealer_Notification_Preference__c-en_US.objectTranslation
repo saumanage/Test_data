@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dealer Notification</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dealer Notifications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Allow Matchback Notifications --></label>
+        <name>Allow_Matchback_Notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow New Lead Creation Notifications --></label>
+        <name>Allow_New_Lead_Creation_Notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Subdivision --></label>
+        <name>Dealer_Subdivision__c</name>
+        <relationshipLabel><!-- Dealer Notifications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lost Opportunity --></label>
+        <name>Lost_Opportunity__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Lead Email --></label>
+        <name>New_Lead_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Lead SMS --></label>
+        <name>New_Lead_SMS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required field for Lead SMS, Enter only numeric values. --></help>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Sales --></label>
+        <name>Potential_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Dealer Account --></label>
+        <name>Preferred_Dealer_Account__c</name>
+        <relationshipLabel><!-- Dealer Notification Preferences --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 1 Notifications --></label>
+        <name>SLA_Level_1_Notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 2 Notifications --></label>
+        <name>SLA_Level_2_Notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Level 3 Notifications --></label>
+        <name>SLA_Level_3_Notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Level Agreement --></label>
+        <name>Service_Level_Agreement__c</name>
+        <picklistValues>
+            <masterLabel>Level 1</masterLabel>
+            <translation><!-- Level 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 2</masterLabel>
+            <translation><!-- Level 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 3</masterLabel>
+            <translation><!-- Level 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Escalation</masterLabel>
+            <translation><!-- No Escalation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SubDivision --></label>
+        <name>SubDivision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Escalation</masterLabel>
+            <translation><!-- Escalation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost Opportunity - Matched to Dealer</masterLabel>
+            <translation><!-- Lost Opportunity - Matched to Dealer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Lead Email</masterLabel>
+            <translation><!-- New Lead Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Lead SMS</masterLabel>
+            <translation><!-- New Lead SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential Sales</masterLabel>
+            <translation><!-- Potential Sales --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please add Phone Number --></errorMessage>
+        <name>Based_on_Escalation_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 10 Digit number should be entered. --></errorMessage>
+        <name>only_numbers</name>
+    </validationRules>
+</CustomObjectTranslation>

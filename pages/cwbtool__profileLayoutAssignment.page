@@ -1,0 +1,123 @@
+<apex:page controller="cwbtool.ProfileLayoutController" action="{!getActiveConnection}" sidebar="false" showHeader="false">
+    <c:requiredJSAndCSS />
+   <style>
+    .Btn-group > .Btn:first-child {
+        margin-left: 0;
+        max-width: 300px;
+        overflow: hidden;
+    }
+</style>
+
+    <apex:form id="frmId" styleClass="CWB">
+            <script>
+                    function refreshOrgDetailFromModal(){
+                      refreshOrgConnection();
+                    }
+                    </script>   
+    <!--<apex:pagemessages rendered="{!lstObject==null || lstObject.size==0}" />-->
+        <c:lightningspinner />
+        <c:lightningScript ></c:lightningScript>
+
+        <apex:actionFunction name="downloadProfileLayoutAssignment" action="{!downloadProfileLayoutAssignment}" />
+        <apex:actionFunction name="refresh" action="{!refresh}" reRender="refreshPanel,msgId,frmId" />
+        <apex:actionFunction name="refreshOrgConnection" action="{!refreshOrgDetail}"  oncomplete="getActiveConnection();init();initTab();" rerender="frmId,msgId" />
+        <apex:actionFunction name="refreshObjectList" action="{!refreshObjectList}"  oncomplete="init();initTab();" rerender="frmId,msgId" />
+        
+        <apex:actionFunction name="getActiveConnection" action="{!getActiveConnection}"  oncomplete="hideOverLay();init();initTab();" rerender="frmId,msgId" />
+
+        <apex:outputpanel id="refreshPanel">
+           
+            <apex:actionPoller action="{!resultfound}" reRender="refreshPanel,msgId,form" interval="5" enabled="{!isStart}" oncomplete="if({!isProcessed}){initTab();init();hideOverLay();}"
+            />
+        </apex:outputpanel>
+        <div class="slds-box slds-theme--shade" role="banner">
+            <div class="slds-grid slds-wrap slds-form--inline">
+                <div class="slds-form-element">
+                    <div class='slds-form--inline'>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="select-01">
+                                <a href='javascript:void(0);' onclick="showOverLay();refreshOrgConnection();" style='font-size:16px;'>
+                                    <span class="ion-loop" aria-hidden="true"></span>
+                                </a>
+                                Source Org</label>
+                            <div class="slds-select_container">
+                                <div class="slds-select_container">
+                                    <apex:selectList id="TargetOrg" value="{!strSelectedOrg}" onchange="showOverLay();refreshObjectList();" multiselect="false"
+                                        size="1" styleclass="slds-select multiselect profileClass">
+                                        <apex:selectOptions value="{!lstActiveConnection}" />
+                                    </apex:selectList>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-form-element">
+
+                    <fieldset class="slds-form-element">
+                        <legend class="slds-form-element__legend slds-form-element__label">Object</legend>
+                        <div class="slds-form-element__control">
+                          
+                            <apex:selectList value="{!lstSelectedObjectId}" multiselect="true" size="1" styleclass="slds-select multiselect multiSelectwithoutSelectAll" style="margin-right:40px;display:none1;">
+                                    <apex:selectOption rendered="{!lstObject.size==0}" itemValue="" itemLabel=""/>   
+                            <apex:selectOptions rendered='{!lstObject.size>=1}' value="{!lstObject[0]}" />
+                                <apex:selectOptions rendered='{!lstObject.size>=2}' value="{!lstObject[1]}" />
+                                <apex:selectOptions rendered='{!lstObject.size>=3}' value="{!lstObject[2]}" />
+                            </apex:selectList>
+                            
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="slds-form-element">
+                    <div class="slds-button-group" role="group">
+                        <apex:outputpanel layout="none" rendered="{!lstActiveConnection.size>0}">
+                            <button type='button' onclick='showOverLay();refresh();downloadProfileLayoutAssignment();' class="slds-button slds-button--brand slds-not-selected"
+                                style='margin-top:19px;' aria-live="assertive" actiondetail='Download Profile Layout Assignment '>
+                                <span class="slds-text-not-selected">
+                                    <span class='ion-ios-plus-empty'></span>Download Profile Layout Assignment</span>
+                            </button>
+                        </apex:outputpanel>
+                        <button type='button' onclick='showOverLay();refreshOrgConnection();' class="slds-button slds-button--neutral slds-not-selected" 
+                            style='margin-top:19px;background:#4bca81;color: #fff;' aria-live="assertive" actiondetail='Refresh Connection '>
+                            <span class="slds-text-not-selected">
+                                <span class='ion-ios-plus-empty'></span>Refresh Connection</span>
+                        </button>
+                        <button type='button' urlparam="{!$Page.createNewConnection}?open=modal" class="slds-button slds-button--neutral connectionmodal"
+                            style='margin-top:19px;' aria-live="assertive" actiondetail='Create New Connection '>
+                            <span class="slds-text-not-selected">
+                                <span class='ion-ios-plus-empty'></span>Create New Connection</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-notify_container1">
+                    <div class="slds-notify slds-notify--toast slds-theme--warning" role="alert">
+                      <span class="slds-assistive-text">Warning</span>
+                      
+                      <div class="slds-notify__content">
+                        <h2 class="slds-text-heading--small">Select less number of objects for best result.</h2>
+                      </div>
+                    </div>
+                  </div>
+            <apex:pagemessages id="msgId" />
+        </div>
+        <!--<div class="slds-form--compound" style='max-width:87rem;'>
+            <div class="slds-form-element__row">
+                <div class="slds-form-element slds-size--1-of-5">
+                    <apex:selectList value="{!lstSelectedObjectId}" multiselect="true" styleclass="multiselect objectClass" style="margin-right:40px;display:none;">
+                        <apex:selectOption rendered="{!lstObject.size==0}" itemValue="" itemLabel="" />
+                        <apex:selectOptions rendered='{!lstObject.size>=1}' value="{!lstObject[0]}" />
+                        <apex:selectOptions rendered='{!lstObject.size>=2}' value="{!lstObject[1]}" />
+                        <apex:selectOptions rendered='{!lstObject.size>=3}' value="{!lstObject[2]}" />
+                    </apex:selectList>
+                </div>
+                <div class="slds-form-element slds-size--1-of-5">
+                    <button type='button' id="example21-toggle" class="slds-button slds-button--brand compType ga" style='margin-right:10px;'
+                        onclick='showOverLay();refresh();downloadProfileLayoutAssignment();' data-action='Download Profile Layout Assignment'>Download Profile Layout Assignment</button>
+                </div>
+            </div>
+            <apex:pagemessages id='msgId' />
+        </div>-->
+        
+    </apex:form>
+    <c:ConnectionModalComp />
+</apex:page>

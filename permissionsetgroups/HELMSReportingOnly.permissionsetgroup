@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This permission set group will assign to HELMS Reporting users</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>HELMSReportingOnly</label>
+    <permissionSets>HELMS_Dealer_Notification_Preference_Management</permissionSets>
+    <permissionSets>HELMS_Reporting_Only</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

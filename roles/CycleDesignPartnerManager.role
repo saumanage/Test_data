@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Cycle Design Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Cycle Design Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>CycleDesignPartnerExecutive</parentRole>
+</Role>

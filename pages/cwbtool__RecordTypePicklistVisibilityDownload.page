@@ -1,0 +1,14 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 06-21-2021
+  @last modified by  : Kanishk Singh
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   06-17-2021   Kanishk Singh   Initial Version
+-->
+<apex:page controller="cwbtool.RecordTypePicklistVisibilityController" contenttype="application/x-excel#PicklistVisibility_{!Now()}.xls"  readOnly="true">
+
+<c:RecordTypePicklistVisibility lastRecordTypePicklistVisibilityModel="{!lastRecordTypePicklistVisibilityModel}" lstObjectName="{!objComponentSelectorModel.lstSelectedComponent}"></c:RecordTypePicklistVisibility>
+</apex:page>

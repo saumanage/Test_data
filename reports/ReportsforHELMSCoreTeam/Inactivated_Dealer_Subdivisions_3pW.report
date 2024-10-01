@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Dealer_Division__c.Dealer_ID__c</field>
+    </columns>
+    <columns>
+        <field>Dealer_Division__c.SubDiv_TXT__c</field>
+    </columns>
+    <columns>
+        <field>Dealer_Division__c.SalesZone_CD__c</field>
+    </columns>
+    <columns>
+        <field>Dealer_Division__c.SalesDistrict_CD__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Dealer_Division__c.isActive_FLG__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Dealer_Division__c.isActive_FLG__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Inactivated Dealer Sub-divisions</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityAuditHistory$Dealer_Division__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

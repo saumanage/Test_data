@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Assign Tableau_CRM_Plus_User permission set and permission set lincense to USer</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Tableau_CRM_Plus_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Assign Tableau_CRM_Plus_User permission set group and licence</description>
+        <label>Tableau_CRM_Plus_User</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Tableau_CRM_Plus</label>
+    <visibility>Public</visibility>
+</CustomObject>

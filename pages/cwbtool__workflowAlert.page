@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 01-07-2022
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.WorkFlowAlert" sidebar="false" showHeader="false" tabStyle="CWB_Tool__tab">
+    <c:requiredJSAndCSS />
+    <c:lightningScript ></c:lightningScript>
+    
+    <apex:form id="frmId" styleClass="CWB">
+    <c:lightningspinner />
+    <apex:actionFunction name="downloadComponent" action="{!downloadWorkFlowAlert}" />
+    <label class="slds-checkbox--toggle slds-grid slds-grid--vertical-align-center">
+        <span class="slds-form-element__label m-bottom--">Include Recipient</span>
+        <apex:inputCheckbox id="includeRecipient" value="{!includeRecipient}" ></apex:inputCheckbox>
+        <span class="slds-checkbox--faux" data-check-on="On" data-check-off="Off"></span>
+    </label>
+    <c:ComponentSelector buttonText="Download" ComponentType="{!strComponentType}" ComponentSelectorModel="{!objComponentSelectorModel}" hideWarning="true"></c:ComponentSelector>
+   </apex:form>
+<c:ConnectionModalComp />
+</apex:page>

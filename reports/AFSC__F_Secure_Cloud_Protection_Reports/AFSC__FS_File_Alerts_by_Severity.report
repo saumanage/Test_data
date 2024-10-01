@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AFSC__FS_Alert__c.AFSC__Date_Time__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FS_Alert__c.AFSC__Object_Name__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FS_Alert__c.AFSC__Reason__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FS_Alert__c.AFSC__Source__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FS_Alert__c.AFSC__User__c</field>
+    </columns>
+    <columns>
+        <field>AFSC__FS_Alert__c.AFSC__Details__c</field>
+    </columns>
+    <description>File Protection alerts grouped by Severity</description>
+    <filter>
+        <criteriaItems>
+            <column>AFSC__FS_Alert__c.AFSC__Object_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>FSFileScanLog__c</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AFSC__FS_Alert__c.AFSC__Severity__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>File Protection Alerts by Severity</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AFSC__FS_Alert__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AFSC__FS_Alert__c.AFSC__Date_Time__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,22 @@
+<template>
+
+        <!-- <lightning-icon icon-name="utility:pinned" ></lightning-icon> -->
+        <!-- <centre><h1>Navigation to Dealer Notifications</h1></centre> -->
+<lightning-layout multiple-rows="true" horizontal-align="center">
+        <template for:each={getSB} for:item="action">
+            <lightning-layout-item key={action.key} size="12" padding="around-small">
+                <button class="contactSupportButton slds-button stylingOverrideHook_1092a forceCommunityContactSupportButton button-color slds-align_absolute-center" style="width:220px;background-color: #5e6162" title={action.key} data-name={action.key}  onclick={onSBClick}>{action.value}</button>
+            </lightning-layout-item>
+        </template>
+</lightning-layout>
+        <!-- <template if:true={getSB} for:each={getSB} for:item="SB" >
+        <centre key={SB.key}>  
+        <li key={SB.key}>
+                <a href onclick={onSBClick} id={SB.key}>{SB.value} </a>
+                
+        </li>
+</centre> -->
+        <!-- </template> -->
+
+
+</template>

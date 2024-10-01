@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DSP Lead Update</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DSP Lead Updates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Line 1 --></label>
+        <name>AddressLine1_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 2 --></label>
+        <name>AddressLine2_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 3 --></label>
+        <name>AddressLine3_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 4 --></label>
+        <name>AddressLine4_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 5 --></label>
+        <name>AddressLine5_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Type --></label>
+        <name>AddressType_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apartment Number --></label>
+        <name>ApartmentNumber_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Date and Time --></label>
+        <name>Appointment_Date_and_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Id --></label>
+        <name>Appointment_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Location --></label>
+        <name>Appointment_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Notes --></label>
+        <name>Appointment_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment type --></label>
+        <name>Appointment_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Body Style --></label>
+        <name>Body_Style_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit SubDivision --></label>
+        <name>BusinessUnitSubDivision_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit Code --></label>
+        <name>Business_Unit_Code_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Color --></label>
+        <name>Color_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Method --></label>
+        <name>ContactMethod_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact person --></label>
+        <name>Contact_person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal ID --></label>
+        <name>Deal_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Link --></label>
+        <name>Deal_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer IDs --></label>
+        <name>Dealer_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Amount --></label>
+        <name>Deposit_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Confirmation Number --></label>
+        <name>Deposit_Confirmation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description_DESC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exterior Color --></label>
+        <name>Exterior_Color__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>FirstName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interior Color --></label>
+        <name>Interior_Color__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is This Lead Update --></label>
+        <name>Is_This_Lead_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>LastName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Provider Name --></label>
+        <name>Lead_Provider_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSRP --></label>
+        <name>MSRP_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Make --></label>
+        <name>Make_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Middle Name --></label>
+        <name>MiddleName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Name --></label>
+        <name>Model_Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model --></label>
+        <name>Model_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Trim --></label>
+        <name>Model_Trim_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Odometer Status --></label>
+        <name>Odometer_Status_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Odometer --></label>
+        <name>Odometer_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Odometer Units --></label>
+        <name>Odometer_Units_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Lead Provider --></label>
+        <name>OtherLeadProvider_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Contact Detail --></label>
+        <name>ProviderContactDetails_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Detail --></label>
+        <name>ProviderDetails_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider IDs --></label>
+        <name>Provider_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Service --></label>
+        <name>Provider_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Tool --></label>
+        <name>Provider_Tool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Order Number --></label>
+        <name>Salesforce_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Unique ID --></label>
+        <name>Source_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stock Number --></label>
+        <name>Stock_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transmission --></label>
+        <name>Transmission_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle IDs --></label>
+        <name>Vehicle_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Interest --></label>
+        <name>Vehicle_Interest_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Status --></label>
+        <name>Vehicle_Status_TX__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Contact Email --></label>
+        <name>Vendor_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Contact Name --></label>
+        <name>Vendor_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vin Number --></label>
+        <name>Vin_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year_YR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>ZipCode_TXT__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

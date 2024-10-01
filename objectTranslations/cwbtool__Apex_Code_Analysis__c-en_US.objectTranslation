@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Action Type --></label>
+        <name>cwbtool__Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Apex Code</masterLabel>
+            <translation><!-- Apex Code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apex Test Class</masterLabel>
+            <translation><!-- Apex Test Class --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RecordType Picklist</masterLabel>
+            <translation><!-- RecordType Picklist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Batch Size --></label>
+        <name>cwbtool__Batch_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Connection ID --></label>
+        <name>cwbtool__Connection_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>cwbtool__End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error --></label>
+        <name>cwbtool__Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- Export to Excel --></label>
+        <name>cwbtool__Export_to_Excel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Status --></label>
+        <name>cwbtool__Final_Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holding</masterLabel>
+            <translation><!-- Holding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preparing</masterLabel>
+            <translation><!-- Preparing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MetadataContainer ID --></label>
+        <name>cwbtool__MetadataContainer_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Name --></label>
+        <name>cwbtool__Org_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Req Name --></label>
+        <name>cwbtool__Req_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Analysis File Name --></label>
+        <name>cwbtool__Request_Analysis_File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request ID --></label>
+        <name>cwbtool__Request_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>cwbtool__Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step 2 ID --></label>
+        <name>cwbtool__Step_2_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Two --></label>
+        <name>cwbtool__Step_2__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reprocess</masterLabel>
+            <translation><!-- Reprocess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reprocessed</masterLabel>
+            <translation><!-- Reprocessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step One ID --></label>
+        <name>cwbtool__Step_One_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step One --></label>
+        <name>cwbtool__Step_One__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reprocess</masterLabel>
+            <translation><!-- Reprocess --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Org ID --></label>
+        <name>cwbtool__Target_Org_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Job Status --></label>
+        <name>cwbtool__View_Job_Status__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- View_Detail --></label>
+        <name>cwbtool__View_Detail</name>
+    </webLinks>
+</CustomObjectTranslation>

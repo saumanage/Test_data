@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Check_Lead_Provider_is_ThirdParty_0</name>
+        <label>Check Lead Provider is ThirdParty</label>
+        <locationX>941</locationX>
+        <locationY>388</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Default_vl_value</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LeadProvider_ID__r.Lead_Source__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Third Party</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_VL_as_default</targetReference>
+            </connector>
+            <label>Default vl value</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Lead_Provider_is_ThirdParty_0_0</name>
+        <label>Check Lead Provider is ThirdParty</label>
+        <locationX>252</locationX>
+        <locationY>398</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Default_vl_value_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LeadProvider_ID__r.Lead_Source__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Third Party</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_VL_as_default_0</targetReference>
+            </connector>
+            <label>Default VL Value</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Name_blank</name>
+        <label>Name blank</label>
+        <locationX>616</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Name_blank_Lead_dealernumber</name>
+            <conditionLogic>(1 OR 2 ) AND (3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FirstName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LastName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PreferredDealerAccount_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>set_isFirstName_to_false</targetReference>
+            </connector>
+            <label>Name blank Lead+dealernumber</label>
+        </rules>
+        <rules>
+            <name>Name_not_blank_Lead_dealerNumber</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FirstName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LastName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PreferredDealerAccount_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>set_ifFirstName_to_true</targetReference>
+            </connector>
+            <label>Name not blank Lead+dealerNumber</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>PreferredDealerAccountDealerCode</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.PreferredDealerAccount_ID__r.DealerCode_CD__c}</expression>
+    </formulas>
+    <interviewLabel>Before Update Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Before Update Lead</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>set_ifFirstName_to_true</name>
+        <label>set ifFirstName to true</label>
+        <locationX>831</locationX>
+        <locationY>385</locationY>
+        <connector>
+            <targetReference>Check_Lead_Provider_is_ThirdParty_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>IsFirstName_FLG__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PreferredDealerNumber_NUM__c</field>
+            <value>
+                <elementReference>$Record.PreferredDealerAccount_ID__r.DealerCode_CD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>set_isFirstName_to_false</name>
+        <label>set isFirstName to false</label>
+        <locationX>402</locationX>
+        <locationY>381</locationY>
+        <connector>
+            <targetReference>Check_Lead_Provider_is_ThirdParty_0_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>IsFirstName_FLG__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PreferredDealerNumber_NUM__c</field>
+            <value>
+                <elementReference>$Record.PreferredDealerAccount_ID__r.DealerCode_CD__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_VL_as_default</name>
+        <label>Update VL as default</label>
+        <locationX>932</locationX>
+        <locationY>224</locationY>
+        <inputAssignments>
+            <field>TransactionCode_CD__c</field>
+            <value>
+                <stringValue>VL Vehicle Lead only</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_VL_as_default_0</name>
+        <label>Update VL as default</label>
+        <locationX>263</locationX>
+        <locationY>219</locationY>
+        <inputAssignments>
+            <field>TransactionCode_CD__c</field>
+            <value>
+                <stringValue>VL Vehicle Lead only</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>490</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Name_blank</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

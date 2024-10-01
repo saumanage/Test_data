@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Description --></label>
+        <name>cwbtool__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level --></label>
+        <name>cwbtool__Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>cwbtool__Parent__c</name>
+        <relationshipLabel><!-- Components --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Root Id --></label>
+        <name>cwbtool__RootId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>cwbtool__Type__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>HELMS Power Sports</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>Acknowledged</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>Assigned to Dealer</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Number_NM__c</fieldNames>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>In Conversation</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Power_Sports</recordTypeName>
+</PathAssistant>

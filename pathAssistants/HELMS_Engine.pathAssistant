@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>HELMS Engine</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>Acknowledged</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>Assigned to Dealer</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Number_NM__c</fieldNames>
+        <info>&lt;p&gt;&lt;a href=&quot;https://engines.honda.com/support-and-service/registration&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;Honda Engines | Product Registration&lt;/a&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OpportunityStatus_TXT__c</fieldNames>
+        <picklistValueName>In Conversation</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Engine</recordTypeName>
+</PathAssistant>

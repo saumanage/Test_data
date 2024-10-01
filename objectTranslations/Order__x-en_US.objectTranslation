@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Ext</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Orders</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Order --></label>
+        <name>AK_Order_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account ID --></label>
+        <name>AccountId__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Account --></label>
+        <name>Account_c__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activated By ID --></label>
+        <name>ActivatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activated Date --></label>
+        <name>ActivatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Address --></label>
+        <name>Address_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allocated Quantity --></label>
+        <name>Allocated_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Gateway Customer Id --></label>
+        <name>BT_Customer_Detail_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- BT Customer Legecy Id --></label>
+        <name>BT_Customer_Legecy_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Payment Gateway Transaction Id --></label>
+        <name>BT_Transaction_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cust Payment Gateway Transaction Status --></label>
+        <name>BT_Transaction_Status_c__c</name>
+        <picklistValues>
+            <masterLabel>Authorization_Expired</masterLabel>
+            <translation><!-- Authorization_Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorized</masterLabel>
+            <translation><!-- Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gateway_Rejected</masterLabel>
+            <translation><!-- Gateway_Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processor_Declined</masterLabel>
+            <translation><!-- Processor_Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settled</masterLabel>
+            <translation><!-- Settled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settlement_Declined</masterLabel>
+            <translation><!-- Settlement_Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settlement_Pending</masterLabel>
+            <translation><!-- Settlement_Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Settling</masterLabel>
+            <translation><!-- Settling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted_For_Settlement</masterLabel>
+            <translation><!-- Submitted_For_Settlement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voided</masterLabel>
+            <translation><!-- Voided --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Bill To Contact ID --></label>
+        <name>BillToContactId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Address --></label>
+        <name>BillingAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing City --></label>
+        <name>BillingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Country --></label>
+        <name>BillingCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Email Address --></label>
+        <name>BillingEmailAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Geocode Accuracy --></label>
+        <name>BillingGeocodeAccuracy__c</name>
+        <picklistValues>
+            <masterLabel>Address</masterLabel>
+            <translation><!-- Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Block</masterLabel>
+            <translation><!-- Block --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City</masterLabel>
+            <translation><!-- City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>County</masterLabel>
+            <translation><!-- County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Zip</masterLabel>
+            <translation><!-- Extended Zip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Near Address</masterLabel>
+            <translation><!-- Near Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neighborhood</masterLabel>
+            <translation><!-- Neighborhood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State</masterLabel>
+            <translation><!-- State --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Street</masterLabel>
+            <translation><!-- Street --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zip</masterLabel>
+            <translation><!-- Zip --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Billing Latitude --></label>
+        <name>BillingLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Longitude --></label>
+        <name>BillingLongitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Phone Number --></label>
+        <name>BillingPhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Zip/Postal Code --></label>
+        <name>BillingPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State/Province --></label>
+        <name>BillingState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Street --></label>
+        <name>BillingStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- BillingZip --></label>
+        <name>BillingZip_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Customer Name --></label>
+        <name>Billing_Customer_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Email Address/User Email --></label>
+        <name>Billing_Email_Address_User_Email_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Card Last Four Digit --></label>
+        <name>CC_Last4_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Shipping City --></label>
+        <name>Cart_Shipping_City_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Shipping Country --></label>
+        <name>Cart_Shipping_Country_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Shipping Customer Name --></label>
+        <name>Cart_Shipping_Customer_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Phone Number --></label>
+        <name>Cart_Shipping_Phone_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Shipping Postal Code --></label>
+        <name>Cart_Shipping_Postal_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Shipping State --></label>
+        <name>Cart_Shipping_State_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Shipping Street --></label>
+        <name>Cart_Shipping_Street_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checkout Carrier Code --></label>
+        <name>Chkout_Carrier_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checkout Carrier Name --></label>
+        <name>Chkout_Carrier_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checkout Shipping Speed --></label>
+        <name>Chkout_Shipping_Speed_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Authorized By ID --></label>
+        <name>CompanyAuthorizedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Authorized Date --></label>
+        <name>CompanyAuthorizedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract ID --></label>
+        <name>ContractId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current with Tax --></label>
+        <name>Current_Grand_Total_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Installation Tax --></label>
+        <name>Current_Installation_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Quantity --></label>
+        <name>Current_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Return Amount --></label>
+        <name>Current_Return_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Return Tax --></label>
+        <name>Current_Return_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Shipping Tax --></label>
+        <name>Current_Shipping_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomTotal --></label>
+        <name>CustomTotal_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Authorized By ID --></label>
+        <name>CustomerAuthorizedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Authorized Date --></label>
+        <name>CustomerAuthorizedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerOrderStatus --></label>
+        <name>CustomerOrderStatus_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Customer Name --></label>
+        <name>Customer_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Notes --></label>
+        <name>Customer_Notes_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Preferred Speed --></label>
+        <name>Customer_Preferred_Speed_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Shipping Speed --></label>
+        <name>Customer_Preferred_Speeds_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Account --></label>
+        <name>Dealer_Account_c__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dealer Email --></label>
+        <name>Dealer_Email_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Notes --></label>
+        <name>Dealer_Notes_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Number --></label>
+        <name>Dealer_Number_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Shipping Speed --></label>
+        <name>Dealer_Shipping_Speed_c__c</name>
+        <picklistValues>
+            <masterLabel>Expedited</masterLabel>
+            <translation><!-- Expedited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Express</masterLabel>
+            <translation><!-- Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Delivery Type --></label>
+        <name>Delivery_Type_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Type --></label>
+        <name>Delivery_Types_c__c</name>
+        <picklistValues>
+            <masterLabel>DirectShip</masterLabel>
+            <translation><!-- DirectShip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install At Dealer</masterLabel>
+            <translation><!-- Install At Dealer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pick Up At Dealer</masterLabel>
+            <translation><!-- Pick Up At Dealer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ship to Me</masterLabel>
+            <translation><!-- Ship to Me --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Start Date --></label>
+        <name>EffectiveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Username --></label>
+        <name>Email_Username_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order End Date --></label>
+        <name>EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- External_account_POID --></label>
+        <name>External_account_POID_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- FormattedEffectiveDate --></label>
+        <name>FormattedEffectiveDate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total with Tax --></label>
+        <name>GrandTotalAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original with Tax --></label>
+        <name>GrandTotalAmount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- HPD Racing Line Number --></label>
+        <name>HPD_RLN_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install Refund --></label>
+        <name>Install_Refund_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsError --></label>
+        <name>IsError_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsEvseOrder --></label>
+        <name>IsEvseOrder_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsPaymentReproccessing --></label>
+        <name>IsPaymentReproccessing_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reduction Order --></label>
+        <name>IsReductionOrder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Payment Processed --></label>
+        <name>Is_Payment_Processed_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Shipping Returned --></label>
+        <name>Is_Shipping_Returned_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Referenced Date --></label>
+        <name>LastReferencedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Viewed Date --></label>
+        <name>LastViewedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead_Posted --></label>
+        <name>Lead_Posted_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Product Amount --></label>
+        <name>ORDER_AMOUNT_from_cart_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity ID --></label>
+        <name>OpportunityId__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrderItemSKU --></label>
+        <name>OrderItemSKU_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>OrderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Reference Number --></label>
+        <name>OrderReferenceNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Product --></label>
+        <name>Order_Product_c__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ordered Date --></label>
+        <name>OrderedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order ID --></label>
+        <name>OriginalOrderId__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Original Shipping Amount --></label>
+        <name>Original_Shipping_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Name --></label>
+        <name>Other_Carrier_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Gateway --></label>
+        <name>Payment_Gateway_c__c</name>
+        <picklistValues>
+            <masterLabel>Braintree</masterLabel>
+            <translation><!-- Braintree --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Method Token --></label>
+        <name>Payment_Method_Token_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Method Type --></label>
+        <name>Payment_Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Amex</masterLabel>
+            <translation><!-- Amex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discover</masterLabel>
+            <translation><!-- Discover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mastercard</masterLabel>
+            <translation><!-- Mastercard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PayPal</masterLabel>
+            <translation><!-- PayPal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visa</masterLabel>
+            <translation><!-- Visa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Phone No --></label>
+        <name>Phone_No_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Date --></label>
+        <name>PoDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Number --></label>
+        <name>PoNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book ID --></label>
+        <name>Pricebook2Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Division --></label>
+        <name>Product_Division_c__c</name>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acura Auto</masterLabel>
+            <translation><!-- Acura Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda Auto</masterLabel>
+            <translation><!-- Honda Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle</masterLabel>
+            <translation><!-- Motorcycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powerequipment</masterLabel>
+            <translation><!-- Powerequipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Subdivision --></label>
+        <name>Product_Subdivision_c__c</name>
+        <picklistValues>
+            <masterLabel>Acura</masterLabel>
+            <translation><!-- Acura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engine</masterLabel>
+            <translation><!-- Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda</masterLabel>
+            <translation><!-- Honda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hrc</masterLabel>
+            <translation><!-- Hrc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine</masterLabel>
+            <translation><!-- Marine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle/Powersports</masterLabel>
+            <translation><!-- Motorcycle/Powersports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powerequipment</masterLabel>
+            <translation><!-- Powerequipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Original Quantity --></label>
+        <name>Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order ID --></label>
+        <name>RelatedOrderId__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Released Quantity --></label>
+        <name>Released_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Restocking Fees --></label>
+        <name>Restocking_Fees_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Quantity --></label>
+        <name>Return_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Shipping Tax --></label>
+        <name>Return_Shipping_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- SHIPPING from cart --></label>
+        <name>SHIPPING_from_cart_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Channel ID --></label>
+        <name>SalesChannelId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Store ID --></label>
+        <name>SalesStoreId__c</name>
+    </fields>
+    <fields>
+        <label><!-- SendToHelmsLead --></label>
+        <name>SendToHelmsLead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Email To Customer --></label>
+        <name>Send_Email_To_Customer_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Contact ID --></label>
+        <name>ShipToContactId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Address Type --></label>
+        <name>Ship_To_Address_Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Shipped Date --></label>
+        <name>Shipped_Date_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Quantity --></label>
+        <name>Shipped_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Address --></label>
+        <name>ShippingAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping City --></label>
+        <name>ShippingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Country --></label>
+        <name>ShippingCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Geocode Accuracy --></label>
+        <name>ShippingGeocodeAccuracy__c</name>
+        <picklistValues>
+            <masterLabel>Address</masterLabel>
+            <translation><!-- Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Block</masterLabel>
+            <translation><!-- Block --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City</masterLabel>
+            <translation><!-- City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>County</masterLabel>
+            <translation><!-- County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Zip</masterLabel>
+            <translation><!-- Extended Zip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Near Address</masterLabel>
+            <translation><!-- Near Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neighborhood</masterLabel>
+            <translation><!-- Neighborhood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State</masterLabel>
+            <translation><!-- State --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Street</masterLabel>
+            <translation><!-- Street --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zip</masterLabel>
+            <translation><!-- Zip --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Shipping Latitude --></label>
+        <name>ShippingLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Longitude --></label>
+        <name>ShippingLongitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShippingNumber --></label>
+        <name>ShippingNumber_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Phone Number --></label>
+        <name>ShippingPhoneNumber_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Zip/Postal Code --></label>
+        <name>ShippingPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping State/Province --></label>
+        <name>ShippingState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Street --></label>
+        <name>ShippingStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Customer Name --></label>
+        <name>Shipping_Customer_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Note --></label>
+        <name>Shipping_Note_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta Return Shipping Amount --></label>
+        <name>Shipping_Refund_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Vendor --></label>
+        <name>Shipping_Vendors_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShowShippingInfo --></label>
+        <name>ShowShippingInfo_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Category --></label>
+        <name>StatusCode__c</name>
+        <picklistValues>
+            <masterLabel>Activated</masterLabel>
+            <translation><!-- Activated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Activated</masterLabel>
+            <translation><!-- Activated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CUSTOMER CANCELED</masterLabel>
+            <translation><!-- CUSTOMER CANCELED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEALER CANCELED</masterLabel>
+            <translation><!-- DEALER CANCELED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEALER REJECTED</masterLabel>
+            <translation><!-- DEALER REJECTED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN PROGRESS</masterLabel>
+            <translation><!-- IN PROGRESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORDER COMPLETE - INSTALLED</masterLabel>
+            <translation><!-- ORDER COMPLETE - INSTALLED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORDER COMPLETE - PICKED UP</masterLabel>
+            <translation><!-- ORDER COMPLETE - PICKED UP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORDER COMPLETE - SHIPPED</masterLabel>
+            <translation><!-- ORDER COMPLETE - SHIPPED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORDER ISSUE</masterLabel>
+            <translation><!-- ORDER ISSUE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORDER RETURN</masterLabel>
+            <translation><!-- ORDER RETURN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PARTIAL RETURN</masterLabel>
+            <translation><!-- PARTIAL RETURN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PARTIAL RETURN COMPLETE</masterLabel>
+            <translation><!-- PARTIAL RETURN COMPLETE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PARTIAL SHIP</masterLabel>
+            <translation><!-- PARTIAL SHIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PARTIALLY SHIPPED</masterLabel>
+            <translation><!-- PARTIALLY SHIPPED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAYMENT ISSUE</masterLabel>
+            <translation><!-- PAYMENT ISSUE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PREPARING FOR SHIPMENT</masterLabel>
+            <translation><!-- PREPARING FOR SHIPMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROCESSING IN WAREHOUSE</masterLabel>
+            <translation><!-- PROCESSING IN WAREHOUSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>READY FOR PICKUP</masterLabel>
+            <translation><!-- READY FOR PICKUP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SENT TO WAREHOUSE</masterLabel>
+            <translation><!-- SENT TO WAREHOUSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYSTEM CANCELED</masterLabel>
+            <translation><!-- SYSTEM CANCELED --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Tax --></label>
+        <name>TAX_from_cart_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original With Tax --></label>
+        <name>TOTAL_from_cart_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Locale Type --></label>
+        <name>TaxLocaleType__c</name>
+        <picklistValues>
+            <masterLabel>Automatic</masterLabel>
+            <translation><!-- Automatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gross</masterLabel>
+            <translation><!-- Gross --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net</masterLabel>
+            <translation><!-- Net --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tax Refund --></label>
+        <name>Tax_Refund_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjusted Delivery Amount with Tax --></label>
+        <name>TotalAdjDeliveryAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjusted Product Amount with Tax --></label>
+        <name>TotalAdjProductAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjusted Delivery Amount --></label>
+        <name>TotalAdjustedDeliveryAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjusted Delivery Tax --></label>
+        <name>TotalAdjustedDeliveryTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjusted Product Amount --></label>
+        <name>TotalAdjustedProductAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjusted Product Tax --></label>
+        <name>TotalAdjustedProductTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Amount --></label>
+        <name>TotalAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Delivery Distributed Adjustments --></label>
+        <name>TotalDeliveryAdjDistAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Delivery Distributed Adjustments w --></label>
+        <name>TotalDeliveryAdjDistAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Delivery Distributed Adjustment Ta --></label>
+        <name>TotalDeliveryAdjDistTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Product Distributed Adjustments --></label>
+        <name>TotalProductAdjDistAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Product Distributed Adjustments wi --></label>
+        <name>TotalProductAdjDistAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Product Distributed Adjustment Tax --></label>
+        <name>TotalProductAdjDistTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Tax --></label>
+        <name>TotalTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Tax --></label>
+        <name>TotalTaxAmount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Pre Tax Order Amount --></label>
+        <name>Total_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Current Amount --></label>
+        <name>Total_Core_Charge_Current_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Current Quantity --></label>
+        <name>Total_Core_Charge_Current_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Current Tax --></label>
+        <name>Total_Core_Charge_Current_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Original Amount --></label>
+        <name>Total_Core_Charge_Original_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Original Quantity --></label>
+        <name>Total_Core_Charge_Original_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Original Tax --></label>
+        <name>Total_Core_Charge_Original_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Return Amount --></label>
+        <name>Total_Core_Charge_Return_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Return Quantity --></label>
+        <name>Total_Core_Charge_Return_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Return Tax --></label>
+        <name>Total_Core_Charge_Return_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Core Charge Return Tax --></label>
+        <name>Total_Core_Charge_Return_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Pre Tax Order Amount --></label>
+        <name>Total_Current_Pre_Tax_Order_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Product Amount --></label>
+        <name>Total_Current_Product_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Product Tax --></label>
+        <name>Total_Current_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Installation Charge --></label>
+        <name>Total_Installation_Charge_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Installation Charge --></label>
+        <name>Total_Installation_Charges_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Installation Charge --></label>
+        <name>Total_Installation_Return_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Installation Tax --></label>
+        <name>Total_Installation_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Product Amount --></label>
+        <name>Total_Item_Return_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Product Amount --></label>
+        <name>Total_Original_Product_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Product Tax --></label>
+        <name>Total_Original_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Restocking Fee Tax --></label>
+        <name>Total_Restocking_Fee_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Restocking Fee --></label>
+        <name>Total_Restocking_Fees_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Amount --></label>
+        <name>Total_Return_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Installation Tax --></label>
+        <name>Total_Return_Installation_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Pre Tax Amount --></label>
+        <name>Total_Return_Pre_Tax_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Product Amount --></label>
+        <name>Total_Return_Product_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Product Tax --></label>
+        <name>Total_Return_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Amount --></label>
+        <name>Total_Return_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Shipping Amount --></label>
+        <name>Total_Ship_Return_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Shipping Tax --></label>
+        <name>Total_Shipping_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Tax --></label>
+        <name>Total_Tax_Return_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable AMT --></label>
+        <name>Total_Unavailable_AMT_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable PreTax Amt --></label>
+        <name>Total_Unavailable_PreTaxAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Product Amt --></label>
+        <name>Total_Unavailable_ProductAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Product Tax --></label>
+        <name>Total_Unavailable_ProductTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Shipping Amt --></label>
+        <name>Total_Unavailable_ShippingAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Refund Shipping Tax --></label>
+        <name>Total_Unavailable_ShippingTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Tax AMT --></label>
+        <name>Total_Unavailable_TaxAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Direct Ship</masterLabel>
+            <translation><!-- Direct Ship --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unavailable Quantity --></label>
+        <name>Unavailable_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Installation Price --></label>
+        <name>Updated_Installation_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Product Amount --></label>
+        <name>Updated_Order_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current with Tax --></label>
+        <name>Updated_Order_Total_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Shipping Amount --></label>
+        <name>Updated_Shipping_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Tax --></label>
+        <name>Updated_Total_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vertex Trans Id --></label>
+        <name>Vertex_Trans_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- cart --></label>
+        <name>cart_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- customOrderDate --></label>
+        <name>customOrderDate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- isOrderPickedUp --></label>
+        <name>isOrderPickedUp_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- isStatusDraft --></label>
+        <name>isStatusDraft_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

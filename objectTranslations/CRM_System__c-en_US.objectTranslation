@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CRM System</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CRM Systems</value>
+    </caseValues>
+    <fields>
+        <label><!-- CRM AUTH TYPE --></label>
+        <name>CRM_AUTH_TYPE__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM BASIC AUTH --></label>
+        <name>CRM_BASIC_AUTH__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM FORMAT --></label>
+        <name>CRM_FORMAT__c</name>
+        <picklistValues>
+            <masterLabel>ADF_HTTPS_ENCODED</masterLabel>
+            <translation><!-- ADF_HTTPS_ENCODED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADF_HTTPS_RAW</masterLabel>
+            <translation><!-- ADF_HTTPS_RAW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADF_SOAP</masterLabel>
+            <translation><!-- ADF_SOAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAR_HTTPS</masterLabel>
+            <translation><!-- STAR_HTTPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAR_SOAP</masterLabel>
+            <translation><!-- STAR_SOAP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CRM HEADER API KEY --></label>
+        <name>CRM_HEADER_API_KEY__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM PROTOCOL --></label>
+        <name>CRM_PROTOCOL__c</name>
+        <picklistValues>
+            <masterLabel>HTTPS</masterLabel>
+            <translation><!-- HTTPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOAP</masterLabel>
+            <translation><!-- SOAP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division_CD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Changing this URL will change the endpoint for the CRM System. All opportunities will be sent to the URL address here. --></help>
+        <label><!-- Endpoint URL --></label>
+        <name>Endpoint_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsActive --></label>
+        <name>ISActive_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receive Lead Updates --></label>
+        <name>Receive_Lead_Updates__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>Vendor_ID__c</name>
+        <relationshipLabel><!-- CRM Systems --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <label><!-- System --></label>
+        <name>System</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

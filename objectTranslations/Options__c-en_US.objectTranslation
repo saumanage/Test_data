@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Options</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Options</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Opportunity Options --></label>
+        <name>AK_Opportunity_Options__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory Number --></label>
+        <name>InventoryNumber_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox Id --></label>
+        <name>Launchbox_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- LeadId --></label>
+        <name>LeadId__c</name>
+        <relationshipLabel><!-- Options --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Code --></label>
+        <name>ManufacturerCode_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Dealer Accessory Price --></label>
+        <name>ModelDealerAccessoryPrice_AM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity ID --></label>
+        <name>Opportunity_ID__c</name>
+        <relationshipLabel><!-- Options --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OptionName --></label>
+        <name>OptionName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Option Type --></label>
+        <name>Option_Type__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation><!-- Accessory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Factory Installed Feature (FIF)</masterLabel>
+            <translation><!-- Factory Installed Feature (FIF) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Appraisal Source --></label>
+        <name>PriceAppraisalSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Appraisal --></label>
+        <name>PriceAppraisal_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Appraisal delta --></label>
+        <name>PriceAppraisaldelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Appraisal relativeto --></label>
+        <name>PriceAppraisalrelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Asking Source --></label>
+        <name>PriceAskingSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Asking --></label>
+        <name>PriceAsking_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Asking delta --></label>
+        <name>PriceAskingdelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Asking relativeto --></label>
+        <name>PriceAskingrelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Call Source --></label>
+        <name>PriceCallSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Call --></label>
+        <name>PriceCall_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Call delta --></label>
+        <name>PriceCalldelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Call relativeto --></label>
+        <name>PriceCallrelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Currency --></label>
+        <name>PriceCurrency_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Invoice Source --></label>
+        <name>PriceInvoiceSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Invoice --></label>
+        <name>PriceInvoice_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Invoice delta --></label>
+        <name>PriceInvoicedelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Invoice relativeto --></label>
+        <name>PriceInvoicerelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price MSRP Source --></label>
+        <name>PriceMSRPSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price MSRP --></label>
+        <name>PriceMSRP_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price MSRP delta --></label>
+        <name>PriceMSRPdelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price MSRP relativeto --></label>
+        <name>PriceMSRPrelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Offer Source --></label>
+        <name>PriceOfferSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Offer --></label>
+        <name>PriceOffer_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Offer delta --></label>
+        <name>PriceOfferdelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Offer relativeto --></label>
+        <name>PriceOfferrelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Quote Source --></label>
+        <name>PriceQuoteSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Quote --></label>
+        <name>PriceQuote_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Quote delta --></label>
+        <name>PriceQuotedelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Quote relativeto --></label>
+        <name>PriceQuoterelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Source --></label>
+        <name>PriceSource_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price delta --></label>
+        <name>Pricedelta_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relative</masterLabel>
+            <translation><!-- Relative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price relativeto --></label>
+        <name>Pricerelativeto_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSRP</masterLabel>
+            <translation><!-- MSRP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Weighting --></label>
+        <name>Weighting_NUM__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

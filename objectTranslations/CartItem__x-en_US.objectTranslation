@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cart Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cart Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Cart Item --></label>
+        <name>AK_Cart_Item_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accessorie Image URL --></label>
+        <name>Accessorie_Image_URL_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Amount quantity based --></label>
+        <name>AdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Tax Amount --></label>
+        <name>AdjustmentTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CityTax Rate --></label>
+        <name>B2B_CityTax_Rate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- CityTax --></label>
+        <name>B2B_CityTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Product Tax --></label>
+        <name>B2B_Item_Total_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- StateTax Rate --></label>
+        <name>B2B_StateTax_Rate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- StateTax --></label>
+        <name>B2B_StateTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- TransitDistrict TaxRate --></label>
+        <name>B2B_TransitDistrictTax_Rate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- TransitDistrict Tax --></label>
+        <name>B2B_TransitDistrictTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brand Name --></label>
+        <name>Brand_Name_c__c</name>
+        <picklistValues>
+            <masterLabel>Acura</masterLabel>
+            <translation><!-- Acura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda</masterLabel>
+            <translation><!-- Honda --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cart Delivery Group ID --></label>
+        <name>CartDeliveryGroupId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart ID --></label>
+        <name>CartId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Color Marketing Name --></label>
+        <name>Color_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Installation Charge --></label>
+        <name>Dealer_Installation_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributed Promotions Total --></label>
+        <name>DistributedAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributed Promotions Tax Adjustment --></label>
+        <name>DistributedAdjustmentTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Adjustment Amount quantity based --></label>
+        <name>GrossAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Unit Price --></label>
+        <name>GrossUnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Illustration Group Image Id --></label>
+        <name>Illustration_Group_Image_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Illustration Id --></label>
+        <name>Illustration_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is VIN Fitment --></label>
+        <name>Is_VIN_Fitment_c__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Item Package Quantity --></label>
+        <name>Item_Package_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Promotions Total --></label>
+        <name>ItemizedAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Promotions Tax Adjustment --></label>
+        <name>ItemizedAdjustmentTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Price --></label>
+        <name>ListPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Item Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Adjustment Amount quantity based --></label>
+        <name>NetAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Unit Price --></label>
+        <name>NetUnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product ID --></label>
+        <name>Product2Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Division --></label>
+        <name>Product_Division_c__c</name>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acura Auto</masterLabel>
+            <translation><!-- Acura Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda Auto</masterLabel>
+            <translation><!-- Honda Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle</masterLabel>
+            <translation><!-- Motorcycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powerequipment</masterLabel>
+            <translation><!-- Powerequipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Identifier --></label>
+        <name>Product_Identifier_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Model Marketing Name --></label>
+        <name>Product_Model_Marketing_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Model --></label>
+        <name>Product_Model_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Subdivision --></label>
+        <name>Product_Subdivision_c__c</name>
+        <picklistValues>
+            <masterLabel>Acura</masterLabel>
+            <translation><!-- Acura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engine</masterLabel>
+            <translation><!-- Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda</masterLabel>
+            <translation><!-- Honda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hrc</masterLabel>
+            <translation><!-- Hrc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine</masterLabel>
+            <translation><!-- Marine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle/Powersports</masterLabel>
+            <translation><!-- Motorcycle/Powersports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powerequipment</masterLabel>
+            <translation><!-- Powerequipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation><!-- Accessory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core Charge</masterLabel>
+            <translation><!-- Core Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motocompacto</masterLabel>
+            <translation><!-- Motocompacto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part</masterLabel>
+            <translation><!-- Part --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Price --></label>
+        <name>SalesPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Id --></label>
+        <name>Section_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Option --></label>
+        <name>Shipping_Option_c__c</name>
+        <picklistValues>
+            <masterLabel>Pickup at Dealer only</masterLabel>
+            <translation><!-- Pickup at Dealer only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pickup at Dealer, Direct Ship</masterLabel>
+            <translation><!-- Pickup at Dealer, Direct Ship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pickup at Dealer, Ship from Dealer</masterLabel>
+            <translation><!-- Pickup at Dealer, Ship from Dealer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SKU --></label>
+        <name>Sku__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Adjustments Total --></label>
+        <name>TotalAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Amount --></label>
+        <name>TotalAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Line Amount --></label>
+        <name>TotalLineAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Line Gross Amount --></label>
+        <name>TotalLineGrossAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Line Net Amount --></label>
+        <name>TotalLineNetAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Line Tax Amount --></label>
+        <name>TotalLineTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total List Price --></label>
+        <name>TotalListPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjusted Price --></label>
+        <name>TotalPriceAfterAllAdjustments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Price Tax Amount --></label>
+        <name>TotalPriceTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Price --></label>
+        <name>TotalPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Promotions Plus Distributed Promoti --></label>
+        <name>TotalPromoAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Promotions Tax Adjustment Plus Dist --></label>
+        <name>TotalPromoAdjustmentTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Tax Amount --></label>
+        <name>TotalTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Charge</masterLabel>
+            <translation><!-- Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unit Adjusted Price --></label>
+        <name>UnitAdjustedPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Adjustment Amount --></label>
+        <name>UnitAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accessory Op Code --></label>
+        <name>op_code_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Model</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Models</value>
+    </caseValues>
+    <fields>
+        <label><!-- Launchbox ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model ID --></label>
+        <name>Model_ID_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model MSRP --></label>
+        <name>Model_MSRP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Marketing Name --></label>
+        <name>Model_Marketing_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Year --></label>
+        <name>Model_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Model Group Id --></label>
+        <name>Product_Model_Group_Id__c</name>
+        <relationshipLabel><!-- Product Models --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

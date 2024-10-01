@@ -1,0 +1,82 @@
+<!--
+ 
+  About page provides some information about the application.
+  
+  Copyright (c) 2016 F-Secure Corporation. All rights reserved.
+ 
+-->
+
+<apex:page sidebar="false">
+<apex:stylesheet value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+    <title>About</title>
+</head>
+
+<style>
+@font-face {
+  font-family: FSecureHeadline;
+  font-style: normal;
+  font-weight: 400;
+  src: url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.eot')}?#iefix") format("embedded-opentype"), 
+  	url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff2')}") format("woff2"), 
+  	url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff')}") format("woff");
+} 
+</style>
+
+<body style="padding: 0; margin: 0;">
+<div class="fslds">
+
+<!-- PAGE HEADER -->
+<div class="slds-page-header" role="banner">
+  <div class="slds-media slds-media--center">
+    <div class="slds-media__figure">
+      <svg aria-hidden="true" class="slds-icon slds-icon-standard-apps">
+        <use xlink:href="{!URLFOR($Resource.SLDS0203, 'assets/icons/standard-sprite/svg/symbols.svg#topic')}"></use>
+      </svg>
+    </div>
+    <div class="slds-media__body">
+      <p class="slds-page-header__title slds-truncate slds-align-middle">About</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="slds-grid slds-theme--shade">
+
+ <div class="slds-col">
+	<div class="slds-panel__section slds-p-top--small">
+		<div class="slds-box slds-theme--default">
+
+           <h3 class="slds-text-heading--medium slds-p-vertical--medium" style="font-family:FSecureHeadline,'Salesforce Sans',sans-serif;">F-SECURE CLOUD PROTECTION</h3>
+
+			<p class="slds-text-body--regular">&copy; 2016 F-Secure Corporation. All rights reserved.</p> 
+			<p class="slds-text-body--regular">'F-Secure' and F-logo are registered trademarks of F-Secure Corporation. 
+			F-Secure product and technology names and F-Secure logos are either trademarks or registered trademarks of F-Secure Corporation. 
+			Other product names and logos referenced herein are trademarks or registered trademarks of their respective companies.
+			</p>
+
+            <h3 class="slds-text-heading--medium slds-p-vertical--medium">Overview</h3>
+		
+			<p class="slds-text-body--regular">
+            F-Secure Cloud Protection for Salesforce application keeps your organization protected against malware, ransomware, exploits and other advanced threats. 
+            It analyzes files and URLs using F-Secure Security Cloud and award-winning technologies, which allow to detect and block dangerous content and emerging threats instantly.
+            </p>
+
+            <h3 class="slds-text-heading--medium slds-p-vertical--medium">How to check it works</h3>
+            
+            <p class="slds-text-body--regular">Upload <a href="http://www.eicar.org/85-0-Download.html" target="_blank">Eicar test file</a> to your organization's public or private library. 
+            Then, try to download it from Salesforce to your local device.</p>
+			
+		</div>
+	</div>
+
+  </div>
+</div>
+</div>
+</body>
+
+</html>
+
+</apex:page>

@@ -1,0 +1,102 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 05-30-2021
+  @last modified by  : Kanishk Singh
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   05-30-2021   Kanishk Singh   Initial Version
+-->
+<apex:page controller="cwbtool.DescribeBasicObjectCtrl" sidebar="false" tabStyle="CWB_Tool__tab" showheader="false">
+<link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}"/>
+<link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap-multiselect.css')}" /> 
+<apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/jquery.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-transition.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-dropdown.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-multiselect.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.cwbtool__googleAnalytics,'/googleAnalytics.js')}"/>
+
+   <apex:stylesheet value="{!URLFOR($Resource.cwbtool__SLDS, 'SLDS/assets/styles/salesforce-lightning-design-system-ns-vf.css')}" />
+   
+ <style>
+   .bodyDiv{
+     height:400px;
+  }
+.Btn-group{
+  width:60% !important;
+}
+.frm{
+  margin:15px;
+}
+.modal {
+    outline:none;
+}
+ 
+ 
+ </style>  
+   <apex:pagemessages rendered="{!lstObject==null || lstObject.size==0}"/>
+   <apex:outputpanel rendered='{!lstObject!=null && lstObject.size>0}' layout='none' > 
+<c:actionstatusNew />
+
+<apex:form id="form" styleclass="frm CWB">
+    <apex:selectList value="{!lstSelectedObject}" multiselect="true" styleclass="multiselect ObjectClass" style="margin-right:40px;display:none;"> 
+            <apex:selectOption rendered="{!lstObject.size==0}" itemValue="" itemLabel=""/>
+            <apex:selectOptions rendered='{!lstObject.size>=1}' value="{!lstObject[0]}"/>
+            <apex:selectOptions rendered='{!lstObject.size>=2}' value="{!lstObject[1]}"/>
+            <apex:selectOptions rendered='{!lstObject.size>=3}' value="{!lstObject[2]}"/>
+       </apex:selectList>
+      <span id="example21-toggle" class="Btn Btn-primary compType ga" 
+      style='margin-right:10px;' 
+      onclick="showOverLay('{!HTMLENCODE(strStatus)}');getObjectDetails();refresh();" data-action='Download Full Object Detail Action'>Download Object</span>
+   
+   
+      <c:saveFilter lstSelectedComponentName="{!lstSelectedObject}" type="Full Object" displayMessage="Object"></c:saveFilter>
+
+      <apex:actionFunction name="getObjectDetails" action="{!getObjectDetails}" />
+       <apex:actionFunction name="refresh" action="{!refresh}" oncomplete="initMultiselect();" reRender="refreshPanel,msgId,form"/> 
+       
+   <apex:outputpanel id="refreshPanel">  
+      <apex:pagemessages rendered="{!lstObject==null || lstObject.size==0}"/>
+      <apex:actionPoller action="{!resultfound}" reRender="refreshPanel,msgId,form" interval="5" enabled="{!isStart}" oncomplete="if({!isProcessed}){hideOverLay();};initMultiselect();"/> 
+   </apex:outputpanel>
+    <apex:pagemessages ></apex:pagemessages>
+<script>
+  $(document).ready(function() {
+  initMultiselect();
+  function initMultiselect(){
+    $('.ObjectClass').multiselect({
+   nSelectedText  : ' Objects selected', 
+    buttonClass: 'Btn Btn-default', 
+    enableFiltering: true,
+    filterBehavior: 'both',
+   enableCaseInsensitiveFiltering: true,
+    filterPlaceholder: 'Search Object..',
+   includeSelectAllOption:true,
+   selectAllText: 'Select ALL Object',
+   selectAllValue: 'multiselect-all',
+  maxHeight:217,
+ buttonWidth: '90%',
+  nonSelectedText: 'You have not selected any Object',
+  disableIfEmpty:true,
+   onChange: function(element, checked) {
+          if($('.ObjectClass').val()==null){
+              $('.containerDivclass').hide();
+              $('#containerMessage').show();
+          }else{
+              $('.containerDivclass').show();
+              $('#containerMessage').hide();
+          }
+        }
+    });
+  
+}   
+   
+});
+
+</script>  
+</apex:form>
+</apex:outputpanel>
+
+</apex:page>

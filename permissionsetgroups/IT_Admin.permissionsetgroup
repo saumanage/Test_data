@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>IT_Admin</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>IT Admin</label>
+    <permissionSets>HELMS_Account_Management</permissionSets>
+    <permissionSets>HELMS_Campaign_management</permissionSets>
+    <permissionSets>HELMS_Case_Management</permissionSets>
+    <permissionSets>HELMS_Contact_Management</permissionSets>
+    <permissionSets>HELMS_Dealer_Certification_Management</permissionSets>
+    <permissionSets>HELMS_IT_Admin</permissionSets>
+    <permissionSets>HELMS_Lead_Import</permissionSets>
+    <permissionSets>HELMS_Lead_Management</permissionSets>
+    <permissionSets>HELMS_Opportunity_Creation</permissionSets>
+    <permissionSets>HELMS_Opportunity_Edit</permissionSets>
+    <permissionSets>HELMS_Public_Report_Management</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

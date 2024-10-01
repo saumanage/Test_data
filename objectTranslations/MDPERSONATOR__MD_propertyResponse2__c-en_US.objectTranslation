@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- BuildingAirConditioningCode --></label>
+        <name>MDPERSONATOR__BuildingAirConditioningCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingBasementCode --></label>
+        <name>MDPERSONATOR__BuildingBasementCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingBathFixtures --></label>
+        <name>MDPERSONATOR__BuildingBathFixtures__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingBedRooms --></label>
+        <name>MDPERSONATOR__BuildingBedRooms__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingBuildingCode --></label>
+        <name>MDPERSONATOR__BuildingBuildingCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingBuildingStyleCode --></label>
+        <name>MDPERSONATOR__BuildingBuildingStyleCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingConditionCode --></label>
+        <name>MDPERSONATOR__BuildingConditionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingConstructionCode --></label>
+        <name>MDPERSONATOR__BuildingConstructionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingEffectiveYearBuilt --></label>
+        <name>MDPERSONATOR__BuildingEffectiveYearBuilt__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingElectricityCode --></label>
+        <name>MDPERSONATOR__BuildingElectricityCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingExteriorWallCode --></label>
+        <name>MDPERSONATOR__BuildingExteriorWallCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingFireplaceCode --></label>
+        <name>MDPERSONATOR__BuildingFireplaceCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingFireplace --></label>
+        <name>MDPERSONATOR__BuildingFireplace__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingFireplaces --></label>
+        <name>MDPERSONATOR__BuildingFireplaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingFlooringCode --></label>
+        <name>MDPERSONATOR__BuildingFlooringCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingFoundationCode --></label>
+        <name>MDPERSONATOR__BuildingFoundationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingFuelCode --></label>
+        <name>MDPERSONATOR__BuildingFuelCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingFullBaths --></label>
+        <name>MDPERSONATOR__BuildingFullBaths__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingGarageCode --></label>
+        <name>MDPERSONATOR__BuildingGarageCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingHalfBaths --></label>
+        <name>MDPERSONATOR__BuildingHalfBaths__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingHeatingCode --></label>
+        <name>MDPERSONATOR__BuildingHeatingCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingImprovementCode --></label>
+        <name>MDPERSONATOR__BuildingImprovementCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingMobileHome --></label>
+        <name>MDPERSONATOR__BuildingMobileHome__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingOneQuarterBaths --></label>
+        <name>MDPERSONATOR__BuildingOneQuarterBaths__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingParkingCode --></label>
+        <name>MDPERSONATOR__BuildingParkingCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingParkingSpaces --></label>
+        <name>MDPERSONATOR__BuildingParkingSpaces__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingPoolCode --></label>
+        <name>MDPERSONATOR__BuildingPoolCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingPool --></label>
+        <name>MDPERSONATOR__BuildingPool__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingQualityCode --></label>
+        <name>MDPERSONATOR__BuildingQualityCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingRoofCoverCode --></label>
+        <name>MDPERSONATOR__BuildingRoofCoverCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingRoofFramingCode --></label>
+        <name>MDPERSONATOR__BuildingRoofFramingCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingRoofTypeCode --></label>
+        <name>MDPERSONATOR__BuildingRoofTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingSewerCode --></label>
+        <name>MDPERSONATOR__BuildingSewerCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingStoriesCode --></label>
+        <name>MDPERSONATOR__BuildingStoriesCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingStories --></label>
+        <name>MDPERSONATOR__BuildingStories__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingThreeQuarterBaths --></label>
+        <name>MDPERSONATOR__BuildingThreeQuarterBaths__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingTotalBathsCalculated --></label>
+        <name>MDPERSONATOR__BuildingTotalBathsCalculated__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingTotalBaths --></label>
+        <name>MDPERSONATOR__BuildingTotalBaths__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingTotalRooms --></label>
+        <name>MDPERSONATOR__BuildingTotalRooms__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingUnits --></label>
+        <name>MDPERSONATOR__BuildingUnits__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingWaterCode --></label>
+        <name>MDPERSONATOR__BuildingWaterCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- BuildingYearBuilt --></label>
+        <name>MDPERSONATOR__BuildingYearBuilt__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotAcreage --></label>
+        <name>MDPERSONATOR__LotAcreage__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotDepthFootage --></label>
+        <name>MDPERSONATOR__LotDepthFootage__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotFrontFootage --></label>
+        <name>MDPERSONATOR__LotFrontFootage__c</name>
+    </fields>
+    <fields>
+        <label><!-- LotSquareFootage --></label>
+        <name>MDPERSONATOR__LotSquareFootage__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelAPNSequenceNo --></label>
+        <name>MDPERSONATOR__ParcelAPNSequenceNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelAbsenteeOwnerCode --></label>
+        <name>MDPERSONATOR__ParcelAbsenteeOwnerCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelCensusTract --></label>
+        <name>MDPERSONATOR__ParcelCensusTract__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelCountyLandUse1 --></label>
+        <name>MDPERSONATOR__ParcelCountyLandUse1__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelCountyLandUse2 --></label>
+        <name>MDPERSONATOR__ParcelCountyLandUse2__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelFIPSCode --></label>
+        <name>MDPERSONATOR__ParcelFIPSCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelFIPSSubCode --></label>
+        <name>MDPERSONATOR__ParcelFIPSSubCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelFormattedAPN --></label>
+        <name>MDPERSONATOR__ParcelFormattedAPN__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelHomesteadExempt --></label>
+        <name>MDPERSONATOR__ParcelHomesteadExempt__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelLandUseCode --></label>
+        <name>MDPERSONATOR__ParcelLandUseCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelLocationInfluenceCode --></label>
+        <name>MDPERSONATOR__ParcelLocationInfluenceCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelMunicipalityName --></label>
+        <name>MDPERSONATOR__ParcelMunicipalityName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelNumberOfBuildings --></label>
+        <name>MDPERSONATOR__ParcelNumberOfBuildings__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelOriginalAPN --></label>
+        <name>MDPERSONATOR__ParcelOriginalAPN__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelPropertyIndicatorCode --></label>
+        <name>MDPERSONATOR__ParcelPropertyIndicatorCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelQuarterSection --></label>
+        <name>MDPERSONATOR__ParcelQuarterSection__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelRange --></label>
+        <name>MDPERSONATOR__ParcelRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelSection --></label>
+        <name>MDPERSONATOR__ParcelSection__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelTownship --></label>
+        <name>MDPERSONATOR__ParcelTownship__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelUnformattedAPN --></label>
+        <name>MDPERSONATOR__ParcelUnformattedAPN__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelViewCode --></label>
+        <name>MDPERSONATOR__ParcelViewCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParcelZoning --></label>
+        <name>MDPERSONATOR__ParcelZoning__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageAdjustedGross --></label>
+        <name>MDPERSONATOR__SquareFootageAdjustedGross__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageBasement --></label>
+        <name>MDPERSONATOR__SquareFootageBasement__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageBuildingAreaCode --></label>
+        <name>MDPERSONATOR__SquareFootageBuildingAreaCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageBuildingArea --></label>
+        <name>MDPERSONATOR__SquareFootageBuildingArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageGarageOrParking --></label>
+        <name>MDPERSONATOR__SquareFootageGarageOrParking__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageGross --></label>
+        <name>MDPERSONATOR__SquareFootageGross__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageGroundFloor --></label>
+        <name>MDPERSONATOR__SquareFootageGroundFloor__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageLivingSpace --></label>
+        <name>MDPERSONATOR__SquareFootageLivingSpace__c</name>
+    </fields>
+    <fields>
+        <label><!-- SquareFootageUniversalBuilding --></label>
+        <name>MDPERSONATOR__SquareFootageUniversalBuilding__c</name>
+    </fields>
+    <fields>
+        <label><!-- contactIdExtID --></label>
+        <name>MDPERSONATOR__contactIdExtID__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,300 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 10-10-2021
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.MetadataDictionaryController" tabstyle="CWB_Tool__tab" sidebar="false">
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap-multiselect.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-transition.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-dropdown.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-multiselect.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__datatableWithBootstrap,'/datatable/media/js/jquery.dataTables.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__datatableWithBootstrap,'/datatable/media/js/dataTables.bootstrap.js')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.cwbtool__datatableWithBootstrap,'/datatable/media/css/dataTables.bootstrap.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.cwbtool__SLDS, 'SLDS/assets/styles/salesforce-lightning-design-system-ns-vf.css')}" />
+    <div class='CWB'>
+        <c:lightningspinner />
+    </div>
+    <script type="text/javascript" charset="utf-8">
+    showOverLay();
+    /* Table initialisation */
+    function initDataTable() {
+        $.extend($.fn.dataTableExt.oStdClasses, {
+            "sSortAsc": "header headerSortDown",
+            "sSortDesc": "header headerSortUp",
+            "sSortable": "header"
+        });
+
+        $('.download').dataTable({
+            "sDom": "<'row'<'span8 slds-select1'l><'span8 pagec slds-input1'f>r>t<'row'<'span8'i><'span8 pagec'p>>",
+            // "sDom": '<" table-navbar-header rounded-tops"ilf><"table search-results-table" t><"center"p> ',
+            "sPaginationType": "bootstrap",
+            "bDestroy": true,
+
+            "oLanguage": {
+                "oPaginate": {
+                    "sPrevious": "",
+                    "sNext": ""
+                },
+                "sLengthMenu": "_MENU_ records per page"
+            },
+            "iDisplayLength": 5,
+            "aoColumnDefs": [{
+                'bSortable': false,
+                'aTargets': [0]
+            }],
+           "aLengthMenu": [[1,5,10, 25, 50, -1], [1,5,10, 25, 50, "All"]],
+            "aaSorting": [],
+            "order2": [
+                [1, "desc"]
+            ],
+            "initComplete": function(settings) {
+                hideOverLay();
+            }
+        });
+
+        $('.dataTables_filter input').addClass('slds-input');
+
+    }
+    $(document).ready(function() {
+        initDataTable();
+        hideOverLay();
+    });
+    </script>
+    <style>
+    .slds-app-launcher__tile-figure {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        padding: .75rem;
+        color: #fff;
+        background: #fff;
+        border-radius: .25rem 0 0 .25rem;
+        text-align: center;
+    }
+
+    .slds-app-launcher__tile-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        background: #eef1f6;
+        padding: .5rem .75rem;
+        border-radius: 0 .25rem .25rem 0;
+    }
+
+    .slds-app-launcher__tile {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        margin: .5rem 0;
+        border: 1px solid #d8dde6;
+        border-radius: .25rem;
+        cursor1: move;
+    }
+
+    .CWB .slds-avatar--large {
+        height: 100%;
+    }
+
+    .pagination>li>a,
+    .pagination>li>a:hover,
+    .pagination>li>a:focus {
+        text-decoration: none !important;
+    }
+
+    .pagination>li>a,
+    .pagination>li>span {
+        display: inline-block;
+        border: 1px solid rgb(192, 197, 210);
+        color: rgb(192, 197, 210);
+        background-color: rgb(255, 255, 255);
+        cursor: pointer;
+        border-radius: 50% !important;
+        font-size: 16px;
+        line-height: 25px;
+        width: 40px;
+        text-align: center;
+        margin: 0px 7.5px;
+    }
+
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a:hover,
+    .pagination>.active>span:hover,
+    .pagination>.active>a:focus,
+    .pagination>.active>span:focus {
+        display: inline-block;
+        border: 1px solid rgb(53, 118, 232);
+        color: rgb(53, 118, 232);
+        background-color: rgba(53, 118, 232, 0.05);
+        cursor: pointer;
+        border-radius: 50% !important;
+        font-size: 15px;
+        line-height: 25px;
+        width: 40px;
+        text-align: center;
+        margin: 0px 7.5px;
+        outline: none;
+    }
+
+    .pagination>li.first>a,
+    .pagination>li.last>a {
+        display: none !important;
+    }
+
+    .pagination>li.prev>a,
+    .pagination>li.next>a {
+        display: inline-block;
+        border: 1px solid rgb(53, 118, 232);
+        color: rgb(255, 255, 255);
+        background-color: rgb(53, 118, 232);
+        cursor: pointer;
+        border-radius: 50% !important;
+        font-size: 16px;
+        line-height: 25px;
+        width: 40px;
+        text-align: center;
+        margin: 0px 7.5px;
+        outline: none;
+    }
+
+    .pagination>.disabled>span,
+    .pagination>li.disabled>a,
+    .pagination>li.disabled>a:hover,
+    .pagination>li.disabled>a:focus {
+        display: inline-block;
+        border: 1px solid rgb(207, 212, 220);
+        color: rgb(159, 169, 186);
+        background-color: rgba(159, 169, 186, 0.5);
+        cursor: not-allowed;
+        border-radius: 50% !important;
+        font-size: 16px;
+        line-height: 25px;
+        width: 40px;
+        text-align: center;
+        margin: 0px 7.5px;
+    }
+
+    .pagec {
+        float: right !important;
+    }
+
+    .badge--dev-ready {
+        background: #4bca81 !important;
+        color: #fff !important;
+    }
+
+    .CWB .slds-input {
+        width: 90%;
+    }
+
+    .radiolabelstyle {
+        padding: 4px;
+    }
+    
+    </style>
+    <apex:outputpanel layout="none" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+     <style>
+     .sfdcBody .multiselect-container,.sfdcBody .dropdown-menu{
+          position: inherit !important;
+       } 
+       </style>
+    </apex:outputpanel> 
+    <c:lightningScript ></c:lightningScript>
+    <div class='CWB'>
+        <apex:form id="frmId">
+        <apex:pagemessages ></apex:pagemessages>
+            <apex:actionfunction action="{!loadObjectField}" name="loadObjectField" reRender="frmId" oncomplete="initDataTable();initTab();hideOverLay();">
+                <apex:param name="strObject" value="" assignTo="{!parent}" />
+                <apex:param name="strtype" value="Field" assignTo="{!strtype}" />
+            </apex:actionfunction>
+            <apex:actionfunction action="{!loadObjectList}" name="loadObjectList" reRender="frmId" oncomplete="initDataTable();initTab();hideOverLay();">
+            </apex:actionfunction>
+            <apex:actionfunction action="{!updateDetail}" name="updateDetail" reRender="detaildiv" oncomplete="hideOverLay();">
+            </apex:actionfunction>
+            <apex:actionfunction action="{!getSelctedObjectDetail}" name="getSelctedObjectDetail" reRender="frmId" oncomplete="initDataTable();initTab();hideOverLay();" />
+            <apex:actionfunction action="{!getSelctedObjectPickListDetail}" name="getSelctedObjectPickListDetail" reRender="frmId" oncomplete="initDataTable();initTab();hideOverLay();" />
+            <apex:actionfunction action="{!downloadMetadataDictionary}" name="downloadMetadataDictionary" />
+            <apex:actionfunction action="{!downloadMetadataPicklistDictionary}" name="downloadMetadataDictionaryList" />
+            
+            <!--Refresh page  -->
+            <apex:actionFunction name="refresh" action="{!refresh}" reRender="refreshPanel"/> 
+             <apex:outputpanel id="refreshPanel">  
+		      <apex:pagemessages rendered="{!lstObject==null || lstObject.size==0}"/>
+		      <apex:actionPoller action="{!resultfound}" reRender="refreshPanel,msgId,form" interval="5" enabled="{!isStart}" oncomplete="if({!!isStart}){hideOverLay();}"/> 
+		   </apex:outputpanel>
+            <!--  -->
+            <div class="slds-page-header slds-box" role="banner">
+                <div class="slds-media slds-media--center">
+                    <div class="slds-media__figure">
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-form--inline">
+                            <div class="slds-form-element">
+                                <div class="slds-radio--button-group1">
+                                    <apex:selectRadio value="{!filterType}" layout="pageDirection" enabledClass="radiolabelstyle">
+                                        <apex:selectOption itemValue="All" itemLabel="All" />
+                                        <apex:selectOption itemValue="Custom" itemLabel="Custom" />
+                                        <apex:actionSupport event="onchange" action="{!loadAllObject}" rerender="frmId" onsubmit="showOverLay();" oncomplete="initDataTable();initTab();hideOverLay();" />
+                                    </apex:selectRadio>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" style='vertical-align:top;'>
+                                <div class="slds-form-element__control">
+                                    <apex:selectList value="{!lstSelectedObject}" multiselect="true" styleclass="multiselect objectClass" style="margin-right:40px;display:none;">
+                                        <apex:selectOption rendered="{!lstObject.size==0}" itemValue="" itemLabel="" />
+                                        <apex:selectOptions rendered='{!lstObject.size>=1}' value="{!lstObject[0]}" />
+                                        <apex:selectOptions rendered='{!lstObject.size>=2}' value="{!lstObject[1]}" />
+                                        <apex:selectOptions rendered='{!lstObject.size>=3}' value="{!lstObject[2]}" />
+                                    </apex:selectList>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" style='vertical-align:top;'>
+                                <button type='button' class="slds-button slds-button--neutral " style='margin-right:10px;' onclick='showOverLay();getSelctedObjectDetail();'>Show Object Detail</button>
+                            </div>
+                             <div class="slds-form-element" style='vertical-align:top;'>
+                                <button type='button' class="slds-button slds-button--brand " style='margin-right:10px;' onclick='showOverLay();refresh();downloadMetadataDictionary();'>Download</button>
+                            </div>
+                            <div class="slds-form-element" style='vertical-align:top;'>
+                                <button type='button' class="slds-button slds-button--neutral " style='margin-right:10px;' onclick='showOverLay();getSelctedObjectPickListDetail();'>Show Object Picklist Detail</button>
+                            </div>
+                            <div class="slds-form-element" style='vertical-align:top;'>
+                                <button type='button' class="slds-button slds-button--brand " style='margin-right:10px;' onclick='showOverLay();refresh();downloadMetadataDictionaryList();'>Download Picklist</button>
+                            </div>
+                            <div class="slds-form-element" style='vertical-align:top;'>
+                                <a href='{!$page.metadatadictionary}' class="slds-button slds-button--brand " style='margin-right:10px;' >Edit</a>
+                            </div>
+                        </div>
+                        <apex:outputpanel layout="none" rendered="{!parent!=null}">
+                            <span class="slds-pill"><a href="javascript:void(0);" class="slds-pill__label" title="Full pill label verbiage mirrored here">{!parent}</a>
+  <button class="slds-button slds-button--icon slds-pill__remove" title="Remove" type='button' onclick='showOverLay();loadObjectList()'>
+    X
+    <span class="slds-assistive-text">Remove</span>
+                            </button>
+                            </span>
+                        </apex:outputpanel>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-has-dividers--around-space slds-grid1 slds-grid--pull-padded slds-wrap" style='padding:10px;'>
+              <apex:outputpanel rendered='{!lst.size>0}' layout='none'>   
+                <table class='download'>
+                    <thead>
+                        <tr>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <apex:repeat value="{!lst}" var="row">
+			            <c:metadatadicdetail row="{!row}" strType="{!strType}" isPicklist="true"></c:metadatadicdetail>
+			          </apex:repeat>
+			         </table>
+			         </apex:outputpanel>
+			         </div>
+			            
+          </apex:form>
+    </div>
+</apex:page>

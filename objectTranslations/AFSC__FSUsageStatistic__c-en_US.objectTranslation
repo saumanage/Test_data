@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Date --></label>
+        <name>AFSC__Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Downloads --></label>
+        <name>AFSC__File_Downloads__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Uploads --></label>
+        <name>AFSC__File_Uploads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scan Job Events --></label>
+        <name>AFSC__Scan_Job_Events__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Events --></label>
+        <name>AFSC__Total_Events__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL Clicks --></label>
+        <name>AFSC__URL_Clicks__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL Posts --></label>
+        <name>AFSC__URL_Posts__c</name>
+    </fields>
+</CustomObjectTranslation>

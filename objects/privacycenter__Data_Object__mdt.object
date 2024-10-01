@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>privacycenter__API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Archive_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Archive Value</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>delete</fullName>
+                    <default>false</default>
+                    <label>delete</label>
+                </value>
+                <value>
+                    <fullName>archive</fullName>
+                    <default>false</default>
+                    <label>archive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Batch_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Batch Data</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Child_Object__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Child Object</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Custom__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Custom</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Data_Policy__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Data Policy</label>
+        <referenceTo>privacycenter__Data_Policy__mdt</referenceTo>
+        <relationshipLabel>Data Objects</relationshipLabel>
+        <relationshipName>Data_Objects</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Filter_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Filter Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Hard_Delete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Hard Delete</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Last_Prepped_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Last Prepped Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Master_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Master Object</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Number_of_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Number of Fields</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Parent_Object_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Parent Object API Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Parent_Object_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Parent Object ID</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Raw_Filter_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Raw Filter Data</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Record_Caching__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Record Caching</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cache Original</fullName>
+                    <default>false</default>
+                    <label>Cache Original</label>
+                </value>
+                <value>
+                    <fullName>Cache Transformation</fullName>
+                    <default>false</default>
+                    <label>Cache Transformation</label>
+                </value>
+                <value>
+                    <fullName>No Cache</fullName>
+                    <default>false</default>
+                    <label>No Cache</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Record_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Record Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Record_Retention__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Record Retention</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Transform</fullName>
+                    <default>false</default>
+                    <label>Transform</label>
+                </value>
+                <value>
+                    <fullName>Delete</fullName>
+                    <default>false</default>
+                    <label>Delete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Run_In_Poly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Run In Poly</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Run_In_Serial__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Run In Serial</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Where_Criteria_LT__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Where Criteria SOQL LT</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Where_Criteria_PG_Cache_LT__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Where Criteria PG Cache LT</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Where_Criteria_PG_Cache__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Where Criteria PG Cache</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Where_Criteria_PG_LT__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Where Criteria PG Salesforce LT</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Where_Criteria_PG__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Where Criteria PG Salesforce</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>privacycenter__Where_Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Where Criteria SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Data Object</label>
+    <listViews>
+        <fullName>privacycenter__AllDetailView</fullName>
+        <columns>privacycenter__Data_Policy__c</columns>
+        <columns>privacycenter__API_Name__c</columns>
+        <columns>privacycenter__Parent_Object_API_Name__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>privacycenter__Active__c</columns>
+        <columns>privacycenter__Child_Object__c</columns>
+        <columns>privacycenter__Master_Object__c</columns>
+        <columns>privacycenter__Parent_Object_ID__c</columns>
+        <columns>privacycenter__Record_Retention__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>AllDetailView</label>
+    </listViews>
+    <listViews>
+        <fullName>privacycenter__AllQueryView</fullName>
+        <columns>privacycenter__Active__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>privacycenter__API_Name__c</columns>
+        <columns>privacycenter__Child_Object__c</columns>
+        <columns>privacycenter__Parent_Object_API_Name__c</columns>
+        <columns>privacycenter__Where_Criteria_PG_LT__c</columns>
+        <columns>privacycenter__Where_Criteria_PG_Cache_LT__c</columns>
+        <columns>privacycenter__Record_Retention__c</columns>
+        <columns>privacycenter__Master_Object__c</columns>
+        <columns>privacycenter__Raw_Filter_Data__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>AllQueryView</label>
+    </listViews>
+    <pluralLabel>Data Objects</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

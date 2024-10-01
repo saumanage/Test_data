@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>BypassApexClass__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disables Apex Classes from Firing, when enabled and proper usage within individual Apex Classes.</description>
+        <label>Bypass Apex Class</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassProcessBuilder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disables Process Builder from running, when enabled and proper usage within individual Process Builder logic.</description>
+        <label>Bypass Process Builder</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassTrigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disables trigger from Firing, when enabled and proper usage within individual Triggers.</description>
+        <label>Bypass Trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassValidationRule__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disables Validation Rules from Firing, when enabled and proper usage within individual Validation Rules.</description>
+        <label>Bypass Validation Rule</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassWorkflowRule__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disables Workflow Rules from Firing, when enabled and proper usage within individual Workflow Rules.</description>
+        <label>Bypass Workflow Rule</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Bypass Automations</label>
+    <visibility>Public</visibility>
+</CustomObject>

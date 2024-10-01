@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Matchback MDT</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Matchbacks MDT</value>
+    </caseValues>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>A-Honda</masterLabel>
+            <translation><!-- A-Honda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B-Acura</masterLabel>
+            <translation><!-- B-Acura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M-Motorcycle</masterLabel>
+            <translation><!-- M-Motorcycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P-PowerEquipment</masterLabel>
+            <translation><!-- P-PowerEquipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status Code MDT --></label>
+        <name>Status_Code_MDT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subdivision --></label>
+        <name>Subdivision__c</name>
+        <picklistValues>
+            <masterLabel>Acura</masterLabel>
+            <translation><!-- Acura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engine</masterLabel>
+            <translation><!-- Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda</masterLabel>
+            <translation><!-- Honda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine</masterLabel>
+            <translation><!-- Marine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle</masterLabel>
+            <translation><!-- Motorcycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Equipment</masterLabel>
+            <translation><!-- Power Equipment --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

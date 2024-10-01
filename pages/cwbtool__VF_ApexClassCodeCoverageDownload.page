@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 03-28-2021
+  @last modified by  : Kanishk Singh
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   03-27-2021   Kanishk Singh   Initial Version
+-->
+<apex:page controller="cwbtool.ApexClassCoverageController" contenttype="application/x-excel#ApexClassCodeCoverage_{!Now()}.xls"  readOnly="true">
+    
+<c:VFC_ApexClassCodeCoverage mapCodecoverage="{!mapCodecoverage}" singleformat="{!singleformat}" 
+sortedKey="{!lstClassName}"
+mapOverAllCoverage="{!mapOverAllCoverage}"
+showOnlyOverAll="{!showOnlyOverAll}"></c:VFC_ApexClassCodeCoverage>
+</apex:page>

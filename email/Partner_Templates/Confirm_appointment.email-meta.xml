@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>Confirm appointment</name>
+    <style>freeForm</style>
+    <subject>Confirm appointment (Insert time and date!)</subject>
+    <textOnly>Dear {!Opportunity.Name},
+
+This is just to check if the {!Contact.LastCURequestDate} still works for you to meet with us. Please let us know in case of any questions/concerns.
+
+I can be reached either by replying to this e-mail or by phone at {!User.Phone}
+
+Thanks for your interest.  I look forward to speaking with you soon!
+
+Sincerely,
+
+{!User.Name}
+{!Opportunity.PreferredDealerAccount_TXT__c}
+{!User.Phone}
+{!User.Email}
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deduplication Parameters</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deduplication Parameters</value>
+    </caseValues>
+    <fields>
+        <label><!-- Days Threshold --></label>
+        <name>Days_Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M</masterLabel>
+            <translation><!-- M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P</masterLabel>
+            <translation><!-- P --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Minutes Threshold --></label>
+        <name>Minutes_Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- UBBottomDaysInMin --></label>
+        <name>UBBottomDaysInMin__c</name>
+    </fields>
+    <fields>
+        <label><!-- UBUpperDaysInMin --></label>
+        <name>UBUpperDaysInMin__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

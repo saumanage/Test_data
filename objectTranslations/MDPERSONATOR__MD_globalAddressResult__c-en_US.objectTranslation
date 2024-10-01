@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AddressKey --></label>
+        <name>MDPERSONATOR__AddressKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine1 --></label>
+        <name>MDPERSONATOR__AddressLine1__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine2 --></label>
+        <name>MDPERSONATOR__AddressLine2__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine3 --></label>
+        <name>MDPERSONATOR__AddressLine3__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine4 --></label>
+        <name>MDPERSONATOR__AddressLine4__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine5 --></label>
+        <name>MDPERSONATOR__AddressLine5__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine6 --></label>
+        <name>MDPERSONATOR__AddressLine6__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine7 --></label>
+        <name>MDPERSONATOR__AddressLine7__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine8 --></label>
+        <name>MDPERSONATOR__AddressLine8__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressType --></label>
+        <name>MDPERSONATOR__AddressType__c</name>
+    </fields>
+    <fields>
+        <label><!-- AdministrativeArea --></label>
+        <name>MDPERSONATOR__AdministrativeArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- Building --></label>
+        <name>MDPERSONATOR__Building__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryISO3166_1_Alpha2 --></label>
+        <name>MDPERSONATOR__CountryISO3166_1_Alpha2__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryISO3166_1_Alpha3 --></label>
+        <name>MDPERSONATOR__CountryISO3166_1_Alpha3__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryISO3166_1_Numeric --></label>
+        <name>MDPERSONATOR__CountryISO3166_1_Numeric__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryName --></label>
+        <name>MDPERSONATOR__CountryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountrySubdivisionCode --></label>
+        <name>MDPERSONATOR__CountrySubdivisionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentLocality --></label>
+        <name>MDPERSONATOR__DependentLocality__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfareLeadingType --></label>
+        <name>MDPERSONATOR__DependentThoroughfareLeadingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfareName --></label>
+        <name>MDPERSONATOR__DependentThoroughfareName__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfarePostDirection --></label>
+        <name>MDPERSONATOR__DependentThoroughfarePostDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfarePreDirection --></label>
+        <name>MDPERSONATOR__DependentThoroughfarePreDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfareTrailingType --></label>
+        <name>MDPERSONATOR__DependentThoroughfareTrailingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfare --></label>
+        <name>MDPERSONATOR__DependentThoroughfare__c</name>
+    </fields>
+    <fields>
+        <label><!-- DoubleDependentLocality --></label>
+        <name>MDPERSONATOR__DoubleDependentLocality__c</name>
+    </fields>
+    <fields>
+        <label><!-- FormattedAddress --></label>
+        <name>MDPERSONATOR__FormattedAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>MDPERSONATOR__Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locality --></label>
+        <name>MDPERSONATOR__Locality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>MDPERSONATOR__Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping --></label>
+        <name>MDPERSONATOR__Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>MDPERSONATOR__Organization__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostBox --></label>
+        <name>MDPERSONATOR__PostBox__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>MDPERSONATOR__PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PremisesNumber --></label>
+        <name>MDPERSONATOR__PremisesNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PremisesType --></label>
+        <name>MDPERSONATOR__PremisesType__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordID --></label>
+        <name>MDPERSONATOR__RecordID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Results --></label>
+        <name>MDPERSONATOR__Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubAdministrativeArea --></label>
+        <name>MDPERSONATOR__SubAdministrativeArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubNationalArea --></label>
+        <name>MDPERSONATOR__SubNationalArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubPremisesNumber --></label>
+        <name>MDPERSONATOR__SubPremisesNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubPremisesType --></label>
+        <name>MDPERSONATOR__SubPremisesType__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubPremises --></label>
+        <name>MDPERSONATOR__SubPremises__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfareLeadingType --></label>
+        <name>MDPERSONATOR__ThoroughfareLeadingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfareName --></label>
+        <name>MDPERSONATOR__ThoroughfareName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfarePostDirection --></label>
+        <name>MDPERSONATOR__ThoroughfarePostDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfarePreDirection --></label>
+        <name>MDPERSONATOR__ThoroughfarePreDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfareTrailingType --></label>
+        <name>MDPERSONATOR__ThoroughfareTrailingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thoroughfare --></label>
+        <name>MDPERSONATOR__Thoroughfare__c</name>
+    </fields>
+</CustomObjectTranslation>

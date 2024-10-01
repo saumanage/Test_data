@@ -1,0 +1,20 @@
+<template>
+    <lightning-layout multiple-rows="true" horizontal-align="center">
+        <template for:each={actions} for:item="action">
+            <lightning-layout-item key={action.name} size="12" padding="around-small">
+                <button class="contactSupportButton slds-button stylingOverrideHook_1092a forceCommunityContactSupportButton button-color slds-align_absolute-center" style="width:220px" title={action.label} data-name={action.name} data-recordtypeid={action.recordTypeId} onclick={handleClick}>{action.label}</button>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+    <c-modal header={header}>
+        <div class="slds-p-around_small">
+            <lightning-record-form
+                object-api-name="Opportunity"
+                record-type-id={recordTypeId}
+                layout-type="Full"
+                columns="2"
+                onsubmit={handleSubmit}>
+            </lightning-record-form>
+        </div>
+    </c-modal>
+</template>

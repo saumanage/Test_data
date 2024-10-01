@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Terms and Conditions Acceptance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Terms and Conditions Acceptance</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK TandC id Relate ID --></label>
+        <name>AK_TandCID_RelatedID_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accepted Datetime --></label>
+        <name>Accepted_Datetime_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms and Conditions Acceptance Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Name --></label>
+        <name>ObjectName_c__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order</masterLabel>
+            <translation><!-- Order --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related to ID --></label>
+        <name>Related_to_ID_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms and Conditions ID --></label>
+        <name>TermsAndConditions_ID_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

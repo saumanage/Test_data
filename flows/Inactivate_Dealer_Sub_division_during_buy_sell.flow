@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>Bypassautomation_check</name>
+        <label>Bypassautomation check</label>
+        <locationX>170</locationX>
+        <locationY>367</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>bypassadutomation_decide</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Updating_the_dealer_sub_division_record</targetReference>
+            </connector>
+            <label>bypassadutomation decide</label>
+        </rules>
+    </decisions>
+    <description>This flow deactivates the old dealer subdivision when a dealer buy-sell happens.</description>
+    <interviewLabel>Inactivate Dealer Sub-division during buy-sell {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Inactivate Dealer Sub-division during buy-sell</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Updating_the_dealer_sub_division_record</name>
+        <label>Updating the dealer sub-division record</label>
+        <locationX>454</locationX>
+        <locationY>363</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Dealer_ID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.BuyFromDealerAccount_CD__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SubDiv_TXT__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SubDiv_TXT__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>isActive_FLG__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Dealer_Division__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>53</locationX>
+        <locationY>33</locationY>
+        <connector>
+            <targetReference>Bypassautomation_check</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BuyFromDealerAccount_CD__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Dealer_Division__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>Templateforemailnotification</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;This email is to notify that the {!$Record.SubDiv_TXT__c} sub-division has been deactivated for {!$Record.BuyFromDealerAccount_CD__r.Name}. &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;{!$Record.SubDiv_TXT__c} opportunities will not be routed to {!$Record.BuyFromDealerAccount_CD__r.Name} and the dealers access to create {!$Record.SubDiv_TXT__c} opportunities has been revoked as well.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;This email is sent from an unmonitored email address. Please do not reply to this email.﻿&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+</Flow>

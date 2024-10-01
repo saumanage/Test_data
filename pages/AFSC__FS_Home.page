@@ -1,0 +1,90 @@
+<apex:page lightningStylesheets="true" controller="AFSC.FS_HomeController" sidebar="false" showHeader="true" applyHtmlTag="true" applyBodyTag="false" docType="html-5.0" title="{!$Label.afsc__fs_summarytitle}" readOnly="false">
+
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__fscap, 'css/home.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__fscap, 'css/start.css')}" />
+
+	<script src="{!URLFOR($Resource.fscap, 'js/home.js')}"></script>
+
+    <style>
+    @font-face {
+      font-family: FSecureHeadline;
+      font-style: normal;
+      font-weight: 400;
+      src: url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.eot')}?#iefix") format("embedded-opentype"),
+        url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff2')}") format("woff2"),
+        url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff')}") format("woff");
+    }
+    .background {
+		background-image: url("{!URLFOR($Resource.fscap, 'img/hero-pattern.jpg')}");
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: 100%;
+		height: 407px;
+	}
+    </style>
+
+    <body>
+
+        <div class="fslds">
+
+            <div class="slds-page-header" role="banner" style="border-bottom: 0px;">
+                <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate">
+                        <div class="slds-media slds-no-space slds-grow">
+
+                            <div class="slds-media__figure" style="margin-top: 4px;">
+                                <div class="slds-icon slds-icon-standard-apps">
+                                    <apex:image value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/icons/standard/dashboard_60.png')}" />
+                                </div>
+                            </div>
+
+                            <div class="slds-media__body">
+                                <p class="slds-text-title--caps slds-line-height--reset">{!$Label.afsc__fs_summarytitle}</p>
+                                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Protection dashboard">{!$Label.FS_SummarySubtitle}</h1>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+						<div class="slds-button-group" role="group">
+                    		<button onclick="goToDashboard('{!dashboard.Id}', '{!dashboardFolder.Id}'); return false;" class="slds-button slds-button--neutral" >{!$Label.FS_MoreReportsButtonLabel}</button>
+                    		<div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last" id="show-all-area">
+
+                    			<button class="slds-button slds-button--icon-border-filled" aria-haspopup="true" title="Show More" onclick="showAllDashboards();">
+                    				<apex:image value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/icons/utility/down_60.png')}" styleClass="slds-button__icon slds-button__icon--small" />
+                    			</button>
+
+                    			<div class="slds-dropdown slds-dropdown--right">
+                    				<ul class="slds-dropdown__list" role="menu">
+                    					<apex:repeat value="{!dashboards}" var="d">
+
+                    						<li class="slds-dropdown__item" role="presentation">
+												<a onclick="goToDashboard('{!d.id}');" role="menuitem" tabindex="0">
+									            	<span class="slds-truncate">{!d.title}</span>
+									          	</a>
+									        </li>
+
+                    					</apex:repeat>
+                    				</ul>
+                    			</div>
+                    		</div>
+                    	</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <apex:outputPanel layout="block" id="messages" >
+                <c:FS_MessageLog />
+            </apex:outputPanel>
+
+            <c:HomeStatistics Dashboards="{!dashboards}" />
+
+            <c:HomeAlerts />
+
+        </div>
+
+    </body>
+
+</apex:page>

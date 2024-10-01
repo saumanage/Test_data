@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- API Name --></label>
+        <name>privacycenter__API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>privacycenter__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom --></label>
+        <name>privacycenter__Custom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Object --></label>
+        <name>privacycenter__Data_Object__c</name>
+        <relationshipLabel><!-- Data Fields --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Max --></label>
+        <name>privacycenter__Date_Max__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Min --></label>
+        <name>privacycenter__Date_Min__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Length --></label>
+        <name>privacycenter__Field_Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Type --></label>
+        <name>privacycenter__Field_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Index Number --></label>
+        <name>privacycenter__Index_Number__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Masking Category --></label>
+        <name>privacycenter__Masking_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Masking Type --></label>
+        <name>privacycenter__Masking_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Range Max --></label>
+        <name>privacycenter__Range_Max__c</name>
+    </fields>
+    <fields>
+        <label><!-- Range Min --></label>
+        <name>privacycenter__Range_Min__c</name>
+    </fields>
+    <fields>
+        <label><!-- Required --></label>
+        <name>privacycenter__Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique --></label>
+        <name>privacycenter__Unique__c</name>
+    </fields>
+</CustomObjectTranslation>

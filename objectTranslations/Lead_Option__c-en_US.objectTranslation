@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Option</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Options</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Lead Option --></label>
+        <name>AK_Lead_Option__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory Number --></label>
+        <name>Inventory_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Id --></label>
+        <name>Lead_Id__c</name>
+        <relationshipLabel><!-- Lead Options --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead Option Name --></label>
+        <name>Lead_Option_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Code --></label>
+        <name>Manufacturer_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Dealer Accessory Price --></label>
+        <name>Model_Dealer_Accessory_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Option Type --></label>
+        <name>Option_Type__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation><!-- Accessory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Factory Installed Feature</masterLabel>
+            <translation><!-- Factory Installed Feature --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Amount --></label>
+        <name>Price_Amount__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Carrier Speed</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Carrier Speeds</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Carrier Speed --></label>
+        <name>AK_Carrier_Speed_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Speed Name --></label>
+        <name>Carrier_Speed_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier_c__c</name>
+        <relationshipLabel><!-- Carrier Speeds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Shipping Speed --></label>
+        <name>Honda_Shipping_Speed_c__c</name>
+        <relationshipLabel><!-- Carrier Speeds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Speed Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sort Order --></label>
+        <name>Sort_Order_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

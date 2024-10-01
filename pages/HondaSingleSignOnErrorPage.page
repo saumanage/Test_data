@@ -1,0 +1,62 @@
+<apex:page showHeader="false" sidebar="false" lightningStylesheets="true" controller="HELMSSSOCustomJITHandlerPartner" >
+
+<style>
+    body {
+        background-color: #D0D0D0;
+        background-repeat:repeat;
+    }
+</style>
+ 
+<body>
+    <br/><br/>
+    <div style="text-align:center;">
+        <apex:image url="{!URLFOR($Resource.HondaLogo)}"/>
+    </div>
+    <br/><br/>
+     <div style="text-align:center;font-size:25px;color:black;">
+               <b><apex:outputText value="Single Sign-On Error"/></b>
+           </div><br/>
+    <center>
+    <div style="text-align:center;font-size:18px;background-color: #FFFFFF;width:35%;color:black">
+  
+             <apex:outputText value="{!errorMsg}"/><br/>               
+            <!--  <apex:outputText value="{!$Label.HondaSingleSignOnError}"/><br/>  
+           {!AccNoAccess}
+           {!otherError}
+           {!EmailError} 
+            <apex:outputPanel id="panel1" rendered="{!AccNoAccess}}" layout="block">
+                <apex:outputText value="{!$Label.HondaSingleSignOnError}"/><br/>
+            </apex:outputPanel>
+             
+             <apex:outputPanel id="panel2" rendered="{!otherError}}" layout="block">
+                <apex:outputText value="{!$Label.HondaSingleSignOnErrorOtherError}"/><br/>
+             </apex:outputPanel>
+             
+             <apex:outputPanel id="panel3" rendered="{!EmailError}}" layout="block">
+                <apex:outputText value="{!$Label.HondaSingleSignOnErrorEmailRequired}"/><br/>
+             </apex:outputPanel>
+           -->
+              
+           </div>
+    </center>
+</body>
+
+<script>
+function test(){
+
+    createlogfun('{!error_log}');
+}
+window.onload = test;
+</script>
+
+<apex:form id="resultPanel">
+
+<apex:actionfunction action="{!createLog}" name="createlogfun" rerender="resultPanel"  >
+
+<apex:param assignto="{!jiterrolog}" name="firstParameter" value="">
+
+</apex:param>
+</apex:actionfunction>
+</apex:form>
+
+</apex:page>

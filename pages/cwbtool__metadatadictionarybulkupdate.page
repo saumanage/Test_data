@@ -1,0 +1,3 @@
+<apex:page tabstyle="CWB_Tool__tab" sidebar="false">
+   <c:metadatadictionarybulkupdate ></c:metadatadictionarybulkupdate>   
+</apex:page>

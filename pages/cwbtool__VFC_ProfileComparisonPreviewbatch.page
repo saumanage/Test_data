@@ -1,0 +1,9 @@
+<apex:page controller="cwbtool.ProfileComparatorControllerBatch" sidebar="false" contentType="{!strContentType}">
+<apex:outputPanel rendered="{!previewOnly}" layout="none">
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}"/>
+    <c:actionstatusNew ></c:actionstatusNew>  
+</apex:outputPanel>
+<apex:pagemessages rendered="{!!isPaid || isError}"></apex:pagemessages>
+<c:VFC_ProfileComparisondownloadbatch lstFullProfileDetail="{!lstFullProfileDetail}" rendered="{!!previewOnly && isPaid}" isMultiOrg="{!isMultiOrg}" sourceOrg="{!strSourceOrgName}" targetOrg="{!strTargetOrgName}"/>
+ <c:VFC_ProfileComparisonPreviewbatch lstFullProfileDetail="{!lstFullProfileDetail}" rendered="{!previewOnly }" isMultiOrg="{!isMultiOrg}" sourceOrg="{!strSourceOrgName}" targetOrg="{!strTargetOrgName}"/>
+</apex:page>

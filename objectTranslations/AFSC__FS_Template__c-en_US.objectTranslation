@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Default Message --></label>
+        <name>AFSC__Default_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Subject --></label>
+        <name>AFSC__Default_Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>AFSC__Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>AFSC__Subject__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,7 @@
+<apex:page sidebar="false" controller="AFSC.FS_ScanResultPageController" title="{!$Label.afsc__fs_harmfulcontentblocked}" lightningStylesheets="true" showHeader="false">
+
+	<c:ScanResultInfo state="block" header="{!$Label.afsc__fs_harmfulcontentblocked}" 
+	subHeader="{!$CurrentPage.parameters.name}" standardText="{!$Label.afsc__fs_statuscontent1harmfulcontent}" 
+	customTextTemplate="{!HarmfulContentTemplate}" />
+
+</apex:page>

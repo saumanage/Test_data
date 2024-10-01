@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Additional Attribute Definition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Additional Attribute Definitions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Shared With Dealer --></label>
+        <name>Shared_With_Dealer__c</name>
+        <picklistValues>
+            <masterLabel>FALSE</masterLabel>
+            <translation><!-- FALSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRUE</masterLabel>
+            <translation><!-- TRUE --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

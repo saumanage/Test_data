@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- CurrentDeedLenderCode --></label>
+        <name>MDPERSONATOR__CurrentDeedLenderCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedLenderName --></label>
+        <name>MDPERSONATOR__CurrentDeedLenderName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageAmount --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageAssumptionAmount --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageAssumptionAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageDate --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageDeedTypeCode --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageDeedTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageDueDate --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageDueDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageLoanTypeCode --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageLoanTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageTermCode --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageTermCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedMortgageTerm --></label>
+        <name>MDPERSONATOR__CurrentDeedMortgageTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedSecondMortgageAmount --></label>
+        <name>MDPERSONATOR__CurrentDeedSecondMortgageAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedSecondMortgageDeedTypeCode --></label>
+        <name>MDPERSONATOR__CurrentDeedSecondMortgageDeedTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentDeedSecondMortgageLoanTypeCode --></label>
+        <name>MDPERSONATOR__CurrentDeedSecondMortgageLoanTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleDeedCategoryCode --></label>
+        <name>MDPERSONATOR__CurrentSaleDeedCategoryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleDocumentYear --></label>
+        <name>MDPERSONATOR__CurrentSaleDocumentYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleMultiAPNCode --></label>
+        <name>MDPERSONATOR__CurrentSaleMultiAPNCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleMultiAPNCount --></label>
+        <name>MDPERSONATOR__CurrentSaleMultiAPNCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleRecordingDate --></label>
+        <name>MDPERSONATOR__CurrentSaleRecordingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleResidentalModel --></label>
+        <name>MDPERSONATOR__CurrentSaleResidentalModel__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleSaleCode --></label>
+        <name>MDPERSONATOR__CurrentSaleSaleCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleSaleDate --></label>
+        <name>MDPERSONATOR__CurrentSaleSaleDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleSalePrice --></label>
+        <name>MDPERSONATOR__CurrentSaleSalePrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleSellerName --></label>
+        <name>MDPERSONATOR__CurrentSaleSellerName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentSaleTransactionId --></label>
+        <name>MDPERSONATOR__CurrentSaleTransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressAddress --></label>
+        <name>MDPERSONATOR__OwnerAddressAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressCarrierRoute --></label>
+        <name>MDPERSONATOR__OwnerAddressCarrierRoute__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressCity --></label>
+        <name>MDPERSONATOR__OwnerAddressCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressMailOptOut --></label>
+        <name>MDPERSONATOR__OwnerAddressMailOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressMatchcode --></label>
+        <name>MDPERSONATOR__OwnerAddressMatchcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressState --></label>
+        <name>MDPERSONATOR__OwnerAddressState__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressSuite --></label>
+        <name>MDPERSONATOR__OwnerAddressSuite__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerAddressZip --></label>
+        <name>MDPERSONATOR__OwnerAddressZip__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerCorporateOwner --></label>
+        <name>MDPERSONATOR__OwnerCorporateOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerName2 --></label>
+        <name>MDPERSONATOR__OwnerName2__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerName --></label>
+        <name>MDPERSONATOR__OwnerName__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerPhoneOptOut --></label>
+        <name>MDPERSONATOR__OwnerPhoneOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerPhone --></label>
+        <name>MDPERSONATOR__OwnerPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerUnparsedName1 --></label>
+        <name>MDPERSONATOR__OwnerUnparsedName1__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerUnparsedName2 --></label>
+        <name>MDPERSONATOR__OwnerUnparsedName2__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParsedPropertyAddressPostDirectional --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressPostDirectional__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParsedPropertyAddressPreDirectional --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressPreDirectional__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParsedPropertyAddressRange --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParsedPropertyAddressStreetName --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressStreetName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParsedPropertyAddressSuffix --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressSuffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParsedPropertyAddressSuiteName --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressSuiteName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParsedPropertyAddressSuiteRange --></label>
+        <name>MDPERSONATOR__ParsedPropertyAddressSuiteRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleDeedCategoryCode --></label>
+        <name>MDPERSONATOR__PriorSaleDeedCategoryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleDeedTypeCode --></label>
+        <name>MDPERSONATOR__PriorSaleDeedTypeCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleDocumentYear --></label>
+        <name>MDPERSONATOR__PriorSaleDocumentYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleMortgageAmount --></label>
+        <name>MDPERSONATOR__PriorSaleMortgageAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleMultiAPNCode --></label>
+        <name>MDPERSONATOR__PriorSaleMultiAPNCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleMultiAPNCount --></label>
+        <name>MDPERSONATOR__PriorSaleMultiAPNCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleRecordingDate --></label>
+        <name>MDPERSONATOR__PriorSaleRecordingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleSaleCode --></label>
+        <name>MDPERSONATOR__PriorSaleSaleCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleSaleDate --></label>
+        <name>MDPERSONATOR__PriorSaleSaleDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleSalePrice --></label>
+        <name>MDPERSONATOR__PriorSaleSalePrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleTransactionCode --></label>
+        <name>MDPERSONATOR__PriorSaleTransactionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PriorSaleTransactionId --></label>
+        <name>MDPERSONATOR__PriorSaleTransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProductName --></label>
+        <name>MDPERSONATOR__ProductName__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyAddressAddressKey --></label>
+        <name>MDPERSONATOR__PropertyAddressAddressKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyAddressAddress --></label>
+        <name>MDPERSONATOR__PropertyAddressAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyAddressCity --></label>
+        <name>MDPERSONATOR__PropertyAddressCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyAddressLatitude --></label>
+        <name>MDPERSONATOR__PropertyAddressLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyAddressLongitude --></label>
+        <name>MDPERSONATOR__PropertyAddressLongitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyAddressState --></label>
+        <name>MDPERSONATOR__PropertyAddressState__c</name>
+    </fields>
+    <fields>
+        <label><!-- PropertyAddressZip --></label>
+        <name>MDPERSONATOR__PropertyAddressZip__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResponseResultCode --></label>
+        <name>MDPERSONATOR__ResponseResultCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResponseResultDescription --></label>
+        <name>MDPERSONATOR__ResponseResultDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResultCode --></label>
+        <name>MDPERSONATOR__ResultCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ResultDescription --></label>
+        <name>MDPERSONATOR__ResultDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeStamp --></label>
+        <name>MDPERSONATOR__TimeStamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesAppraisedImprovementValue --></label>
+        <name>MDPERSONATOR__ValuesAppraisedImprovementValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesAppraisedLandValue --></label>
+        <name>MDPERSONATOR__ValuesAppraisedLandValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesAppraisedTotalValue --></label>
+        <name>MDPERSONATOR__ValuesAppraisedTotalValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesAssessedImprovementValue --></label>
+        <name>MDPERSONATOR__ValuesAssessedImprovementValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesAssessedLandValue --></label>
+        <name>MDPERSONATOR__ValuesAssessedLandValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesAssessedTotalValue --></label>
+        <name>MDPERSONATOR__ValuesAssessedTotalValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesCalculatedImprovementValueCode --></label>
+        <name>MDPERSONATOR__ValuesCalculatedImprovementValueCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesCalculatedImprovementValue --></label>
+        <name>MDPERSONATOR__ValuesCalculatedImprovementValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesCalculatedLandValueCode --></label>
+        <name>MDPERSONATOR__ValuesCalculatedLandValueCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesCalculatedLandValue --></label>
+        <name>MDPERSONATOR__ValuesCalculatedLandValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesCalculatedTotalValueCode --></label>
+        <name>MDPERSONATOR__ValuesCalculatedTotalValueCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesCalculatedTotalValue --></label>
+        <name>MDPERSONATOR__ValuesCalculatedTotalValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesMarketImprovementValue --></label>
+        <name>MDPERSONATOR__ValuesMarketImprovementValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesMarketLandValue --></label>
+        <name>MDPERSONATOR__ValuesMarketLandValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesMarketTotalValue --></label>
+        <name>MDPERSONATOR__ValuesMarketTotalValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesTaxAmount --></label>
+        <name>MDPERSONATOR__ValuesTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValuesTaxYear --></label>
+        <name>MDPERSONATOR__ValuesTaxYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>MDPERSONATOR__Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- contactIdExtID --></label>
+        <name>MDPERSONATOR__contactIdExtID__c</name>
+    </fields>
+</CustomObjectTranslation>

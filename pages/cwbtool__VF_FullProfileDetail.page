@@ -1,0 +1,16 @@
+<!--
+  @File Name          : VF_FullProfileDetail.page
+  @Description        : 
+  @Author             : Kanishk Singh
+  @Group              : 
+  @Last Modified By   : Kanishk Singh
+  @Last Modified On   : 07-31-2020
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    7/15/2020   Kanishk Singh     Initial Version
+-->
+<apex:page controller="cwbtool.DescribeProfileCtrl" contenttype="application/x-excel#FullProfileDetail_{!Now()}.xls" readOnly="true"  action="{!getProfileDetailsAction}" >
+<apex:pageMessages rendered="{!isBatch}"></apex:pageMessages>
+<c:VFC_FullProfileDetail mapFullProfileDetail="{!mapFullProfileDetail}" /> 
+ 
+</apex:page>

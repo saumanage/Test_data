@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>ECRM_Marketing_User</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>ECRM_Marketing_User</label>
+    <permissionSets>ECRM_Account</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

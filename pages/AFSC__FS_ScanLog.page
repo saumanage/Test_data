@@ -1,0 +1,95 @@
+<apex:page lightningStylesheets="true" controller="AFSC.FS_ScanLogPageController" sidebar="false" showHeader="true" applyHtmlTag="true" applyBodyTag="false" docType="html-5.0" title="{!$Label.afsc__fs_logpagetitle}" tabStyle="Analytics__tab" >
+
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__fscap, 'css/scanlog.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__fscap, 'css/start.css')}" />
+
+	<script src="{!URLFOR($Resource.fscap, 'js/scanlog.js')}"></script>
+	
+	<style>
+	
+	@font-face {
+	  font-family: FSecureHeadline;
+	  font-style: normal;
+	  font-weight: 400;
+	  src: url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.eot')}?#iefix") format("embedded-opentype"), 
+	  	url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff2')}") format("woff2"), 
+	  	url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff')}") format("woff");
+	} 
+	
+	.background {
+		background-image: url("{!URLFOR($Resource.fscap, 'img/hero-pattern.jpg')}");
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: 100%;
+		height: 407px;
+	}
+	
+	</style>
+	
+  	<body>
+
+  		<div class="fslds">
+
+  		  	<div class="slds-page-header" role="banner" style="border-bottom: 0px;">
+	            <div class="slds-grid">
+	                <div class="slds-col slds-has-flexi-truncate">
+	                    <div class="slds-media slds-no-space slds-grow">
+
+	                        <div class="slds-media__figure" style="margin-top: 4px;">
+	                            <div class="slds-icon slds-icon-standard-apps">
+	                                <apex:image value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/icons/standard/metrics_60.png')}" />
+	                            </div>
+	                        </div>
+
+	                        <div class="slds-media__body">
+	                            <p class="slds-text-title--caps slds-line-height--reset">{!$Label.afsc__fs_logpagetitle}</p>
+	                            <h1 id="tab-default-1-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(OR(defaultTab = null, defaultTab = 'alert'), 'slds-show', 'slds-hide')}" title="{!$Label.FS_AlertsHeader}">{!$Label.FS_AlertsHeader}</h1>
+	                            <h1 id="tab-default-2-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'file', 'slds-show', 'slds-hide')}" title="{!$Label.FS_FileEventsHeader}">{!$Label.FS_FileEventsHeader}</h1>
+	                            <h1 id="tab-default-3-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'url', 'slds-show', 'slds-hide')}" title="{!$Label.FS_UrlEventsHeader}">{!$Label.FS_UrlEventsHeader}</h1>
+	                        </div>
+
+	                    </div>
+	                </div>
+	            </div>
+            </div>
+
+	  		<div class="slds-tabs--default">
+
+	  			<!-- tabs for navigation -->
+	  			<ul class="slds-tabs--default__nav" role="tablist" style="background-color: #f7f9fb;">
+
+	  				
+	  				<li title="{!$Label.FS_AlertsHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(OR(defaultTab = null, defaultTab = 'alert'), 'slds-active', '')}" role="presentation" id="tab-default-1-li">
+	  					<a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item" onclick="selectTab('tab-default-1');">{!UPPER($Label.FS_AlertsHeader)}</a>
+	  				</li>
+	  				
+
+	  				<li title="{!$Label.FS_FileEventsHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'file', 'slds-active', '')}" role="presentation" id="tab-default-2-li">
+	  					<a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item" onclick="selectTab('tab-default-2');">{!UPPER($Label.FS_FileEventsHeader)}</a>
+	  				</li>
+
+	  				<li title="{!$Label.FS_UrlEventsHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'url', 'slds-active', '')}" role="presentation" id="tab-default-3-li">
+	  					<a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab('tab-default-3');">{!UPPER($Label.FS_UrlEventsHeader)}</a>
+	  				</li>
+
+	  			</ul>
+
+	  			<!-- Content blocks for each tab -->
+	  			
+	  			<div id="tab-default-1" class="slds-tabs--default__content slds-m-horizontal--medium {!IF(OR(defaultTab = null, defaultTab = 'alert'), 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-1__item">
+					<c:AlertLog />
+	  			</div>
+	  			<div id="tab-default-2" class="slds-tabs--default__content slds-m-horizontal--medium {!IF(defaultTab = 'file', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-2__item">
+	  				<c:FileScanLog />
+	  			</div>
+	  			<div id="tab-default-3" class="slds-tabs--default__content slds-m-horizontal--medium {!IF(defaultTab = 'url', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-3__item">
+	  				<c:URLScanLog />
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+
+  	</body>
+
+</apex:page>

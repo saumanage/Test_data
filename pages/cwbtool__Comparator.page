@@ -1,0 +1,365 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 03-31-2021
+  @last modified by  : Kanishk Singh
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   10-31-2020   Kanishk Singh   Initial Version
+-->
+<apex:page sidebar="false"  controller="cwbtool.CodeComparator"  tabStyle="CWB_Tool__tab" 
+ >
+    
+    <apex:sectionHeader subtitle="Comparator (beta)" title="This feature is beta as of now. We appreciate your patience, and look forward to your feedback." />
+    <!--<c:VFC_Comparator />-->
+    <c:ComparatorJSCSS connectionsize="{!lstExistingConnection.size}"></c:ComparatorJSCSS>
+    
+    <div class='CWB'>
+        <c:lightningspinner />
+        <div id="tabs12" class='slds-tabs--default' style='overflow1:hidden;float: left;width: 100%;font-family:1cursive !important;'>
+            <ul class="slds-tabs--default__nav" role="tablist">
+                <li class="slds-tabs--default__item slds-text-heading--label slds-active" title="Connection" role="presentation">
+                    <a class="slds-tabs--default__link tabsl" href="javascript:void(0);" data-container='tabs-1' id="tab-scoped-1__item">Connection</a>
+                </li>
+                <li class="slds-tabs--default__item slds-text-heading--label" title="Code Comparator" role="presentation"><a class="slds-tabs--default__link tabsl" href="javascript:void(0);" data-container='tabs-2' id="tab-scoped-2__item">Code Comparator</a></li>
+                <li class="slds-tabs--default__item slds-text-heading--label" title="Object Comparator" role="presentation"><a class="slds-tabs--default__link tabsl" href="javascript:void(0);" data-container='tabs-3' id="tab-scoped-3__item">Object Comparator</a></li>
+                <!-- <li class="slds-tabs--default__item slds-text-heading--label" title="Profile Comparator" role="presentation"><a class="slds-tabs--default__link tabsl" href="javascript:void(0);" data-container='tabs-4' id="tab-scoped-4__item">Profile Comparator</a></li>-->
+            </ul>
+            <div id="tabs-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+                <c:ConnectionComp />
+            </div>
+            <!-- Start Code Comparator Block  -->
+            <div id="tabs-2" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-2__item">
+                <apex:form id="frm">
+                   <apex:actionFunction name="refreshOrgDetailAction" action="{!refreshOrgDetail}" oncomplete="hideOverLay();initButton();initDropdown();" rerender="frm,frm2"/>
+                    <div class="slds-form--inline">
+                        <div class='slds-form-element'>
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="select-01">
+                                    <apex:commandLink action="{!refreshOrgDetail}" onclick="showOverLay('Please wait..');" oncomplete="hideOverLay();initButton();initDropdown();" rerender="frm"> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></apex:commandLink>
+                                    Source Org</label>
+                                <div class="slds-form-element__control1">
+                                    <div class="slds-select_container">
+                                        <apex:selectList id="SourceOrg" value="{!strSoureOrg}" multiselect="false" size="1" styleclass="slds-select">
+                                            <apex:selectOptions value="{!lstExistingConnection}" />
+                                        </apex:selectList>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="TargetOrg">Target Org</label>
+                                <div class="slds-select_container">
+                                <apex:selectList id="TargetOrg" value="{!strtargetOrg}" multiselect="false" size="1" styleclass="slds-select">
+                                    <apex:selectOptions value="{!lstExistingConnection}" />
+                                </apex:selectList>
+                            </div>
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="Component">Component</label>
+                               <div class="slds-select_container">
+                                <apex:selectList id="Component" value="{!strtype}" multiselect="false" size="1" styleclass="slds-select">
+                                    <apex:selectOption itemValue="ApexClass" itemLabel="Apex Class" />
+                                    <apex:selectOption itemValue="ApexPage" itemLabel="Apex Page" />
+                                    <apex:selectOption itemValue="ApexComponent" itemLabel="Apex Component" />
+                                    <apex:selectOption itemValue="ApexTrigger" itemLabel="Apex Trigger" />
+                                    <apex:selectOption itemValue="Layout" itemLabel="Layout" />
+                                    <!--  <apex:selectOption itemValue="CustomObject" itemLabel="Object Mapping"/>-->
+                                </apex:selectList>
+                               </div> 
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <div class="slds-form-element">
+                                <button type="button" class="slds-button slds-button--neutral slds-button--brand" id='Retrieve' style='margin-top:21px;' onclick="showOverLay('Please wait...');hideEditor();RetrieveCmp();return false;">Retrieve</button>
+                                <apex:actionFunction name="RetrieveCmp" action="{!getComponentDetail}" rerender="sourcecomppnl,mesg" oncomplete="initDropdown();initButton();hideOverLay();" />
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <apex:outputpanel id="sourcecomppnl">
+                                <apex:outputpanel rendered='{!lstSourcecomponent!=null && lstSourcecomponent.size>0}' layout='none'>
+                                    <!--<div class='org1'>-->
+                                    <apex:outputpanel id="compdiv">
+                                        <div class="slds-form-element">
+                                            <div class='slds-form-element'>
+                                                <div class="slds-form-element">
+                                                    <label class='slds-form-element__label' for="SourceOrgcomp">Source Org Component</label>
+
+                                                    <apex:selectList id="SourceOrgcomp" value="{!strSourceComp}" multiselect="false" size="1" styleclass="slds-select comp">
+                                                        <apex:selectOptions value="{!lstSourcecomponent}" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                            <div class='slds-form-element'>
+                                                <div class="slds-form-element">
+                                                    <label class='slds-form-element__label' for="TargetOrgcomp">Target Org Component</label>
+                                                    <apex:selectList id="TargetOrgcomp" value="{!strtargetComp}" multiselect="false" size="1" styleclass="slds-select comp">
+                                                        <apex:selectOptions value="{!lstTargetcomponent}" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                            <div class='slds-form-element'>
+                                                <div class="slds-form-element">
+                                                    <button type="button" class="slds-button slds-button--neutral slds-button--brand" id='Compare' style='margin-top:21px;' onclick='CompareComp();hideEditor();showOverLay("Please wait..");'>Compare</button>
+                                                    <apex:actionFunction name="CompareComp" action="{!getCompDetails}" rerender="compdiv" />
+                                                    <apex:actionPoller action="{!checkAsyncRequest}" interval="5" rerender="compdiv" rendered="{!NOT(ISNULL(AsyncResult))}" oncomplete="if({!isExceptionFound}) hideOverLay() ;else showOverLay('{!strStatus}');" />
+                                                    <apex:outputPanel rendered="{!NOT(ISNULL(ZipDetail))}">
+                                                        <apex:actionFunction name="receiveFile" action="{!receiveMetadataZipFile}" rerender="mesg" oncomplete="unzip();">
+                                                        </apex:actionFunction>
+                                                        <apex:actionFunction name="receiveComplete" action="{!receiveComplete}" rerender="compdiv" oncomplete="if({!isCompleted}){hideOverLay();initDropdown();initButton();diffUsingJS(0,'{!strSourceOrgName}','{!strTargetOrgName}');showEditor();}" />
+                                                        <c:CodeComparatorZip name="unzip" source="{!isSourceProcessed}" oncomplete="if(more){receiveFile();setfilevalue(data,{!isSourceProcessed})} else receiveComplete();">{!ZipDetail}</c:CodeComparatorZip>
+                                                    </apex:outputPanel>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </apex:outputpanel>
+                                    <!--</div>-->
+                                </apex:outputpanel>
+                                <apex:outputpanel id="mesg">
+                                    <div style='float:left;'>
+                                        <apex:pagemessages />
+                                    </div>
+                                </apex:outputpanel>
+                            </apex:outputpanel>
+                        </div>
+                    </div>
+                    <apex:outputpanel id="compare2">
+                    </apex:outputpanel>
+                </apex:form>
+                <c:CodeComparatorBlock ></c:CodeComparatorBlock>
+                <!--  <input type="text" id="contextSize" value="" /> -->
+                <div id='codeEdit' style='display:none;'>
+                    <div class="viewType" style='clear:both;'>
+                        <input type="radio" name="_viewtype" value='0' id="sidebyside" onclick="diffUsingJS(0,'{!JSENCODE(strSourceOrgName)}','{!JSENCODE(strTargetOrgName)}');" />
+                        <label for="sidebyside">Side by Side Diff</label>
+                        <input type="radio" name="_viewtype" value='1' id="inline" onclick="diffUsingJS(1,'{!JSENCODE(strSourceOrgName)}','{!JSENCODE(strTargetOrgName)}');" />
+                        <label for="inline">Inline Diff</label>
+                        &nbsp; &nbsp;
+                        <input type="checkbox" name="_viewtype" class='onlymismatch' />
+                        <label for="inline">Only Mismatch Line</label>
+                        <!--  <input type="button" name="" class='' value='Download' onclick='downloadDocFile();'/>  <label for="inline">Only Mismatch Line</label>-->
+                    </div>
+                    <div style='display:none;'>
+                        <textarea id="baseText"></textarea>
+                        <textarea id="newText"></textarea>
+                    </div>
+                    <div id="diffoutput" style='clear:both;'> </div>
+                </div>
+            </div>
+            <!--End  Code Comparator Block  -->
+            <div id="tabs-3" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-3__item">
+                <apex:form id="frm2">
+                  <apex:actionFunction name="refresh" action="{!refresh}" reRender="refreshPanel"/>     
+                  <apex:outputpanel id="refreshPanel">
+                      <apex:actionPoller action="{!resultfound}"  reRender="refreshPanel" interval="5" enabled="{!isStart}" oncomplete="if({!isProcessed}){hideOverLay();initButton();initDropdown();}"/>
+                    </apex:outputpanel>
+                    <div class="slds-form--inline">
+                        <div class='slds-form-element'>
+                            <!--<div style='float:left;'>
+                                <span class="glyphicon glyphicon-chevron-up btn1" aria-hidden="true">Hide</span>
+                                <span class=" btn2 glyphicon glyphicon-chevron-down" aria-hidden="true" style='display:none;'>Show</span>
+                            </div>-->
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="select-01">
+                                    <apex:commandLink action="{!refreshOrgDetail}" onclick="showOverLay('Please wait..');" oncomplete="hideOverLay();initButton();initDropdown();" rerender="frm2,compdivOrgdetail"> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></apex:commandLink>
+                                    Source Org</label>
+                                
+                                    <div class="slds-select_container">
+                                        <apex:selectList id="SourceOrg" value="{!strSoureOrg}" multiselect="false" size="1" styleclass="slds-select">
+                                            <apex:selectOptions value="{!lstExistingConnection}" />
+                                        </apex:selectList>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="select-01">Target Org</label>
+                               
+                                    <div class="slds-select_container">
+                                        <apex:selectList id="TargetOrg" value="{!strtargetOrg}" multiselect="false" size="1" styleclass="slds-select">
+                                            <apex:selectOptions value="{!lstExistingConnection}" />
+                                        </apex:selectList>
+                                    </div>
+                               
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="Component">Component</label>
+                                
+                                    <div class="slds-select_container">
+                                        <apex:selectList id="Component" value="{!strtype}" multiselect="false" size="1" styleclass="slds-select">
+                                            <apex:selectOption itemValue="CustomObject" itemLabel="Object" />
+                                        </apex:selectList>
+                                    </div>
+                               
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <div class="form-group">
+                                <button type="button" class="slds-button slds-button--neutral slds-button--brand" id='RetrieveOrg' onclick="showOverLay('Please wait...');ComponentDetailForObject();return false;" style='margin-top:21px;'>Retrieve</button>
+                                <apex:actionFunction name="ComponentDetailForObject" action="{!getComponentDetailForObjectcompare}" rerender="sourcecomppnlorg,mesgoRg,compdivOrgdetail" oncomplete="initDropdown();initButton();hideOverLay();" />
+                            </div>
+                        </div>
+                        <div class='slds-form-element'>
+                            <apex:outputpanel id="sourcecomppnlorg">
+                                <apex:outputpanel rendered='{!lstSourcecomponent!=null && lstSourcecomponent.size>0}' layout='none'>
+                                    <apex:outputpanel id="compdivorg">
+                                        <div class="slds-form-element">
+                                            <div class='slds-form-element'>
+                                                <div class="slds-form-element">
+                                                    <label class="slds-form-element__label" for="SourceOrgcomp">Source Org Component</label>
+                                                    <!--<div class="slds-form-element__control">
+                                                        <div class="slds-select_container">-->
+                                                    <apex:selectList id="SourceOrgcomp" value="{!strSourceObject}" multiselect="false" size="1" styleclass="slds-select comp">
+                                                        <apex:selectOptions value="{!lstSourcecomponent}" />
+                                                    </apex:selectList>
+                                                    <!--</div>
+                                                    </div>-->
+                                                </div>
+                                            </div>
+                                            <div class='slds-form-element'>
+                                                <div class="slds-form-element">
+                                                    <label class="slds-form-element__label" for="TargetOrgcomp">Target Org Component</label>
+                                                    <!--<div class="slds-form-element__control">
+                                                        <div class="slds-select_container">-->
+                                                    <apex:selectList id="TargetOrgcomp" value="{!strtartObject}" multiselect="false" size="1" styleclass="slds-select comp comp">
+                                                        <apex:selectOptions value="{!lstTargetcomponent}" />
+                                                    </apex:selectList>
+                                                    <!--</div>
+                                                    </div>-->
+                                                </div>
+                                            </div>
+                                            <div class='slds-form-element'>
+                                                <div class="slds-form-element">
+                                                    <button type="button" class="slds-button slds-button--neutral slds-button--brand" id='Compareorg' style='margin-top:21px;' onclick='CompareCompOrg();showOverLay("Please wait..");'>Compare</button>
+                                                    <apex:actionFunction name="CompareCompOrg" action="{!getOrgComparedetail}" rerender="compdivOrgdetail,mesgoRg" oncomplete="initTable();hideOverLay();" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </apex:outputpanel>
+                                </apex:outputpanel>
+                            </apex:outputpanel>
+                        </div>
+                    </div>
+                    
+                    <apex:outputpanel id="compdivOrgdetail">
+                        <apex:outputPanel rendered="{!isObjectComparator}">
+                            <div class='slds-box '>
+                                <div class='slds-grid slds-grid--vertical-align-end slds-grid--pull-padded'>
+                                    <div class='slds-col--padded slds-p-bottom--large'>
+                                        <div class="slds-form-element" >
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-select_container" style='float:left'>
+                                                    <apex:selectList id="filter" value="{!lstSelectedField}" multiselect="true" styleclass="slds-select filter2">
+                                                        <apex:selectOptions value="{!lstSelectedFieldOption}" />
+                                                    </apex:selectList>
+                                                </div>
+                                                <div style='float:left'>
+                                                <button type="button" class="slds-button slds-button--neutral slds-button--brand" style='margin-left: 10px;float:left;' onclick='FilterCompareCompOrgDetail();showOverLay("Please wait..");'>Filter</button>
+                                                <button type="button" class="slds-button slds-button--neutral slds-button--brand" style='margin-left: 10px;float:left;' onclick='refresh();downloadObjectComparison();showOverLay("Please wait..");'>Download</button>
+                                                <apex:actionFunction name="downloadObjectComparison" action="{!downloadObjectComparison}" />
+                                                
+                                                <apex:actionFunction name="FilterCompareCompOrgDetail" action="{!FilterCompareCompOrgDetail}" rerender="compdivOrgdetail" oncomplete="initTable();hideOverLay();" />
+                                               </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <table cellpadding="0" cellspacing="0" border="0" class="slds-table slds-table--bordered slds-table--cell-buffer" id="compare" width="100%">
+                                        <thead>
+                                            <tr class='slds-text-heading--label'>
+                                                <apex:repeat value="{!lstSelectedField}" var="fieldname">
+                                                    <th scope="col" colspan='3' class="leftborder rightborder">{!UPPER(fieldname)}</th>
+                                                </apex:repeat>
+                                            </tr>
+                                            <tr>
+                                                <apex:repeat value="{!lstSelectedField}" var="fieldname">
+                                                    <th scope="col" class="leftborder">Source</th>
+                                                    <th scope="col">Target</th>
+                                                    <th scope="col" class="rightborder">Match</th>
+                                                </apex:repeat>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <apex:variable var="onlyPickList" value="{!0}" />
+                                            <apex:repeat value="{!lstSelectedField}" var="fieldname">
+                                                <apex:variable var="onlyPickList" value="{!IF(onlyPickList==0 && fieldname=='picklist',1,onlyPickList)}" />
+                                            </apex:repeat>
+                                            <apex:repeat value="{!orgComparedetail2}" var="objObect">
+                                                <apex:outputPanel layout="none" rendered="{!onlyPickList==0 && objObect.sourceField.label!='' ||(onlyPickList==1 && (objObect.sourceField.type_x=='Picklist' || objObect.sourceField.type_x=='fullName'))}">
+                                                    <tr>
+                                                        <apex:repeat value="{!lstSelectedField}" var="fieldname" rendered="{!onlyPickList==0 ||(onlyPickList==1 && (objObect.sourceField.type_x=='Picklist' || objObect.sourceField.type_x=='fullName'))}">
+                                                            <apex:outputPanel layout="none" rendered="{!fieldname=='picklist'}">
+                                                                <td>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <th>Values {!fieldname}</th>
+                                                                            <th>Controlling Field</th>
+                                                                        </tr>
+                                                                        <apex:repeat value="{!objObect.sourceField[fieldname].picklistValues}" var="pickvalue">
+                                                                            <tr>
+                                                                                <td> {!pickvalue.fullName}</td>
+                                                                                <td>{!pickvalue.controllingFieldValues}-{!objObect.sourceField[fieldname].controllingField} </td>
+                                                                            </tr>
+                                                                        </apex:repeat>
+                                                                    </table>
+                                                                </td>
+                                                                <td>
+                                                                    <apex:outputPanel layout="none" rendered="{!objObect.isFound}">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <th>Values</th>
+                                                                                <th>Controlling Field</th>
+                                                                            </tr>
+                                                                            <apex:repeat value="{!objObect.targetField[fieldname].picklistValues}" var="pickvalue">
+                                                                                <tr>
+                                                                                    <td> {!pickvalue.fullName}</td>
+                                                                                    <td>{!pickvalue.controllingFieldValues}-{!objObect.sourceField[fieldname].controllingField} </td>
+                                                                                </tr>
+                                                                            </apex:repeat>
+                                                                        </table>
+                                                                    </apex:outputPanel>
+                                                                    <apex:outputPanel layout="none" rendered="{!!objObect.isFound}">
+                                                                        {!IF(objObect.isFound,objObect.targetField[fieldname],'Not Found')}
+                                                                    </apex:outputPanel>
+                                                                </td>
+                                                                <td>
+                                                                    <!-- <span class="glyphicon {!If(objObect.sourceField[fieldname]==objObect.targetField[fieldname],'glyphicon-ok green','glyphicon-remove red')} " aria-hidden="true"></span>--></td>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel layout="none" rendered="{!(fieldname!='picklist' && onlyPickList==0 && objObect.sourceField['label']!='') || fieldname=='fullName'}">
+                                                                <td class="leftborder">{!IF(objObect.sourceField[fieldname]=='','NA',objObect.sourceField[fieldname])}</td>
+                                                                <td>{!IF(objObect.sourceField[fieldname]=='','NA',IF(objObect.isFound,objObect.targetField[fieldname],'Not Found'))}</td>
+                                                                <td class="rightborder"> <span class="glyphicon {!If(objObect.sourceField[fieldname]==objObect.targetField[fieldname],'glyphicon-ok green','glyphicon-remove red')} " aria-hidden="true"></span> </td>
+                                                            </apex:outputPanel>
+                                                        </apex:repeat>
+                                                    </tr>
+                                                </apex:outputPanel>
+                                            </apex:repeat>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                        <div style='float:left;'>
+                            <apex:pagemessages id="mesgoRg" />
+                        </div>
+                    </apex:outputpanel>
+                    <!--<div class='org hideandShow'>
+                    </div> -->
+                </apex:form>
+            </div>
+            <div id="tabs-4" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-4__item">
+                <h1>Coming Soon...</h1></div>
+            <!-- End Tavb div -->
+        </div>
+    </div>
+
+
+</apex:page>

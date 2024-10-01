@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>AHM FieldLink User</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>AHM_FieldLink_User</label>
+    <permissionSets>CRM_System_Read</permissionSets>
+    <permissionSets>HELMS_Case_Management</permissionSets>
+    <permissionSets>HELMS_Opportunity_Creation</permissionSets>
+    <permissionSets>HELMS_Opportunity_Offers_Read</permissionSets>
+    <permissionSets>HELMS_Reporting_Only</permissionSets>
+    <permissionSets>Partner_Community_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

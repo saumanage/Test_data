@@ -1,0 +1,33 @@
+<messaging:emailTemplate subject="A new relatedTo has been assigned to your dealership" recipientType="User" relatedToType="Opportunity">
+<messaging:plainTextEmailBody >
+Dear {!relatedTo.PreferredDealerAccount_TXT__c},
+
+A new relatedTo has been assigned to your dealership. The details are as below.
+
+relatedTo Name: {!relatedTo.Name}
+
+relatedTo Email: {!relatedTo.Email__c}
+
+relatedTo Phone: ({! LEFT(relatedTo.Phone__c , 3) }) {! LEFT(RIGHT(relatedTo.Phone__c, 7), 3) }-{! RIGHT(relatedTo.Phone__c, 4) }
+
+Model/Year: {!relatedTo.Model_TXT__c}{!relatedTo.Model_ID__c}/{!relatedTo.Year_YR__c}
+
+Lead Provider: {!relatedTo.LeadProvider_ID__c}
+
+Please click the below HONDA lead management system link to view more details.
+
+Login using your Dealer Number and Credentials
+->Navigate to Sales
+->Expand Lead Management
+->Select Lead Management and Analytics
+https://vendortest.in.honda.com/
+
+
+Thanks!
+
+HONDA {!relatedTo.SubDiv_TXT__c} Lead Management team
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalDataSource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authProvider>HDMP_QA</authProvider>
+    <customConfiguration>{&quot;environment&quot;:&quot;TEST&quot;,&quot;apiVersion&quot;:&quot;59.0&quot;,&quot;timeout&quot;:&quot;120&quot;,&quot;searchEnabled&quot;:&quot;true&quot;}</customConfiguration>
+    <endpoint>https://test.salesforce.com</endpoint>
+    <isWritable>true</isWritable>
+    <label>HDMP QA</label>
+    <oauthScope>full refresh_token</oauthScope>
+    <principalType>NamedUser</principalType>
+    <protocol>Oauth</protocol>
+    <type>SfdcOrg</type>
+</ExternalDataSource>

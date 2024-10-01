@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>AutoNation Honda Lewisville Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>AutoNation Honda Lewisville Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>AutoNationHondaLewisvillePartnerManager</parentRole>
+</Role>

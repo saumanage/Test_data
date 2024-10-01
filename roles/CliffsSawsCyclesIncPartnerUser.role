@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Cliff&apos;s Saws &amp; Cycles, Inc. Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Cliff&apos;s Saws &amp; Cycles, Inc. Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>CliffsSawsCyclesIncPartnerManager</parentRole>
+</Role>

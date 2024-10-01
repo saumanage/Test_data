@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Home Page</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Watch Video</actionButtonLabel>
+        <actionButtonLink>http://salesforce.vidyard.com/watch/PGUReuuG8DHk7ED6cwYxwz</actionButtonLink>
+        <body>&lt;p&gt;&lt;span style=&quot;color: rgb(120, 144, 156);&quot;&gt;See how your Home page gives you the info you need to plan your next steps and start off your day on the right foot.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(120, 144, 156);&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</body>
+        <customApplication>standard__LightningSales</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Home Page</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Home Page</masterLabel>
+        <publishedDate>2019-08-14</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2019-08-14</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>3</timesToDisplay>
+        <title>Organize Your Daily Tasks</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

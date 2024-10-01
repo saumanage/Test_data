@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 01-07-2022
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.SharingRuleController" sidebar="false" showHeader="false" tabStyle="CWB_Tool__tab">
+    <c:requiredJSAndCSS />
+    <c:lightningScript ></c:lightningScript>
+    
+    <apex:form id="frmId" styleClass="CWB">
+    <c:lightningspinner />
+    <apex:actionFunction name="downloadComponent" action="{!downloadSharingRule}" />
+    <c:ComponentSelector buttonText="Download" filter="true" ComponentType="{!strComponentType}" ComponentSelectorModel="{!objComponentSelectorModel}" hideWarning="true"></c:ComponentSelector>
+   </apex:form>
+<c:ConnectionModalComp />
+</apex:page>

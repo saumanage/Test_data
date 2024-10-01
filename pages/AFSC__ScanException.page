@@ -1,0 +1,13 @@
+<!--
+
+  This page is shown when there was unhandled exception on file scanning
+
+  Copyright (c) 2016 F-Secure Corporation. All rights reserved.
+
+-->
+
+<apex:page sidebar="false" controller="AFSC.FS_ScanResultPageController" title="{!$Label.afsc__fs_statuserrorheader}"  lightningStylesheets="true" showHeader="false">
+
+	<c:ScanResultInfo state="exception" header="{!$Label.afsc__fs_statusexceptionheader}" subHeader="{!$CurrentPage.parameters.name}" standardText="{!$Label.afsc__fs_statuscontent1exception}" customTextTemplate="{!ExceptionTemplate}" />
+
+</apex:page>

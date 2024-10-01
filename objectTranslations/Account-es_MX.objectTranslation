@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account Timezone --></label>
+        <name>Account_Timezone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active Divisions --></label>
+        <name>Active_Divisions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blackbook Price --></label>
+        <name>BlackbookPrice_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>BusinessUnit_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bypass Duplicate Merge Rule --></label>
+        <name>Bypass_Duplicate_Merge_Rule__c</name>
+    </fields>
+    <fields>
+        <label><!-- CID --></label>
+        <name>CID_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM Tool --></label>
+        <name>CRMTool_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM Vendor Effective Date --></label>
+        <name>CRMVendorEff_Date_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Equity --></label>
+        <name>CalculatedEquity_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Certification Status --></label>
+        <name>Certification_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>Channel__c</name>
+        <picklistValues>
+            <masterLabel>Events</masterLabel>
+            <translation><!-- Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social</masterLabel>
+            <translation><!-- Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel api --></label>
+        <name>Channel_api__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compare Third Party for Duplicate --></label>
+        <name>Compare_Third_Party_for_Duplicate_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirm Interest Notification Date --></label>
+        <name>ConfirmInterestNotificationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Key --></label>
+        <name>Contact_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Postal Code Ranking --></label>
+        <name>DLPostalCodeRank_CD_RNK__c</name>
+    </fields>
+    <fields>
+        <label><!-- DSP Lead Source --></label>
+        <name>DSP_Lead_Source__c</name>
+        <picklistValues>
+            <masterLabel>DSP Tekion</masterLabel>
+            <translation><!-- DSP Tekion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP WalkIN</masterLabel>
+            <translation><!-- DSP WalkIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dealer Access Level --></label>
+        <name>DealerAccessLevel_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Full Access</masterLabel>
+            <translation><!-- Full Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Access</masterLabel>
+            <translation><!-- No Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporting Only</masterLabel>
+            <translation><!-- Reporting Only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dealer Attributes (Name and Value) --></label>
+        <name>DealerAttributes_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer CRM Vendor --></label>
+        <name>DealerCRMVendor_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer City State Ranking --></label>
+        <name>DealerCityStateRank_RNK__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Number --></label>
+        <name>DealerCode_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer DBA Name --></label>
+        <name>DealerDBAName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer District --></label>
+        <name>DealerDistrict_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Legal Name --></label>
+        <name>DealerLegalName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Website Address --></label>
+        <name>DealerWebsiteAddrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Manager --></label>
+        <name>Dealer_Manager__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dealer Metro Name --></label>
+        <name>Dealer_Metro_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deduplication --></label>
+        <name>Deduplication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email ID --></label>
+        <name>Email_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint --></label>
+        <name>Endpoint_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enrichment --></label>
+        <name>Enrichment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalation Email Level 1 --></label>
+        <name>EscalationEmailLevel1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalation Email Level 2 --></label>
+        <name>EscalationEmailLevel2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exclude from Scoring Flag --></label>
+        <name>Exclude_from_Scoring_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fri Close Hour --></label>
+        <name>FriCloseHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fri Open Hour --></label>
+        <name>FriOpenHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Digital Solutions --></label>
+        <name>HondaDigitalSolutions_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>IsActive_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Concierge Process Needed --></label>
+        <name>Is_Concierge_Process_Needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Stop Sent To eCRM --></label>
+        <name>Is_Stop_Sent_To_eCRM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Urgent Priority --></label>
+        <name>Is_Urgent_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Date of Service --></label>
+        <name>LastDateofService_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox_ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Entry Point --></label>
+        <name>LeadEntryPoint_TXT__c</name>
+        <picklistValues>
+            <masterLabel>Direct to Dealer CRM</masterLabel>
+            <translation><!-- Direct to Dealer CRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECRM</masterLabel>
+            <translation><!-- ECRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECRM/Events</masterLabel>
+            <translation><!-- ECRM/Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Campaigns</masterLabel>
+            <translation><!-- Email Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDRA</masterLabel>
+            <translation><!-- LDRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urban Science</masterLabel>
+            <translation><!-- Urban Science --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eShopping</masterLabel>
+            <translation><!-- eShopping --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lead Vendor Name --></label>
+        <name>LeadVendorName_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Channel --></label>
+        <name>Lead_Source__c</name>
+        <picklistValues>
+            <masterLabel>Brand Site</masterLabel>
+            <translation><!-- Brand Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP</masterLabel>
+            <translation><!-- DSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dealer Website</masterLabel>
+            <translation><!-- Dealer Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event/Tradeshow</masterLabel>
+            <translation><!-- Event/Tradeshow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Campaign</masterLabel>
+            <translation><!-- Lead Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party</masterLabel>
+            <translation><!-- Third Party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walk-in</masterLabel>
+            <translation><!-- Walk-in --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Loan Amount --></label>
+        <name>LoanAmount_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model info --></label>
+        <name>ModelInfo_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mon Close Hour --></label>
+        <name>MonCloseHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mon Open Hour --></label>
+        <name>MonOpenHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notification Date --></label>
+        <name>Notification_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other owned products --></label>
+        <name>OtherOwnedProducts_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outreach Complete --></label>
+        <name>OutreachComplete_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owned HONDA Products --></label>
+        <name>OwnedHondaProducts_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pager --></label>
+        <name>Pager_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Dealer Code --></label>
+        <name>ParentDealerCode_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Phone Extension --></label>
+        <name>PhoneExtension_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preference Values --></label>
+        <name>Preference_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Dealer Name account --></label>
+        <name>Preferred_Dealer_Name_account__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Previous Owner --></label>
+        <name>PreviousOwner_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Member of household --></label>
+        <name>PrimaryMemberofHousehold_FLAG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Source Type --></label>
+        <name>ProviderSourceType_TXT__c</name>
+        <picklistValues>
+            <masterLabel>T1</masterLabel>
+            <translation><!-- T1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T2</masterLabel>
+            <translation><!-- T2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T3</masterLabel>
+            <translation><!-- T3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Status --></label>
+        <name>ProviderStatus_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Service --></label>
+        <name>Provider_Service_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Amount --></label>
+        <name>PurchaseAmount_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Date --></label>
+        <name>PurchaseDate_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Quantity --></label>
+        <name>PurchaseQuantity_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Realtime TimeZone Offset --></label>
+        <name>Realtime_TimeZone_Offset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receive Dealer Updates --></label>
+        <name>Receive_Dealer_Updates__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Count --></label>
+        <name>Record_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provider Routable status for the dealers who are not enrolled in the HDS program --></help>
+        <label><!-- Routable? --></label>
+        <name>Routable_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Routing Date --></label>
+        <name>RoutingDate_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Routing Termination Date --></label>
+        <name>Routing_Date_Termination__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sat Close Hour --></label>
+        <name>SatCloseHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sat Open Hour --></label>
+        <name>SatOpenHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selling Dealer --></label>
+        <name>SellingDealer_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Customer Acknowledgement Email --></label>
+        <name>Send_Customer_Acknowledgement_Email_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Invalid Information notification --></label>
+        <name>Send_Invalid_Information_notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Product Missing Notification --></label>
+        <name>Send_Product_Missing_Notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Confirm Interest Notification --></label>
+        <name>Send_confirmation_interest_notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send to Urban Science --></label>
+        <name>Send_to_Urban_Science_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Dealer --></label>
+        <name>ServiceDealer_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Division --></label>
+        <name>SubDivision_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sun Close Hour --></label>
+        <name>SunCloseHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sun Open Hour --></label>
+        <name>SunOpenHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thu Close Hour --></label>
+        <name>ThuCloseHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thu Open Hour --></label>
+        <name>ThuOpenHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timezone Offset From GMT --></label>
+        <name>Timezone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger Type Code --></label>
+        <name>TriggerType_TXT__c</name>
+        <picklistValues>
+            <masterLabel>future</masterLabel>
+            <translation><!-- future --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>instant</masterLabel>
+            <translation><!-- instant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tue Close Hour --></label>
+        <name>TueCloseHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tue Open Hour --></label>
+        <name>TueOpenHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Brand --></label>
+        <name>VehicleBrand_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Code --></label>
+        <name>VendorCode_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website URL --></label>
+        <name>Website_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web-to-Lead Allowed? --></label>
+        <name>WebtoLeadAllowed_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wed Close Hour --></label>
+        <name>WedCloseHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wed Open Hour --></label>
+        <name>WedOpenHour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone --></label>
+        <name>Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Sent To eCRM --></label>
+        <name>eCRM_setup_complete__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Used as a placeholder for Person Accounts Enablement --></description>
+        <label><!-- Business --></label>
+        <name>Business</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for Dealer Records --></description>
+        <label><!-- Dealer --></label>
+        <name>Dealer</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for Provider Records --></description>
+        <label><!-- Provider --></label>
+        <name>Provider</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Vendor --></description>
+        <label><!-- Vendor --></label>
+        <name>Vendor</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Routing Date and End Date should be Future Date. --></errorMessage>
+        <name>Trigger_Type_Code_is_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Routing Date and End Date Fields should not be Empty --></errorMessage>
+        <name>Trigger_Type_Code_is_Instant</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enable eCRM setup complete?, If Provider Status is Active --></errorMessage>
+        <name>eCRM_setup_complete_Should_Be_True</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Business_Coder --></label>
+        <name>MDPERSONATOR__Business_Coder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Business_Lookup --></label>
+        <name>MDPERSONATOR__Business_Lookup</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExpressEntry_Mobile_Account --></label>
+        <name>MDPERSONATOR__ExpressEntry_Mobile_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Personate --></label>
+        <name>MDPERSONATOR__Personate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExactTarget_Resubscribe --></label>
+        <name>et4ae5__ExactTarget_Resubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExactTarget_Unsubscribe --></label>
+        <name>et4ae5__ExactTarget_Unsubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ExactTarget_Email --></label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_ExactTarget_Analytics --></label>
+        <name>et4ae5__View_ExactTarget_Analytics</name>
+    </webLinks>
+</CustomObjectTranslation>

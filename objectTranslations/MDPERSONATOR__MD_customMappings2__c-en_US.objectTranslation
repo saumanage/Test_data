@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Mapping --></label>
+        <name>MDPERSONATOR__Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Type --></label>
+        <name>MDPERSONATOR__objectType__c</name>
+    </fields>
+</CustomObjectTranslation>

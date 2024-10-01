@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used for Filtering auto lead conversion.
+We mapped with name instead of word.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Category_txt__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_Against__c</fullName>
+        <externalId>false</externalId>
+        <label>Check Against</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Handling_txt__c</fullName>
+        <externalId>false</externalId>
+        <label>Handling</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Word_txt__c</fullName>
+        <externalId>false</externalId>
+        <label>Word</label>
+        <length>180</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Filter Words</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reservation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reservations</value>
+    </caseValues>
+    <fields>
+        <help><!-- All the IDs of the accessories (comma separated) --></help>
+        <label><!-- Accessories IDs --></label>
+        <name>Accessories_IDs_c__c</name>
+    </fields>
+    <fields>
+        <help><!-- Names of the Accessories --></help>
+        <label><!-- Accessories Names --></label>
+        <name>Accessories_Names_c__c</name>
+    </fields>
+    <fields>
+        <help><!-- Accessories stored as a JSON string --></help>
+        <label><!-- Accessories --></label>
+        <name>Accessories_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Confirmation Number --></label>
+        <name>Approval_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- BT Status --></label>
+        <name>BT_Status_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- BT Transaction Id --></label>
+        <name>BT_Transaction_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Image URL --></label>
+        <name>Base_Image_URL_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Entity --></label>
+        <name>Business_Entity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign Name --></label>
+        <name>Campaign_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart --></label>
+        <name>Cart_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed --></label>
+        <name>Completed_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Address --></label>
+        <name>Dealer_Address_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer City --></label>
+        <name>Dealer_City_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Name --></label>
+        <name>Dealer_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Number --></label>
+        <name>Dealer_Number_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Phone --></label>
+        <name>Dealer_Phone_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Postal Code --></label>
+        <name>Dealer_Postal_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer State --></label>
+        <name>Dealer_State_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Send Date --></label>
+        <name>Delivery_Send_Date_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Amount --></label>
+        <name>Deposit_Amount_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Number --></label>
+        <name>Display_Number_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Sent --></label>
+        <name>EmailSent_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exterior Color Code --></label>
+        <name>Exterior_Color_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exterior Color Price --></label>
+        <name>Exterior_Color_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exterior Color --></label>
+        <name>Exterior_Color_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image URL --></label>
+        <name>Image_URL_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interior Color Code --></label>
+        <name>Interior_Color_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interior Color --></label>
+        <name>Interior_Color_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsWaitlist --></label>
+        <name>IsWaitlist_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Participating --></label>
+        <name>Is_Participating_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Pre Reserve Flow --></label>
+        <name>Is_Pre_Reserve_Flow_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Referenced Date --></label>
+        <name>LastReferencedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Viewed Date --></label>
+        <name>LastViewedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Posted --></label>
+        <name>Lead_Posted__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSRP --></label>
+        <name>MSRP_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model ID --></label>
+        <name>Model_ID_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Name --></label>
+        <name>Model_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Year --></label>
+        <name>Model_Year_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reservation Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order_c__c</name>
+        <relationshipLabel><!-- Reservations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Name --></label>
+        <name>Package_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post to HELMS tries --></label>
+        <name>Post_to_HELMS_tries_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Posted to HELMS Datetime --></label>
+        <name>Posted_to_HELMS_Datetime_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Non Participating Dealer --></label>
+        <name>Provider_Non_Participating_Dealer_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Participating Dealer --></label>
+        <name>Provider_Participating_Dealer_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Reserve Waitlist --></label>
+        <name>Provider_Reserve_Waitlist_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Redirect URL --></label>
+        <name>Redirect_URL_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refunded --></label>
+        <name>Refunded_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reservation Cap Group --></label>
+        <name>Reservation_Cap_Group_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reservation Contact --></label>
+        <name>Reservation_Contact2_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reservation Payment --></label>
+        <name>Reservation_Payment_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry Count --></label>
+        <name>Retry_Count_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent to Cancel API --></label>
+        <name>Sent_to_Cancel_API_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent to Email API --></label>
+        <name>Sent_to_Email_API_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shopping Tool --></label>
+        <name>Shopping_Tool_c__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the id generated for Sitecore. --></help>
+        <label><!-- Sitecore id --></label>
+        <name>Sitecore_id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status_c__c</name>
+        <picklistValues>
+            <masterLabel>Abandoned</masterLabel>
+            <translation><!-- Abandoned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deposit Failed</masterLabel>
+            <translation><!-- Deposit Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deposit Made</masterLabel>
+            <translation><!-- Deposit Made --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Failed to Post</masterLabel>
+            <translation><!-- Lead Failed to Post --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PaymentFlow</masterLabel>
+            <translation><!-- PaymentFlow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PossibleDuplicate</masterLabel>
+            <translation><!-- PossibleDuplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PreReserve</masterLabel>
+            <translation><!-- PreReserve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reservation Made</masterLabel>
+            <translation><!-- Reservation Made --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wait-listed</masterLabel>
+            <translation><!-- Wait-listed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Type --></label>
+        <name>Transaction_Type_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- User IP Address --></label>
+        <name>User_IP_Address_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Model Body Style --></label>
+        <name>Vehicle_Model_Body_Style_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Model Marketing Name --></label>
+        <name>Vehicle_Model_Marketing_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Model Series --></label>
+        <name>Vehicle_Model_Series_c__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds a unique model ID that was passed in. --></help>
+        <label><!-- uniqueModelId --></label>
+        <name>uniqueModelId_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

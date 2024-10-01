@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Additional Attribute</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Additional Attributes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attribute Value --></label>
+        <name>Attribute_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Definition Name --></label>
+        <name>Definition_Name__c</name>
+        <relationshipLabel><!-- Opportunity Additional Attributes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Id --></label>
+        <name>Opportunity_Id__c</name>
+        <relationshipLabel><!-- Opportunity Additional Attributes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sequence Number --></label>
+        <name>Sequence_Number__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

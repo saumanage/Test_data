@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>B2C Error Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>B2C Error Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- DateTime --></label>
+        <name>DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Records Failed --></label>
+        <name>No_of_Records_Failed__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Records Processed --></label>
+        <name>No_of_Records_Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes and Details --></label>
+        <name>Notes_and_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Records Failed --></label>
+        <name>Number_of_Records_Failed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Failure</masterLabel>
+            <translation><!-- Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>City State Rankings</masterLabel>
+            <translation><!-- City State Rankings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dealers</masterLabel>
+            <translation><!-- Dealers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dealers Subdivisions</masterLabel>
+            <translation><!-- Dealers Subdivisions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model Group name</masterLabel>
+            <translation><!-- Model Group name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RDR</masterLabel>
+            <translation><!-- RDR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZIP Code Rankings</masterLabel>
+            <translation><!-- ZIP Code Rankings --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

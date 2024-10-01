@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Bypass_automation_check</name>
+        <label>Bypass automation check</label>
+        <locationX>543</locationX>
+        <locationY>117</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>bypass_automation_path</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_all_dealer_participation_records</targetReference>
+            </connector>
+            <label>bypass automation path</label>
+        </rules>
+    </decisions>
+    <interviewLabel>CRM system name daily update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CRM system name daily update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>update_all_dealer_participation_records</name>
+        <label>update all dealer participation records</label>
+        <locationX>782</locationX>
+        <locationY>114</locationY>
+        <inputAssignments>
+            <field>Division__c</field>
+            <value>
+                <elementReference>$Record.Division__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>132</locationX>
+        <locationY>51</locationY>
+        <connector>
+            <targetReference>Bypass_automation_check</targetReference>
+        </connector>
+        <object>Dealer_Participation__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-01-24</startDate>
+            <startTime>03:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

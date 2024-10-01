@@ -1,0 +1,2 @@
+<apex:page standardController="Lead" extensions="MDPERSONATOR.PersonatorListViewController" recordSetVar="leads" action="{!processSelected}">
+</apex:page>

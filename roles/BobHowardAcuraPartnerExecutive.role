@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Bob Howard Acura Partner Executive</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Bob Howard Acura Partner Executive</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>SBZ02</parentRole>
+</Role>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Lead SubDivision = PowerEquipment , Marine ,Engine  then Division is &apos;P&apos;
+
+Lead SubDivision = Honda  then Division is &apos;A&apos;
+
+SubDivision = Acura , NSX  then Division is &apos;B&apos;
+
+SubDivision = Motorcycle then Division is &apos;M&apos;</description>
+    <fields>
+        <fullName>Division_CD__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Division_CD</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Recortype_API_name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Opp_Recortype_API_name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subdivision__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Subdivision</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lead_Division_Mapping_From_Subdivision</label>
+    <pluralLabel>Lead_Division_Mapping_From_Subdivision</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

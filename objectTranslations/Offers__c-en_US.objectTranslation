@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Offers</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Offers</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Opportunity Offer --></label>
+        <name>AK_Opportunity_Offer__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Offer ID --></label>
+        <name>Offer_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Offer Type --></label>
+        <name>Offer_Type__c</name>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Offers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Record ID --></label>
+        <name>Record_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Description --></label>
+        <name>Special_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Short Description --></label>
+        <name>Special_Short_Description__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

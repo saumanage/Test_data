@@ -1,0 +1,24 @@
+<apex:page showHeader="false" sidebar="false" lightningStylesheets="true">
+<style>
+    body {
+        background-color: #D0D0D0;
+        background-repeat:repeat;
+    }
+</style>
+
+<body>
+    <br/><br/>
+    <div style="text-align:center;">
+        <apex:image url="{!URLFOR($Resource.HondaLogo)}"/>
+    </div>
+    <br/><br/>
+     <div style="text-align:center;font-size:25px;color:black;">
+               <b><apex:outputText value="Single Sign-On Error"/></b>
+           </div><br/>
+    <center>
+    <div style="text-align:center;font-size:18px;background-color: #FFFFFF;width:35%;color:black">
+               <apex:outputText value="{!$Label.HondaSingleSignOnErrorInternalUser}"/><br/> 
+           </div>
+    </center>
+</body>
+</apex:page>

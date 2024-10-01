@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tax Transaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tax Transactions</value>
+    </caseValues>
+    <fields>
+        <label><!-- B2B Cart Item Id --></label>
+        <name>B2B_Cart_Item_Id_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B Cart --></label>
+        <name>B2B_Cart_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B City Tax Rate --></label>
+        <name>B2B_City_Tax_Rate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B City Tax --></label>
+        <name>B2B_City_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B State Tax Rate --></label>
+        <name>B2B_State_Tax_Rate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B State Tax --></label>
+        <name>B2B_State_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B Total Tax --></label>
+        <name>B2B_Total_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B Transit District Tax Rate --></label>
+        <name>B2B_Transit_District_Tax_Rate_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- B2B Transit District Tax --></label>
+        <name>B2B_Transit_District_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vertex Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrderItem --></label>
+        <name>OrderItem_c__c</name>
+        <relationshipLabel><!-- Tax Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Transaction --></label>
+        <name>Order_Transaction_c__c</name>
+        <relationshipLabel><!-- Tax Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order_c__c</name>
+        <relationshipLabel><!-- Tax Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Tax Transaction --></label>
+        <name>Parent_Vertex_Details_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Transaction Date --></label>
+        <name>Tax_Transaction_Date_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Number --></label>
+        <name>documentNumber_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

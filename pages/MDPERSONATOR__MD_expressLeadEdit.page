@@ -1,0 +1,594 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_expressLeadEdit ]  
+     
+     purpose            : An example custom Visualforce page showing how to integrate ExpressEntry. This custom VF page
+                          simulates a standard edit/new page.
+
+     date created       : 8/25/2015
+     version            : 2.2
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+
+<apex:page standardController="Lead" showHeader="true" sidebar="true" extensions="MDPERSONATOR.MD_ExpressEntry">
+    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <apex:includeScript value="/soap/ajax/32.0/connection.js"/>
+    <apex:includeScript value="/soap/ajax/32.0/apex.js"/>
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/redmond/jquery-ui.css"/>
+    <apex:form id="myForm">
+        <script>
+            var j$;
+            
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+            
+            function copyAddress() {
+                var BillingStreet = j$('[id$=BillingStreet').val();
+                var BillingCity = j$('[id$=BillingCity').val();
+                var BillingState = j$('[id$=BillingState').val();
+                var BillingCountry = j$('[id$=BillingCountry').val();
+                var BillingPostalCode = j$('[id$=BillingPostalCode').val();
+
+                j$('[id$=ShippingStreet]').val(BillingStreet);
+                j$('[id$=ShippingCity').val(BillingCity);
+                j$('[id$=ShippingState').val(BillingState);
+                j$('[id$=ShippingCountry').val(BillingCountry);
+                j$('[id$=ShippingPostalCode').val(BillingPostalCode);
+            }
+
+            var countryISOMap = [
+                {value: "US", label: "US - United States of America"}, {value: "AF", label: "AF - Afghanistan"}, {value: "AX", label: "AX - Aland Islands"}, {value: "AL", label: "AL - Albania"}, {value: "DZ", label: "DZ - Algeria"}, {value: "AD", label: "AD - Andorra"}, {value: "AO", label: "AO - Angola"},
+                {value: "AI", label: "AI - Anguilla"}, {value: "AG", label: "AG - Antigua and Barbuda"}, {value: "AR", label: "AR - Argentina"}, {value: "AM", label: "AM - Armenia"}, {value: "AW", label: "AW - Aruba"}, {value: "AU", label: "AU - Australia"}, {value: "AT", label: "AT - Austria"}, {value: "AZ", label: "AZ - Azerbaijan"},
+                {value: "BS", label: "BS - Bahamas"}, {value: "BH", label: "BH - Bahrain"}, {value: "BD", label: "BD - Bangladesh"}, {value: "BB", label: "BB - Barbados"}, {value: "BY", label: "BY - Belarus"}, {value: "BE", label: "BE - Belgium"}, {value: "BZ", label: "BZ - Belize"}, {value: "BJ", label: "BJ - Benin"},
+                {value: "BM", label: "BM - Bermuda"}, {value: "BT", label: "BT - Bhutan"}, {value: "BO", label: "BO - Bolivia"}, {value: "BA", label: "BA - Bosnia and Herzegovina"}, {value: "BW", label: "BW - Botswana"}, {value: "BV", label: "BV - Bouvet Island"}, {value: "BR", label: "BR - Brazil"},
+                {value: "IO", label: "IO - British Indian Ocean Territory"}, {value: "BN", label: "BN - Brunei Darussalam"}, {value: "BG", label: "BG - Bulgaria"}, {value: "BF", label: "BF - Burkina Faso"}, {value: "BI", label: "BI - Burundi"}, {value: "KH", label: "KH - Cambodia"},
+                {value: "CM", label: "CM - Cameroon"}, {value: "CA", label: "CA - Canada"}, {value: "CV", label: "CV - Cape Verde"}, {value: "BQ", label: "BQ - Caribbean Netherlands "}, {value: "KY", label: "KY - Cayman Islands"}, {value: "CF", label: "CF - Central African Republic"},
+                {value: "TD", label: "TD - Chad"}, {value: "CL", label: "CL - Chile"}, {value: "CN", label: "CN - China"}, {value: "CX", label: "CX - Christmas Island"}, {value: "CC", label: "CC - Cocos (Keeling) Islands"}, {value: "CO", label: "CO - Colombia"}, {value: "KM", label: "KM - Comoros"},
+                {value: "CG", label: "CG - Congo"}, {value: "CD", label: "Congo, Democratic Republic of"}, {value: "CK", label: "CK - Cook Islands"}, {value: "CR", label: "CR - Costa Rica"}, {value: "CI", label: "Cote D'Ivoire"}, {value: "HR", label: "HR - Croatia"},
+                {value: "CU", label: "CU - Cuba"}, {value: "CW", label: "CW - Curacao"}, {value: "CY", label: "CY - Cyprus"}, {value: "CZ", label: "CZ - Czech Republic"}, {value: "DK", label: "DK - Denmark"}, {value: "DJ", label: "DJ - Djibouti"}, {value: "DM", label: "DM - Dominica"}, {value: "DO", label: "DO - Dominican Republic"},
+                {value: "EC", label: "EC - Ecuador"}, {value: "EG", label: "EG - Egypt"}, {value: "SV", label: "SV - El Salvador"}, {value: "GQ", label: "GQ - Equatorial Guinea"}, {value: "ER", label: "ER - Eritrea"}, {value: "EE", label: "EE - Estonia"}, {value: "ET", label: "ET - Ethiopia"}, {value: "FK", label: "FK - Falkland Islands"},
+                {value: "FO", label: "FO - Faroe Islands"}, {value: "FJ", label: "FJ - Fiji"}, {value: "FI", label: "FI - Finland"}, {value: "FR", label: "FR - France"}, {value: "GF", label: "GF - French Guiana"}, {value: "PF", label: "PF - French Polynesia"}, {value: "TF", label: "TF - French Southern Territories"},
+                {value: "GA", label: "GA - Gabon"}, {value: "GM", label: "GM - Gambia"}, {value: "GE", label: "GE - Georgia"}, {value: "DE", label: "DE - Germany"}, {value: "GH", label: "GH - Ghana"}, {value: "GI", label: "GI - Gibraltar"}, {value: "GR", label: "GR - Greece"}, {value: "GL", label: "GL - Greenland"}, {value: "GD", label: "GD - Grenada"},
+                {value: "GP", label: "GP - Guadeloupe"}, {value: "GT", label: "GT - Guatemala"}, {value: "GG", label: "GG - Guernsey"}, {value: "GN", label: "GN - Guinea"}, {value: "GW", label: "Guinea-Bissau"}, {value: "GY", label: "GY - Guyana"}, {value: "HT", label: "HT - Haiti"},
+                {value: "HM", label: "HM - Heard and McDonald Islands"}, {value: "HN", label: "HN - Honduras"}, {value: "HK", label: "HK - Hong Kong"}, {value: "HU", label: "HU - Hungary"}, {value: "IS", label: "IS - Iceland"}, {value: "IN", label: "IN - India"}, {value: "ID", label: "ID - Indonesia"},
+                {value: "IR", label: "IR - Iran"}, {value: "IQ", label: "IQ - Iraq"}, {value: "IE", label: "IE - Ireland"}, {value: "IM", label: "IM - Isle of Man"}, {value: "IL", label: "IL - Israel"}, {value: "IT", label: "IT - Italy"}, {value: "JM", label: "JM - Jamaica"}, {value: "JP", label: "JP - Japan"}, {value: "JE", label: "JE - Jersey"},
+                {value: "JO", label: "JO - Jordan"}, {value: "KZ", label: "KZ - Kazakhstan"}, {value: "KE", label: "KE - Kenya"}, {value: "KI", label: "KI - Kiribati"}, {value: "KW", label: "KW - Kuwait"}, {value: "KG", label: "KG - Kyrgyzstan"}, {value: "LA", label: "Lao People's Democratic Republic"},
+                {value: "LV", label: "LV - Latvia"}, {value: "LB", label: "LB - Lebanon"}, {value: "LS", label: "LS - Lesotho"}, {value: "LR", label: "LR - Liberia"}, {value: "LY", label: "LY - Libya"}, {value: "LI", label: "LI - Liechtenstein"}, {value: "LT", label: "LT - Lithuania"}, {value: "LU", label: "LU - Luxembourg"},
+                {value: "MO", label: "MO - Macau"}, {value: "MK", label: "MK - Macedonia"}, {value: "MG", label: "MG - Madagascar"}, {value: "MW", label: "MW - Malawi"}, {value: "MY", label: "MY - Malaysia"}, {value: "MV", label: "MV - Maldives"}, {value: "ML", label: "ML - Mali"}, {value: "MT", label: "MT - Malta"},
+                {value: "MQ", label: "MQ - Martinique"}, {value: "MR", label: "MR - Mauritania"}, {value: "MU", label: "MU - Mauritius"}, {value: "YT", label: "YT - Mayotte"}, {value: "MX", label: "MX - Mexico"}, {value: "MD", label: "MD - Moldova"}, {value: "MC", label: "MC - Monaco"}, {value: "MN", label: "MN - Mongolia"},
+                {value: "ME", label: "ME - Montenegro"}, {value: "MS", label: "MS - Montserrat"}, {value: "MA", label: "MA - Morocco"}, {value: "MZ", label: "MZ - Mozambique"}, {value: "MM", label: "MM - Myanmar"}, {value: "NA", label: "NA - Namibia"}, {value: "NR", label: "NR - Nauru"}, {value: "NP", label: "NP - Nepal"},
+                {value: "NC", label: "NC - New Caledonia"}, {value: "NZ", label: "NZ - New Zealand"}, {value: "NI", label: "NI - Nicaragua"}, {value: "NE", label: "NE - Niger"}, {value: "NG", label: "NG - Nigeria"}, {value: "NU", label: "NU - Niue"}, {value: "NF", label: "NF - Norfolk Island"},
+                {value: "KP", label: "KP - North Korea"}, {value: "NO", label: "NO - Norway"}, {value: "OM", label: "OM - Oman"}, {value: "PK", label: "PK - Pakistan"}, {value: "PS", label: "Palestinian Territory, Occupied"}, {value: "PA", label: "PA - Panama"},
+                {value: "PG", label: "PG - Papua New Guinea"}, {value: "PY", label: "PY - Paraguay"}, {value: "PE", label: "PE - Peru"}, {value: "PH", label: "PH - Philippines"}, {value: "PN", label: "PN - Pitcairn"}, {value: "PL", label: "PL - Poland"}, {value: "PT", label: "PT - Portugal"},
+                {value: "QA", label: "QA - Qatar"}, {value: "RE", label: "RE - Reunion"}, {value: "RO", label: "RO - Romania"}, {value: "RU", label: "RU - Russian Federation"}, {value: "RW", label: "RW - Rwanda"}, {value: "BL", label: "BL - Saint Barthelemy"}, {value: "SH", label: "SH - Saint Helena"},
+                {value: "KN", label: "KN - Saint Kitts and Nevis"}, {value: "LC", label: "LC - Saint Lucia"}, {value: "VC", label: "VC - Saint Vincent and the Grenadines"}, {value: "MF", label: "Saint-Martin (France)"}, {value: "SX", label: "Saint-Martin (Pays-Bas)"},
+                {value: "WS", label: "WS - Samoa"}, {value: "SM", label: "SM - San Marino"}, {value: "ST", label: "ST - Sao Tome and Principe"}, {value: "SA", label: "SA - Saudi Arabia"}, {value: "SN", label: "SN - Senegal"}, {value: "RS", label: "RS - Serbia"}, {value: "SC", label: "SC - Seychelles"},
+                {value: "SL", label: "SL - Sierra Leone"}, {value: "SG", label: "SG - Singapore"}, {value: "SK", label: "SK - Slovakia (Slovak Republic)"}, {value: "SI", label: "SI - Slovenia"}, {value: "SB", label: "SB - Solomon Islands"}, {value: "SO", label: "SO - Somalia"},
+                {value: "ZA", label: "ZA - South Africa"}, {value: "GS", label: "South Georgia & S Sandwich Islands"}, {value: "KR", label: "KR - South Korea"}, {value: "SS", label: "SS - South Sudan"}, {value: "ES", label: "ES - Spain"}, {value: "LK", label: "LK - Sri Lanka"},
+                {value: "PM", label: "PM - St. Pierre and Miquelon"}, {value: "SD", label: "SD - Sudan"}, {value: "SR", label: "SR - Suriname"}, {value: "SJ", label: "SJ - Svalbard and Jan Mayen Islands"}, {value: "SZ", label: "SZ - Swaziland"}, {value: "SE", label: "SE - Sweden"},
+                {value: "CH", label: "CH - Switzerland"}, {value: "SY", label: "SY - Syria"}, {value: "TW", label: "TW - Taiwan"}, {value: "TJ", label: "TJ - Tajikistan"}, {value: "TZ", label: "TZ - Tanzania"}, {value: "TH", label: "TH - Thailand"}, {value: "NL", label: "NL - The Netherlands"},
+                {value: "TL", label: "Timor-Leste"}, {value: "TG", label: "TG - Togo"}, {value: "TK", label: "TK - Tokelau"}, {value: "TO", label: "TO - Tonga"}, {value: "TT", label: "TT - Trinidad and Tobago"}, {value: "TN", label: "TN - Tunisia"}, {value: "TR", label: "TR - Turkey"},
+                {value: "TM", label: "TM - Turkmenistan"}, {value: "TC", label: "TC - Turks and Caicos Islands"}, {value: "TV", label: "TV - Tuvalu"}, {value: "UG", label: "UG - Uganda"}, {value: "UA", label: "UA - Ukraine"}, {value: "AE", label: "AE - United Arab Emirates"},
+                {value: "GB", label: "GB - United Kingdom"}, {value: "UY", label: "UY - Uruguay"}, {value: "UZ", label: "UZ - Uzbekistan"}, {value: "VU", label: "VU - Vanuatu"}, {value: "VA", label: "VA - Vatican"}, {value: "VE", label: "VE - Venezuela"}, {value: "VN", label: "VN - Vietnam"},
+                {value: "VG", label: "VG - Virgin Islands (British)"}, {value: "WF", label: "WF - Wallis and Futuna Islands"}, {value: "YE", label: "YE - Yemen"}, {value: "ZM", label: "ZM - Zambia"}, {value: "ZW", label: "ZW - Zimbabwe"}, {value: "PR", label: "PR - Puerto Rico"}
+            ];
+            
+            var eeToken = '';
+            var autocompleteSet = false;
+            
+            var mapping = null;
+            var mappingFuncs = new Object();
+            var currentCountry = '';
+            var currentCity = '';
+            var currentState = '';
+            var currentPostal = '';
+            var defaultCountry = 'US';
+            var objectPrefix = '';
+            var eeMinLookup = 3;
+            var eeToggleCase = 'MIXED';
+            
+            // borrowed from here: http://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#JavaScript
+            /*
+              Copyright (c) 2011 Andrei Mackenzie
+            
+              Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+            
+              The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+            
+              THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+            */
+            function getEditDistance(a, b) {
+              if(a.length === 0) return b.length; 
+              if(b.length === 0) return a.length; 
+             
+              var matrix = [];
+             
+              // increment along the first column of each row
+              var i;
+              for(i = 0; i <= b.length; i++){
+                matrix[i] = [i];
+              }
+             
+              // increment each column in the first row
+              var j;
+              for(j = 0; j <= a.length; j++){
+                matrix[0][j] = j;
+              }
+             
+              // Fill in the rest of the matrix
+              for(i = 1; i <= b.length; i++){
+                for(j = 1; j <= a.length; j++){
+                  if(b.charAt(i-1) == a.charAt(j-1)){
+                    matrix[i][j] = matrix[i-1][j-1];
+                  } else {
+                    matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
+                                            Math.min(matrix[i][j-1] + 1, // insertion
+                                                     matrix[i-1][j] + 1)); // deletion
+                  }
+                }
+              }
+             
+              return matrix[b.length][a.length];
+            };
+                    
+            function setupAutocomplete() {        
+                for (i = 0; i < mapping.length; i++) {   
+                    if ("apex" == mapping[i].MDPERSONATOR__objectPrefix__c) {
+                        if (j$('[id="' + mapping[i].MDPERSONATOR__countryField__c + '"]').length == 0) {
+                            continue;
+                        }
+                        
+                        mappingFuncs[mapping[i].MDPERSONATOR__streetField__c] = { streetField : mapping[i].MDPERSONATOR__streetField__c,
+                                                                                  cityField : mapping[i].MDPERSONATOR__cityField__c,
+                                                                                  postalField : mapping[i].MDPERSONATOR__postalField__c,
+                                                                                  countryField : mapping[i].MDPERSONATOR__countryField__c,
+                                                                                  stateField : mapping[i].MDPERSONATOR__stateField__c };
+                        
+                        mappingFuncs[mapping[i].MDPERSONATOR__postalField__c] = { cityField : mapping[i].MDPERSONATOR__cityField__c,
+                                                                                  streetField : mapping[i].MDPERSONATOR__streetField__c,
+                                                                                  countryField : mapping[i].MDPERSONATOR__countryField__c,
+                                                                                  stateField : mapping[i].MDPERSONATOR__stateField__c };
+                                                                   
+                        j$('[id="' + mapping[i].MDPERSONATOR__countryField__c + '"]').autocomplete({
+                            source: countryISOMap,
+                            delay: 0,
+                            select: function( event, ui ) { event.stopPropagation(); }
+                        }).data('ui-autocomplete')._renderItem = function( ul, item ) {
+                                var srchTerm = j$.trim(this.term).split(/\s+/).join ('|');
+                                var strNewLabel = item.label;
+                                regexp = new RegExp ('(' + srchTerm + ')', "ig");
+                                var strNewLabel = strNewLabel.replace(regexp,"<span style='font-weight:bold;'>$1</span>");
+                                return j$( "<li></li>" )
+                                .data( "ui-autocomplete-item", item )
+                                .append( "<a>" + strNewLabel + "</a>" )
+                                .appendTo( ul )
+                                ;
+                            };
+                        
+                        j$('[id="' + mapping[i].MDPERSONATOR__streetField__c + '"]').dblclick(function(event) {
+                            j$('[id="' + mappingFuncs[String(event.target.id)].streetField + '"]').val("");
+                            j$('[id="' + mappingFuncs[String(event.target.id)].cityField + '"]').val("");
+                            j$('[id="' + mappingFuncs[String(event.target.id)].postalField + '"]').val("");
+                            j$('[id="' + mappingFuncs[String(event.target.id)].stateField + '"]').val("");
+                            
+                            j$('[id="' + mappingFuncs[String(event.target.id)].countryField + '"]').val(defaultCountry);
+                            
+                            currentCity = "";
+                            currentState = "";
+                            currentPostal = "";
+                            currentCountry = j$('[id="' + mappingFuncs[String(event.target.id)].countryField + '"]').val();
+                            event.stopPropagation();
+                        });
+                        
+                        j$('[id="' + mapping[i].MDPERSONATOR__streetField__c + '"]').focus(function(event) {
+                            if (j$('[id="' + mappingFuncs[String(event.target.id)].countryField + '"]').val() == "") {
+                                j$('[id="' + mappingFuncs[String(event.target.id)].countryField + '"]').val(defaultCountry);
+                            }
+                            currentCity = j$('[id="' + mappingFuncs[String(event.target.id)].cityField + '"]').val();;
+                            currentState = j$('[id="' + mappingFuncs[String(event.target.id)].stateField + '"]').val();;
+                            currentPostal = j$('[id="' + mappingFuncs[String(event.target.id)].postalField + '"]').val();;
+                            currentCountry = j$('[id="' + mappingFuncs[String(event.target.id)].countryField + '"]').val();
+                        });
+                        
+                        j$('[id="' + mapping[i].MDPERSONATOR__streetField__c + '"]').autocomplete({
+                            showHeader: true,
+                            minLength: eeMinLookup,   
+                            delay: 1,                                                                                                                 
+                            source: function(request, response) {
+                                if (currentPostal != null && currentPostal.trim() != "") {
+                                    j$.getJSON("https://expressentry.melissadata.net/jsonp/GlobalExpressAddress?callback=?", {format: "jsonp", id: eeToken, address1: request.term, locality: currentCity, administrativearea: currentState, postalcode: currentPostal, country: currentCountry, maxrecords: "10"}, function (data) {
+                                        var suites = [];
+                                        var results = j$.map(data.Results, function( item ) {
+                                            if (item.Address.SubBuilding != null && item.Address.SubBuilding != "") {
+                                                var suiteArray = item.Address.SubBuilding.split(",");
+                                                var secondaryPostalCode = item.Address.PostalCodeSecondary.split(",");
+                                                for (var i = 0; i < suiteArray.length; i++) {
+                                                    var postalCode = item.Address.PostalCode;
+                                                    if (item.Address.PostalCodePrimary != null && item.Address.PostalCodePrimary != "") {
+                                                        if (secondaryPostalCode[i] != null && secondaryPostalCode[i] != "") {
+                                                            postalCode = item.Address.PostalCodePrimary + "-" + secondaryPostalCode[i];
+                                                        }
+                                                    }
+                                                    var m_completeAddress = item.Address.DeliveryAddress + " " + suiteArray[i];
+                                                    if (eeToggleCase == "UPPER") {
+                                                        m_completeAddress = (m_completeAddress != null) ? m_completeAddress.toUpperCase() : m_completeAddress;
+                                                        
+                                                        item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                                        item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                                        item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                                        item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                                        item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                                        item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                                        item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                                
+                                                        suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(),
+                                                            deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(), postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                                            subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                                    } else {
+                                                        suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i],
+                                                            deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i], postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                                            subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                                    }
+                                                }
+                                            }
+                                            
+                                            var m_completeAddress = item.Address.DeliveryAddress;
+                                            
+                                            if (eeToggleCase == "UPPER") {
+                                                m_completeAddress = (m_completeAddress != null) ? m_completeAddress.toUpperCase() : m_completeAddress;
+                                                        
+                                                item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                                item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                                item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                                item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                                item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                                item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                                item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                                
+                                                return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                                    deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                                    subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                                            }
+                                            
+                                            return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                                deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                                subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                                        });
+                                        
+                                        for (var i = 0; i < suites.length; i++) {
+                                            results.push(suites[i]);
+                                        }
+                
+                                        results = results.sort(function(a,b) {
+                                            return getEditDistance(a.deliveryAddress.toUpperCase(),request.term.toUpperCase()) - getEditDistance(b.deliveryAddress.toUpperCase(),request.term.toUpperCase());
+                                        });
+                                        
+                                        response(results);
+                                    });
+                                } else {
+            
+                                j$.getJSON("https://expressentry.melissadata.net/jsonp/GlobalExpressFreeForm?callback=?", {format: "jsonp", id: eeToken, FF: request.term, country: currentCountry, maxrecords: "10"}, function (data) {
+                                    var suites = [];
+                                    var results = j$.map(data.Results, function( item ) {
+                                        if (item.Address.SubBuilding != null && item.Address.SubBuilding != "") {
+                                            var suiteArray = item.Address.SubBuilding.split(",");
+                                            var secondaryPostalCode = item.Address.PostalCodeSecondary.split(",");
+                                            for (var i = 0; i < suiteArray.length; i++) {
+                                                var postalCode = item.Address.PostalCode;
+                                                if (item.Address.PostalCodePrimary != null && item.Address.PostalCodePrimary != "") {
+                                                    if (secondaryPostalCode[i] != null && secondaryPostalCode[i] != "") {
+                                                        postalCode = item.Address.PostalCodePrimary + "-" + secondaryPostalCode[i];
+                                                    }
+                                                }
+                                                var m_completeAddress = item.Address.DeliveryAddress + " " + suiteArray[i] + ", " + item.Address.Locality + ", " + item.Address.AdministrativeArea + ", " + postalCode;
+                                                if (eeToggleCase == "UPPER") {
+                                                    m_completeAddress = m_completeAddress.toUpperCase();
+                                                    
+                                                    item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                                    item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                                    item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                                    item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                                    item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                                    item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                                    item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                                    
+                                                    suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(),
+                                                    deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i].toUpperCase(), postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                                    subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                                } else {
+                                                    suites.push({label: m_completeAddress, value: item.Address.DeliveryAddress + " " + suiteArray[i],
+                                                        deliveryAddress: item.Address.DeliveryAddress + " " + suiteArray[i], postalCode: postalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                                        subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality});
+                                                }
+                                            }
+                                        }
+                                        
+                                        var m_completeAddress = item.Address.DeliveryAddress + ", " + item.Address.Locality + ", " + item.Address.AdministrativeArea + ", " + item.Address.PostalCode;
+                                        if (eeToggleCase == "UPPER") {
+                                            m_completeAddress = m_completeAddress.toUpperCase();
+                                            
+                                            item.Address.DeliveryAddress = (item.Address.DeliveryAddress != null) ? item.Address.DeliveryAddress.toUpperCase() : null;
+                                            item.Address.PostalCode = (item.Address.PostalCode != null) ? item.Address.PostalCode.toUpperCase() : null;
+                                            item.Address.Locality = (item.Address.Locality != null) ? item.Address.Locality.toUpperCase() : null;
+                                            item.Address.AdministrativeArea = (item.Address.AdministrativeArea != null) ? item.Address.AdministrativeArea.toUpperCase() : null;
+                                            item.Address.SubAdministrativeArea = (item.Address.SubAdministrativeArea != null) ? item.Address.SubAdministrativeArea.toUpperCase() : null;
+                                            item.Address.DoubleDependentLocality = (item.Address.DoubleDependentLocality != null) ? item.Address.DoubleDependentLocality.toUpperCase() : null;
+                                            item.Address.DependentLocality = (item.Address.DependentLocality != null) ? item.Address.DependentLocality.toUpperCase() : null;
+                                            
+                                            return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                            deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                            subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                                        }
+                                        
+                                        return{label: m_completeAddress, value: item.Address.DeliveryAddress,
+                                            deliveryAddress: item.Address.DeliveryAddress, postalCode: item.Address.PostalCode, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea,
+                                            subadministrativeArea: item.Address.SubAdministrativeArea, ddlocality: item.Address.DoubleDependentLocality, dlocality: item.Address.DependentLocality};
+                                    });
+                                    
+                                    for (var i = 0; i < suites.length; i++) {
+                                        results.push(suites[i]);
+                                    }
+            
+                                    results = results.sort(function(a,b) {
+                                        return getEditDistance(a.deliveryAddress.toUpperCase(),request.term.toUpperCase()) - getEditDistance(b.deliveryAddress.toUpperCase(),request.term.toUpperCase());
+                                    });
+                                    
+                                    response(results);
+                                });
+                                
+                                }
+                            },
+                            select: function(event, ui) {
+                                event.stopPropagation();
+                                
+                                j$('[id="' + mappingFuncs[String(event.target.id)].streetField + '"]').val(ui.item.deliveryAddress);
+                                j$('[id="' + mappingFuncs[String(event.target.id)].cityField + '"]').val(ui.item.locality);
+                                j$('[id="' + mappingFuncs[String(event.target.id)].postalField + '"]').val(ui.item.postalCode.substring(0,5));
+                                j$('[id="' + mappingFuncs[String(event.target.id)].stateField + '"]').val(ui.item.administrativeArea);
+                                
+                                if (j$('[id="' + mappingFuncs[String(event.target.id)].countryField + '"]').val() == "US") {
+                                    // sforce.apex.execute('MDPERSONATOR/MD_ExpressEntry', 'consumeCredits', {});
+                                    setTimeout(function() { sforce.apex.execute('MDPERSONATOR/MD_ExpressEntry', 'consumeCredits', {}); }, 0);
+                                } else {
+                                    // sforce.apex.execute('MDPERSONATOR/MD_ExpressEntry', 'globalConsumeCredits', {});
+                                    setTimeout(function() { sforce.apex.execute('MDPERSONATOR/MD_ExpressEntry', 'globalConsumeCredits', {}); }, 0);
+                                }
+                            }
+                        })
+                            .data('ui-autocomplete')._renderItem = function( ul, item ) {
+                                var srchTerm = j$.trim(this.term).split(/\s+/).join ('|');
+                                var strNewLabel = item.label;
+                                regexp = new RegExp ('(' + srchTerm + ')', "ig");
+                                var strNewLabel = strNewLabel.replace(regexp,"<span style='font-weight:bold;'>$1</span>");
+                                return j$( "<li></li>" )
+                                .data( "ui-autocomplete-item", item )
+                                .append( "<a>" + strNewLabel + "</a>" )
+                                .appendTo( ul )
+                                ;
+                            }
+                        ;
+                        
+                        j$('[id="' + mapping[i].MDPERSONATOR__postalField__c + '"]').focus(function(event) {
+                            currentCountry = j$('[id="' + mappingFuncs[String(event.target.id)].countryField + '"]').val();
+                        });
+                        
+                        j$('[id="' + mapping[i].MDPERSONATOR__postalField__c + '"]').autocomplete({
+                            showHeader: true,
+                            minLength: 2,
+                            delay: 1,
+                            source: function(request, response) {
+                                j$.getJSON("https://expressentry.melissadata.net/jsonp/GlobalExpressPostalCode?callback=?", {format: "jsonp", id: eeToken, postalcode: request.term, country: currentCountry, maxrecords: "10"}, function (data) {
+                                    response(j$.map(data.Results, function( item ) {  
+                                        var m_completeAddress = item.Address.PostalCodePrimary + ", " + item.Address.Locality + ", " + item.Address.AdministrativeArea;
+                                        return{label: m_completeAddress, value: item.Address.PostalCodePrimary, locality: item.Address.Locality, administrativeArea: item.Address.AdministrativeArea};
+                                    }));
+                                });
+                            },
+                            select: function(event, ui) {
+                                event.stopPropagation();
+                                j$('[id="' + mappingFuncs[String(event.target.id)].cityField + '"]').val(ui.item.locality);
+                                j$('[id="' + mappingFuncs[String(event.target.id)].stateField + '"]').val(ui.item.administrativeArea);
+                                
+                                j$('[id="' + mappingFuncs[String(event.target.id)].streetField + '"]').val('');
+                            }
+                        })
+                            .data('ui-autocomplete')._renderItem = function( ul, item ) {
+                                var srchTerm = j$.trim(this.term).split(/\s+/).join ('|');
+                                var strNewLabel = item.label;
+                                regexp = new RegExp ('(' + srchTerm + ')', "ig");
+                                var strNewLabel = strNewLabel.replace(regexp,"<span style='font-weight:bold;'>$1</span>");
+                                return j$( "<li></li>" )
+                                .data( "ui-autocomplete-item", item )
+                                .append( "<a>" + strNewLabel + "</a>" )
+                                .appendTo( ul );
+                            }
+                        ;
+                        
+                        j$(".ui-autocomplete").css("z-index", 100000000000);
+                    }
+                }
+            }
+            
+            var expressEntrySetup = function() { 
+                j$ = jQuery.noConflict();
+                
+                j$(".ui-autocomplete").css("z-index", 100000000000);
+                
+                var hideComponentArray = ['expressEntryBox'];
+                j$("h2.brandPrimaryFgr").each(function(){
+                    if(j$.inArray(j$(this).text(), hideComponentArray) != -1){
+                        console.log(j$(this).text());
+                        j$(this).parent("div.sidebarModuleHeader").parent("div.linksModule").hide();
+                    }
+                });
+                
+                // get eeMinLookup
+                var eeSetting = sforce.connection.query('SELECT ID, MDPERSONATOR__eeMinLookup__c, MDPERSONATOR__eeToggleCase__c FROM MDPERSONATOR__MD_suiteSetting__c').getArray('records');
+                eeMinLookup = parseInt(eeSetting[0].MDPERSONATOR__eeMinLookup__c);
+                eeToggleCase = (eeSetting[0].MDPERSONATOR__eeToggleCase__c != null) ? eeSetting[0].MDPERSONATOR__eeToggleCase__c : "MIXED";
+                
+                mapping = sforce.connection.query('SELECT ID, MDPERSONATOR__objectPrefix__c, MDPERSONATOR__streetField__c, MDPERSONATOR__postalField__c, MDPERSONATOR__countryField__c, MDPERSONATOR__cityField__c, MDPERSONATOR__stateField__c FROM MDPERSONATOR__MD_expressEntryMap__c').getArray('records');
+                
+                objectPrefix = (window.sfdcPage.entityId != null) ? window.sfdcPage.entityId.substr(0,3) : null;
+                    
+                if (objectPrefix == null) {
+                    objectPrefix = window.location.pathname.substr(1,3);
+                }
+                    
+                for (i = 0; i < mapping.length; i++) {
+                    if ("apex" == mapping[i].MDPERSONATOR__objectPrefix__c) {
+                        eeToken = sforce.apex.execute('MDPERSONATOR/MD_ExpressEntry', 'getExpressToken', {})[0];
+                        defaultCountry = sforce.connection.query('SELECT ID, MDPERSONATOR__eeCountry__c FROM MDPERSONATOR__MD_suiteSetting__c');
+                        
+                        if (defaultCountry != null) {
+                            defaultCountry = defaultCountry.getArray('records')[0].MDPERSONATOR__eeCountry__c;
+                        } else {
+                            defaultCountry = 'US';
+                        }
+                        
+                        j$("[id*=_ilecell]").bind('dblclick', function(){
+                            var elementID = j$(this).attr('id');
+                            if (!sfdcPage.editMode)
+                                sfdcPage.activateInlineEditMode();
+                    
+                            if (sfdcPage.inlineEditData != null && !sfdcPage.inlineEditData.isCurrentField(sfdcPage.getFieldById(elementID)))
+                                sfdcPage.inlineEditData.openField(sfdcPage.getFieldById(elementID));
+                                
+                            setupAutocomplete(); 
+                        });
+                                
+                        j$(function() {
+                            if (!autocompleteSet) {
+                                setupAutocomplete();
+                                
+                                autocompleteSet = true;
+                            }
+                        });
+                        
+                        break;
+                    }
+                }
+            };
+            
+            expressEntrySetup();
+        </script>
+        <apex:sectionHeader title="Lead Edit" subtitle="{!Lead.Name}" />    
+        <apex:pageBlock id="pgBlock" mode="edit" title="Lead Edit">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton action="{!Save}" value="Save" id="xyzz"/>
+                <apex:commandButton action="{!Save}" value="Save & New" id="saveAndNew"/>
+                    <apex:param name="newAndSave" value="newAndSave" />
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+            </apex:pageBlockButtons>
+        <apex:pageBlockSection id="pgBlockSectionAcctInfo" title="LeadInformation" collapsible="false" columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Lead Owner</apex:outputLabel>
+                <apex:outputField id="Owner" value="{!lead.ownerid}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Phone</apex:outputLabel>
+                <apex:inputField id="Phone" value="{!lead.phone}" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >First Name</apex:outputLabel>
+                <apex:inputField id="FistName" value="{!lead.firstname}" required="true" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Mobile</apex:outputLabel>
+                <apex:inputField id="MobilePhone" value="{!lead.mobilephone}" />
+            </apex:pageBlockSectionItem>    
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Last Name</apex:outputLabel>
+                <apex:inputField id="LastName" value="{!lead.lastname}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Fax</apex:outputLabel>
+                <apex:inputField id="Fax" value="{!lead.fax}" />
+            </apex:pageBlockSectionItem>     
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Company</apex:outputLabel>
+                <apex:inputField id="Company" value="{!lead.company}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Email</apex:outputLabel>
+                <apex:inputField id="Email" value="{!lead.email}" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Title</apex:outputLabel>
+                <apex:inputField id="Title" value="{!lead.title}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Website</apex:outputLabel>
+                <apex:inputField id="Website" value="{!lead.website}" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Lead Source</apex:outputLabel>
+                <apex:inputField id="LeadSource" value="{!lead.leadsource}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Lead Status</apex:outputLabel>
+                <apex:inputField id="LeadStatus" value="{!lead.status}" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Industry</apex:outputLabel>
+                <apex:inputField id="Industry" value="{!lead.Industry}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Rating</apex:outputLabel>
+                <apex:inputField id="Rating" value="{!lead.rating}" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Annual Revenue</apex:outputLabel>
+                <apex:inputField id="AnnualRevenue" value="{!lead.AnnualRevenue}" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >No. of Employees</apex:outputLabel>
+                <apex:inputField id="NumberOfEmployees" value="{!lead.NumberOfEmployees}" />
+            </apex:pageBlockSectionItem>            
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection id="pgBlockSectionAddressInfo" title="Address Information" collapsible="false" columns="1">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Street</apex:outputLabel>
+                <apex:inputTextArea id="Street" value="{!lead.Street}" cols="27" rows="2" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >City</apex:outputLabel>
+                <apex:inputField id="City" value="{!lead.City}" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >State/Province</apex:outputLabel>
+                <apex:inputField id="State" value="{!lead.State}" />
+            </apex:pageBlockSectionItem>          
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Zip/Postal Code</apex:outputLabel>
+                <apex:inputField id="PostalCode" value="{!lead.PostalCode}" />
+            </apex:pageBlockSectionItem>   
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Country</apex:outputLabel>
+                <apex:inputField id="Country" value="{!lead.Country}" />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        
+        
+        <apex:pageBlockSection id="pgBlockDescriptionInformation" title="Description Information" collapsible="false" columns="1">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Description</apex:outputLabel>
+                <apex:inputTextArea id="Description" value="{!lead.Description}" cols="75" rows="6"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

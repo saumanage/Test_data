@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead_Disposition_Last_Event_Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead_Disposition_Last_Event_Status</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Status --></label>
+        <name>CurrentStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Event --></label>
+        <name>Last_Event__c</name>
+    </fields>
+    <fields>
+        <label><!-- StageName --></label>
+        <name>StageName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

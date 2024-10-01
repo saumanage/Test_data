@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Roles_Title__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Role-Title</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assistant Zone Manager</fullName>
+                    <default>false</default>
+                    <label>Assistant Zone Manager</label>
+                </value>
+                <value>
+                    <fullName>Zone Manager</fullName>
+                    <default>false</default>
+                    <label>Zone Manager</label>
+                </value>
+                <value>
+                    <fullName>Analyst</fullName>
+                    <default>false</default>
+                    <label>Analyst</label>
+                </value>
+                <value>
+                    <fullName>TA/Admin</fullName>
+                    <default>false</default>
+                    <label>TA/Admin</label>
+                </value>
+                <value>
+                    <fullName>DSM</fullName>
+                    <default>false</default>
+                    <label>DSM</label>
+                </value>
+                <value>
+                    <fullName>AZM</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>AZM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Dealer Buy/Sell-New dealer onboarding</label>
+    <pluralLabel>Dealer Buy/Sell-New dealer onboardings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

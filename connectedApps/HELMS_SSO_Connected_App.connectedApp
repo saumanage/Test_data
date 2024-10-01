@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>mamatha.gonuguntla@wipro.com</contactEmail>
+    <contactPhone>9739886979</contactPhone>
+    <label>HELMS SSO Connected App</label>
+    <samlConfig>
+        <acsUrl>https://americanhondamotorcohelms--ahmdev.my.salesforce.com</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://dev.hondaweb.com/sps/hondasaml20fed/saml20</entityUrl>
+        <issuer>https://americanhondamotorcohelms--ahmdev.my.salesforce.com</issuer>
+        <samlNameIdFormat>Persistent</samlNameIdFormat>
+        <samlSigningAlgoType>SHA1</samlSigningAlgoType>
+        <samlSubjectType>FederationId</samlSubjectType>
+    </samlConfig>
+    <startUrl>https://dev.hondaweb.com/sps/hondasaml20fed/saml20</startUrl>
+</ConnectedApp>

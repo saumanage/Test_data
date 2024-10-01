@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Active --></label>
+        <name>privacycenter__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Anonymize Case Comments --></label>
+        <name>privacycenter__Anonymize_Case_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By --></label>
+        <name>privacycenter__Created_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>privacycenter__Created_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delete Chatter --></label>
+        <name>privacycenter__Delete_Chatter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delete Email --></label>
+        <name>privacycenter__Delete_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>privacycenter__Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Edit By --></label>
+        <name>privacycenter__Last_Edit_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Edit --></label>
+        <name>privacycenter__Last_Edit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Prepped Date --></label>
+        <name>privacycenter__Last_Prepped_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>privacycenter__Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Run Frequency --></label>
+        <name>privacycenter__Run_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Daily</masterLabel>
+            <translation><!-- Daily --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Once</masterLabel>
+            <translation><!-- Once --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yearly</masterLabel>
+            <translation><!-- Yearly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scheduled Start --></label>
+        <name>privacycenter__Scheduled_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>privacycenter__Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation><!-- Hidden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>privacycenter__Type__c</name>
+    </fields>
+</CustomObjectTranslation>

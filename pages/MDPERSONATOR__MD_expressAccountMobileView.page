@@ -1,0 +1,22 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_expressEntry ] 
+     
+     purpose            : A custom VisualForce page which adds the "Express Entry" form to your Salesforce Contacts, etc.
+                          Where mapping correlates with the MD_expressEntryMaps fields and num gives each instance a unique ID
+                          Here you can see two Express components brought in - one for Contact's mailing address and another
+                          for the "Other" mailing address. In order for this Visualforce page to function, the mappings
+                          "Contact Mailing" and "Contact Other" need to be created under the Listware Express Entry Maps tab.
+                          For each Express component brought into the Visualforce page, use the num attribute to give
+                          each component a unique ID.
+
+     date created       : 8/20/2014
+     version            : 2.0
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+<apex:page StandardController="Account" showHeader="true" tabStyle="Account">    
+    <apex:form >
+        <c:MD_expressMobileComponent record="Account" mapping="Account Billing" num="0"/>
+        <c:MD_expressMobileComponent record="Account" mapping="Account Shipping" num="1"/>
+    </apex:form>
+</apex:page>

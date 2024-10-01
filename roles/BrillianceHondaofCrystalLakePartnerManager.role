@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Brilliance Honda of Crystal Lake Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Brilliance Honda of Crystal Lake Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>BrillianceHondaofCrystalLakePartnerExecutive</parentRole>
+</Role>

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Business Unit: HELMS
+Jira Story: LMS-4998
+Description: 
+Source System:  Dealers will enter the records manually as per LMS-4998.
+Integration:  N/A
+Data Transformation:  N/A
+Functional Definition: This is used to store the contacts for sending different types of notifications.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Allow_Matchback_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Allow Matchback Notifications</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_New_Lead_Creation_Notification__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Allow New Lead Creation Notifications</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Dealer_Subdivision__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Dealer Subdivision</label>
+        <referenceTo>Dealer_Division__c</referenceTo>
+        <relationshipLabel>Dealer Notifications</relationshipLabel>
+        <relationshipName>Dealer_Notifications</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Business Unit: HELMS
+Jira Story: LMS-4998 Story name
+Description: This stores the email address of the person whose record is stored in dealer notification record object.
+Source System: Manually added when the record is created.
+Integration: N/A
+Data Transformation: N/A
+Functional Definition: This will be used in the escalation mail processes.</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lost_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>As per LMS-6628</description>
+        <label>Lost Opportunity</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_Lead_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>LMS-6628,when I am configuring Dealer Notification Preferences, instead of seeing various options under Type, 
+I should see those options as check boxes such as:
+New Lead SMS</description>
+        <label>New Lead Email</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_Lead_SMS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>As per LMS-6628</description>
+        <label>New Lead SMS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <description>Business Unit: HELMS
+Jira Story: LMS-4998 Story name
+Description: This is used to the store the phone number of the person who&apos;s record is being stored in the dealer notification object.
+Source System: Entered manually when the record is created.
+Integration: N/A.
+Data Transformation: N/A
+Functional Definition: This will be used to send SMS. (Still not use)</description>
+        <inlineHelpText>Required field for Lead SMS, Enter only numeric values.</inlineHelpText>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Potential_Sales__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Potential Sales</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Dealer_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Business Unit: HELMS
+Jira Story: LMS-4998 Story name
+Description: This is a lookup field to account which is used to link the Dealer notification Preference object to the Account. (Dealer Notification Preference is the child and Account is the parent)
+Source System: Entered Manually when record is created.
+Integration: N/A
+Data Transformation: N/A
+Functional Definition: This will be used in the escalation mail processes to find out the people who would be getting the escalation mails for a particular account.</description>
+        <label>Preferred Dealer Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Dealer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Dealer Notification Preferences</relationshipLabel>
+        <relationshipName>Dealer_Notification_Preferences</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLA_Level_1_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SLA Level 1 Notifications</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SLA_Level_2_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SLA Level 2 Notifications</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SLA_Level_3_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SLA Level 3 Notifications</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Level_Agreement__c</fullName>
+        <description>Business Unit: HELMS
+Jira Story: LMS-4998 Story name
+Description: This field stores the escalation level for the person who&apos;s record is created in this object.( Which level escalation mail will be sent to that particular person.)
+Source System: It is entered manually when the record is created.
+Integration: N/A.
+Data Transformation: N/A
+Functional Definition: This will be used in escalation mail processes to send the corresponding email template based on the level of escalation stored in this field for the particular record.</description>
+        <label>Service Level Agreement</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Escalation</fullName>
+                    <default>true</default>
+                    <label>No Escalation</label>
+                </value>
+                <value>
+                    <fullName>Level 1</fullName>
+                    <default>false</default>
+                    <label>Level 1</label>
+                </value>
+                <value>
+                    <fullName>Level 2</fullName>
+                    <default>false</default>
+                    <label>Level 2</label>
+                </value>
+                <value>
+                    <fullName>Level 3</fullName>
+                    <default>false</default>
+                    <label>Level 3</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Escalation</controllingFieldValue>
+                <valueName>Level 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Escalation</controllingFieldValue>
+                <valueName>Level 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Escalation</controllingFieldValue>
+                <valueName>Level 3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Lead SMS</controllingFieldValue>
+                <valueName>No Escalation</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubDivision__c</fullName>
+        <label>SubDivision</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Subdivision</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Business Unit: HELMS
+Jira Story: LMS-4998 Story name
+Description: This stores the type of notification which is to be send to the particular record.
+Source System: It is entered manually when the record is created.
+Integration: N/A.
+Data Transformation: N/A
+Functional Definition: This is used as a criteria for sending out escalation mails. Right now it is only used to send the escalation mails.</description>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Escalation</fullName>
+                    <default>false</default>
+                    <label>Escalation</label>
+                </value>
+                <value>
+                    <fullName>New Lead SMS</fullName>
+                    <default>false</default>
+                    <label>New Lead SMS</label>
+                </value>
+                <value>
+                    <fullName>Lost Opportunity - Matched to Dealer</fullName>
+                    <default>false</default>
+                    <label>Lost Opportunity - Matched to Dealer</label>
+                </value>
+                <value>
+                    <fullName>Potential Sales</fullName>
+                    <default>false</default>
+                    <label>Potential Sales</label>
+                </value>
+                <value>
+                    <fullName>New Lead Email</fullName>
+                    <default>false</default>
+                    <label>New Lead Email</label>
+                </value>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>MatchBack</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>MatchBack</label>
+                </value>
+                <value>
+                    <fullName>OpportunityStageChange</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>OpportunityStageChange</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Dealer Notification</label>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Dealer Notifications</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Based_on_Escalation_Type</fullName>
+        <active>false</active>
+        <errorConditionFormula>$Setup.BypassAutomations__c.BypassValidationRule__c = False &amp;&amp; (TEXT(Type__c)=&apos;New Lead SMS&apos; || TEXT(Type__c)=&apos;All&apos; ) &amp;&amp;    ISBLANK(Phone__c)</errorConditionFormula>
+        <errorMessage>Please add Phone Number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>only_numbers</fullName>
+        <active>true</active>
+        <errorConditionFormula>or(
+      NOT(ISNUMBER( Phone__c  )),
+
+      AND(
+         LEN(Phone__c  ) != 10
+         
+     )
+   )</errorConditionFormula>
+        <errorMessage>Only 10 Digit number should be entered.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

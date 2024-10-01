@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>Marketing Cloud</name>
+    <publicFolderAccess>ReadOnly</publicFolderAccess>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <group>HELMS_Standard_UsersGroup</group>
+        <group>HELMS_Team</group>
+    </sharedTo>
+</EmailFolder>

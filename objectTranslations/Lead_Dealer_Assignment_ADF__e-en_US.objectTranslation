@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Dealer Assignment ADF</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Dealer Assignment ADF</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>ADF_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>ADF_Description_DESC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acura Vehicles Owned --></label>
+        <name>Acura_Vehicles_Owned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Info --></label>
+        <name>Additional_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 1 --></label>
+        <name>AddressLine1_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Type --></label>
+        <name>AddressType_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Age --></label>
+        <name>Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apartment Number --></label>
+        <name>ApartmentNumber_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Date and Time --></label>
+        <name>Appointment_Date_and_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Id --></label>
+        <name>Appointment_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Location --></label>
+        <name>Appointment_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Notes --></label>
+        <name>Appointment_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment type --></label>
+        <name>Appointment_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Baseball --></label>
+        <name>Baseball__c</name>
+    </fields>
+    <fields>
+        <label><!-- Basketball --></label>
+        <name>Basketball__c</name>
+    </fields>
+    <fields>
+        <label><!-- Body Style --></label>
+        <name>Body_Style_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM AUTH TYPE --></label>
+        <name>CRM_AUTH_TYPE__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM BASIC AUTH --></label>
+        <name>CRM_BASIC_AUTH__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM ENDPOINT --></label>
+        <name>CRM_ENDPOINT__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM FORMAT --></label>
+        <name>CRM_FORMAT__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM HEADER API KEY --></label>
+        <name>CRM_HEADER_API_KEY__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM PROTOCOL --></label>
+        <name>CRM_PROTOCOL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chat Transcript --></label>
+        <name>Chat_Transcript__c</name>
+    </fields>
+    <fields>
+        <label><!-- Children --></label>
+        <name>Children__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Color --></label>
+        <name>Color_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complete Prediction Score --></label>
+        <name>Complete_Prediction_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Condition --></label>
+        <name>Condition_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Method --></label>
+        <name>ContactMethod_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Time --></label>
+        <name>Contact_Time_TM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact person --></label>
+        <name>Contact_person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Type --></label>
+        <name>Contact_type_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Comment --></label>
+        <name>Customer_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer IDs --></label>
+        <name>Customer_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Children in Household --></label>
+        <name>Customer_Insight_Children_in_Household__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Event Attendance --></label>
+        <name>Customer_Insight_Event_Attendance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Extended Warranty --></label>
+        <name>Customer_Insight_Extended_Warranty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Likely to Buy Acura --></label>
+        <name>Customer_Insight_Likely_to_Buy_Acura__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Likely to Buy Honda --></label>
+        <name>Customer_Insight_Likely_to_Buy_Honda__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Likely to Buy PSP --></label>
+        <name>Customer_Insight_Likely_to_Buy_PSP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Ownership Details --></label>
+        <name>Customer_Insight_Ownership_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Ownership --></label>
+        <name>Customer_Insight_Ownership__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Insight Service History --></label>
+        <name>Customer_Insight_Service_History__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Likeliness to Buy Acura --></label>
+        <name>Customer_Likeliness_to_Buy_Acura__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Likeliness to Buy Honda --></label>
+        <name>Customer_Likeliness_to_Buy_Honda__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Likeliness to Buy PSP --></label>
+        <name>Customer_Likeliness_to_Buy_PSP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Preferred Contact Method --></label>
+        <name>Customer_Preferred_Contact_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal ID --></label>
+        <name>Deal_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Link --></label>
+        <name>Deal_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Account from ADF --></label>
+        <name>DealerAccountfromADF_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Contact from ADF --></label>
+        <name>DealerContactfromADF_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer IDs --></label>
+        <name>Dealer_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Amount --></label>
+        <name>Deposit_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Confirmation Number --></label>
+        <name>Deposit_Confirmation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Sales Order Number --></label>
+        <name>Deposit_Sales_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description_DESC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doors --></label>
+        <name>Doors_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Education Level --></label>
+        <name>Education_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Einstein Predicted Priority --></label>
+        <name>Einstein_Predicted_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Environmental Issues --></label>
+        <name>Environmental_Issues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extended Warranty Contract --></label>
+        <name>Extended_Warranty_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exterior Colors --></label>
+        <name>Exterior_Colors__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Lead Reference Number --></label>
+        <name>External_Lead_Reference_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Details --></label>
+        <name>Financial_Details_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>FirstName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Football --></label>
+        <name>Football__c</name>
+    </fields>
+    <fields>
+        <label><!-- Golf --></label>
+        <name>Golf__c</name>
+    </fields>
+    <fields>
+        <label><!-- Green Living --></label>
+        <name>Green_Living__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hockey --></label>
+        <name>Hockey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Owner or Renter --></label>
+        <name>Home_Owner_or_Renter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Vehicles Owned --></label>
+        <name>Honda_Vehicles_Owned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Household Size --></label>
+        <name>Household_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Addres URL --></label>
+        <name>IP_Addres_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Income Estate HHLD Higher Ranges --></label>
+        <name>Income_Estate_HHLD_Higher_Ranges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Income --></label>
+        <name>Income__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Walkin Lead --></label>
+        <name>Initial_Walkin_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interior Colors --></label>
+        <name>Interior_Colors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is This Lead Update --></label>
+        <name>Is_This_Lead_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>LastName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Provider Name --></label>
+        <name>Lead_Provider_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSRP --></label>
+        <name>MSRP_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Make --></label>
+        <name>Make_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marital Status --></label>
+        <name>Marital_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Middle Name --></label>
+        <name>MiddleName_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- MiddlewareUUID --></label>
+        <name>MiddlewareUUID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Name --></label>
+        <name>Model_Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model --></label>
+        <name>Model_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Trim --></label>
+        <name>Model_Trim_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Models Selected --></label>
+        <name>Models_Selected__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation Detailed --></label>
+        <name>Occupation_Detailed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation --></label>
+        <name>Occupation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Odometer Status --></label>
+        <name>Odometer_Status_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Odometer --></label>
+        <name>Odometer_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Odometer Units --></label>
+        <name>Odometer_Units_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Offer Name --></label>
+        <name>Offer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oppotunity SF ID --></label>
+        <name>Oppotunity_SF_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Options --></label>
+        <name>Options_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Contacts --></label>
+        <name>OtherContacts_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Lead Provider --></label>
+        <name>OtherLeadProvider_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership Type --></label>
+        <name>Ownership_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pager --></label>
+        <name>Pager_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneType NM --></label>
+        <name>PhoneType_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photography --></label>
+        <name>Photography__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Equipment Vehicles Owned --></label>
+        <name>Power_Equipment_Vehicles_Owned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Sports Vehicles Owned --></label>
+        <name>Power_Sports_Vehicles_Owned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Comment --></label>
+        <name>Price_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prospect IDs --></label>
+        <name>Prospect_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Contact Detail --></label>
+        <name>ProviderContactDetails_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Detail --></label>
+        <name>ProviderDetails_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider IDs --></label>
+        <name>Provider_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Service --></label>
+        <name>Provider_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Tool --></label>
+        <name>Provider_Tool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Type --></label>
+        <name>Provider_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Earliest Date --></label>
+        <name>PurchaseEarliestDate_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Horizon --></label>
+        <name>PurchaseHorizon_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Latest Date --></label>
+        <name>PurchaseLatestDate_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote --></label>
+        <name>Quote_AMT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Order Number --></label>
+        <name>Salesforce_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- SendOnlyToUrbanScience --></label>
+        <name>SendOnlyToUrbanScience__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send to DSP --></label>
+        <name>Send_to_DSP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send to Urban Science --></label>
+        <name>Send_to_Urban_Science__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skiing --></label>
+        <name>Skiing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Name --></label>
+        <name>SourceName_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source User --></label>
+        <name>SourceUser_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Unique ID --></label>
+        <name>Source_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stock Number --></label>
+        <name>Stock_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubDivision --></label>
+        <name>SubDiv_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suffix --></label>
+        <name>Suffix_INIT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Spent on Service by Customer --></label>
+        <name>Total_Spent_on_Service_by_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Spent on Service by Warranty --></label>
+        <name>Total_Spent_on_Service_by_Warranty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade In Balance Owed --></label>
+        <name>TradeBalanceOwed_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade In Make --></label>
+        <name>TradeMake_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade In Mileage --></label>
+        <name>TradeMileage_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade In Model --></label>
+        <name>TradeModel_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade Status --></label>
+        <name>TradeStatus_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade In Value --></label>
+        <name>TradeValue_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade In Year --></label>
+        <name>TradeYear_YR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade IN --></label>
+        <name>Trade_IN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Code --></label>
+        <name>TransactionCode_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transmission --></label>
+        <name>Transmission_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tigger Send By Date --></label>
+        <name>TriggerSendbyDate_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger type Code --></label>
+        <name>Trigger_type_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- US Travel --></label>
+        <name>US_Travel__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Comments --></label>
+        <name>User_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Comment --></label>
+        <name>Vehicle_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle IDs --></label>
+        <name>Vehicle_IDs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Interest --></label>
+        <name>Vehicle_Interest_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Known Owned --></label>
+        <name>Vehicle_Known_Owned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Status --></label>
+        <name>Vehicle_Status_TX__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Contact Email --></label>
+        <name>Vendor_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Contact Name --></label>
+        <name>Vendor_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vin Number --></label>
+        <name>Vin_Number_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year_YR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>ZipCode_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- origination Url --></label>
+        <name>origination_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- transcript --></label>
+        <name>transcript__c</name>
+    </fields>
+    <fields>
+        <label><!-- visit Notes --></label>
+        <name>visit_Notes__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

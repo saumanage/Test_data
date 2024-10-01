@@ -1,0 +1,3 @@
+<apex:page standardcontroller="cwbtool__ProfileComparison__c">
+  <c:profileComparisonstatus />
+</apex:page>

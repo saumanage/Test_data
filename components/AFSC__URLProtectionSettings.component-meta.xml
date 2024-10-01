@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>36.0</apiVersion>
+    <description>F-Secure Cloud Protection: URL Protection settings on Administration view</description>
+    <label>Admininstrator URL Protection Settings</label>
+</ApexComponent>

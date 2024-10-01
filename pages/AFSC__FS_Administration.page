@@ -1,0 +1,288 @@
+<apex:page lightningStylesheets="true" controller="AFSC.FS_Administration" sidebar="false" showHeader="true" applyHtmlTag="true" applyBodyTag="false" docType="html-5.0" title="{!$Label.afsc__fs_administrationpagetitle}" tabStyle="Administration__tab"  id="thePage" >
+
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__fscap, 'css/admin.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AFSC__fscap, 'css/scanlog.css')}" />
+
+    <script src="{!URLFOR($Resource.fscap, 'js/admin.js')}"></script>
+    <script src="{!URLFOR($Resource.fscap, 'js/scanlog.js')}"></script>
+    <script src="{!URLFOR($Resource.JQuery_UI, '/jquery-ui-1.12.1/external/jquery/jquery.js')}"></script>
+    <script src="{!URLFOR($Resource.JQuery_UI, '/jquery-ui-1.12.1/jquery-ui.min.js')}"></script>
+
+    <style>
+
+        .page-header-main
+        {
+            border-bottom: none;
+        }
+
+        .fs-disabled
+        {
+            pointer-events: none;
+            cursor: default;
+        }
+
+        @font-face
+        {
+            font-family: FSecureHeadline;
+            font-style: normal;
+            font-weight: 400;
+            src: url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.eot')}?#iefix") format("embedded-opentype"),
+            url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff2')}") format("woff2"),
+            url("{!URLFOR($Resource.fscap, 'fonts/fsecuresans-headline.woff')}") format("woff");
+        }
+
+        .background
+        {
+            background-image: url("{!URLFOR($Resource.fscap, 'img/hero-pattern.jpg')}");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100%;
+            height: 407px;
+        }
+        label.slds-grid
+        {
+            display: inline-flex !important;
+            cursor: pointer;
+        }
+        label.slds-checkbox--toggle
+        {
+            width: initial !important;
+        }
+        span.fs-popuplink
+        {
+            padding: 3px 0px;
+        }
+        @-moz-document url-prefix()
+        {
+            .correctFirefoxLinkAlignment .slds-text-link
+            {
+                position: relative;
+            }
+            .slds-select {
+                -moz-appearance: none;
+                padding-left: .5rem;
+                padding-right: 1.5rem;
+                padding-top: .25rem;
+            }
+        }
+
+    </style>
+
+    <body >
+        <div class="fslds">
+            <apex:form id="frm">
+
+                <apex:actionFunction action="{!saveSettings}" name="saveSettingsFunc" rerender="tab-default-1-c, tab-default-2-c, tab-default-3-c, tab-default-5-c, tab-default-8-c, messageLog" oncomplete="disableSaveButton();" status="processStatus"/>
+                <apex:actionFunction action="{!discardChanges}" name="discardChangesFunc" rerender="tab-default-1-c, tab-default-2-c, tab-default-3-c, tab-default-5-c, tab-default-8-c, messageLog" oncomplete="disableSaveButton();"/>
+				<apex:actionFunction action="{!refreshSettings}" name="refreshChangesFunc" rerender="tab-default-1-c, tab-default-2-c, tab-default-3-c, tab-default-5-c, tab-default-8-c" oncomplete="disableSaveButton();"/>
+
+				<apex:actionStatus id="processStatus" layout="block">
+
+		            <apex:facet name="start">
+
+		                <apex:outputPanel styleClass="status-overlay" >
+		                    <apex:image value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/images/spinners/slds_spinner_brand.gif')}" height="40px" styleClass="status-img" />
+		                    <apex:outputLabel value="{!$Label.afsc__fs_statusprocessing}" styleClass="status-label"/>
+		                </apex:outputPanel>
+
+		            </apex:facet>
+
+		            <apex:facet name="stop"  />
+
+		        </apex:actionStatus>
+
+                <div class="slds-page-header" role="banner" style="border-bottom: 0px;">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-has-flexi-truncate">
+                            <div class="slds-media slds-no-space slds-grow">
+
+                                <div class="slds-media__figure" style="margin-top: 4px;">
+                                    <div class="slds-icon slds-icon-standard-apps">
+                                        <apex:image value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/icons/custom/custom67_60.png')}" />
+                                    </div>
+                                </div>
+
+                                <div class="slds-media__body">
+                                    <p class="slds-text-title--caps slds-line-height--reset">{!$Label.afsc__fs_administrationpagetitle}</p>
+                                    <h1 id="tab-default-1-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(OR(defaultTab = null, defaultTab = 'FILE_PROTECTION'), 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminFileProtectionHeader}">{!$Label.FS_AdminFileProtectionHeader}</h1>
+                                    <h1 id="tab-default-2-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'URL_PROTECTION', 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminURLProtectionHeader}">{!$Label.FS_AdminURLProtectionHeader}</h1>
+                                    <h1 id="tab-default-3-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'GENERAL', 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminGeneralHeader}">{!$Label.FS_AdminGeneralHeader}</h1>
+                                    <h1 id="tab-default-4-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'TOOLS', 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminToolsHeader}">{!$Label.FS_AdminToolsHeader}</h1>
+                                    <h1 id="tab-default-5-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'LICENSE', 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminLicenseHeader}">{!$Label.FS_AdminLicenseHeader}</h1>
+                                    <h1 id="tab-default-6-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'ABOUT', 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminAboutHeader}">{!$Label.FS_AdminAboutHeader}</h1>
+                                	<h1 id="tab-default-7-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'QUARANTINE', 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminQuarantineHeader}">{!$Label.FS_AdminQuarantineHeader}</h1>
+                                	<h1 id="tab-default-8-he" class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate {!IF(defaultTab = 'MANUAL_SCAN', 'slds-show', 'slds-hide')}" title="{!$Label.FS_AdminManualScanHeader}">{!$Label.FS_AdminManualScanHeader}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-no-flex slds-grid slds-align-top">
+                            <apex:commandButton value="{!$Label.afsc__fs_discardbuttonlabel}" onclick="discardChangesFunc(); return false;" id="set-reset" styleClass="slds-button slds-button--neutral" />
+                            <apex:commandButton value="{!$Label.afsc__fs_savebuttonlabel}" onclick="saveSettingsFunc(); return false;" id="set-save" styleClass="slds-button slds-button--brand" />
+                        </div>
+                    </div>
+                </div>
+
+                <apex:outputPanel id="messageLog">
+                    <c:FS_MessageLog />
+                </apex:outputPanel>
+
+                <div class="slds-tabs--default">
+                    <!-- tabs for navigation -->
+                    <ul class="slds-tabs--default__nav" role="tablist" style="background-color: #f7f9fb;">
+
+
+                        <li onclick="setTab('FILE_PROTECTION'); return false;"
+                            title="{!$Label.FS_AdminFileProtectionHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(OR(defaultTab = null, defaultTab = 'FILE_PROTECTION'), 'slds-active', '')} {!IF(disableTabs, 'fs-disabled', '')}" role="presentation" id="tab-default-1-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item" onclick="selectTab('tab-default-1');">{!UPPER($Label.FS_FileProtectionHeader)}</a>
+                        </li>
+
+
+                        <li onclick="setTab('URL_PROTECTION'); return false;"
+                            title="{!$Label.FS_AdminURLProtectionHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'URL_PROTECTION', 'slds-active', '')} {!IF(disableTabs, 'fs-disabled', '')}" role="presentation" id="tab-default-2-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item" onclick="selectTab('tab-default-2');">{!UPPER($Label.FS_URLProtectionHeader)}</a>
+                        </li>
+
+                        <li onclick="setTab('GENERAL'); return false;"
+                            title="{!$Label.FS_AdminGeneralHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'GENERAL', 'slds-active', '')} {!IF(disableTabs, 'fs-disabled', '')}" role="presentation" id="tab-default-3-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab('tab-default-3');">{!UPPER($Label.FS_GeneralHeader)}</a>
+                        </li>
+
+                        <li onclick="setTab('MANUAL_SCAN'); return false;"
+                            title="{!$Label.FS_AdminManualScanHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'MANUAL_SCAN', 'slds-active', '')} {!IF(disableTabs, 'fs-disabled', '')}" role="presentation" id="tab-default-8-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-8" id="tab-default-8__item" onclick="selectTab('tab-default-8');">{!UPPER($Label.FS_AdminManualScanHeader)}</a>
+                        </li>
+
+                        <li onclick="setTab('QUARANTINE'); return false;"
+                            title="{!$Label.FS_AdminQuarantineHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'QUARANTINE', 'slds-active', '')}" role="presentation" id="tab-default-7-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-7" id="tab-default-7__item" onclick="selectTab('tab-default-7');">{!UPPER($Label.FS_AdminQuarantineHeader)}</a>
+                        </li>
+
+                        <li onclick="setTab('TOOLS'); return false;"
+                            title="{!$Label.FS_AdminToolsHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'TOOLS', 'slds-active', '')} {!IF(disableTabs, 'fs-disabled', '')}" role="presentation" id="tab-default-4-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-4" id="tab-default-4__item" onclick="selectTab('tab-default-4');">{!UPPER($Label.FS_AdminToolsHeader)}</a>
+                        </li>
+
+                        <li onclick="setTab('LICENSE'); return false;"
+                            title="{!$Label.FS_AdminLicenseHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'LICENSE', 'slds-active', '')}" role="presentation" id="tab-default-5-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-5" id="tab-default-5__item" onclick="selectTab('tab-default-5');">{!UPPER($Label.FS_AdminLicenseHeader)}</a>
+                        </li>
+
+                        <li onclick="setTab('ABOUT'); return false;"
+                            title="{!$Label.FS_AdminAboutHeader}" class="slds-tabs--default__item slds-text-title--caps {!IF(defaultTab = 'ABOUT', 'slds-active', '')}" role="presentation" id="tab-default-6-li">
+                            <a class="slds-tabs--default__link" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-6" id="tab-default-6__item" onclick="selectTab('tab-default-6');">{!UPPER($Label.FS_AdminAboutHeader)}</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Content blocks for each tab -->
+
+                    <div id="tab-default-1" class="slds-tabs--default__content {!IF(OR(defaultTab = null, defaultTab = 'FILE_PROTECTION'), 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-1__item">
+                        <apex:outputPanel layout="block" id="tab-default-1-c">
+                            <c:FileProtectionSettings controllerKey="{!adminFileControllerKey}" mainController="{!this}"/>
+                        </apex:outputPanel>
+                    </div>
+                    <div id="tab-default-2" class="slds-tabs--default__content {!IF(defaultTab = 'URL_PROTECTION', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-2__item">
+                        <apex:outputPanel layout="block" id="tab-default-2-c">
+                            <c:URLProtectionSettings controllerKey="{!adminUrlControllerKey}" mainController="{!this}"/>
+                        </apex:outputPanel>
+                    </div>
+                    <div id="tab-default-3" class="slds-tabs--default__content {!IF(defaultTab = 'GENERAL', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-3__item">
+                        <apex:outputPanel layout="block" id="tab-default-3-c">
+                            <c:GeneralSettings controllerKey="{!adminGeneralControllerKey}" mainController="{!this}"/>
+                        </apex:outputPanel>
+                    </div>
+                    <div id="tab-default-4" class="slds-tabs--default__content {!IF(defaultTab = 'TOOLS', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-4__item">
+                        <apex:outputPanel layout="block" id="tab-default-4-c">
+                            <c:Tools />
+                        </apex:outputPanel>
+                    </div>
+                    <div id="tab-default-5" class="slds-tabs--default__content {!IF(defaultTab = 'LICENSE', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-5__item">
+                        <apex:outputPanel layout="block" id="tab-default-5-c">
+                            <c:LicenseSettings controllerKey="{!adminLicenseControllerKey}" mainController="{!this}"/>
+                        </apex:outputPanel>
+                    </div>
+                    <div id="tab-default-6" class="slds-tabs--default__content {!IF(defaultTab = 'ABOUT', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-6__item">
+                        <apex:outputPanel layout="block" id="tab-default-6-c">
+                            <c:About />
+                        </apex:outputPanel>
+                    </div>
+                    <div id="tab-default-7" class="slds-tabs--default__content {!IF(defaultTab = 'QUARANTINE', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-7__item">
+                        <apex:outputPanel layout="block" id="tab-default-7-c">
+                            <c:QuarantineLog />
+                        </apex:outputPanel>
+                    </div>
+                    <div id="tab-default-8" class="slds-tabs--default__content {!IF(defaultTab = 'MANUAL_SCAN', 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-default-8__item">
+                        <apex:outputPanel layout="block" id="tab-default-8-c">
+                            <c:ManualScanSettings controllerKey="{!adminManualScanControllerKey}" mainController="{!this}" rerender="thePage:frm:messageLog"/>
+                        </apex:outputPanel>
+                    </div>
+                </div>
+            </apex:form>
+
+        </div>
+    </body>
+
+    <script>
+
+            $(document).ready(function()
+            {
+                $('input[id$=set-save]').prop('disabled',true);
+                $('input[id$=set-reset]').prop('disabled',true);
+                $('input[id$=quarantineDeleteButton]').prop('disabled',true);
+                $('input[id$=quarantineRestoreButton]').prop('disabled',true);
+
+                $('input[type=checkbox], input[id$=maxFilesToScan], input[id$=scanStartDate], input[id$=scanEndDate], .slds-select').change(function(){
+                    enableSaveButton();
+                });
+                $('textarea').keyup(function(){
+                    enableSaveButton();
+                });
+
+                deleteExtraQuarantineLogs();
+            });
+
+            function enableSaveButton()
+            {
+                $('input[id$=set-save]').prop('disabled',false);
+                $('input[id$=set-reset]').prop('disabled',false);
+
+                $('input[type=checkbox], input[id$=maxFilesToScan], input[id$=scanStartDate], input[id$=scanEndDate], .slds-select').unbind('change');
+                $('textarea').unbind('keyup');
+
+                window.onbeforeunload = function()
+                {
+                    return "Are you sure you wish to leave the page?";
+                }
+            }
+
+            function enableQuarantineButton()
+            {
+                $('input[id$=quarantineDeleteButton]').prop('disabled',false);
+                $('input[id$=quarantineRestoreButton]').prop('disabled',false);
+            }
+
+            function disableSaveButton()
+            {
+                $('input[id$=set-save]').prop('disabled',true);
+                $('input[id$=set-reset]').prop('disabled',true);
+
+                $('input[type=checkbox], input[id$=maxFilesToScan], input[id$=scanStartDate], input[id$=scanEndDate], .slds-select').change(function(){
+                    enableSaveButton();
+                });
+                $('textarea').keyup(function(){
+                    enableSaveButton();
+                });
+
+                 window.onbeforeunload = null;
+            }
+
+            function setTab(tabName) {
+                const urlParams = new URLSearchParams(window.location.search);
+                urlParams.set('tab', tabName);
+                window.history.replaceState({}, "", decodeURIComponent(`${window.location.pathname}?${urlParams}`));
+            }
+
+    </script>
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Rydell Honda of Grand Forks Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Rydell Honda of Grand Forks Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>RydellHondaofGrandForksPartnerExecutive</parentRole>
+</Role>

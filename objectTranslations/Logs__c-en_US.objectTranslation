@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Logs</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Error Line Number --></label>
+        <name>Error_Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE Reply Id --></label>
+        <name>PE_Reply_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF Rec Id --></label>
+        <name>SF_Rec_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger or Class Name --></label>
+        <name>Trigger_or_Class_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Lead enrichment call failures</masterLabel>
+            <translation><!-- Lead enrichment call failures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead insertion failures</masterLabel>
+            <translation><!-- Lead insertion failures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead routing failure</masterLabel>
+            <translation><!-- Lead routing failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead update failures</masterLabel>
+            <translation><!-- Lead update failures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity update failures</masterLabel>
+            <translation><!-- Opportunity update failures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful log-in attempts from SSO</masterLabel>
+            <translation><!-- Unsuccessful log-in attempts from SSO --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

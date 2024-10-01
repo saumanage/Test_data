@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Scansione file</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Scansioni file</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action --></label>
+        <name>AFSC__Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>AFSC__Date_Time_Scanned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direction --></label>
+        <name>AFSC__Direction__c</name>
+        <picklistValues>
+            <masterLabel>Download</masterLabel>
+            <translation>Scarica</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scan Job</masterLabel>
+            <translation>Attività di scansione</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload</masterLabel>
+            <translation>Carica</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Extension --></label>
+        <name>AFSC__File_Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Name --></label>
+        <name>AFSC__File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Parent Id --></label>
+        <name>AFSC__File_Parent_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Prevalence --></label>
+        <name>AFSC__File_Prevalence_Desc1__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Prevalence Desc --></label>
+        <name>AFSC__File_Prevalence_Desc__c</name>
+        <picklistValues>
+            <masterLabel>Common</masterLabel>
+            <translation>Comune</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rare</masterLabel>
+            <translation>Raro</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unique</masterLabel>
+            <translation>Unico</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universal</masterLabel>
+            <translation>Universale</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Sconosciuto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very common</masterLabel>
+            <translation>Molto comune</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very rare</masterLabel>
+            <translation>Molto raro</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Prevalence --></label>
+        <name>AFSC__File_Prevalence__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Reputation --></label>
+        <name>AFSC__File_Reputation_Desc1__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Reputation --></label>
+        <name>AFSC__File_Reputation_Desc__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation>Pulisci</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malicious</masterLabel>
+            <translation>Dannoso</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not available</masterLabel>
+            <translation>Non disponibile</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspicious</masterLabel>
+            <translation>Sospetto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Sconosciuto</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Reputation Rating --></label>
+        <name>AFSC__File_Reputation_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Size --></label>
+        <name>AFSC__File_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Type --></label>
+        <name>AFSC__File_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Version --></label>
+        <name>AFSC__File_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full File Name --></label>
+        <name>AFSC__Full_File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infection Name --></label>
+        <name>AFSC__Infection_Name2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Infection Name DEPRECATED --></label>
+        <name>AFSC__Infection_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP address --></label>
+        <name>AFSC__Ip_address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Download --></label>
+        <name>AFSC__Is_Download__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>AFSC__Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>AFSC__Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEPRECATED Record Id --></label>
+        <name>AFSC__Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ref Content Document Id --></label>
+        <name>AFSC__Ref_Content_Document_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Id --></label>
+        <name>AFSC__Ref_Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replacement File Id --></label>
+        <name>AFSC__Replacement_File_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- SHA --></label>
+        <name>AFSC__SHA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scan Type --></label>
+        <name>AFSC__Scan_Type__c</name>
+        <picklistValues>
+            <masterLabel>Attachment</masterLabel>
+            <translation>Allegato</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation>Contenuto</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scanbox Result --></label>
+        <name>AFSC__Scanbox_Result__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation>Pulisci</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grayware</masterLabel>
+            <translation>Grayware</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infected</masterLabel>
+            <translation>Infetto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspected</masterLabel>
+            <translation>Sospetto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Sconosciuto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Whitelisted</masterLabel>
+            <translation>Inserito nella whitelist</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DEPRECATED SHA1 --></label>
+        <name>AFSC__Sha1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>AFSC__Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>AFSC__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Name --></label>
+        <name>AFSC__User_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>AFSC__User__c</name>
+        <relationshipLabel><!-- File Scans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Verdict --></label>
+        <name>AFSC__Verdict__c</name>
+        <picklistValues>
+            <masterLabel>Disallowed</masterLabel>
+            <translation>Non autorizzato</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation>Errore</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safe</masterLabel>
+            <translation>Sicuro</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Sconosciuto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsafe</masterLabel>
+            <translation>Non sicuro</translation>
+        </picklistValues>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>
+</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

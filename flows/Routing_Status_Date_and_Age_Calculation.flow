@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <description>Migrated from the: Routing Status Date and Age Calculation workflow rule
+Workflow rule description: &quot;</description>
+    <formulas>
+        <name>Routing_Status_Success_Date_CalculationFormula</name>
+        <dataType>DateTime</dataType>
+        <expression>now()</expression>
+    </formulas>
+    <label>Routing Status Date and Age Calculation</label>
+    <migratedFromWorkflowRuleName>Routing Status Date and Age Calculation</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Set the business hours to zero to reset the SLA calculation clock
+Change SLA Level to NO escalation whenever routing status gets to success</description>
+        <name>mainUpdate</name>
+        <label>mainUpdate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Business_Hours_Elasped__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Routing_Success_Date_Time__c</field>
+            <value>
+                <elementReference>Routing_Status_Success_Date_CalculationFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Service_Level_Agreement_TXT__c</field>
+            <value>
+                <stringValue>No Escalation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>mainUpdate</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>AND(ISPICKVAL({!$Record.Routing_Status__c} , &apos;Success&apos;) ,{!$Setup.BypassAutomations__c.BypassWorkflowRule__c} = false)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

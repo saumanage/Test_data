@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>경고</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>AFSC__Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details --></label>
+        <name>AFSC__Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Name --></label>
+        <name>AFSC__Object_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original File Id --></label>
+        <name>AFSC__Original_File_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>AFSC__Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Id --></label>
+        <name>AFSC__Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replacement File --></label>
+        <name>AFSC__Replacement_File_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Severity --></label>
+        <name>AFSC__Severity__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation>심각</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Important</masterLabel>
+            <translation>중요</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information</masterLabel>
+            <translation>정보</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>AFSC__Source__c</name>
+        <picklistValues>
+            <masterLabel>Administration</masterLabel>
+            <translation>관리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>File Protection</masterLabel>
+            <translation>파일 보호</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>License</masterLabel>
+            <translation>라이선스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Cloud</masterLabel>
+            <translation>보안 클라우드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL Protection</masterLabel>
+            <translation>URL 보호</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>AFSC__User__c</name>
+        <relationshipLabel><!-- Alerts --></relationshipLabel>
+    </fields>
+    <nameFieldLabel>
+</nameFieldLabel>
+</CustomObjectTranslation>

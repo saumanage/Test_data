@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AddressLine1 --></label>
+        <name>MDPERSONATOR__AddressLine1__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusBlock --></label>
+        <name>MDPERSONATOR__CensusBlock__c</name>
+    </fields>
+    <fields>
+        <label><!-- CensusTract --></label>
+        <name>MDPERSONATOR__CensusTract__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>MDPERSONATOR__City__c</name>
+    </fields>
+    <fields>
+        <label><!-- CompanyName --></label>
+        <name>MDPERSONATOR__CompanyName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryCode --></label>
+        <name>MDPERSONATOR__CountryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryName --></label>
+        <name>MDPERSONATOR__CountryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountyFIPS --></label>
+        <name>MDPERSONATOR__CountyFIPS__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountyName --></label>
+        <name>MDPERSONATOR__CountyName__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeliveryIndicator --></label>
+        <name>MDPERSONATOR__DeliveryIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- EIN --></label>
+        <name>MDPERSONATOR__EIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmployeesEstimate --></label>
+        <name>MDPERSONATOR__EmployeesEstimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>MDPERSONATOR__Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- LocationType --></label>
+        <name>MDPERSONATOR__LocationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>MDPERSONATOR__Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping --></label>
+        <name>MDPERSONATOR__Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- MelissaAddressKeyBase --></label>
+        <name>MDPERSONATOR__MelissaAddressKeyBase__c</name>
+    </fields>
+    <fields>
+        <label><!-- MelissaAddressKey --></label>
+        <name>MDPERSONATOR__MelissaAddressKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- MelissaEnterpriseKey --></label>
+        <name>MDPERSONATOR__MelissaEnterpriseKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAICSCode1 --></label>
+        <name>MDPERSONATOR__NAICSCode1__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAICSCode2 --></label>
+        <name>MDPERSONATOR__NAICSCode2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAICSCode3 --></label>
+        <name>MDPERSONATOR__NAICSCode3__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAICSDescription1 --></label>
+        <name>MDPERSONATOR__NAICSDescription1__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAICSDescription2 --></label>
+        <name>MDPERSONATOR__NAICSDescription2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NAICSDescription3 --></label>
+        <name>MDPERSONATOR__NAICSDescription3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>MDPERSONATOR__Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlaceCode --></label>
+        <name>MDPERSONATOR__PlaceCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlaceName --></label>
+        <name>MDPERSONATOR__PlaceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plus4 --></label>
+        <name>MDPERSONATOR__Plus4__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>MDPERSONATOR__PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordID --></label>
+        <name>MDPERSONATOR__RecordID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Results --></label>
+        <name>MDPERSONATOR__Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- SICCode1 --></label>
+        <name>MDPERSONATOR__SICCode1__c</name>
+    </fields>
+    <fields>
+        <label><!-- SICCode2 --></label>
+        <name>MDPERSONATOR__SICCode2__c</name>
+    </fields>
+    <fields>
+        <label><!-- SICCode3 --></label>
+        <name>MDPERSONATOR__SICCode3__c</name>
+    </fields>
+    <fields>
+        <label><!-- SICDescription1 --></label>
+        <name>MDPERSONATOR__SICDescription1__c</name>
+    </fields>
+    <fields>
+        <label><!-- SICDescription2 --></label>
+        <name>MDPERSONATOR__SICDescription2__c</name>
+    </fields>
+    <fields>
+        <label><!-- SICDescription3 --></label>
+        <name>MDPERSONATOR__SICDescription3__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesEstimate --></label>
+        <name>MDPERSONATOR__SalesEstimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>MDPERSONATOR__State__c</name>
+    </fields>
+    <fields>
+        <label><!-- StockTicker --></label>
+        <name>MDPERSONATOR__StockTicker__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suite --></label>
+        <name>MDPERSONATOR__Suite__c</name>
+    </fields>
+    <fields>
+        <label><!-- TotalContacts --></label>
+        <name>MDPERSONATOR__TotalContacts__c</name>
+    </fields>
+    <fields>
+        <label><!-- TotalSuggestions --></label>
+        <name>MDPERSONATOR__TotalSuggestions__c</name>
+    </fields>
+    <fields>
+        <label><!-- WebAddress --></label>
+        <name>MDPERSONATOR__WebAddress__c</name>
+    </fields>
+</CustomObjectTranslation>

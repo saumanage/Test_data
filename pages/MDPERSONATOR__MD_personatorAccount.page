@@ -1,0 +1,121 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_personatorContact ] 
+     
+     purpose            : a custom VisualForce page which adds the "MD Personator Detail" section to the bottom half of the Account 
+                          Detail page.  This includes the 'Personate' custom button which is how you run the 
+                          application.
+
+     date created       : 8/20/2014
+     version            : 1.5
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+<apex:page StandardController="Account" extensions="MDPERSONATOR.MD_PersonatorWSExt" showHeader="true" tabStyle="Account">
+    <script>
+        old_onload = window.onload;
+        window.onload=function() {
+            old_onload();
+            doCheck();
+        };
+    </script>
+    
+    <apex:outputPanel id="detailContainer">
+        <apex:detail id="detailView" subject="{!Account}" relatedList="true" relatedListHover="true" inlineEdit="true"/>
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="messagesPanel">
+        <apex:pageMessages id="pMessages" rendered="true" showDetail="true" />
+    </apex:outputPanel>
+    
+    <apex:form >
+    
+    <apex:actionFunction name="getDetailSection" rerender="detailContainer,messagesPanel,personatorDetail"/>
+    <apex:actionFunction name="refreshDetail" rerender="detailContainer" />
+    <apex:actionFunction name="doCheck" action="{!doCheckUpdate}" rerender="messagesPanel,personatorDetail,detailContainer" oncomplete="refreshDetail();"/>
+    
+    <p></p>
+    
+    <style>
+        p { color: #FFFFFF; background-image:none; height: 7.5px;}
+        .linkText {font-weight:bold;}
+        .msgText {font=weight:bold;}
+        .persResponse {color: #000000; background-image:none}
+        .persTitle {color: #0066CC; font-size: x-large; font-weight: bold; font-style: italic}
+    </style>
+    
+    <apex:pageBlock id="personatorDetail" mode="maindetail">
+        
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!doVerifyParams}" value="Personate" status="status" oncomplete="getDetailSection();" />
+        </apex:pageBlockButtons>
+        
+        <apex:outputPanel styleClass="persTitle">
+            <apex:image url="{!$Resource.MDPERSONATOR__MD_personatorIcon}" width="47" height="47"/>
+            
+            Personator
+        </apex:outputPanel>
+        
+        <apex:pageBlockSection title="" columns="1">            
+            <apex:pageBlockTable value="{!savedResult}" var="a" id="savedResultTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Result" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedResult[a]}">
+                    <apex:facet name="footer">
+                    <apex:outputLink value="http://wiki.melissadata.com/index.php?title=Result_Code_Details#Personator" target="_blank"><b>View Result Descriptions</b></apex:outputLink>
+                </apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedBasic}" var="a" id="savedBasicTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Basic" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedBasic[a]}" id="savedBasic"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedNameDetails}" var="a" id="savedNameDetailsTable" columns="2" columnsWidth="40%, 60%">
+               <apex:column headerValue="Name Details" value="{!a}"></apex:column>
+               <apex:column headerValue="" value="{!savedNameDetails[a]}" id="savedNameDetails"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedAddressDetails}" var="a" id="savedAddressDetailsTable" columns="2" columnsWidth="40%, 60%">
+               <apex:column headerValue="Address Details" value="{!a}"></apex:column>
+               <apex:column headerValue="" value="{!savedAddressDetails[a]}" id="savedAddressDetails"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedAddressParsed}" var="a" id="savedAddressParsedTable" columns="2" columnsWidth="%40, 60%">
+               <apex:column headerValue="Address Parsed" value="{!a}"></apex:column>
+               <apex:column headerValue="" value="{!savedAddressParsed[a]}" id="savedAddressParsed"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedEmailParsed}" var="a" id="savedEmailParsedTable" columns="2" columnsWidth="%40, 60%">
+               <apex:column headerValue="Parsed Email" value="{!a}"></apex:column>
+               <apex:column headerValue="" value="{!savedEmailParsed[a]}" id="savedEmailParsed"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedPhoneParsed}" var="a" id="savedPhoneParsedTable" columns="2" columnsWidth="%40, 60%">
+                <apex:column headerValue="Parsed Phone" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedPhoneParsed[a]}" id="savedPhoneParsed"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedGeocodeResults}" var="a" id="savedGeocodeResultsTable" columns="2" columnsWidth="%40, 60%">
+               <apex:column headerValue="Geocode Results" value="{!a}"></apex:column>
+               <apex:column headerValue="" value="{!savedGeocodeResults[a]}" id="savedGeocodeResults">
+                <apex:facet name="footer">
+                    <apex:outputLink value="http://maps.google.com/maps?q={!savedGeocodeResults['Latitude']},{!savedGeocodeResults['Longitude']}" target="_blank" id="geocodeGoogleMaps" styleClass="linkText" rendered="{!geocodeRendered}">Google Maps</apex:outputLink>
+                </apex:facet>
+               </apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedCensusResults}" var="a" id="savedCensusResultsTable" columns="2" columnsWidth="%40, 60%">
+               <apex:column headerValue="Census Results" value="{!a}"></apex:column>
+               <apex:column headerValue="" value="{!savedCensusResults[a]}" id="savedCensusResults"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedDemographicsResults}" var="a" id="savedDemographicsResultsTable" columns="2" columnsWidth="%40, 60%">
+                <apex:column headerValue="Demographics Results" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedDemographicsResults[a]}" id="savedDemographicsResults"></apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

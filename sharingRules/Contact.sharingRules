@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Dealer_Contact_Internal</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Dealer Contact Internal</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>HELMS_Corporate_User</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Dealer</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Contact</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Contact</label>
+        <sharedTo>
+            <roleAndSubordinates>HELMS_Corporate_User</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Provider</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Vendor_Contact</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Vendor Contact</label>
+        <sharedTo>
+            <roleAndSubordinates>HELMS_Corporate_User</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Vendor_Contact_Write</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Vendor Contact Write</label>
+        <sharedTo>
+            <roleAndSubordinates>HELMS_Corporate_User</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

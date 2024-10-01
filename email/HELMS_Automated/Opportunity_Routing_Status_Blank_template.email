@@ -1,0 +1,10 @@
+Hi 
+
+This is to notify that an opportunity with id='{!Opportunity.Id}' has not been routed since an hour.
+
+Opportunity Name: {!Opportunity.Name}
+
+Opportunity Created Date: {!Opportunity.Created_Date_DT__c}
+
+Thank you
+HELMS Support Team

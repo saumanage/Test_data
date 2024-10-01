@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AdministrativeArea --></label>
+        <name>MDPERSONATOR__AdministrativeArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallerID --></label>
+        <name>MDPERSONATOR__CallerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>MDPERSONATOR__Carrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryAbbreviation --></label>
+        <name>MDPERSONATOR__CountryAbbreviation__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryName --></label>
+        <name>MDPERSONATOR__CountryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- DST --></label>
+        <name>MDPERSONATOR__DST__c</name>
+    </fields>
+    <fields>
+        <label><!-- InternationalPhoneNumber --></label>
+        <name>MDPERSONATOR__InternationalPhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>MDPERSONATOR__Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>MDPERSONATOR__Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locality --></label>
+        <name>MDPERSONATOR__Locality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>MDPERSONATOR__Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping --></label>
+        <name>MDPERSONATOR__Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneCountryDialingCode --></label>
+        <name>MDPERSONATOR__PhoneCountryDialingCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneInternationalPrefix --></label>
+        <name>MDPERSONATOR__PhoneInternationalPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneNationPrefix --></label>
+        <name>MDPERSONATOR__PhoneNationPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneNationalDestinationCode --></label>
+        <name>MDPERSONATOR__PhoneNationalDestinationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneNumber --></label>
+        <name>MDPERSONATOR__PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneSubscriberNumber --></label>
+        <name>MDPERSONATOR__PhoneSubscriberNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>MDPERSONATOR__PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordID --></label>
+        <name>MDPERSONATOR__RecordID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Results --></label>
+        <name>MDPERSONATOR__Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suggestions --></label>
+        <name>MDPERSONATOR__Suggestions__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeZoneCode --></label>
+        <name>MDPERSONATOR__TimeZoneCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeZoneName --></label>
+        <name>MDPERSONATOR__TimeZoneName__c</name>
+    </fields>
+    <fields>
+        <label><!-- UTC --></label>
+        <name>MDPERSONATOR__UTC__c</name>
+    </fields>
+</CustomObjectTranslation>

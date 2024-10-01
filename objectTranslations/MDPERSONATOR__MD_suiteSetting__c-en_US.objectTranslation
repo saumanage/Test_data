@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- GlobalCorrectFirstName --></label>
+        <name>MDPERSONATOR__GlobalCorrectFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- GlobalGenderAggression --></label>
+        <name>MDPERSONATOR__GlobalGenderAggression__c</name>
+    </fields>
+    <fields>
+        <label><!-- GlobalGenderPopulation --></label>
+        <name>MDPERSONATOR__GlobalGenderPopulation__c</name>
+    </fields>
+    <fields>
+        <label><!-- GlobalMiddleNameLogic --></label>
+        <name>MDPERSONATOR__GlobalMiddleNameLogic__c</name>
+    </fields>
+    <fields>
+        <label><!-- GlobalNameHint --></label>
+        <name>MDPERSONATOR__GlobalNameHint__c</name>
+    </fields>
+    <fields>
+        <label><!-- PersApplyFilters --></label>
+        <name>MDPERSONATOR__PersApplyFilters__c</name>
+    </fields>
+    <fields>
+        <label><!-- aac --></label>
+        <name>MDPERSONATOR__aac__c</name>
+    </fields>
+    <fields>
+        <label><!-- append --></label>
+        <name>MDPERSONATOR__append__c</name>
+    </fields>
+    <fields>
+        <label><!-- centricHint --></label>
+        <name>MDPERSONATOR__centricHint__c</name>
+    </fields>
+    <fields>
+        <label><!-- countryOfOrigin --></label>
+        <name>MDPERSONATOR__countryOfOrigin__c</name>
+    </fields>
+    <fields>
+        <label><!-- customerId --></label>
+        <name>MDPERSONATOR__customerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- dominantBusiness --></label>
+        <name>MDPERSONATOR__dominantBusiness__c</name>
+    </fields>
+    <fields>
+        <label><!-- eeCountry --></label>
+        <name>MDPERSONATOR__eeCountry__c</name>
+    </fields>
+    <fields>
+        <label><!-- eeMinLookup --></label>
+        <name>MDPERSONATOR__eeMinLookup__c</name>
+    </fields>
+    <fields>
+        <label><!-- eeToggleCase --></label>
+        <name>MDPERSONATOR__eeToggleCase__c</name>
+    </fields>
+    <fields>
+        <label><!-- enterprise --></label>
+        <name>MDPERSONATOR__enterprise__c</name>
+    </fields>
+    <fields>
+        <label><!-- geVerifyMode --></label>
+        <name>MDPERSONATOR__geVerifyMode__c</name>
+    </fields>
+    <fields>
+        <label><!-- geoLevel --></label>
+        <name>MDPERSONATOR__geoLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- geocode --></label>
+        <name>MDPERSONATOR__geocode__c</name>
+    </fields>
+    <fields>
+        <label><!-- globalEmailUpdateCodes --></label>
+        <name>MDPERSONATOR__globalEmailUpdateCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- globalNameUpdateCodes --></label>
+        <name>MDPERSONATOR__globalNameUpdateCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- globalPhoneCallerID --></label>
+        <name>MDPERSONATOR__globalPhoneCallerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- globalPhoneMode --></label>
+        <name>MDPERSONATOR__globalPhoneMode__c</name>
+    </fields>
+    <fields>
+        <label><!-- globalPhoneUpdateCodes --></label>
+        <name>MDPERSONATOR__globalPhoneUpdateCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- globalVerifyLevel --></label>
+        <name>MDPERSONATOR__globalVerifyLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- gpVerifyMode --></label>
+        <name>MDPERSONATOR__gpVerifyMode__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpAddressDetails --></label>
+        <name>MDPERSONATOR__grpAddressDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpCensus2 --></label>
+        <name>MDPERSONATOR__grpCensus2__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpCensus --></label>
+        <name>MDPERSONATOR__grpCensus__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpDemographics --></label>
+        <name>MDPERSONATOR__grpDemographics__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpGeocode --></label>
+        <name>MDPERSONATOR__grpGeocode__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpIPAddress --></label>
+        <name>MDPERSONATOR__grpIPAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpNameDetails --></label>
+        <name>MDPERSONATOR__grpNameDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpParsedAddress --></label>
+        <name>MDPERSONATOR__grpParsedAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpParsedEmail --></label>
+        <name>MDPERSONATOR__grpParsedEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- grpParsedPhone --></label>
+        <name>MDPERSONATOR__grpParsedPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- isAppendAction --></label>
+        <name>MDPERSONATOR__isAppendAction__c</name>
+    </fields>
+    <fields>
+        <label><!-- isCheckAction --></label>
+        <name>MDPERSONATOR__isCheckAction__c</name>
+    </fields>
+    <fields>
+        <label><!-- isMoveAction --></label>
+        <name>MDPERSONATOR__isMoveAction__c</name>
+    </fields>
+    <fields>
+        <label><!-- isVerifyAction --></label>
+        <name>MDPERSONATOR__isVerifyAction__c</name>
+    </fields>
+    <fields>
+        <label><!-- longAddressFormat --></label>
+        <name>MDPERSONATOR__longAddressFormat__c</name>
+    </fields>
+    <fields>
+        <label><!-- opt --></label>
+        <name>MDPERSONATOR__opt__c</name>
+    </fields>
+    <fields>
+        <label><!-- outputScript --></label>
+        <name>MDPERSONATOR__outputScript__c</name>
+    </fields>
+    <fields>
+        <label><!-- persAddressUpdateCodes --></label>
+        <name>MDPERSONATOR__persAddressUpdateCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- persEmailUpdateCodes --></label>
+        <name>MDPERSONATOR__persEmailUpdateCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- persNameUpdateCodes --></label>
+        <name>MDPERSONATOR__persNameUpdateCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- persPhoneUpdateCodes --></label>
+        <name>MDPERSONATOR__persPhoneUpdateCodes__c</name>
+    </fields>
+    <fields>
+        <label><!-- usePreferredCity --></label>
+        <name>MDPERSONATOR__usePreferredCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code Format --></label>
+        <name>MDPERSONATOR__zipFormat__c</name>
+    </fields>
+</CustomObjectTranslation>

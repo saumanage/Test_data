@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Fulfillment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Fulfillments</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Order Fulfillment --></label>
+        <name>AK_Order_Fulfillment_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Shipping Speed --></label>
+        <name>Honda_Shipping_Speed_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Referenced Date --></label>
+        <name>LastReferencedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Viewed Date --></label>
+        <name>LastViewedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Fulfillment Details Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrderId --></label>
+        <name>OrderId_c__c</name>
+        <relationshipLabel><!-- Order Fulfillments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Product --></label>
+        <name>Order_Product_c__c</name>
+        <relationshipLabel><!-- Order Fulfillments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner ID --></label>
+        <name>OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipment Carrier --></label>
+        <name>Shipment_Carrier_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipment Date Time --></label>
+        <name>Shipment_Date_Time_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Item Quantity --></label>
+        <name>Shipped_Item_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Part number --></label>
+        <name>Shipped_Partnumber_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Speed --></label>
+        <name>Shipping_Speed_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipment Tracking Number --></label>
+        <name>Tracking_Number_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

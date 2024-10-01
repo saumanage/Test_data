@@ -1,0 +1,12 @@
+Greetings!
+This message is to notify you that an event has been assigned to you. You can find the event in your calendar. Please find the details of the event below. 
+
+Subject: {!Event.Subject}
+Description: {!Event.Description}
+Start: {!Event.StartDateTime}
+End: {!Event.EndDateTime}
+Related To: {!Event.What}
+
+Please reach out to the HELMS Core Team at CRMVendorSupport@AHM.Honda.com if you have any questions or concerns.
+Thank you,
+HELMS Core Team

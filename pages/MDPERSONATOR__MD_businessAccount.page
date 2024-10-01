@@ -1,0 +1,78 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_businessAccount ] 
+     
+     purpose            : a custom VisualForce page which adds the "MD Personator Detail" section to the bottom half of the Contact 
+                          Detail page.  This includes the 'Personate' custom button which is how you run the 
+                          application.
+
+     date created       : 3/20/2016
+     version            : 1.0
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+<apex:page StandardController="Account" extensions="MDPERSONATOR.MD_BusinessWSExt" showHeader="true" tabStyle="Account">
+    <script>
+        window.onload=function() {
+            // doCheck();
+        };
+    </script>
+    
+    <apex:outputPanel id="detailContainer">
+        <apex:detail id="detailView" subject="{!Account}" relatedList="false"/>
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="messagesPanel">
+        <apex:pageMessages id="pMessages" rendered="true" showDetail="true" />
+    </apex:outputPanel>
+    
+    <apex:form >
+    
+    <apex:actionFunction name="getDetailSection" rerender="detailContainer,messagesPanel,businessDetail"/>
+    <apex:actionFunction name="refreshDetail" rerender="businessDetail" />
+    <apex:actionFunction name="doCheck" action="{!doLookup}" rerender="messagesPanel,personatorDetail,detailContainer" oncomplete="refreshDetail();"/>
+    
+    <p></p>
+    
+    <style>
+        p { color: #FFFFFF; background-image:none; height: 7.5px;}
+        .linkText {font-weight:bold;}
+        .msgText {font=weight:bold;}
+        .persResponse {color: #000000; background-image:none}
+        .bussinessTitle {color: #0066CC; font-size: x-large; font-weight: bold; font-style: italic}
+    </style>
+    
+    <apex:pageBlock id="businessDetail" mode="maindetail">
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!doLookup}" value="Lookup Business" status="status" oncomplete="getDetailSection();" />
+        </apex:pageBlockButtons>
+        
+        <apex:outputPanel styleClass="bussinessTitle">
+            Business Coder
+        </apex:outputPanel>
+        
+        <apex:pageBlockSection title="" columns="1">
+            <apex:pageBlockTable value="{!savedResult}" var="a" id="savedResultTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Result" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedResult[a]}">
+                    <apex:facet name="footer">
+                        <apex:outputLink value="http://wiki.melissadata.com/index.php?title=Result_Code_Details#Listware_for_Salesforce" target="_blank"><b>View Result Descriptions</b></apex:outputLink>
+                    </apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+        
+            <apex:pageBlockTable value="{!savedAddress}" var="a" id="savedAddressTable" columns="2" columnsWidth="40%,60%">
+                <apex:column headerValue="Address" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedAddress[a]}">
+                </apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedResponse}" var="a" id="savedResponseTable" columns="2" columnsWidth="40%,60%">
+                <apex:column headerValue="Firmographics" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedResponse[a]}" id="savedResponse"></apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,151 @@
+<apex:page showHeader="true" sidebar="false" controller="AFSC.FS_AdvancedConfigController">
+
+	<apex:stylesheet value="{!URLFOR($Resource.AFSC__SLDS0203, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+	<script src="{!URLFOR($Resource.fscap, 'js/admin.js')}"></script>
+
+	<style>
+		input.close-icon
+		{
+			    background-image: url('{!URLFOR($Resource.SLDS0203, 'assets/icons/utility/close_60.png')}') !important;
+	    		background-size: 1.5rem !important;
+	    		background-position: center !important;
+	    		background-repeat: no-repeat !important;
+		}
+	</style>
+
+	<div class="fslds">
+		<apex:form id="frm">
+
+			<apex:outputPanel id="messageLog">
+				<c:FS_MessageLog />
+			</apex:outputPanel>
+
+			<div class="slds-panel__section slds-p-top--xx-small slds-p-bottom--none">
+
+				<div class="slds-box slds-theme--default">
+					<h4 class="slds-text-heading--small slds-m-top--medium slds-m-bottom--x-large">{!$Label.FS_AdvancedConfig}</h4>
+
+					<div class="slds-form-element slds-m-left--x-large">
+
+						<div class="slds-text-body--regular">
+							<p>{!$Label.FS_LicenseActivateHeader}</p><br/>
+						</div>
+						<div class="slds-grid slds-wrap slds-grid--pull-padded">
+							<div class="slds-p-horizontal--small slds-m-bottom--small">
+								<apex:commandButton id="activateLicenseKeyWindowButton" value="{!$Label.afsc__fs_activatebuttonlabel}" action="{!openActivateLicenseKey}" styleClass="slds-button slds-button--neutral" rerender="licenseKeyEdit" status="processStatus" />
+							</div>
+							<div class="slds-p-horizontal--small slds-text-body--small slds-text-color--weak" style="white-space: normal; width: 800px; color: #a8a8a8;">
+								<p>{!$Label.FS_LicenseActivateInfo}</p>
+							</div>
+						</div>
+
+						<div class="slds-text-body--regular slds-m-top--medium">
+							<p>{!$Label.FS_DoormanStorageEmptyToolHeader}</p><br/>
+						</div>
+						<div class="slds-grid slds-wrap slds-grid--pull-padded">
+							<div class="slds-p-horizontal--small slds-m-bottom--small">
+								<apex:commandButton id="emptyDoormanStorageButton" value="{!$Label.afsc__fs_cleanupbuttonlabel}" action="{!emptyDoormanStorage}" styleClass="slds-button slds-button--neutral" status="processStatus" />
+							</div>
+							<div class="slds-p-horizontal--small slds-text-body--small slds-text-color--weak" style="white-space: normal; width: 800px; color: #a8a8a8;">
+								<p>{!$Label.FS_DoormanStorageEmptyInfo}</p>
+							</div>
+						</div>
+
+		                <div class="slds-text-body--regular slds-m-top--medium">
+		                    <p>{!$Label.FS_FileScanLogDeleteToolHeader}</p><br/>
+		                </div>
+		                <div class="slds-grid slds-wrap slds-grid--pull-padded">
+		                    <div class="slds-p-horizontal--small slds-m-bottom--small">
+		                        <apex:commandButton id="cleanScanLogButton" value="{!$Label.afsc__fs_startbuttonlabel}" action="{!cleanScanLog}" styleClass="slds-button slds-button--neutral" reRender="page-msgs,tools-buttons-panel" status="processStatus" />
+		                    </div>
+		                    <div class="slds-p-horizontal--small slds-text-body--small slds-text-color--weak" style="white-space: normal; width: 800px; color: #a8a8a8;">
+		                        <p>{!$Label.FS_FileScanLogDeleteInfo}</p>
+		                    </div>
+		                </div>
+
+		                <div class="slds-text-body--regular slds-m-top--medium">
+		                    <p>{!$Label.FS_UrlScanLogDeleteToolHeader}</p><br/>
+		                </div>
+		                <div class="slds-grid slds-wrap slds-grid--pull-padded">
+		                    <div class="slds-p-horizontal--small slds-m-bottom--small">
+		                        <apex:commandButton id="cleanUrlScanLogButton" value="{!$Label.afsc__fs_startbuttonlabel}" action="{!cleanUrlScanLog}" styleClass="slds-button slds-button--neutral" reRender="page-msgs,tools-buttons-panel" status="processStatus" />
+		                    </div>
+		                    <div class="slds-p-horizontal--small slds-text-body--small slds-text-color--weak" style="white-space: normal; width: 800px; color: #a8a8a8;">
+		                        <p>{!$Label.FS_UrlScanLogDeleteInfo}</p>
+		                    </div>
+		                </div>
+
+
+						<apex:outputPanel layout="block" id="licenseKeyEdit" >
+							<apex:outputPanel layout="block" id="licenseKeyModal" >
+								<apex:outputPanel layout="block" rendered="{!renderModal}">
+
+									<div class="slds-modal slds-fade-in-open" role="dialog">
+
+										<div class="slds-modal__container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70%;">
+
+											<div class="slds-modal__header">
+												<apex:commandButton id="closeLicenseKeyWindowButton" styleClass="slds-button slds-modal__close slds-button--icon-inverse bright close-icon" title="{!$Label.afsc__fs_closebuttonlabel}" action="{!closeActivateLicenseKey}" rerender="licenseKeyEdit" />
+												<h2 class="slds-text-heading--medium">{!$Label.FS_LicenseActivateHeader}</h2>
+											</div>
+
+											<div class="slds-modal__content slds-p-around--medium">
+
+												<div class="slds-form--stacked">
+
+													<apex:outputPanel rendered="{!serviceHostnames.size == 0}">
+
+														<div class="slds-form-element">
+
+															<apex:outputLabel styleClass="slds-form-element__label" for="doormanUrl" value="{!$Label.afsc__fs_doormanurl}" />
+
+															<div class="slds-form-element__control">
+																<apex:inputText value="{!doormanUrl}" id="doormanUrl" styleClass="slds-input slds-size--6-of-8 slds-m-right--medium" />
+															</div>
+														</div>
+														<div class="slds-form-element {!IF(activateInputError != null, 'slds-has-error', '')}">
+															<apex:outputLabel styleClass="slds-form-element__label" for="licenseKey" value="{!$Label.afsc__fs_licensekeylabel}" />
+
+															<div class="slds-form-element__control">
+																<apex:inputText value="{!licenseKey}" id="licenseKey" styleClass="slds-input slds-size--6-of-8 slds-m-right--medium" />
+															</div>
+														</div>
+													</apex:outputPanel>
+
+													<apex:outputPanel id="activate-error-message" styleClass="slds-form-element__help" rendered="{!activateInputError != null}">{!activateInputError}</apex:outputPanel>
+
+													<apex:outputPanel id="serviceHostnames" layout="block" rendered="{!serviceHostnames.size != 0}">
+														<p>{!$Label.FS_ServiceHostnames}</p>
+														
+														<div class="slds-grid slds-grid--vertical-align-start">
+															<ul class="slds-list--vertical-space-medium slds-m-left--xx-large slds-has-dividers_around-space">
+																<apex:repeat value="{!serviceHostnames}" var="hostname">
+																	<li class="slds-item"> - {!hostname}</li>		
+																</apex:repeat>
+															</ul>
+														</div>
+													</apex:outputPanel>
+												</div>
+											</div>
+
+											<div class="slds-modal__footer">
+												<apex:commandButton id="closeLicenseKeyWindowButton2" value="{!$Label.afsc__fs_closebuttonlabel}" styleClass="slds-button slds-button--neutral" action="{!closeActivateLicenseKey}" rerender="licenseInformation, licenseKeyEdit"/>
+												<apex:commandButton id="ActivateKeyButton" value="{!$Label.afsc__fs_activatebuttonlabel}" styleClass="slds-button slds-button--brand" action="{!ActivateKey}" rerender="licenseInformation, licenseKeyEdit, messageLog" rendered="{!serviceHostnames.size == 0}" />
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="slds-backdrop slds-backdrop--open"></div>
+								</apex:outputPanel>
+							</apex:outputPanel>
+					    </apex:outputPanel>
+
+					</div>
+				</div>
+			</div>
+		</apex:form>
+	</div>
+
+</apex:page>

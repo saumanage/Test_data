@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- PersonalInfo_EPIM --></label>
+        <name>PersonalInfo_EPIM</name>
+    </fieldSets>
+    <fields>
+        <label><!-- ActAsDealerNumber --></label>
+        <name>ActAsDealerNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Role --></label>
+        <name>ApplicationRole_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Name --></label>
+        <name>Application_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB Region --></label>
+        <name>DB_Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Deactivated Date --></label>
+        <name>Deactivated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Number --></label>
+        <name>DealerNumber_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- District --></label>
+        <name>District__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E</masterLabel>
+            <translation><!-- E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M</masterLabel>
+            <translation><!-- M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P</masterLabel>
+            <translation><!-- P --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Job Code --></label>
+        <name>JobCode_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tableau CRM Permission --></label>
+        <name>Tableau_CRM_Permission_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- UserLicense --></label>
+        <name>UserLicense__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone --></label>
+        <name>Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Marketing Cloud Page --></label>
+        <name>et4ae5__Default_ET_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default MID --></label>
+        <name>et4ae5__Default_MID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange Admin --></label>
+        <name>et4ae5__ExactTargetForAppExchangeAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange User --></label>
+        <name>et4ae5__ExactTargetForAppExchangeUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud Username --></label>
+        <name>et4ae5__ExactTargetUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- @deprecated --></label>
+        <name>et4ae5__ExactTarget_OAuth_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud Admin --></label>
+        <name>et4ae5__ValidExactTargetAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud User --></label>
+        <name>et4ae5__ValidExactTargetUser__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Please note that email address updates cannot be made from this platform. Kindly log in to the interactive portal to update your email address. --></errorMessage>
+        <name>Email_is_not_editable_for_Dealers</name>
+    </validationRules>
+</CustomObjectTranslation>

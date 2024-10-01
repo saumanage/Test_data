@@ -1,0 +1,159 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" class="slds-border_bottom" padding="around-small" large-device-size="12" >
+            <div class="custom-box slds-text-heading_large">Settings </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small" large-device-size="12">        
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="12" >
+                    <div class="custom-box slds-text-heading_medium">Returns</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="2" >
+                    <div class="custom-box" style="line-height: 2rem;">Return Window</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="4">
+                    <div class="custom-box" style="display: flex;">
+                        <lightning-input style="width: 11.5rem;" type="number" class="returnWindowNumber" variant="label-hidden" value={returnWindow} onchange={returnWindowChange} name="name" ></lightning-input> 
+                        <div style="line-height: 2rem;padding-left: 8px;">  Days</div>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="6"></lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="2" >
+                    <div class="custom-box" style="line-height: 2rem;">Charge restocking fees</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="4">
+                    <div class="custom-box" style="display: flex;">
+                        <lightning-combobox
+                            variant="label-hidden"                       
+                            value={chargeRestocking}                        
+                            options={chargeRestockingOptions}
+                            onchange={handleChargeRestockingChange} ></lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" padding="around-small" large-device-size="6"></lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="2">
+                    <div class="custom-box" style="line-height: 2rem;">Restocking fees type</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="4" >
+                    <div class="custom-box" style="display: flex;">
+                        <lightning-combobox
+                        variant="label-hidden"                       
+                        value={restockingType}                        
+                        options={restockingTypeOptions}
+                        onchange={handleRestockingTypeChange}
+                        disabled={showRestockingFeeSecton} ></lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="6"></lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="2" >
+                    <div class="custom-box" style="line-height: 2rem;">Restocking fees</div>
+                </lightning-layout-item>
+                
+                <lightning-layout-item size="12" padding="around-small" large-device-size="4" >
+                    <div class="custom-box" style="display: flex;" if:false={isPercentage}>
+                        <div style="line-height: 2rem;padding-right: 8px;">$  </div> 
+                        <lightning-input value={restockingFees} type="text" variant="label-hidden" name="name" class="restockingFees" onchange={handleRestockingFeesChange} disabled={showRestockingFeeSecton}></lightning-input>
+                    </div>
+                    <div class="custom-box" style="display: flex;" if:true={isPercentage}>                     
+                        <lightning-input value={restockingFeesPercentage} type="text" variant="label-hidden" name="name" class="restockingFeesPer" onchange={restockingFeesPerChange} disabled={showRestockingFeeSecton}></lightning-input>
+                        <div style="line-height: 2rem;padding-left: 8px;">%  </div> 
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="6"></lightning-layout-item>
+            </lightning-layout>            
+        </lightning-layout-item>
+
+        <!-- R2B Dealer Install Epic -->
+        <!--
+        <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+            <lightning-layout multiple-rows>
+                
+                <lightning-layout-item size="12" padding="around-small" large-device-size="12" >
+                    <div class="custom-box slds-text-heading_medium">Installation</div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" padding="around-small" large-device-size="2" >
+                    <div class="custom-box" style="line-height: 2rem;">Scheduling link</div>
+                </lightning-layout-item>
+            
+                <lightning-layout-item size="12" padding="around-small" large-device-size="4">
+                    <div class="custom-box" style="display: flex;">
+                        <lightning-input style="width: 11.5rem;" disabled={isDealerNonAdmin} type="text" value={schedulingLink} onchange={schedulingLinkChange} variant="label-hidden" name="name" ></lightning-input>                    
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="6"></lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+        -->
+        <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+            <lightning-layout multiple-rows>
+                <template if:false={isHRC}>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="12" >
+                    <div class="custom-box slds-text-heading_medium">Shipping</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="2" >
+                    <div class="custom-box" style="line-height: 2rem;">Default Shipping Method</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="4">
+                    <div class="custom-box" style="display: flex;">
+                        <lightning-combobox
+                        variant="label-hidden"                       
+                        value={shippingMethod}                        
+                        options={shippingMethodOptions}
+                        onchange={shippingMethodChange} 
+                        disabled={isDealerNonAdmin}></lightning-combobox>                    
+                    </div>
+                </lightning-layout-item></template>
+                <!-- Pratik LTIM Commented for Sprint -4 Tax-->
+                <!--<lightning-layout-item size="12" padding="around-small" large-device-size="6"></lightning-layout-item>  
+                <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+                    <lightning-button variant="brand" label="SAVE CHANGES" title="Save Changes" onclick={handleSave}></lightning-button>
+                </lightning-layout-item> -->                       
+            </lightning-layout>
+           
+        </lightning-layout-item>
+
+         <!--- Pratik LTIM Added for SPrint 4-->
+        <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="12" >
+                    <div class="custom-box slds-text-heading_medium">Tax Jurisdictions</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="2" >
+                    <div class="custom-box" style="line-height: 2rem;">Selling States</div>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small" large-device-size="4">
+                    <div class="custom-box" style="display: flex;">
+                        <lightning-combobox
+                        variant="label-hidden"                       
+                        value={salesValues}                        
+                        options={salesJurisdications}
+                        onchange={salesValuesChanges}
+                        ></lightning-combobox>                    
+                    </div>
+
+
+                </lightning-layout-item>
+
+                 <!-- Pratik LTIM Commented for Sprint -4 Tax-->
+
+                <lightning-layout-item size="12" padding="around-small" large-device-size="6"> </lightning-layout-item> 
+                <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+                    {salesTaxDisclaimer}
+                </lightning-layout-item>
+                <!-- Pratik LTIM Commented for Sprint -4 Tax-->
+
+                <lightning-layout-item size="12" padding="around-small" large-device-size="6"></lightning-layout-item>  
+                <lightning-layout-item size="12" padding="around-small" large-device-size="12">
+                    <lightning-button variant="brand" label="SAVE CHANGES" title="Save Changes" onclick={handleSave}></lightning-button>
+                </lightning-layout-item>                        
+            </lightning-layout>
+           
+        </lightning-layout-item>
+       
+    </lightning-layout>
+</template>

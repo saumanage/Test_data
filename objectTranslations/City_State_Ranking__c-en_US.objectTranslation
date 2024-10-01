@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>City State Ranking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>City State Ranking</value>
+    </caseValues>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Account --></label>
+        <name>Dealer_Account__c</name>
+        <relationshipLabel><!-- City State Ranking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dealer Number --></label>
+        <name>Dealer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox_ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ranking --></label>
+        <name>Ranking__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

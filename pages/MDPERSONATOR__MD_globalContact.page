@@ -1,0 +1,99 @@
+<!-- ************************************************************************************************************************ -->
+<!-- [ MD_globalContact ] 
+     
+     purpose            : a custom VisualForce page which adds the "MD Global Detail" section to the bottom half of the Contact 
+                          Detail page.  This includes the 'Global Address Verify' custom button which is how you run the 
+                          application.
+
+     date created       : 1/30/2014
+     version            : 1.5
+     developer          : Kevin Ubay-Ubay (Melissa Data) 
+-->
+<!-- ************************************************************************************************************************ -->
+<apex:page StandardController="Contact" extensions="MDPERSONATOR.MD_GlobalWSExt" showHeader="true" tabStyle="Contact">
+    <script>
+        window.onload=function() {
+            doCheck();
+        };
+    </script>
+    
+    <apex:outputPanel id="detailContainer">
+        <apex:detail id="detailView" subject="{!Contact}" relatedList="false" />
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="messagesPanel">
+        <apex:pageMessages id="pMessages" rendered="true" showDetail="true" />
+    </apex:outputPanel>
+    
+    <apex:form >
+    
+    <apex:actionFunction name="getDetailSection" rerender="detailContainer,messagesPanel,globalDetail"/>
+    <apex:actionFunction name="refreshDetail" rerender="detailContainer" />
+    <apex:actionFunction name="doCheck" action="{!doCheckUpdate}" rerender="messagesPanel,globalDetail,detailContainer" oncomplete="refreshDetail();"/>
+    
+    <p></p>
+    
+    <style>
+        p { color: #FFFFFF; background-image:none; height: 7.5px;}
+        .linkText {font-weight:bold;}
+        .msgText {font=weight:bold;}
+        .persResponse {color: #000000; background-image:none}
+        .persTitle {color: #0066CC; font-size: x-large; font-weight: bold; font-style: italic}
+    </style>
+    
+    <apex:pageBlock id="globalDetail" mode="maindetail">
+    
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!doVerifyParams}" value="Global Verify" status="status" oncomplete="getDetailSection();"/>
+        </apex:pageBlockButtons>
+        
+        <apex:outputPanel styleClass="persTitle">
+            <apex:image url="{!$Resource.MDPERSONATOR__MD_globalIcon}" width="47" height="47"/>
+            
+            Global Verification
+        </apex:outputPanel>
+        
+        <apex:pageBlockSection title="" columns="1">            
+            <apex:pageBlockTable value="{!savedResult}" var="a" id="savedResultTable" columns="2" columnsWidth="40%, 60%">
+                <apex:column headerValue="Result" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedResult[a]}">
+                    <apex:facet name="footer">
+                        <apex:outputLink value="http://wiki.melissadata.com/index.php?title=Result_Code_Details#Listware_for_Salesforce" target="_blank"><b>View Result Descriptions</b></apex:outputLink>
+                    </apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedResponse}" var="a" id="savedResponseTable" columns="2" columnsWidth="40%,60%">
+                <apex:column headerValue="Address Verification Results" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedResponse[a]}" id="savedResponse"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedGeocode}" var="a" id="savedGeocodeTable" columns="2" columnsWidth="40%,60%">
+                <apex:column headerValue="Geocoding Results" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedGeocode[a]}" id="savedGeocode">
+                    <apex:facet name="footer">
+                        <apex:outputLink value="http://maps.google.com/maps?q={!savedGeocode['Latitude']},{!savedGeocode['Longitude']}" target="_blank" id="geocodeGoogleMaps" styleClass="linkText" rendered="{!geocodeRendered}">Google Maps</apex:outputLink>
+                    </apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedNameVerify}" var="a" id="savedNameVerifyTable" columns="2" columnsWidth="40%,60%">
+                <apex:column headerValue="Name Verify Results" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedNameVerify[a]}" id="savedNameVerify"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedPhoneVerify}" var="a" id="savedPhoneVerifyTable" columns="2" columnsWidth="40%,60%">
+                <apex:column headerValue="Phone Verify Results" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedPhoneVerify[a]}" id="savedPhoneVerify"></apex:column>
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockTable value="{!savedEmailVerify}" var="a" id="savedEmailVerifyTable" columns="2" columnsWidth="40%,60%">
+                <apex:column headerValue="Email Verify Results" value="{!a}"></apex:column>
+                <apex:column headerValue="" value="{!savedEmailVerify[a]}" id="savedEmailVerify"></apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Quarantaine</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Quarantaines</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>AFSC__Deleted_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Name --></label>
+        <name>AFSC__File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Type --></label>
+        <name>AFSC__Object_Type__c</name>
+        <picklistValues>
+            <masterLabel>Attachment</masterLabel>
+            <translation>Pièce jointe</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content Document</masterLabel>
+            <translation>Document de contenu</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Parent Record Id --></label>
+        <name>AFSC__Parent_Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>AFSC__Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sha1 --></label>
+        <name>AFSC__Sha1__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>AFSC__User__c</name>
+        <relationshipLabel><!-- Quarantines --></relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>
+</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

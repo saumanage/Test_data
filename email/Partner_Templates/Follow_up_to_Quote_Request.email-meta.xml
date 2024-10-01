@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>Follow-up to Quote Request?</name>
+    <style>freeForm</style>
+    <subject>Follow-up to Quote Request?</subject>
+    <textOnly>Dear {!Opportunity.Name},
+
+This is in regards to the quote that you requested for {!Opportunity.Product_TXT__c} on {!Opportunity.CreatedDate__c}.  I am just following up to check If you are still interested in this product. If you have any questions/concerns about the product or if you would prefer me to find a different product for you, please let me know. I would be happy to assist with your product search in any way possible.
+
+I can be reached either by replying to this e-mail or by phone at {!User.Phone}.
+
+I look forward to speaking with you soon!
+
+Sincerely,
+
+{!User.Name}
+{!Opportunity.PreferredDealerAccount_TXT__c}
+{!User.Phone}
+{!User.Email}
+
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

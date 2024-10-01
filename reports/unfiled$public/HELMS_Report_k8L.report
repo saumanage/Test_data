@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Lead.SourceUser_TXT__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Model_ID__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Model_TXT__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Trim_TXT__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Year_YR__c</field>
+    </columns>
+    <columns>
+        <field>Lead.TransactionCode_CD__c</field>
+    </columns>
+    <columns>
+        <field>Lead.LeadProvider_ID__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>HELMS Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityLead</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

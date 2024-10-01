@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_45826403</developerName>
+        <masterLabel>Time in Minute</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity.Time_in_Minnute__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Less Than 1 minute</sourceValue>
+            </sourceValues>
+            <value>A - Less Than 1 minute</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>1 to 5 minutes</sourceValue>
+            </sourceValues>
+            <value>B - 1 to 5 minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>5 to 15 minutes</sourceValue>
+            </sourceValues>
+            <value>C - 5 to 15 minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>15 to 30 minutes</sourceValue>
+            </sourceValues>
+            <value>D - 15 to 30 minutes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>30 minutes to 2 hours</sourceValue>
+            </sourceValues>
+            <value>E - 30 minutes to 2 hours</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2 to 24 hours</sourceValue>
+            </sourceValues>
+            <value>F - 2 to 24 hours</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>24 to 48 hours</sourceValue>
+            </sourceValues>
+            <value>G - 24 to 48 hours</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>More than 48 hours</sourceValue>
+            </sourceValues>
+            <value>H - More than 48 hours</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity.Dealer_CRM_Vendor__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.LeadProvider_ID__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.PreferredDealerAccount_TXT__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Routing_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Created_Date_DT__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.RoutedDateTime__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Dealer_CRM_Vendor__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Routing_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Sent to Dealer,Success</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Created_Date_DT__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_DAYS:60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Created_Date_DT__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_DAYS:60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Created_Date_DT__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_DAYS:60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Created_Date_DT__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_DAYS:60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Created_Date_DT__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_DAYS:60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Created_Date_DT__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_DAYS:60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Created_Date_DT__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_DAYS:60</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_45826403</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Time to Route</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

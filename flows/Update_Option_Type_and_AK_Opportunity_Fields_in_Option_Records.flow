@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Checking_ByPass_Automation</name>
+        <label>Checking ByPass Automation</label>
+        <locationX>569</locationX>
+        <locationY>376</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ByPass</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.BypassAutomations__c.BypassProcessBuilder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Updating_AK_Opporunity_Option_Field</targetReference>
+            </connector>
+            <label>ByPass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>To_Check_Option_Name</name>
+        <label>To Check Option Name</label>
+        <locationX>812</locationX>
+        <locationY>517</locationY>
+        <defaultConnector>
+            <targetReference>Updating_to_Accessory</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Option_Name_is_FIF</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <elementReference>NameisFIF</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Updating</targetReference>
+            </connector>
+            <label>If Option Name is FIF</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Updating_AK_Opporunity_Option_Field</name>
+        <label>Updating AK Opporunity Option Field</label>
+        <locationX>969</locationX>
+        <locationY>261</locationY>
+        <defaultConnector>
+            <targetReference>To_Check_Option_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checking_AK_field</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ManufacturerCode_CD__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Updating_AK_Field</targetReference>
+            </connector>
+            <label>Checking AK field</label>
+        </rules>
+    </decisions>
+    <description>Updating Option Type based on Option Name and updating AK Opportunity Option Field with combination of Manufacture Code, Opportunity ID &amp; Lead ID.</description>
+    <formulas>
+        <name>Concatenationofthreefields</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.ManufacturerCode_CD__c} + {!$Record.Opportunity_ID__c}  + {!$Record.Opportunity_ID__r.Lead_ID__c}</expression>
+    </formulas>
+    <interviewLabel>Update Option Type and AK Opportunity Fields in Option Records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Option Type and AK Opportunity Fields in Option Records</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Updating</name>
+        <label>Updating</label>
+        <locationX>696</locationX>
+        <locationY>651</locationY>
+        <inputAssignments>
+            <field>Option_Type__c</field>
+            <value>
+                <stringValue>Factory Installed Feature (FIF)</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Updating_AK_Field</name>
+        <label>Updating AK Field</label>
+        <locationX>1259</locationX>
+        <locationY>363</locationY>
+        <connector>
+            <targetReference>To_Check_Option_Name</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AK_Opportunity_Options__c</field>
+            <value>
+                <elementReference>Concatenationofthreefields</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Updating_to_Accessory</name>
+        <label>Updating to Accessory</label>
+        <locationX>1065</locationX>
+        <locationY>619</locationY>
+        <inputAssignments>
+            <field>Option_Type__c</field>
+            <value>
+                <stringValue>Accessory</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Checking_ByPass_Automation</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Options__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>NameisFIF</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>FIF</stringValue>
+        </value>
+    </variables>
+</Flow>

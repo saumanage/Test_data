@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Enrichment Response</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Enrichment Response</value>
+    </caseValues>
+    <fields>
+        <label><!-- Acura Current Products Owned 2 --></label>
+        <name>AcuraCurrentProductsOwned2_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acura Current Products Owned --></label>
+        <name>AcuraCurrentProductsOwned_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acura High Value Trimline Propensity --></label>
+        <name>AcuraHighValueTrimlinePropensity_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acura Ownership Status Household --></label>
+        <name>AcuraOwnershipStatusHousehold_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acura Ownership Status --></label>
+        <name>AcuraOwnershipStatus_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Error Code --></label>
+        <name>Address_Error_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Error Description --></label>
+        <name>Address_Error_Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Status --></label>
+        <name>Address_Status_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cell Phone Error Code --></label>
+        <name>Cell_Phone_Error_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cell Phone Error Description --></label>
+        <name>Cell_Phone_Error_Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cleansed Address --></label>
+        <name>CleansedAddress_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Last Service --></label>
+        <name>DateofLastService_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Checked Date --></label>
+        <name>Email_CheckedDate_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Error Code --></label>
+        <name>Email_Error_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Error Description --></label>
+        <name>Email_Error_Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Phone Error Code --></label>
+        <name>Home_Phone_Error_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Phone Error Description --></label>
+        <name>Home_Phone_Error_Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Current Products Owned 2 --></label>
+        <name>HondaCurrentProductsOwned2_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Current Products Owned --></label>
+        <name>HondaCurrentProductsOwned_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda High Value Trimline Propensity --></label>
+        <name>HondaHighValueTrimlinePropensity_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Ownership Status Household --></label>
+        <name>HondaOwnershipStatusHousehold_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honda Ownership Status --></label>
+        <name>HondaOwnershipStatus_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead SF ID --></label>
+        <name>Lead_SF_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Description --></label>
+        <name>Location_Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Error Code --></label>
+        <name>Location_Error_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Error Description --></label>
+        <name>Location_Error_Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Status --></label>
+        <name>Location_Status_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Error Code --></label>
+        <name>Model_Error_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Error Description --></label>
+        <name>Model_Error_Description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Image --></label>
+        <name>Model_IMG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Name --></label>
+        <name>Model_Name_NM__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE Current Products Owned --></label>
+        <name>PECurrentProductsOwned_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE Ownership Status Household --></label>
+        <name>PEOwnershipStatusHousehold_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE Ownership Status --></label>
+        <name>PEOwnershipStatus_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PSP Current Products Owned 2 --></label>
+        <name>PSPCurrentProductsOwned2_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PSP Current Products Owned --></label>
+        <name>PSPCurrentProductsOwned_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PSP Ownership Status Household --></label>
+        <name>PSPOwnershipStatusHousehold_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PSP Ownership Status --></label>
+        <name>PSPOwnershipStatus_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Dealer Number --></label>
+        <name>PreferredDealerNumber_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reply id --></label>
+        <name>Reply_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Sales description --></label>
+        <name>SFMC_Sales_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Sales errorcode --></label>
+        <name>SFMC_Sales_errorcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Sales errordescription --></label>
+        <name>SFMC_Sales_errordescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Sales status --></label>
+        <name>SFMC_Sales_status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Service description --></label>
+        <name>SFMC_Service_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Service errorcode --></label>
+        <name>SFMC_Service_errorcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Service errordescription --></label>
+        <name>SFMC_Service_errordescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Service status --></label>
+        <name>SFMC_Service_status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Description --></label>
+        <name>SFMC_description_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Error Code --></label>
+        <name>SFMC_errorcode_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Error Description --></label>
+        <name>SFMC_errordescription_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFMC Status --></label>
+        <name>SFMC_status_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesRelatedDealerNumber_ --></label>
+        <name>SalesRelatedDealerNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- ServiceRelatedDealerNumber_ --></label>
+        <name>ServiceRelatedDealerNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Address --></label>
+        <name>ValidAddress_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Cell Phone Number --></label>
+        <name>ValidCellPhone_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Email --></label>
+        <name>ValidEmail_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Phone Number --></label>
+        <name>ValidPhoneNum_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Model ID --></label>
+        <name>Valid_Model_ID_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Your Dealership Services Last 60 Mths --></label>
+        <name>YourDealershipServicesLast60Mths_NUM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Your Dealership Svs Spent Last 60 Mth --></label>
+        <name>YourDealershipSvsSpentLast60Mth_NUM__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

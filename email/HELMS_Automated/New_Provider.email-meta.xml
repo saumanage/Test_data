@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email notification to ECRM or Urban science notifying them of a new Provider, letting them know the Provider is valid.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>New Provider</name>
+    <style>none</style>
+    <subject>HELMS Provider Alert</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

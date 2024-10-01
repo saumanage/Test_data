@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Product Ext</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- AK Order Item --></label>
+        <name>AK_Order_Item_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjusted Product Subtotal --></label>
+        <name>AdjustedLineAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjusted Product Subtotal with Tax --></label>
+        <name>AdjustedLineAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allocated Quantity --></label>
+        <name>Allocated_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available Quantity --></label>
+        <name>AvailableQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cart Item Product Name --></label>
+        <name>Cart_Item_Product_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Color Marketing Name --></label>
+        <name>Color_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By ID --></label>
+        <name>CreatedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Extended Price --></label>
+        <name>Current_Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Return Quantity --></label>
+        <name>Current_Return_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Installation Charge --></label>
+        <name>Dealer_Installation_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta Installation Price --></label>
+        <name>Delta_Installation_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delta Quantity --></label>
+        <name>Delta_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Extended Price --></label>
+        <name>Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Unit Price --></label>
+        <name>GrossUnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Dealer Price --></label>
+        <name>Item_Dealer_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item MSRP Price --></label>
+        <name>Item_MSRP_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Package Quantity --></label>
+        <name>Item_Package_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Tax Code --></label>
+        <name>Item_Tax_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By ID --></label>
+        <name>LastModifiedById__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date --></label>
+        <name>LastModifiedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Number --></label>
+        <name>LineNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Price --></label>
+        <name>ListPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accessory Op Code --></label>
+        <name>Op_Code_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Delivery Group ID --></label>
+        <name>OrderDeliveryGroupId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order ID --></label>
+        <name>OrderId__c</name>
+        <relationshipLabel><!-- Order Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Product Number --></label>
+        <name>OrderItemNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Item Status --></label>
+        <name>Order_Item_Status_c__c</name>
+        <picklistValues>
+            <masterLabel>CANCELLED</masterLabel>
+            <translation><!-- CANCELLED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FULFILLED</masterLabel>
+            <translation><!-- FULFILLED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN PROGRESS</masterLabel>
+            <translation><!-- IN PROGRESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEW</masterLabel>
+            <translation><!-- NEW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Original Order Item ID --></label>
+        <name>OriginalOrderItemId__c</name>
+        <relationshipLabel><!-- Order Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Original Extended Price --></label>
+        <name>Original_Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book Entry ID --></label>
+        <name>PricebookEntryId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product ID --></label>
+        <name>Product2Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Division --></label>
+        <name>Product_Division_c__c</name>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acura Auto</masterLabel>
+            <translation><!-- Acura Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda Auto</masterLabel>
+            <translation><!-- Honda Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle</masterLabel>
+            <translation><!-- Motorcycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powerequipment</masterLabel>
+            <translation><!-- Powerequipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Identifier --></label>
+        <name>Product_Identifier_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Model Marketing Name --></label>
+        <name>Product_Model_Marketing_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Model --></label>
+        <name>Product_Model_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Product_Name_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product SKU --></label>
+        <name>Product_SKU_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Subdivision --></label>
+        <name>Product_Subdivision_c__c</name>
+        <picklistValues>
+            <masterLabel>Acura</masterLabel>
+            <translation><!-- Acura --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engine</masterLabel>
+            <translation><!-- Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honda</masterLabel>
+            <translation><!-- Honda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hrc</masterLabel>
+            <translation><!-- Hrc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine</masterLabel>
+            <translation><!-- Marine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorcycle/Powersports</masterLabel>
+            <translation><!-- Motorcycle/Powersports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powerequipment</masterLabel>
+            <translation><!-- Powerequipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type_c__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation><!-- Accessory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Core Charge</masterLabel>
+            <translation><!-- Core Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motocompacto</masterLabel>
+            <translation><!-- Motocompacto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part</masterLabel>
+            <translation><!-- Part --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Product ID --></label>
+        <name>RelatedOrderItemId__c</name>
+        <relationshipLabel><!-- Order Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Released Quantity --></label>
+        <name>Released_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Extended Price --></label>
+        <name>Return_Extended_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Quantity --></label>
+        <name>Return_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Subtotal (Rounded) --></label>
+        <name>RoundedLineAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Subtotal (Rounded) with Tax --></label>
+        <name>RoundedLineAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>ServiceDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Quantity --></label>
+        <name>Shipped_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Amount per unit --></label>
+        <name>Shipping_Amount_Per_Unit_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjusted Product Subtotal Tax --></label>
+        <name>TotalAdjustedLineTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjustments --></label>
+        <name>TotalAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjustments with Tax --></label>
+        <name>TotalAdjustmentAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributed Order Adjustments --></label>
+        <name>TotalAdjustmentDistAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributed Order Adjustments with Tax --></label>
+        <name>TotalAdjustmentDistAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributed Order Adjustments Tax --></label>
+        <name>TotalAdjustmentDistTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Adjustments Tax --></label>
+        <name>TotalAdjustmentTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Amount with Tax --></label>
+        <name>TotalAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Adjustments --></label>
+        <name>TotalLineAdjustmentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Adjustments with Tax --></label>
+        <name>TotalLineAdjustmentAmtWithTax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Adjustments Tax --></label>
+        <name>TotalLineAdjustmentTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Subtotal --></label>
+        <name>TotalLineAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Subtotal Tax --></label>
+        <name>TotalLineTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Price --></label>
+        <name>TotalPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Tax --></label>
+        <name>TotalTaxAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Product Tax --></label>
+        <name>Total_Current_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Shipping Amt --></label>
+        <name>Total_Current_ShippingAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Shipping TaxAMT --></label>
+        <name>Total_Current_Shipping_TaxAMT_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Shipping Amt --></label>
+        <name>Total_Original_ShippingAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Shipping TaxAmt --></label>
+        <name>Total_Original_Shipping_TaxAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Installation Charge --></label>
+        <name>Total_Return_Installation_Charge_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Return Product Tax --></label>
+        <name>Total_Return_Product_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Original Product Tax --></label>
+        <name>Total_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Amt --></label>
+        <name>Total_Unavailable_Amt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable PreTax Amt --></label>
+        <name>Total_Unavailable_PreTaxAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Product Amt --></label>
+        <name>Total_Unavailable_ProductAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Product Tax --></label>
+        <name>Total_Unavailable_ProductTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Shipping Amt --></label>
+        <name>Total_Unavailable_ShippingAmt_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Shipping Tax --></label>
+        <name>Total_Unavailable_ShippingTax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Unavailable Tax --></label>
+        <name>Total_Unavailable_Tax_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Code --></label>
+        <name>TypeCode__c</name>
+        <picklistValues>
+            <masterLabel>Charge</masterLabel>
+            <translation><!-- Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Delivery Charge</masterLabel>
+            <translation><!-- Delivery Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fee</masterLabel>
+            <translation><!-- Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Product</masterLabel>
+            <translation><!-- Order Product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unavailable Quantity --></label>
+        <name>Unavailable_Quantity_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Price --></label>
+        <name>UnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Installation Price --></label>
+        <name>Updated_Installation_Price_c__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Quantity --></label>
+        <name>Updated_Quantity_c__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

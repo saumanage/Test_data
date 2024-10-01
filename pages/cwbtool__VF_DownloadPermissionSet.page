@@ -1,0 +1,6 @@
+<apex:page controller="cwbtool.FieldSchemaController" contenttype="application/x-excel#PermissionSet{!TODAY()}.xls">
+    <c:VFC_DownloadPermissionSet mapPermissionSet="{!mapPermissionSet}"
+      setPermissionSetId="{!setPermissionSetId}" 
+      mapSchema="{!mapSchema}"
+      mapObjectPermDetail="{!mapObjectPermDetail}" /> 
+</apex:page>

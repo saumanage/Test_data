@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Wayne Cycle Shop Partner Executive</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Wayne Cycle Shop Partner Executive</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>SMZ03</parentRole>
+</Role>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>29.0</apiVersion>
+    <description>A custom component that can be included into your Contact Detail page to run the MD Global Address application.</description>
+    <label>MD_globalComponent</label>
+</ApexComponent>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AddressKey --></label>
+        <name>MDPERSONATOR__AddressKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine1 --></label>
+        <name>MDPERSONATOR__AddressLine1__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine2 --></label>
+        <name>MDPERSONATOR__AddressLine2__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine3 --></label>
+        <name>MDPERSONATOR__AddressLine3__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine4 --></label>
+        <name>MDPERSONATOR__AddressLine4__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine5 --></label>
+        <name>MDPERSONATOR__AddressLine5__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine6 --></label>
+        <name>MDPERSONATOR__AddressLine6__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine7 --></label>
+        <name>MDPERSONATOR__AddressLine7__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressLine8 --></label>
+        <name>MDPERSONATOR__AddressLine8__c</name>
+    </fields>
+    <fields>
+        <label><!-- AddressType --></label>
+        <name>MDPERSONATOR__AddressType__c</name>
+    </fields>
+    <fields>
+        <label><!-- AdministrativeArea --></label>
+        <name>MDPERSONATOR__AdministrativeArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- Building --></label>
+        <name>MDPERSONATOR__Building__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>MDPERSONATOR__Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryISO3166_1_Alpha2 --></label>
+        <name>MDPERSONATOR__CountryISO3166_1_Alpha2__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryISO3166_1_Alpha3 --></label>
+        <name>MDPERSONATOR__CountryISO3166_1_Alpha3__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryISO3166_1_Numeric --></label>
+        <name>MDPERSONATOR__CountryISO3166_1_Numeric__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountryName --></label>
+        <name>MDPERSONATOR__CountryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CountrySubdivisionCode --></label>
+        <name>MDPERSONATOR__CountrySubdivisionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- DST --></label>
+        <name>MDPERSONATOR__DST__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentLocality --></label>
+        <name>MDPERSONATOR__DependentLocality__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfareLeadingType --></label>
+        <name>MDPERSONATOR__DependentThoroughfareLeadingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfareName --></label>
+        <name>MDPERSONATOR__DependentThoroughfareName__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfarePostDirection --></label>
+        <name>MDPERSONATOR__DependentThoroughfarePostDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfarePreDirection --></label>
+        <name>MDPERSONATOR__DependentThoroughfarePreDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfareTrailingType --></label>
+        <name>MDPERSONATOR__DependentThoroughfareTrailingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- DependentThoroughfare --></label>
+        <name>MDPERSONATOR__DependentThoroughfare__c</name>
+    </fields>
+    <fields>
+        <label><!-- DomainName --></label>
+        <name>MDPERSONATOR__DomainName__c</name>
+    </fields>
+    <fields>
+        <label><!-- DoubleDependentLocality --></label>
+        <name>MDPERSONATOR__DoubleDependentLocality__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailAddress --></label>
+        <name>MDPERSONATOR__EmailAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailResults --></label>
+        <name>MDPERSONATOR__EmailResults__c</name>
+    </fields>
+    <fields>
+        <label><!-- FormattedAddress --></label>
+        <name>MDPERSONATOR__FormattedAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender2 --></label>
+        <name>MDPERSONATOR__Gender2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>MDPERSONATOR__Gender__c</name>
+    </fields>
+    <fields>
+        <label><!-- InternationalPhoneNumber --></label>
+        <name>MDPERSONATOR__InternationalPhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>MDPERSONATOR__Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>MDPERSONATOR__Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locality --></label>
+        <name>MDPERSONATOR__Locality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>MDPERSONATOR__Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- MailboxName --></label>
+        <name>MDPERSONATOR__MailboxName__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameFirst2 --></label>
+        <name>MDPERSONATOR__NameFirst2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameFirst --></label>
+        <name>MDPERSONATOR__NameFirst__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameLast2 --></label>
+        <name>MDPERSONATOR__NameLast2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameLast --></label>
+        <name>MDPERSONATOR__NameLast__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameMiddle2 --></label>
+        <name>MDPERSONATOR__NameMiddle2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameMiddle --></label>
+        <name>MDPERSONATOR__NameMiddle__c</name>
+    </fields>
+    <fields>
+        <label><!-- NamePrefix2 --></label>
+        <name>MDPERSONATOR__NamePrefix2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NamePrefix --></label>
+        <name>MDPERSONATOR__NamePrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameSuffix2 --></label>
+        <name>MDPERSONATOR__NameSuffix2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NameSuffix --></label>
+        <name>MDPERSONATOR__NameSuffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>MDPERSONATOR__Organization__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneAdministrativeArea --></label>
+        <name>MDPERSONATOR__PhoneAdministrativeArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneCallerID --></label>
+        <name>MDPERSONATOR__PhoneCallerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneCarrier --></label>
+        <name>MDPERSONATOR__PhoneCarrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneCountryDialingCode --></label>
+        <name>MDPERSONATOR__PhoneCountryDialingCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneCountryName --></label>
+        <name>MDPERSONATOR__PhoneCountryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneInternationalPrefix --></label>
+        <name>MDPERSONATOR__PhoneInternationalPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneLatitude --></label>
+        <name>MDPERSONATOR__PhoneLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneLocality --></label>
+        <name>MDPERSONATOR__PhoneLocality__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneLongitude --></label>
+        <name>MDPERSONATOR__PhoneLongitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneNationPrefix --></label>
+        <name>MDPERSONATOR__PhoneNationPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneNationalDestinationCode --></label>
+        <name>MDPERSONATOR__PhoneNationalDestinationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneNumber --></label>
+        <name>MDPERSONATOR__PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PhoneSubscriberNumber --></label>
+        <name>MDPERSONATOR__PhoneSubscriberNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostBox --></label>
+        <name>MDPERSONATOR__PostBox__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>MDPERSONATOR__PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- PremisesNumber --></label>
+        <name>MDPERSONATOR__PremisesNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- PremisesType --></label>
+        <name>MDPERSONATOR__PremisesType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Results --></label>
+        <name>MDPERSONATOR__Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubAdministrativeArea --></label>
+        <name>MDPERSONATOR__SubAdministrativeArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubNationalArea --></label>
+        <name>MDPERSONATOR__SubNationalArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubPremisesNumber --></label>
+        <name>MDPERSONATOR__SubPremisesNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubPremisesType --></label>
+        <name>MDPERSONATOR__SubPremisesType__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubPremises --></label>
+        <name>MDPERSONATOR__SubPremises__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfareLeadingType --></label>
+        <name>MDPERSONATOR__ThoroughfareLeadingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfareName --></label>
+        <name>MDPERSONATOR__ThoroughfareName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfarePostDirection --></label>
+        <name>MDPERSONATOR__ThoroughfarePostDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfarePreDirection --></label>
+        <name>MDPERSONATOR__ThoroughfarePreDirection__c</name>
+    </fields>
+    <fields>
+        <label><!-- ThoroughfareTrailingType --></label>
+        <name>MDPERSONATOR__ThoroughfareTrailingType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thoroughfare --></label>
+        <name>MDPERSONATOR__Thoroughfare__c</name>
+    </fields>
+    <fields>
+        <label><!-- TopLevelDomainName --></label>
+        <name>MDPERSONATOR__TopLevelDomainName__c</name>
+    </fields>
+    <fields>
+        <label><!-- TopLevelDomain --></label>
+        <name>MDPERSONATOR__TopLevelDomain__c</name>
+    </fields>
+    <fields>
+        <label><!-- TransmissionResults --></label>
+        <name>MDPERSONATOR__TransmissionResults__c</name>
+    </fields>
+    <fields>
+        <label><!-- UTC --></label>
+        <name>MDPERSONATOR__UTC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>MDPERSONATOR__Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- contactIdExtID --></label>
+        <name>MDPERSONATOR__contactIdExtID__c</name>
+    </fields>
+</CustomObjectTranslation>

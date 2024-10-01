@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dealer Subdivision</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dealer Divisions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Buy From Dealer Account --></label>
+        <name>BuyFromDealerAccount_CD__c</name>
+        <relationshipLabel><!-- Dealer Divisions (Buy From Dealer Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dealer Subdivision --></label>
+        <name>DealerSubdivision_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealer Access Level --></label>
+        <name>Dealer_Access_Level__c</name>
+        <picklistValues>
+            <masterLabel>Full Access</masterLabel>
+            <translation><!-- Full Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Access</masterLabel>
+            <translation><!-- No Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporting Only</masterLabel>
+            <translation><!-- Reporting Only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dealer --></label>
+        <name>Dealer_ID__c</name>
+        <relationshipLabel><!-- Dealer Subdivision --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dealer URL --></label>
+        <name>Dealer_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Enrollment --></label>
+        <name>InternetCertified_FLG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Dealer DreamShop Active --></label>
+        <name>Is_Dealer_DreamShop_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Launchbox ID --></label>
+        <name>Launchbox_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Enrollment Date --></label>
+        <name>Lead_Enrollment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales District --></label>
+        <name>SalesDistrict_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Region --></label>
+        <name>SalesRegion_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Zone --></label>
+        <name>SalesZone_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubDivision --></label>
+        <name>SubDiv_TXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>isActive_FLG__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

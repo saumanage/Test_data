@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Delray Acura Partner Manager</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Delray Acura Partner Manager</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>DelrayAcuraPartnerExecutive1</parentRole>
+</Role>

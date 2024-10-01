@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Dashboards</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Learn More</actionButtonLabel>
+        <actionButtonLink>https://org62.my.salesforce.com/sfc/p/000000000062/a/0M000000IRq5/B_CrzKp_T8rdgv5IDc8gda6YXUQOrU1vRlHcL71tUSg</actionButtonLink>
+        <body>&lt;p&gt;&lt;span style=&quot;color: rgb(120, 144, 156);&quot;&gt;Learn about the dashboards we’ve built to help you track your revenue, opportunity trends, and pipeline against your goals.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(120, 144, 156);&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</body>
+        <customApplication>standard__LightningSales</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Business Dashboards</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Dashboards</masterLabel>
+        <publishedDate>2019-08-14</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2019-08-14</startDate>
+        <targetPageKey1>Dashboard</targetPageKey1>
+        <targetPageKey2>home</targetPageKey2>
+        <targetPageType>standard__objectPage</targetPageType>
+        <timesToDisplay>3</timesToDisplay>
+        <title>Measure Your Success</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

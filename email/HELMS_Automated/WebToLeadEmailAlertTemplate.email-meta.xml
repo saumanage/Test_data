@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Logo</letterhead>
+    <name>WebToLeadEmailAlertTemplate</name>
+    <style>freeForm</style>
+    <subject>Confirmation of Your Quote Request</subject>
+    <textOnly>Thank you for submitting a quote request for your {!Lead.Model_TXT__c}{!Lead.Model_ID__c}. Your request has been submitted to your selected {!Lead.SubDiv_TXT__c} Dealer who should respond to your quote request shortly.
+
+The information you have submitted follows:
+
+PRODUCT
+
+Model/Trim/Transmission: {!Lead.Model_TXT__c}{!Lead.Model_ID__c}
+
+DEALER INFORMATION:
+
+Dealer Name: {!Lead.PreferredDealerAccount_ID__c} {!Lead.PreferredDealerAccount_ID__r}
+
+Address: {!Lead.Dealer_Address_TXT__c}
+
+Phone Number: ({! LEFT(Lead.Dealer_NUM_TXT__c , 3) }) {! LEFT(RIGHT(Lead.Dealer_NUM_TXT__c, 7), 3) }-{! RIGHT(Lead.Dealer_NUM_TXT__c, 4) }
+
+Once again, thank you for your interest in purchasing a {!Lead.Model_TXT__c}{!Lead.Model_ID__c}.
+
+{!Lead.SubDiv_TXT__c} Division of American Honda Motor Co., Inc.
+
+This message was sent from an unmonitored email address. Please do not reply to this message.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
